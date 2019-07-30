@@ -1,0 +1,20 @@
+$color-list: (red:#c00, green:#0c0, blue:#00c);
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin color-palette($property, $color: $color-list) {
+  @each $name, $key in $color {
+    @for $i from 1 to 10 {
+      .#{$property}-#{$name}-light-#{$i * 10} {
+        #{$property}: tint($key, percentage($i/10));
+      }
+      .#{$property}-#{$name}-dark-#{$i * 10} {
+        #{$property}: shade($key, percentage($i/10));
+      }
+    }
+  }
+}

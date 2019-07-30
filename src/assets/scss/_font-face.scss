@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+$font-family:            "Material-Design-Iconic-Font" !default;
+$file-path:          "assets/fonts/Material-Design-Iconic-Font/Material-Design-Iconic-Font" !default;
+$font-class-allswitch:    false !default;
+$font-class-prefix:       icon !default;
+$font-class-output:       () !default;
+$font-class:  person-uncheck "e900",
+              person-check "e901",
+              search "e902",
+              envelope-o "e903",
+              heart "f004" !default;
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.eot'); /* IE9*/
+    src: url('#{$file-path}.eot?#iefix')                format('embedded-opentype'), /* IE6-IE8 */
+          url('#{$file-path}.svg##{$font-family}')      format('svg'), /* iOS 4.1- */
+          url('#{$file-path}.woff')                     format('woff'), /* chrome, firefox */
+          url('#{$file-path}.ttf')                      format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  }
+}
+
+// 基础样式
+%font-basic{
+  display: inline-block;
+  font: normal normal normal 14px/1 $font-family;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke-width: 0.2px;
+}
+
+@function font-search($needle, $sea: $font-class){
+    @each $name in $sea {
+        $index: index($name, $needle);
+
+        @if $index {
+            $return: if($index == 1, 2, $index);
+            @return nth($name,$return);
+        }
+    }
+    @warn "no #{$needle} in the variables, please check it!";
+    @return false;
+}
+
+@mixin font-icon($name){
+  .#{$font-class-prefix} {
+    @extend %font-basic;
+    &-#{$name} {
+      &:before{
+        content: unquote("\"") + unquote(str-insert( #{font-search($name)} , "\\" , 1)) + unquote("\"");;
+      }
+    }
+  }
+}
+//@include font-icon(person-uncheck);

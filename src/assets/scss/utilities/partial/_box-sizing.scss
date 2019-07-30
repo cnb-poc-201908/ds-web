@@ -1,0 +1,5 @@
+// box-sizing
+@mixin box-sizing($type: border-box) {
+  // border-box | padding-box | content-box
+  @include prefixer(box-sizing, $type, webkit moz o);
+}

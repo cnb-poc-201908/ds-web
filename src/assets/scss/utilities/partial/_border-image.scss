@@ -1,0 +1,4 @@
+// border-image
+@mixin border-image($image){
+  @include prefixer(border-image, $image);
+}

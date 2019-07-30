@@ -1,0 +1,25 @@
+*, *:after, *:before {
+  @include box-sizing();
+}
+*:focus {
+  outline: 0 none;
+}
+
+html {
+  font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  background: $color-white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: #{$font-size-base} / #{$font-line-height-base} $font-family-base;
+  color: $color-font-base;
+  background-color: $color-body-background;
+}

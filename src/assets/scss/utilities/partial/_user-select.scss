@@ -1,0 +1,6 @@
+// User select
+// https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+@mixin user-select($arg: text) {
+  // none | text | all | element
+  @include prefixer(user-select, $arg);
+}

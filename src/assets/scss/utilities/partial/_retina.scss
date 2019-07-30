@@ -1,0 +1,20 @@
+@mixin retina-img($path, $ext: "jpg", $width:100%, $height:auto) {
+
+  $file1x_path: "#{$img}#{$path}.#{$ext}";
+  $file2x_path: "#{$img}#{$path}@2x.#{$ext}";
+
+  background-image: url("#{$file1x_path}") !important;
+  background-repeat: no-repeat;
+  background-size: $width $height !important;
+
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("#{$file2x_path}") !important;
+  }
+}

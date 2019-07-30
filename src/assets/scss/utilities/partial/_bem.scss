@@ -1,0 +1,21 @@
+ /**
+ * [element description]
+ * This is for BEM Block Element
+ * @param  {[String]} $element                          [A Element's name]
+ */
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/**
+ * [modifier description]
+ * This is for BEM Block Modifier
+ * @param  {[String]} $modifier                          [A Modifier's name]
+ */
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}

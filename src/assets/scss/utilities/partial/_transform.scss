@@ -1,0 +1,24 @@
+@mixin transform($property...){
+  @include prefixer(transform, $property, webkit moz ms o);
+}
+@mixin translate($x, $y:0) {
+	@include prefixer(transform, translate($x, $y), webkit moz ms o);
+}
+@mixin scale($factor) {
+  @include prefixer(transform, scale($factor), webkit moz ms o);
+}
+@mixin rotate($deg) {
+  @include prefixer(transform, rotate($deg), webkit moz ms o);
+}
+@mixin rotateY($deg) {
+  @include prefixer(transform, rotateY($deg), webkit moz ms o);
+}
+@mixin skew($deg, $deg2) {
+  @include prefixer(transform, skew($deg, $deg2), webkit moz ms o);
+}
+@mixin translate($x, $y:0) {
+  @include prefixer(transform, translate($x, $y), webkit moz ms o);
+}
+@mixin transform-origin($x:center, $y:center) {
+  @include prefixer(transform-origin, $x $y, webkit moz ms o);
+}
