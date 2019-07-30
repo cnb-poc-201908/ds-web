@@ -1,0 +1,8 @@
+<p>
+  sigin works!
+</p>
+<form>
+  <label>登录名:</label> <input type="text" [(ngModel)]="user.userName" name="userName">
+  <label>密码:</label> <input type="password" [(ngModel)]="user.upwd" name="upwd">
+  <input type="button" value="登录" (click)="login()">
+</form>

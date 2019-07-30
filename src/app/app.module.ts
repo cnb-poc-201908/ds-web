@@ -5,18 +5,39 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimengModule } from './modules/primeng.modules';
+import { ServicesModule } from './services/services.module';
+import { HomeComponent } from './pages/home/home.component';
+import { Code404Component } from './pages/code404/code404.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductDescComponent } from './pages/product-desc/product-desc.component';
+import { SellerInfoComponent } from './pages/seller-info/seller-info.component';
+import { LoginGuard } from './guard/login.guard';
+import { SiginComponent } from './pages/sigin/sigin.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    Code404Component,
+    ProductComponent,
+    ProductDescComponent,
+    SellerInfoComponent,
+    SiginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
-    PrimengModule
+    FormsModule,
+    ReactiveFormsModule,
+    PrimengModule,
+    ServicesModule,
   ],
-  providers: [],
+  providers: [LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
