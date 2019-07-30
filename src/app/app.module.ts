@@ -16,6 +16,8 @@ import { SiginComponent } from './pages/sigin/sigin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { DSLayoutHeaderComponent } from './components/layout/ds-layout-header/ds-layout-header.component';
+import { DSLayoutSidebarComponent } from './components/layout/ds-layout-sidebar/ds-layout-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     ProductDescComponent,
     SellerInfoComponent,
-    SiginComponent
+    SiginComponent,
+    DSLayoutHeaderComponent,
+    DSLayoutSidebarComponent
   ],
   imports: [
     BrowserModule,
