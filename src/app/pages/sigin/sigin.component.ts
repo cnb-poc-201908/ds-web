@@ -49,7 +49,7 @@ export class SiginComponent implements OnInit {
       console.log('login success');
       const userStr: string = JSON.stringify(this.user);
       localStorage.setItem('user', userStr);
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/page');
     } else {
       console.log('login failure');
       this.showError();
