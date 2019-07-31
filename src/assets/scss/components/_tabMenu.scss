@@ -1,0 +1,40 @@
+.DS-tabMenu {
+  .ui-tabmenu {
+    color: $color-green;
+
+    .ui-tabmenu-nav {
+      background: transparent;
+      border-bottom: 1px solid transparent;
+
+      .ui-tabmenuitem {
+        border: 1px solid transparent;
+        background-color: #F9FAFC;
+
+        &:hover,
+        &.ui-state-active {
+          background-color: #fff;
+          border: 1px solid transparent;
+
+          .ui-menuitem-link {
+
+            .ui-menuitem-icon,
+            .ui-menuitem-text {
+            //   font-weight: bold;
+              color: $color-green;
+            }
+          }
+        }
+
+        &:not(.ui-state-active):not(.ui-state-disabled):hover {
+          background-color: #fff;
+          border: 1px solid transparent;
+        }
+      }
+    }
+  }
+}
+.tabContent{
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+}

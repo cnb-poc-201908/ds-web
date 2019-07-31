@@ -20,6 +20,7 @@ import { DSLayoutHeaderComponent } from './components/layout/ds-layout-header/ds
 import { DSLayoutSidebarComponent } from './components/layout/ds-layout-sidebar/ds-layout-sidebar.component';
 import { PageComponent } from './pages/page.component';
 import { MessageService } from 'primeng/api';
+import { MaintainComponent } from './pages/maintain/maintain.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MessageService } from 'primeng/api';
     SiginComponent,
     DSLayoutHeaderComponent,
     DSLayoutSidebarComponent,
-    PageComponent
+    PageComponent,
+    MaintainComponent
   ],
   imports: [
     BrowserModule,

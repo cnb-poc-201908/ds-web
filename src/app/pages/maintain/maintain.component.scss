@@ -1,0 +1,28 @@
+.maintain {
+  padding: 20px;
+  width: 100%;
+
+  .tabContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    section.form-wrap {
+      flex: 1;
+      max-width: 1200px;
+    }
+
+    section.button-wrap {
+    //   width: 300px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+  }
+  .ui-inputgroup{
+      .ui-float-label{
+          width: 100%;
+      }
+  }
+}

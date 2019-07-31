@@ -1,0 +1,32 @@
+<div class="maintain">
+  <p-tabMenu [model]="items" [activeItem]="items[0]" class="DS-tabMenu"></p-tabMenu>
+  <div class="tabContent">
+    <section class="form-wrap">
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText> 
+                    <label for="float-input">手机号</label>
+                </span>   
+            </div>
+            
+            <div class="ui-g-6">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText> 
+                    <label for="float-input">汽车底盘号</label>
+                </span>    
+            </div>
+                    
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="30" pInputText> 
+                    <label for="float-input">汽车牌照号</label>
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="button-wrap">
+        <p-button label="Click" (onClick)="handleClick($event)"></p-button>
+    </section>
+  </div>
+</div>
