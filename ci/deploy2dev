@@ -41,8 +41,9 @@ String INVALID_IMAGE_NAME=DEPLOY_IMAGE_NAME + ':build' + INVALID_IMAGE_NUMBER
            
     }
     stage('Build') {
-        sh "npm install"
-        sh "ng build --prod"
+		
+        sh "npm install --registry  https://registry.npm.taobao.org"
+        sh "ng build"
         
     }
 
@@ -50,11 +51,11 @@ String INVALID_IMAGE_NAME=DEPLOY_IMAGE_NAME + ':build' + INVALID_IMAGE_NUMBER
 
     stage("Deploy to Env ${DEPLOY_ENV_SUFFIX}"){
         docker.withRegistry(DOCKER_REG,DOCKER_REG_KEY){
-              def customImage = docker.build(DOCKER_REPO + "/" + BUILT_IMAGE_NAME, "./ci/Dockerfile")    
+              def customImage = docker.build(DOCKER_REPO + "/" + BUILT_IMAGE_NAME, "-f ./ci/Dockerfile .")    
               customImage.push(BUILT_IMAGE_TAG)
               customImage.push("latest")
             }
 	   sh "sed -i 's/{version}/" + BUILT_IMAGE_TAG + "/g' ./ci/ds-web.yaml"
-	   sh "kubectl apply -f ./ci/demo.yaml"
+	   sh "kubectl apply -f ./ci/ds-web.yaml"
     }
 }
