@@ -14,8 +14,6 @@
 
 // }
 
-
-
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -41,11 +39,13 @@ export class SiginComponent implements OnInit {
     this.user = { userName: '', upwd: '', uId: '' };
   }
 
-  ngOnInit() { } login() {
+  ngOnInit() { }
 
-    // 验证(后台请求 console.log('login()---------------');
+  login() {
 
-    alert(this.user.userName);
+    console.log('login()---------------');
+
+    alert(this.user.uId);
     const userStr: string = JSON.stringify(this.user);
     sessionStorage.setItem('user', userStr);
     this.router.navigateByUrl('/home');

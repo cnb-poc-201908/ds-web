@@ -3,8 +3,11 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SplitButtonModule } from 'primeng/splitbutton';
 
-import {TabMenuModule} from 'primeng/tabmenu';
-import {PanelMenuModule} from 'primeng/panelmenu';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { PanelMenuModule } from 'primeng/panelmenu';
+
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   exports: [
@@ -12,7 +15,9 @@ import {PanelMenuModule} from 'primeng/panelmenu';
     ProgressSpinnerModule,
     SplitButtonModule,
     TabMenuModule,
-    PanelMenuModule
+    PanelMenuModule,
+    InputTextModule,
+    ButtonModule
   ]
 })
 export class PrimengModule { }

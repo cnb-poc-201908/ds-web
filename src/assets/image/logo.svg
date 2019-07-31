@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="158px" height="28px" viewBox="0 0 158 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>编组 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="36">
+        <g id="Login" transform="translate(-639.000000, -196.000000)" fill="#FFFFFF">
+            <g id="编组" transform="translate(310.000000, 188.000000)">
+                <g id="编组-3" transform="translate(327.000000, 0.000000)">
+                    <text id="Drive" font-family="HelveticaNeue, Helvetica Neue" font-weight="normal" letter-spacing="-2.14285714">
+                        <tspan x="0" y="35">Drive</tspan>
+                    </text>
+                    <text id="Smart" font-family="HelveticaNeue-Thin, Helvetica Neue" font-weight="300" letter-spacing="-0.857142857">
+                        <tspan x="75" y="35">Smart</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

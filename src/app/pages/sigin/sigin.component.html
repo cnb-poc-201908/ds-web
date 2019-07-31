@@ -1,8 +1,17 @@
-<p>
-  sigin works!
-</p>
-<form>
-  <label>登录名:</label> <input type="text" [(ngModel)]="user.userName" name="userName">
-  <label>密码:</label> <input type="password" [(ngModel)]="user.upwd" name="upwd">
-  <input type="button" value="登录" (click)="login()">
-</form>
+<div class="DS-layout-wrapper">
+  <div class="DS-login-container">
+    <div class="DS-login-wrapper">
+      <div class="DS-logo">
+        <img src="../../../assets/image/logo.svg" alt="" srcset="">
+      </div>
+      <form class="DS-login-form">
+        <label for="UserID">USER ID</label>
+        <input id="UserID" type="text" pInputText [(ngModel)]="user.uId" name="userID" placeholder="Enter your ID" autocomplete="off">
+        <label for="Password">Password</label>
+        <input id="Password" type="password" size="30" pInputText [(ngModel)]="user.upwd" name="upwd" placeholder="Your password">
+        <button pButton type="button" class="ui-button-success" label="Sign in" (click)="login()"></button>
+        <div class="DS-forgot-link"> <a href="">Forgot password?</a></div>
+      </form>
+    </div>
+  </div>
+</div>

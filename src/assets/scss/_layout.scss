@@ -1,0 +1,4 @@
+.DS-layout-wrapper {
+  height: 100vh;
+  @include flexbox();
+}

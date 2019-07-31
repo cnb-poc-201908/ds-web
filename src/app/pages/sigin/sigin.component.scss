@@ -1,0 +1,74 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.DS-layout-wrapper {
+  background: url('../../../assets/image/sigin.png') no-repeat center / cover;
+}
+.DS-login-container {
+  background-color: rgba(#060606, .6);
+  @include flexbox();
+  @include flex();
+  @include justify-content(center);
+  @include align-items(center);
+}
+.DS-logo {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.DS-login-wrapper {
+  margin-top: -30px;
+}
+.DS-login-form {
+  @include flexbox();
+  @include flex-direction(column);
+  width: 380px;
+  label {
+    font-size: $font-size-xs;
+    color: $color-green;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+  input {
+    border: 0 none;
+    background-color: transparent;
+    border-bottom: 1px solid $color-gray-light;
+    margin-bottom: 40px;
+    font-size: $font-size-base;
+    padding: 10px 0;
+    color: $color-white;
+    @include border-radius(0);
+
+    @include placeholder {
+      color: shade($color-gray, 20%);
+    }
+    &:hover {
+      border-bottom-color: $color-white;
+    }
+    &:focus {
+      border-bottom-color: $color-green;
+    }
+    ~ input {
+      margin-bottom: 50px;
+    }
+  }
+  .ui-button-success {
+    background-color: $color-green;
+    @include box-shadow(0 4px 8px rgba($color-green, .4) );
+    font-size: $font-size-base;
+    height: 48px;
+    text-transform: uppercase;
+    border: 0 none;
+
+    &:hover {
+      background-color: shade($color-green, 10%) !important;
+    }
+  }
+  .DS-forgot-link {
+    text-align: center;
+    margin-top: 20px;
+    a {
+      color: #a4a4a4;
+      font-size: $font-size-xs;
+    }
+  }
+}

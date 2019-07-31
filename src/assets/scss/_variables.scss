@@ -1,27 +1,12 @@
 @charset 'UTF-8';
 $color-body-background: #fbfbfb;
-$color-green: #67c23a;
-$color-blue: #1f81e4;
-$color-red: #fa5555;
-$color-orange: #eb9e05;
-$color-yellow: #cc0;
-$color-skyblue: #79b3ef;
-$color-skyblue-light: #e7f2fe;
-$color-skyblue-lighter: #f4f7f9;
-$color-base: #343743;
-$color-base-light: #878fae;
+$color-green: #82c600;
 $color-black: #000;
 $color-white: #fff;
-$color-gray-light: #ededed;
-$color-gray-dark: #40444f;
-$color-gray: #bbb;
-$color-font-input: #aaa;
+$color-gray-light: #d8d8d8;
+$color-gray: #bebebe;
 $color-font-base: #333;
-$color-font-content: darken(#9f9f9f, 10%);
-$color-border: #e5e5e5;
-$color-border-dark: #9f9f9f;
-$color-font-base: #4a4a4a;
-$link-color: #4a4a4a $color-blue;
+
 
 //== Typography
 $font-family-sans-serif: -apple-system,
@@ -42,8 +27,8 @@ Arial,
 sans-serif !default;
 $font-family-base: $font-family-sans-serif;
 $font-size-base: 16px;
-$font-size-md: ceil(($font-size-base * 1.10)); // ~18px
 $font-size-lg: ceil(($font-size-base * 1.25)); // ~20px
+$font-size-md: ceil(($font-size-base * 1.10)); // ~18px
 $font-size-sm: ceil(($font-size-base * .85)); // ~14px
 $font-size-xs: ceil(($font-size-base * .75)); // ~12px
 
