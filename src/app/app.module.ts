@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DSLayoutHeaderComponent } from './components/layout/ds-layout-header/ds-layout-header.component';
 import { DSLayoutSidebarComponent } from './components/layout/ds-layout-sidebar/ds-layout-sidebar.component';
 import { PageComponent } from './pages/page.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { PageComponent } from './pages/page.component';
     PrimengModule,
     ServicesModule,
   ],
-  providers: [LoginGuard],
+  providers: [LoginGuard, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

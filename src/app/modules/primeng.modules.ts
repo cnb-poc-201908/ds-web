@@ -7,6 +7,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { PanelMenuModule } from 'primeng/panelmenu';
 
 import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   exports: [
@@ -15,7 +16,8 @@ import { InputTextModule } from 'primeng/inputtext';
     SplitButtonModule,
     TabMenuModule,
     PanelMenuModule,
-    InputTextModule
+    InputTextModule,
+    ToastModule
   ]
 })
 export class PrimengModule { }
