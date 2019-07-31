@@ -15,8 +15,7 @@ import { InputTextModule } from 'primeng/inputtext';
     SplitButtonModule,
     TabMenuModule,
     PanelMenuModule,
-    InputTextModule,
-    ButtonModule
+    InputTextModule
   ]
 })
 export class PrimengModule { }

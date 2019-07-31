@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [LoginGuard] },
   { path: 'login', component: SiginComponent },               // 如果路径中为login,则跳到LoginComponent组件中
   { path: 'page', component: PageComponent, children: [
+    { path: '', component: HomeComponent },
     {
       path: 'home', component: HomeComponent
     }

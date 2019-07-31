@@ -2,3 +2,17 @@
   height: 100vh;
   @include flexbox();
 }
+.DS-layout-container {
+  @include flexbox();
+  // margin-top: 48px
+  height: calc(100vh - 48px);
+}
+app-ds-layout-header {
+  flex: 1;
+}
+app-ds-layout-sidebar {
+  width: 42px;
+}
+app-home {
+  flex: 1;
+}
