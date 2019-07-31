@@ -25,4 +25,14 @@
           width: 100%;
       }
   }
+  .maintain-main{
+      display: flex;
+      flex-flow: column;
+      section.left{
+          width: 300px;
+      }
+      section.right{
+          flex: 1;
+      }
+  }
 }

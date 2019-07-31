@@ -8,6 +8,8 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
+import { VirtualScrollerModule } from 'primeng/virtualscroller';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { ToastModule } from 'primeng/toast';
     TabMenuModule,
     PanelMenuModule,
     InputTextModule,
-    ToastModule
+    ToastModule,
+    VirtualScrollerModule
   ]
 })
 export class PrimengModule { }

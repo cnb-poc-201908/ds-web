@@ -2,7 +2,6 @@ import { Injectable, Inject } from '@angular/core';
 import { RestService } from './rest.service';
 import { Observable } from 'rxjs';
 // import { MatDialogConfig, MatDialog, MatDialogRef } from '@angular/material';
-import { DOCUMENT } from '@angular/platform-browser';
 // import { ConfirmComponent } from '../components/confirm/confirm.component';
 
 @Injectable({
