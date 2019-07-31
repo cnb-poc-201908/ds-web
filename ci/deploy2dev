@@ -1,0 +1,60 @@
+#!groovy
+node {
+// '##################Creditial SETUP########################'
+def GIT_URL = 'git@github.com:bmw-poc/ds-web.git'
+def GIT_CRED = 'gitcom-user-bchen'
+
+def SONAR_CRED = 'sonar-token'
+String DOCKER_REPO="registry.cn-beijing.aliyuncs.com/bmwpoc"
+def DOCKER_REPO_USER = ''
+def DOCKER_REPO_PWD = ''
+
+
+String DOCKER_REG="https://" + DOCKER_REPO + "/"
+String DOCKER_REG_KEY = "9643e3f4-6725-4294-a8ca-94a156195e8f"
+
+def PRODUCT_NAME="ds-web"
+def BUILT_IMAGE_SUFFIX="-dev"
+def DEPLOY_ENV_SUFFIX="-dev"
+
+String BUILT_IMAGE_NAME = "${PRODUCT_NAME}${BUILT_IMAGE_SUFFIX}"
+String BUILT_IMAGE_TAG = "build" + env.BUILD_NUMBER 
+
+String CONTAINER_NAME="${PRODUCT_NAME}${DEPLOY_ENV_SUFFIX}"
+String DEPLOY_IMAGE_NAME="${PRODUCT_NAME}${DEPLOY_ENV_SUFFIX}"
+String DEPLOY_IMAGE_TAG="build" + env.BUILD_NUMBER
+
+int INVALID_IMAGE_NUMBER= env.BUILD_NUMBER.toInteger() - 3
+String INVALID_IMAGE_NAME=DEPLOY_IMAGE_NAME + ':build' + INVALID_IMAGE_NUMBER
+
+//################# CI PART ###################################
+
+    stage('Setup Environment') {
+        echo 'CONTAINER_NAME: ' + CONTAINER_NAME
+        echo 'BUILT_IMAGE_NAME: ' + BUILT_IMAGE_NAME
+        
+        echo 'DEPLOY_IMAGE_NAME: ' + DEPLOY_IMAGE_NAME
+        echo "DEPLOY_IMAGE_TAG: " + DEPLOY_IMAGE_TAG
+        echo 'INVALID_IMAGE_NAME: ' + INVALID_IMAGE_NAME
+		
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: GIT_CRED, url: GIT_URL]]])
+           
+    }
+    stage('Build') {
+        sh "npm install"
+        sh "ng build --prod"
+        
+    }
+
+    //################# CD PART ###################################
+
+    stage("Deploy to Env ${DEPLOY_ENV_SUFFIX}"){
+        docker.withRegistry(DOCKER_REG,DOCKER_REG_KEY){
+              def customImage = docker.build(DOCKER_REPO + "/" + BUILT_IMAGE_NAME, "./ci/Dockerfile")    
+              customImage.push(BUILT_IMAGE_TAG)
+              customImage.push("latest")
+            }
+	   sh "sed -i 's/{version}/" + BUILT_IMAGE_TAG + "/g' ./ci/ds-web.yaml"
+	   sh "kubectl apply -f ./ci/demo.yaml"
+    }
+}
