@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DSLayoutHeaderComponent } from './components/layout/ds-layout-header/ds-layout-header.component';
 import { DSLayoutSidebarComponent } from './components/layout/ds-layout-sidebar/ds-layout-sidebar.component';
+import { PageComponent } from './pages/page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DSLayoutSidebarComponent } from './components/layout/ds-layout-sidebar/
     SellerInfoComponent,
     SiginComponent,
     DSLayoutHeaderComponent,
-    DSLayoutSidebarComponent
+    DSLayoutSidebarComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

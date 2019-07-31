@@ -6,12 +6,18 @@ import { SellerInfoComponent } from './pages/seller-info/seller-info.component';
 import { ProductDescComponent } from './pages/product-desc/product-desc.component';
 import { ProductComponent } from './pages/product/product.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
+import { PageComponent } from './pages/page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: 'chat', component: ChatComponent, outlet: "aux" },// 辅助路由
   { path: 'home', component: HomeComponent, canActivate: [LoginGuard] },
-  {path : 'login', component: SiginComponent},               // 如果路径中为login,则跳到LoginComponent组件中
+  { path: 'login', component: SiginComponent },               // 如果路径中为login,则跳到LoginComponent组件中
+  { path: 'page', component: PageComponent, children: [
+    {
+      path: 'home', component: HomeComponent
+    }
+  ] },
   {
     path: 'product/:id', component: ProductComponent, children: [
       { path: '', component: ProductDescComponent },

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>icon/image/car/24</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.05565,7 L2.94435,7 C2.42302837,6.99944883 2.00055117,6.57697163 2,6.05565 L2,2.94435 C2.00055117,2.42302837 2.42302837,2.00055117 2.94435,2 L13.05565,2 C13.5769716,2.00055117 13.9994488,2.42302837 14,2.94435 L14,6.0557 C13.9994213,6.57700211 13.5769521,6.99944888 13.05565,7 L13.05565,7 Z M3,6 L13,6 L13,3 L3,3 L3,6 Z M2,12 L7,12 L7,13 L2,13 L2,12 Z M2,9 L7,9 L7,10 L2,10 L2,9 Z M13.05565,14 L9.94435,14 C9.42302837,13.9994488 9.00055117,13.5769716 9,13.05565 L9,9.94435 C9.00055117,9.42302837 9.42302837,9.00055117 9.94435,9 L13.0557,9 C13.5770021,9.00057872 13.9994489,9.42304786 14,9.94435 L14,13.0557 C13.9994213,13.5770021 13.5769521,13.9994489 13.05565,14 L13.05565,14 Z M10,13 L13,13 L13,10 L10,10 L10,13 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sale" transform="translate(-15.000000, -62.000000)">
+            <g id="icon/image/blog/16" transform="translate(13.000000, 60.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="icon-color" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

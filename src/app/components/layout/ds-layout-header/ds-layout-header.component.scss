@@ -4,10 +4,10 @@ header {
   justify-content: space-around;
   // min-width: 1200px;
   // width: 100%;
-  background-color: black;
+  background-color: #171717;
   box-sizing: border-box;
   padding: 0;
-  height: 70px;
+  height: 48px;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -26,9 +26,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 140px;
+    width: 125px;
     height: 100%;
-    background-color: black;
+    // background-color: black;
     cursor: pointer;
 
     img {
@@ -60,25 +60,29 @@ header {
 
   .DS-menu-box {
     // color: #fff;
-    margin-left: 110px;
+    margin-left: 80px;
+
     ul {
       list-style: none;
+      margin: 0;
+
       li {
-        font-size: 18px;
+        font-size: 16px;
         padding: 0 20px;
         color: #fff;
         display: inline-block;
         cursor: pointer;
-        height: 60px;
-        line-height: 60px;
+        height: 48px;
+        line-height: 48px;
         font-weight: 500;
         letter-spacing: .3px;
         margin-right: 4px;
         float: left;
+
         &:hover,
         &.active {
-          color: #666;
-          border-bottom: 4px solid greenyellow;
+          color: #A4A4A4;
+          border-bottom: 4px solid #82C600;
         }
       }
 
@@ -86,6 +90,28 @@ header {
     }
 
 
+  }
+
+  .DS-tool-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    img{
+      margin-right: 30px;
+    }
+
+    .DS-tool-search {}
+
+    .DS-tool-avatar {
+      img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+      }
+    }
   }
 
   .name {

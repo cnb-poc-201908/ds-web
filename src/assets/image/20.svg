@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>icon/image/search/20</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18.75,17.86875 L14.03125,13.125 C16.374581,10.2976003 16.0821769,6.1277481 13.3671855,3.65505497 C10.6521942,1.18236184 6.47324054,1.27990068 3.87657061,3.87657061 C1.27990068,6.47324054 1.18236184,10.6521942 3.65505497,13.3671855 C6.1277481,16.0821769 10.2976003,16.374581 13.125,14.03125 L17.86875,18.75 L18.75,17.86875 Z M3.125,8.75 C3.125,5.64339828 5.64339828,3.125 8.75,3.125 C11.8566017,3.125 14.375,5.64339828 14.375,8.75 C14.375,11.8566017 11.8566017,14.375 8.75,14.375 C5.64339828,14.375 3.125,11.8566017 3.125,8.75 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sale" transform="translate(-1261.000000, -16.000000)">
+            <g id="topNav" fill="#171717">
+                <rect id="Rectangle复制" x="0" y="0" width="1440" height="48"></rect>
+            </g>
+            <g id="header" transform="translate(490.000000, 0.000000)"></g>
+            <g id="icon/image/search/20" transform="translate(1260.000000, 15.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="icon-color" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="15px" viewBox="0 0 85 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>分组</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="18">
+        <g id="Sale" transform="translate(-21.000000, -19.000000)" fill="#FFFFFF">
+            <g id="编组" transform="translate(-40.000000, 16.000000)">
+                <g id="分组" transform="translate(60.000000, 0.000000)">
+                    <text id="Drive" font-family="HelveticaNeue, Helvetica Neue" font-weight="normal">
+                        <tspan x="0" y="17">Drive</tspan>
+                    </text>
+                    <text id="Smart" font-family="HelveticaNeue-Thin, Helvetica Neue" font-weight="300">
+                        <tspan x="42" y="17">Smart</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
