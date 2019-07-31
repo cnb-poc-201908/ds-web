@@ -7,7 +7,6 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { PanelMenuModule } from 'primeng/panelmenu';
 
 import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   exports: [
@@ -16,8 +15,7 @@ import { ButtonModule } from 'primeng/button';
     SplitButtonModule,
     TabMenuModule,
     PanelMenuModule,
-    InputTextModule,
-    ButtonModule
+    InputTextModule
   ]
 })
 export class PrimengModule { }
