@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { EChartOption } from 'echarts';
 
 import { Subject } from 'rxjs';
 import {
@@ -42,6 +43,74 @@ const colors: any = {
 })
 
 export class HomeComponent implements OnInit {
+  chartOptions: EChartOption = {
+    title: {
+      text: '我的车间',
+    },
+    legend: {
+      orient: 'horizontal',
+      x: 'center',
+      data: ['已分配', '剩余', '未分配', '过去剩余'],
+      bottom: 0
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    series: [{
+      name: '库存情况',
+      type: 'pie',
+      radius: '50%',
+      center: ['50%', '50%'],
+      clockwise: false,
+      data: [{
+        value: 45,
+        name: '已分配'
+      }, {
+        value: 25,
+        name: '剩余'
+      }, {
+        value: 15,
+        name: '未分配'
+      }, {
+        value: 8,
+        name: '过去剩余'
+      }],
+      label: {
+        normal: {
+          textStyle: {
+            color: '#999',
+            fontSize: 14,
+          }
+        }
+      },
+      labelLine: {
+        normal: {
+          show: false
+        }
+      },
+      itemStyle: {
+        normal: {
+          borderWidth: 4,
+          borderColor: '#ffffff',
+        },
+        emphasis: {
+          borderWidth: 0,
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }],
+    color: [
+      '#00acee',
+      '#52cdd5',
+      '#79d9f1',
+      '#a7e7ff',
+      '#c8efff'
+    ],
+    backgroundColor: '#fff'
+  };
 
   constructor(
     private router: Router,
