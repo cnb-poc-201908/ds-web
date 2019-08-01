@@ -11,7 +11,7 @@ export class LoginGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         const userStr = localStorage.getItem('user');
-        console.log('user', userStr);
+        // console.log('user', userStr);
 
         const user: User = JSON.parse(userStr);
         if (user && user.uId) {
@@ -20,9 +20,9 @@ export class LoginGuard implements CanActivate {
             // alert('路由守卫验证通过!');
             return true;
         } else {
-            // console.log('路由守卫验证失败!');
+            console.log('路由守卫验证失败!');
             // alert('路由守卫验证失败!');
-            this.router.navigateByUrl('/login');
+            this.router.navigateByUrl('/sigin');
             return false;
         }
 
