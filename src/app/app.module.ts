@@ -29,14 +29,14 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    // HomeComponent,
     Code404Component,
     ProductComponent,
     ProductDescComponent,
     SellerInfoComponent,
-    SiginComponent,
-    DSLayoutHeaderComponent,
-    DSLayoutSidebarComponent,
+    // SiginComponent,
+    // DSLayoutHeaderComponent,
+    // DSLayoutSidebarComponent,
     PageComponent,
     MaintainComponent
   ],
