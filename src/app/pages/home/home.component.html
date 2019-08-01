@@ -1,7 +1,17 @@
-<p>
-  home works!
-</p>
+<div class="row text-center">
+  <div class="col-md-4">
+      <button pButton type="button" label="Previous" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"></button>
+      <button pButton type="button" label="Today" mwlCalendarToday [(viewDate)]="viewDate"></button>
+      <button pButton type="button" label="Next" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"></button>
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+    
+</div>
 
-<a routerLink="['/product', '111']" >2222</a>
-<!-- <button pButton type="button" label="Click">1111</button> -->
-<p-button label="Click" (click)="goToDetail()"></p-button>
+  <mwl-calendar-day-view [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)" [dayStartHour]="9" [dayEndHour]="18" [hourSegments]="4">
+  </mwl-calendar-day-view>
+
+
+  <p-dialog header="Title" [(visible)]="display" width="200" height="100">
+    {{modalData | json}}
+</p-dialog>

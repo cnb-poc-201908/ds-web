@@ -22,6 +22,9 @@ import { PageComponent } from './pages/page.component';
 import { MessageService } from 'primeng/api';
 import { MaintainComponent } from './pages/maintain/maintain.component';
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,10 @@ import { MaintainComponent } from './pages/maintain/maintain.component';
     ReactiveFormsModule,
     PrimengModule,
     ServicesModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
   ],
   providers: [LoginGuard, MessageService],
   bootstrap: [AppComponent]
