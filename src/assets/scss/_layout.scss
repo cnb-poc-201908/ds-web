@@ -22,13 +22,38 @@ app-home {
   height: 100%;
 
   p-card {
-    flex: 1;
+    flex: 3;
+    .ui-card-header {
+      padding: 10px 20px;
+      h3 {
+        margin: 0;
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+    .ui-card {
+      color: #333;
+    }
+    + p-card {
+      margin-left: 20px;
+      flex: 1;
+    }
   }
+}
+.DS-charts {
+  height: 100%;
 }
 .DS-schedule {
   height: 100%;
+  .dataControl {
+    float: right;
+    .ui-button {
+      background-color: transparent !important;
+      border: 0 none !important;
+    }
+  }
   .ui-card-body {
-    height: calc( 100% - 40px);
+    height: calc( 100% - 56px);
   }
 
   .ui-card-content {
