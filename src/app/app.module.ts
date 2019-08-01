@@ -21,6 +21,10 @@ import { DSLayoutSidebarComponent } from './components/layout/ds-layout-sidebar/
 import { PageComponent } from './pages/page.component';
 import { MessageService } from 'primeng/api';
 import { MaintainComponent } from './pages/maintain/maintain.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,11 @@ import { MaintainComponent } from './pages/maintain/maintain.component';
     ReactiveFormsModule,
     PrimengModule,
     ServicesModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    NgxEchartsModule
   ],
   providers: [LoginGuard, MessageService],
   bootstrap: [AppComponent]

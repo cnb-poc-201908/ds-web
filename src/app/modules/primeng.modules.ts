@@ -10,7 +10,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 
+import {CardModule} from 'primeng/card';
 
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   exports: [
@@ -21,7 +23,9 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     PanelMenuModule,
     InputTextModule,
     ToastModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    DialogModule,
+    CardModule
   ]
 })
 export class PrimengModule { }

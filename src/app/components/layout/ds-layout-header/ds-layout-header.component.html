@@ -4,16 +4,15 @@
   </div>
   <nav class="DS-menu-box">
     <ul>
-      <li>Sales</li>
-      <li>After Sales</li>
+      <li *ngFor="let item of menus" [ngClass]="{'active':isActive == item.key}">{{item.text}}</li>
     </ul>
   </nav>
   <div class="DS-tool-box">
-      <img src="../../../../assets/image/20.svg">
-      <img src="../../../../assets/image/message.svg">
-      <img src="../../../../assets/image/help.svg">
+    <img src="../../../../assets/image/20.svg">
+    <img src="../../../../assets/image/message.svg">
+    <img src="../../../../assets/image/help.svg">
     <div class="action">
-      </div>
+    </div>
     <div class="DS-tool-avatar">
       <img src="../../../../assets/image/avatar.png">
     </div>

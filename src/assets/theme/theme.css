@@ -1688,7 +1688,7 @@ body .ui-toolbar .ui-toolbar-separator {
   margin: 0 0.5em;
 }
 body .ui-card {
-  background-color: #323232;
+  background-color: #ffffff;
   color: #dedede;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
