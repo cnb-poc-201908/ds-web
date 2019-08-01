@@ -18,6 +18,147 @@
   </p-header>
   <div echarts class="demo-chart" [options]="chartOptions"></div>
 </p-card>
-<p-dialog header="Title" [(visible)]="display" width="400" height="300">
-  {{modalData | json}}
+<p-dialog [header]="modalData?.event.title" [(visible)]="display" width="600" [modal]="true" [dismissableMask]="true">
+  <table class="ui-table">
+    <tr>
+      <th>日期</th>
+      <td>{{ modalData?.event.start | amDateFormat: 'YYYY/MM/DD HH:ss' }} - {{ modalData?.event.end | amDateFormat: 'HH:ss' }}</td>
+    </tr>
+    <tr>
+      <th>服务顾问 ID</th>
+      <td>{{ modalData?.event.meta.sales_id }}</td>
+    <tr>
+      <th>服务顾问姓名</th>
+      <td>{{ modalData?.event.meta.sales_name }}</td>
+    </tr>
+    <tr>
+      <th>客户姓名</th>
+      <td>{{ modalData?.event.meta.customer_name }}</td>
+    </tr>
+    <tr>
+      <th>电话号码</th>
+      <td>{{ modalData?.event.meta.tel }}</td>
+    </tr>
+    <tr>
+      <th>牌照号</th>
+      <td>{{ modalData?.event.meta.license_id}}</td>
+    </tr>
+    <tr>
+      <th>底盘号</th>
+      <td>{{ modalData?.event.meta.license_id }}</td>
+    </tr>
+    <tr>
+      <th>型号</th>
+      <td>{{ modalData?.event.meta.model }}</td>
+    </tr>
+    <tr>
+      <th>车辆说明</th>
+      <td>{{ modalData?.event.meta.description }}</td>
+    </tr>
+    <tr>
+      <th>里程</th>
+      <td>{{ modalData?.event.meta.mileage }}</td>
+    </tr>
+    <tr>
+      <th>WIP号</th>
+      <td>{{ modalData?.event.meta.WIP }}</td>
+    </tr>
+    <tr>
+      <th>预约员</th>
+      <td>{{ modalData?.event.meta.orderer }}</td>
+    </tr>
+    <tr>
+      <th>联系日期</th>
+      <td>{{ modalData?.event.meta.contact_date }}</td>
+    </tr>
+    <tr>
+      <th>联系时间</th>
+      <td>{{ modalData?.event.meta.contact_time }}</td>
+    </tr>
+    <tr>
+      <th>预约入场日期</th>
+      <td>{{ modalData?.event.meta.contact_time }}</td>
+    </tr>
+    <tr>
+      <th>预约入场时间</th>
+      <td>{{ modalData?.event.meta.contact_time }}</td>
+    </tr>
+    <tr>
+      <th>入场日期</th>
+      <td>{{ modalData?.event.meta.entrance_date }}</td>
+    </tr>
+    <tr>
+      <th>入场时间</th>
+      <td>{{ modalData?.event.meta.entrance_date }}</td>
+    </tr>
+    <tr>
+      <th>计划入场时间</th>
+      <td>{{ modalData?.event.meta.plan_entrance_date }}</td>
+    </tr>
+    <tr>
+      <th>当前里程</th>
+      <td>{{ modalData?.event.meta.mileage_current }}</td>
+    </tr>
+    <tr>
+      <th>来源</th>
+      <td>{{ modalData?.event.meta.source }}</td>
+    </tr>
+  </table>
+  <!-- meta: {
+        : 51,
+        : '王思维',
+        : '138888888',
+        license_id: '辽B D1L23',
+        baseplate_id: 'LBVAJS938459292',
+        model: 'E90LI',
+        description: '329I A CHN CKD A',
+        mileage: '30000',
+        WIP: '20177',
+        orderer: '王思维',
+        contact_date: '2019/07/31',
+        contact_time: '10.08',
+        pre_entrance_date: '2019/07/31',
+        pre_entrance_time: '10.08',
+        entrance_date: '2019/07/31',
+        entrance_time: '10.08',
+        plan_entrance_date: '2019/07/31',
+        mileage_current: '21000',
+        source: '客户来电'
+        } -->
+  <!-- <p-table [value]="cars">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>日期</th>
+        <th>服务顾问 ID</th>
+        <th>服务顾问姓名</th>
+        <th>客户姓名</th>
+        <th>电话号码</th>
+        <th>牌照号</th>
+        <th>底盘号</th>
+        <th>型号</th>
+        <th>车辆说明</th>
+        <th>里程</th>
+        <th>WIP号</th>
+        <th>预约员</th>
+        <th>联系日期</th>
+        <th>联系时间</th>
+        <th>预约入场日期</th>
+        <th>预约入场时间</th>
+        <th>入场日期</th>
+        <th>入场时间</th>
+        <th>计划入场时间</th>
+        <th>当前里程</th>
+        <th>来源</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car>
+      <tr>
+        <td>{{car.vin}}</td>
+        <td>{{car.year}}</td>
+        <td>{{car.brand}}</td>
+        <td>{{car.color}}</td>
+      </tr>
+    </ng-template>
+  </p-table> -->
+
 </p-dialog>

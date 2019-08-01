@@ -8,7 +8,7 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 
 import { DialogModule } from 'primeng/dialog';
 
