@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { EChartOption } from 'echarts';
-
 import { Subject } from 'rxjs';
 import {
   startOfDay,
@@ -45,7 +44,7 @@ const colors: any = {
 export class HomeComponent implements OnInit {
   chartOptions: EChartOption = {
     title: {
-      text: '我的车间',
+      text: '',
     },
     legend: {
       orient: 'horizontal',
@@ -55,7 +54,7 @@ export class HomeComponent implements OnInit {
     },
     tooltip: {
       trigger: 'item',
-      formatter: "{a} <br/>{b} : {c} ({d}%)"
+      formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     series: [{
       name: '库存情况',
@@ -117,8 +116,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
   activeDayIsOpen: boolean = true;
-display: boolean = false;
-modalData: object = {};
+  display: boolean = false;
+  modalData: object = {};
   view: CalendarView = CalendarView.Day;
 
   viewDate: Date = new Date();

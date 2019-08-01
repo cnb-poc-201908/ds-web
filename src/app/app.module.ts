@@ -25,6 +25,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
 
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { MomentModule } from 'ngx-moment';
+
+import '../../node_modules/moment/locale/zh-cn.js';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
-    NgxEchartsModule
+    NgxEchartsModule,
+    MomentModule
   ],
   providers: [LoginGuard, MessageService],
   bootstrap: [AppComponent]
