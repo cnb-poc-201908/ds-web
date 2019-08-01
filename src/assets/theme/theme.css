@@ -3471,3 +3471,10 @@ body .ui-fluid .ui-inplace.ui-inplace-closable .ui-inplace-content > :first-chil
 .ui-float-label>label{
   font-size: 12px;
 }
+body .ui-menu .ui-menuitem-link{
+  border-left: 2px solid transparent;
+}
+body .ui-menu .ui-menuitem-link:hover,
+body .ui-menu .ui-menuitem-link.ui-state-active{
+  border-left: 2px solid #82c600;
+}

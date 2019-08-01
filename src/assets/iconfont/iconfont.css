@@ -1,0 +1,29 @@
+@font-face {font-family: "ds";
+  src: url('iconfont.eot?t=1564679059459'); /* IE9 */
+  src: url('iconfont.eot?t=1564679059459#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAASEAAsAAAAACZwAAAQ1AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDFAqHKIYeATYCJAMQCwoABCAFhCUHRhs+CBEVnG3JfibYMSkvUNQKa5K3G4vazkz/93/anTcTvqQy8yo6NVZisWbahfS5JzzAX+79cbf97Bq+BALNlxb52J5bAbC1Ka7DqAjFkpwH3+V/5DeEH4xaWaP7P8dSL5+fwL8Kx64QOcJadOHA5zLwgckU1GsmFgP4+WyAAL6RFbQJikgAroxuhAB0Ki3OBW5JK/fgkFpRtuyZIVyApY4j1A0AmB//PPqDQ+ACSpGAbhlTxBSA33vx+3bcLe2GjBABvPXMAKDtBzBgBYCAdq3WNMBp1ArWOqzEEgBblsS13FJpjGrjuvLypJKIPx4qgUoFwDrFMO/FggoQ79uogOJ9uxYw0GR9LiAP0BoAPYlcK04lsmZuwb6FrIBtJEMLaEJkeKTtwgO3xJ0bzXaMWiTFPUh4+DBx7Lhp4t2x+Ps9cUmr16NZSWr3GjWtwpPQvcdoctSmyGnLEf6ohG6NVq/XTJx66Dsj8Uk67jr20Dv/LUXrpFdKJEmzs8nzs7sfeE0+SHuwFru2vUSSkoRo2GavmjbhIz70Yvv2NwnkO0XTiM+ioQtCwokfkX1JYrB5NvjiQ/3uA5NXkrZMbpwam9lssWxbS6N6wwNNDSvVMs2e6Wwh9FlMP85RT1c0P9VQ36iXp73z2bNRDcbcfefOLd+8ElATXnr1xgqsfkn0/Xv8vHjjecbxFzBZKnjNlTuDxQpFdsdpWtdCmS20j31F0224SMGtxCwx0qLCHVJE69ZdqyNX96CWr+l/XV3OrdRs6z7bUi2rDUpgcYOYWr+eCnDi9etElLolEruZF28ryrf2/JOOxGIEUTrYEOZHMvBKS9sg6ggULS4SNmyYF8MwWgy2H34ZrHlZ2Kg5TzRvch4jYrTF3HlzzBw8sz0bHSUUEPHZ+EQCnTiPXo25V8GkxaXFcHhSBOeTmmTCLs6QVK87L0M0hQ0o5+km/E+/ydx0E8Q+985ERwsEkjPxrXXiLHK1774MZjW7NLOS3+rdFN2EGgAAkI7hz7iRoA/GD+MrOPJ3XEvFlVNa2bJe/7j0M5l5VOq1WPJIxwiMzwGuiMb7+XgjR4groDqSbaHgernEB3i8TzXwWQBIgToVPF9Drjw6DIDEEk8DSmUQY8hHIAl2CiydObBFCyDzWWpsNMXfuC7zAMDCDECI5UCRsRowYieSYPcCi4ofsBGXgS/pf0SaSdDnByZkBSXwL1hBi+Lzy13mB+otsCQzu8AHU7a0QFe3Mk+4YBq7Td51X4oClWiGcdL5MASCNZFDUWpTyjo0jWp7pVrQXN0FJmQFJeBfYAUtKty+3BXkB+otyNJU44jqD6Zsx2WDTq2VkZN06em4dnneda8wswJRn2gG425mDFKUwNq+yqEoNTMjvA4aaZIaK61PLZ+vnhjQA92WBAphRBALuGdmlyJCF07ko2X6krd5ZulbVQAAAA==') format('woff2'),
+  url('iconfont.woff?t=1564679059459') format('woff'),
+  url('iconfont.ttf?t=1564679059459') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1564679059459#ds') format('svg'); /* iOS 4.1- */
+}
+
+.ds {
+  font-family: "ds" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-maintain:before {
+  content: "\e679";
+}
+
+.icon-booking:before {
+  content: "\e67b";
+}
+
+.icon-summary:before {
+  content: "\e67c";
+}
+

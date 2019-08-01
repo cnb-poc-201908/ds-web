@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/auth/home/home.component';
 import { LoginGuard } from './guard/login.guard';
-import { SellerInfoComponent } from './pages/seller-info/seller-info.component';
-import { ProductDescComponent } from './pages/product-desc/product-desc.component';
-import { ProductComponent } from './pages/product/product.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
-import { PageComponent } from './pages/page.component';
-import { MaintainComponent } from './pages/maintain/maintain.component';
+import { MaintainComponent } from './pages/auth/maintain/maintain.component';
 import { Code404Component } from './pages/code404/code404.component';
 
 // const routes: Routes = [
@@ -39,7 +35,7 @@ import { Code404Component } from './pages/code404/code404.component';
 const routes: Routes = [
   // { path: '', loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule), canActivate: [LoginGuard] },
   { path: '', loadChildren: './pages/auth/auth.module#AuthModule', canActivate: [LoginGuard] },
-  { path: 'auth', loadChildren: './pages/auth/auth.module#AuthModule', canActivate: [LoginGuard] },
+  // { path: 'auth', loadChildren: './pages/auth/auth.module#AuthModule', canActivate: [LoginGuard] },
   { path: 'sigin', loadChildren: './pages/sigin/sigin.module#SiginModule', },
   // { path: 'not-found', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) },
   { path: 'not-found', component: Code404Component },
