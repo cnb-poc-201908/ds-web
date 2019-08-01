@@ -4,15 +4,35 @@
 }
 .DS-layout-container {
   @include flexbox();
-  // margin-top: 48px
   height: calc(100vh - 48px);
 }
+.DS-layout-main {
+  @include flex();
+}
 app-ds-layout-header {
-  flex: 1;
+  @include flex();
 }
 app-ds-layout-sidebar {
   width: 42px;
 }
 app-home {
-  flex: 1;
+  @include flex();
+  padding: 20px;
+  @include flexbox();
+  height: 100%;
+
+  p-card {
+    flex: 1;
+  }
+}
+.DS-schedule {
+  height: 100%;
+  .ui-card-body {
+    height: calc( 100% - 40px);
+  }
+
+  .ui-card-content {
+    height: 100%;
+    overflow: auto;
+  }
 }

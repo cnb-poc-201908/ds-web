@@ -1,17 +1,16 @@
-<div class="row text-center">
-  <div class="col-md-4">
-      <button pButton type="button" label="Previous" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"></button>
-      <button pButton type="button" label="Today" mwlCalendarToday [(viewDate)]="viewDate"></button>
-      <button pButton type="button" label="Next" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"></button>
-      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+<p-card styleClass="ui-card-shadow DS-schedule">
+  <p-header>
+    <button icon="pi pi-angle-left" pButton type="button" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"></button>
+    <button icon="pi pi-calendar" pButton type="button" mwlCalendarToday [(viewDate)]="viewDate"></button>
+    <button icon="pi pi-angle-right" pButton type="button" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"></button>
+    <span>{{viewDate | calendarDate:(view + 'ViewTitle'):'en'}}</span>
+  </p-header>
+  <div>
+    <mwl-calendar-day-view [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)" [dayStartHour]="9" [dayEndHour]="18" [hourSegments]="4">
+    </mwl-calendar-day-view>
   </div>
-    
-</div>
+</p-card>
 
-  <mwl-calendar-day-view [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)" [dayStartHour]="9" [dayEndHour]="18" [hourSegments]="4">
-  </mwl-calendar-day-view>
-
-
-  <p-dialog header="Title" [(visible)]="display" width="200" height="100">
-    {{modalData | json}}
+<p-dialog header="Title" [(visible)]="display" width="400" height="300">
+  {{modalData | json}}
 </p-dialog>

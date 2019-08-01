@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 
 import { DialogModule } from 'primeng/dialog';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   exports: [
@@ -20,7 +21,8 @@ import { DialogModule } from 'primeng/dialog';
     PanelMenuModule,
     InputTextModule,
     ToastModule,
-    DialogModule
+    DialogModule,
+    CardModule
   ]
 })
 export class PrimengModule { }
