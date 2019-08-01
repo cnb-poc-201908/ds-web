@@ -1,12 +1,14 @@
 .maintain {
   padding: 20px;
   width: 100%;
-
+  
   .tabContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
     section.form-wrap {
       flex: 1;
       max-width: 1200px;

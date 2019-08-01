@@ -1162,7 +1162,7 @@ body .ui-button:enabled:active {
   border-color: #18803c;
 }
 body .ui-button.ui-button-text-only .ui-button-text {
-  padding: 0.6em 1em;
+  padding: 0.495em 2em;
 }
 body .ui-button.ui-button-text-icon-left .ui-button-text {
   padding: 0.6em 1em 0.6em 2em;
@@ -3230,13 +3230,13 @@ body .ui-tabmenu {
 body .ui-tabmenu .ui-tabmenu-nav {
   padding: 0;
   background: transparent;
-  border-bottom: 1px solid #191919;
+  border-bottom: 1px solid transparent;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
   position: static;
-  border: 1px solid #191919;
-  background-color: #191919;
-  margin-right: 2px;
+  border: 1px solid transparent;
+  background-color: #F9FAFC;
+  margin-right: 5px;
   margin-bottom: -1px;
   -moz-transition: background-color 0.2s;
   -o-transition: background-color 0.2s;
@@ -3256,8 +3256,8 @@ body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-
   margin-right: 0.5em;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):not(.ui-state-disabled):hover {
-  background-color: #191919;
-  border: 1px solid #191919;
+  background-color: #fff;
+  border: 1px solid transparent;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):not(.ui-state-disabled):hover .ui-menuitem-link .ui-menuitem-text {
   color: #1ea04c;
@@ -3266,14 +3266,14 @@ body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):not(.ui-s
   color: #dedede;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active {
-  background-color: #1ea04c;
-  border: 1px solid #1ea04c;
+  background-color: #fff;
+  border: 1px solid transparent;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link .ui-menuitem-text {
-  color: #ffffff;
+  color: #1ea04c;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link .ui-menuitem-icon {
-  color: #ffffff;
+  color: #1ea04c;
 }
 body .ui-megamenu {
   padding: 0;

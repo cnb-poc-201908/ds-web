@@ -8,6 +8,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
 import { PageComponent } from './pages/page.component';
 import { MaintainComponent } from './pages/maintain/maintain.component';
+import { Code404Component } from './pages/code404/code404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -31,7 +32,7 @@ const routes: Routes = [
       { path: 'seller/:id', component: SellerInfoComponent }
     ], canActivate: [LoginGuard]
   },
-  // { path: '**', component: Code404Component }
+  { path: '**', component: Code404Component }
 ];
 
 @NgModule({

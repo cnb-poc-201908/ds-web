@@ -1,7 +1,5 @@
 .DS-tabMenu {
   .ui-tabmenu {
-    color: $color-green;
-
     .ui-tabmenu-nav {
       background: transparent;
       border-bottom: 1px solid transparent;
@@ -32,9 +30,4 @@
       }
     }
   }
-}
-.tabContent{
-    background-color: #fff;
-    padding: 20px;
-    width: 100%;
 }
