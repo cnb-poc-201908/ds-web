@@ -10,18 +10,21 @@ export class MaintainComponent implements OnInit {
 
   constructor() { }
 
+  date: Date;
   items: MenuItem[];
   activeItem: MenuItem;
 
   ngOnInit() {
     this.items = [
-      { label: 'Stats', icon: 'fa fa-fw fa-bar-chart' },
-      { label: 'Calendar', icon: 'fa fa-fw fa-calendar' },
-      { label: 'Documentation', icon: 'fa fa-fw fa-book' },
-      { label: 'Support', icon: 'fa fa-fw fa-support' },
-      { label: 'Social', icon: 'fa fa-fw fa-twitter' }
+      { label: '已到店未进厂', icon: 'fa fa-fw fa-bar-chart' },
+      { label: '已在厂维修', icon: 'fa fa-fw fa-calendar' },
+      { label: '已出厂结算', icon: 'fa fa-fw fa-book' }
     ];
-    this.activeItem = this.items[2];
+    // this.activeItem = this.items[2];
   }
 
+  handleClick(e) {
+    console.log(e);
+
+  }
 }

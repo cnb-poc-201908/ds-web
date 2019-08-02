@@ -1174,7 +1174,7 @@ body .ui-button.ui-button-icon-only {
   width: 2.357em;
 }
 body .ui-button.ui-button-icon-only .ui-button-text {
-  padding: 0.6em;
+  padding: 0.495em;
 }
 body .ui-button.ui-button-raised {
   -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
@@ -3248,7 +3248,7 @@ body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link {
   padding: 0.571em 1em;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-text {
-  color: #dedede;
+  color: #565656;
   margin-right: 0.5em;
 }
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-icon {

@@ -13,6 +13,8 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { MenuModule } from 'primeng/menu';
+import { CalendarModule } from 'primeng/calendar';
+
 
 @NgModule({
   exports: [
@@ -26,7 +28,8 @@ import { MenuModule } from 'primeng/menu';
     VirtualScrollerModule,
     DialogModule,
     CardModule,
-    MenuModule
+    MenuModule,
+    CalendarModule
   ]
 })
 export class PrimengModule { }
