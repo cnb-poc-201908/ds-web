@@ -68,7 +68,7 @@ String INVALID_IMAGE_NAME=DEPLOY_IMAGE_NAME + ':build' + INVALID_IMAGE_NUMBER
               customImage.push("latest")
             }
 	   sh "sed -i 's/{version}/" + BUILT_IMAGE_TAG + "/g' ./ci/ds-web.yaml"
-	   cat ./ci/ds-web.yaml
+	   sh "cat ./ci/ds-web.yaml"
 	   sh "kubectl apply -f ./ci/ds-web.yaml"
     }
 }
