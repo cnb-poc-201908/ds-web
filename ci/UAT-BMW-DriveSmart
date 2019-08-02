@@ -1,7 +1,7 @@
 #!groovy
 node {   
 // '##################Creditial SETUP########################'
-def GIT_URL = 'git@github.com:bmw-poc/console-web.git'
+def GIT_URL = 'git@github.com:bmw-poc/ds-web.git'
 def E2E_GIT_URL = 'git@github.com:bmw-poc/test_selenium.git'
 def GIT_CRED = 'gitcom-user-bchen'
 
