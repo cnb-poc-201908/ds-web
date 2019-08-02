@@ -1,5 +1,3 @@
-#DEV
-
 FROM nginx:1.17
 
 #Remove the default nginx web stuffs
