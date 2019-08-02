@@ -43,6 +43,18 @@ String INVALID_IMAGE_NAME=DEPLOY_IMAGE_NAME + ':build' + INVALID_IMAGE_NUMBER
     stage('Build') {
 		
         sh "npm install --registry  https://registry.npm.taobao.org"
+	//	sh "npm install tslint-sonarts --save-dev"
+	//	sh "npm install sonarqube-scanner --save-dev"
+	//	withSonarQubeEnv(credentialsId: SONAR_CRED) {
+    //      sh "ng test"
+    //    }
+	//	 timeout(time: 10, unit: 'MINUTES') {
+	//		def qg = waitForQualityGate()
+    //          if (qg.status != 'OK') {
+    //              error "Pipeline aborted due to quality gate failure: ${qg.status}"
+    //          }
+	//	 }
+	
         sh "ng build"
         
     }
@@ -56,6 +68,7 @@ String INVALID_IMAGE_NAME=DEPLOY_IMAGE_NAME + ':build' + INVALID_IMAGE_NUMBER
               customImage.push("latest")
             }
 	   sh "sed -i 's/{version}/" + BUILT_IMAGE_TAG + "/g' ./ci/ds-web.yaml"
+	   cat ./ci/ds-web.yaml
 	   sh "kubectl apply -f ./ci/ds-web.yaml"
     }
 }
