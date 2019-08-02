@@ -32,14 +32,113 @@
 
   <div class="maintain-main">
     <section class="left">
-        <!-- <p-virtualScroller [value]="cars" scrollHeight="500px" [itemSize]="150">
-            <ng-template pTemplate="item" let-car>
-                Car content
-            </ng-template>
-        </p-virtualScroller> -->
+      <!-- <p-virtualScroller [value]="cars" scrollHeight="500px" [itemSize]="150">
+        <ng-template pTemplate="item" let-car>
+        </ng-template>
+      </p-virtualScroller> -->
+      <div class="title-wrap">
+        待核对车辆列表（26）
+      </div>
+
+      <div class="list-wrap">
+        <div class="item-content" *ngFor="let item of [1,2,3]">
+          <div class="chassis-label">底盘号</div>
+          <div class="chassis-number">LBVVA96096SA23</div>
+          <div class="item-label">
+            <div>日期</div>
+            <div>201907/31 12:00-12:45</div>
+          </div>
+          <div class="item-label">
+            <div>客户姓名</div>
+            <div>马越女士</div>
+          </div>
+          <div class="item-label">
+            <div>牌照号</div>
+            <div>辽BD1L23</div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="right">
-      
+      <div class="title-wrap">
+        待核对车辆信息
+      </div>
+
+      <div class="info-wrap">
+        <div class="ui-g ui-fluid info-content">
+          <div class="ui-g-7 vehicle-img">
+            <img src="../../../assets/image/sigin.png">
+          </div>
+
+          <div class="ui-g-5 info">
+            <div class="info-label">
+              <div>服务顾问姓名</div>
+              <div>王思维</div>
+            </div>
+            <div class="info-label">
+              <div>型号</div>
+              <div>E90LI</div>
+            </div>
+            <div class="info-label">
+              <div>车型说明</div>
+              <div>320I A CHN CDK A</div>
+            </div>
+            <div class="info-label">
+              <div>里程</div>
+              <div>200000</div>
+            </div>
+            <div class="info-label">
+              <div>WIP号</div>
+              <div>20177</div>
+            </div>
+            <div class="info-label">
+              <div>预约员</div>
+              <div>王思维</div>
+            </div>
+            <div class="info-label">
+              <div>联系日期</div>
+              <div>2019/07/31</div>
+            </div>
+            <div class="info-label">
+              <div>联系时间</div>
+              <div>10.08</div>
+            </div>
+            <div class="info-label">
+              <div>预约入场日期</div>
+              <div>2019/07/31</div>
+            </div>
+            <div class="info-label">
+              <div>预约入场时间</div>
+              <div>10.00</div>
+            </div>
+            <div class="info-label">
+              <div>入场日期</div>
+              <div>2019/07/31</div>
+            </div>
+            <div class="info-label">
+              <div>入场时间</div>
+              <div>11.15</div>
+            </div>
+            <div class="info-label">
+              <div>当前里程</div>
+              <div>210000</div>
+            </div>
+            <div class="info-label">
+              <div>来源</div>
+              <div>客户来电</div>
+            </div>
+            <span class="ui-float-label" style="margin-top: 10px;">
+              <!-- <input id="float-input" type="text" size="100" pInputText> -->
+              <textarea id="float-input" rows="7" cols="58" pInputTextarea></textarea>
+              <label for="float-input">客户反映：进行发动机油保养</label>
+            </span>
+            <section class="button-wrap">
+              <p-button label="技术活动" (onClick)="handleClick($event)"></p-button>
+              <p-button label="维修历史" (onClick)="handleClick($event)"></p-button>
+            </section>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </div>
