@@ -41,7 +41,7 @@
       </div>
 
       <div class="list-wrap">
-        <div class="item-content" *ngFor="let item of [1,2,3]">
+        <div class="item-content" (click)="vehicleActiveFlag = i" [ngClass]="{'active': vehicleActiveFlag === i}" *ngFor="let item of [1,2,3];let i = index;">
           <div class="chassis-label">底盘号</div>
           <div class="chassis-number">LBVVA96096SA23</div>
           <div class="item-label">

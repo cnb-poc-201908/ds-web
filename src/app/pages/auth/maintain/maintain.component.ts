@@ -14,6 +14,8 @@ export class MaintainComponent implements OnInit {
   items: MenuItem[];
   activeItem: MenuItem;
 
+  vehicleActiveFlag = 0;
+
   ngOnInit() {
     this.items = [
       { label: '已到店未进厂', icon: 'fa fa-fw fa-bar-chart' },
