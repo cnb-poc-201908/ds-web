@@ -119,31 +119,27 @@ body {
 
 body .ui-inputtext {
   font-size: 14px;
-  color: #dedede;
-  background: #fff;
-  padding: .6em;
-  padding-top: .3rem;
-  padding-bottom: 0;
-  border: 1px solid #dcdcdc;
-     -moz-transition: border-color .2s;
-       -o-transition: border-color .2s;
-  -webkit-transition: border-color .2s;
-          transition: border-color .2s;
+  color: #333333;
+  background: #ffffff;
+  padding: 0.429em;
+  border: 1px solid #a6a6a6;
+  -moz-transition: border-color 0.2s;
+  -o-transition: border-color 0.2s;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-
 body .ui-inputtext:enabled:hover:not(.ui-state-error) {
-  border-color: #1ea04c;
+  border-color: #212121;
 }
-
 body .ui-inputtext:enabled:focus:not(.ui-state-error) {
-  border-color: #1ea04c;
+  border-color: #82C600;
   outline: 0 none;
   -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 body .ui-chkbox {
