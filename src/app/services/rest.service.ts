@@ -6,13 +6,10 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Car } from '../domain/car';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
-
 
   // 具体业务的 url
   // url = 'http://9.119.123.37:8080';
@@ -127,9 +124,18 @@ export class RestService {
   //   return Observable.throw(errMsg);
   // }
 
-
-
   getEventAll(): Observable<Car> {
+    return this.httpGet(this.url + '/event/all');
+  }
+
+  // 车辆管理
+  getCarList(role): Observable<Car> {
+    return this.httpGet(this.url + `/event/all?role=${role}`);
+  }
+  editCar(): Observable<Car> {
+    return this.httpGet(this.url + '/event/all');
+  }
+  delCar(): Observable<Car> {
     return this.httpGet(this.url + '/event/all');
   }
 }
