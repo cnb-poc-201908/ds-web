@@ -10,7 +10,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'booking', pathMatch: 'prefix' },
       { path: 'booking', loadChildren: './home/home.module#HomeModule', },
       { path: 'maintain', loadChildren: './maintain/maintain.module#MaintainModule', },
-      { path: 'stock', loadChildren: './stock/stock.module#StockModule', }
+      { path: 'stock', loadChildren: './stock/stock.module#StockModule', },
+      { path: 'board-progress', loadChildren: './board-progress/board-progress.module#BoardProgressModule', },
+      { path: 'board-task', loadChildren: './board-task/board-task.module#BoardTaskModule', }
     ]
   }
 ];

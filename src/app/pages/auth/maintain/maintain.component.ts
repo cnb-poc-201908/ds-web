@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { RestService } from 'src/app/services/rest.service';
+import { Car } from 'src/app/domain/car';
 
 @Component({
   selector: 'app-maintain',
@@ -25,6 +26,7 @@ export class MaintainComponent implements OnInit {
       { label: '已在厂维修', icon: 'fa fa-fw fa-calendar' },
       { label: '已出厂结算', icon: 'fa fa-fw fa-book' }
     ];
+
     // this.activeItem = this.items[2];
   }
 
