@@ -4,7 +4,7 @@
     车辆管理
   </div>
   <div class="content-wrap">
-    <p-table [columns]="cols" [value]="cars" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [paginator]="true" [rows]="10" [totalRecords]="totalRecords" [loading]="loading">
+    <p-table [columns]="cols" [value]="cars" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]" [totalRecords]="totalRecords" [loading]="loading">
       <ng-template pTemplate="caption">
         <div class="ui-helper-clearfix">
           <button type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" label="Add"></button>

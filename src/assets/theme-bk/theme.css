@@ -105,8 +105,8 @@ body .ui-helper-reset {
 }
 
 body .ui-state-disabled, body .ui-widget:disabled {
-  opacity: .5;
-  filter: alpha(opacity=50);
+  /* opacity: .5; */
+  /* filter: alpha(opacity=50); */
 }
 
 body .pi {
@@ -122,6 +122,8 @@ body .ui-inputtext {
   color: #dedede;
   background: #fff;
   padding: .6em;
+  padding-top: .3rem;
+  padding-bottom: 0;
   border: 1px solid #dcdcdc;
      -moz-transition: border-color .2s;
        -o-transition: border-color .2s;
@@ -481,7 +483,7 @@ body .ui-chips > ul.ui-inputtext .ui-chips-token {
 }
 
 body .ui-dropdown {
-  background: #585858;
+  /* background: #585858; */
   border: 1px solid #585858;
      -moz-transition: border-color .2s;
        -o-transition: border-color .2s;
@@ -502,11 +504,11 @@ body .ui-dropdown:not(.ui-state-disabled).ui-state-focus {
 }
 
 body .ui-dropdown .ui-dropdown-label {
-  padding-right: 2em;
+  /* padding-right: 2em; */
 }
 
 body .ui-dropdown .ui-dropdown-trigger {
-  background-color: #585858;
+  /* background-color: #585858; */
   width: 2em;
   line-height: 2em;
   text-align: center;
@@ -1971,13 +1973,13 @@ body .ui-card {
 }
 
 body .ui-paginator {
-  background-color: #252525;
-  border: 1px solid #191919;
+  /* background-color: #252525; */
+  /* border: 1px solid #191919; */
   padding: 0;
 }
 
 body .ui-paginator .ui-paginator-first, body .ui-paginator .ui-paginator-prev, body .ui-paginator .ui-paginator-next, body .ui-paginator .ui-paginator-last {
-  color: #dedede;
+  color: #171717;
   height: 2.286em;
   min-width: 2.286em;
   border: 0 none;
@@ -2007,11 +2009,11 @@ body .ui-paginator .ui-dropdown {
 }
 
 body .ui-paginator .ui-dropdown .ui-dropdown-trigger, body .ui-paginator .ui-dropdown .ui-dropdown-label {
-  color: #dedede;
+  color: #171717;
 }
 
 body .ui-paginator .ui-dropdown:hover .ui-dropdown-trigger, body .ui-paginator .ui-dropdown:hover .ui-dropdown-label {
-  color: #dedede;
+  color: #171717;
 }
 
 body .ui-paginator .ui-paginator-first:before {
@@ -2054,8 +2056,9 @@ body .ui-paginator .ui-paginator-pages .ui-paginator-page {
 }
 
 body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
-  background-color: #1ea04c;
-  color: #fff;
+  /* background-color: #1ea04c; */
+  color:#82C600;
+  font-weight: bold;
 }
 
 body .ui-paginator .ui-paginator-pages .ui-paginator-page:not(.ui-state-active):hover {
