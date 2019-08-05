@@ -61,3 +61,23 @@ app-home {
     overflow: auto;
   }
 }
+.DS-main {
+  padding: 20px;
+  .title-wrap {
+    height: 40px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 2px;
+  }
+  .content-wrap {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+}
