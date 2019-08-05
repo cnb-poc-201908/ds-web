@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-maintain',
@@ -8,7 +9,9 @@ import { MenuItem } from 'primeng/api';
 })
 export class MaintainComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private rest: RestService
+  ) { }
 
   date: Date;
   items: MenuItem[];
@@ -28,5 +31,11 @@ export class MaintainComponent implements OnInit {
   handleClick(e) {
     console.log(e);
 
+  }
+  getEventAll() {
+    this.rest.getEventAll().subscribe(f => {
+      console.log(f);
+
+    });
   }
 }

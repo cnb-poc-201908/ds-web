@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpRequest } from '@angula
 import { catchError, tap, map } from 'rxjs/operators';
 // import { Event } from '../domain/event.model';
 import { environment } from '../../environments/environment';
+import { Car } from '../domain/car';
 
 
 
@@ -128,7 +129,7 @@ export class RestService {
 
 
 
-  getEventAll(): Observable<any> {
+  getEventAll(): Observable<Car> {
     return this.httpGet(this.url + '/event/all');
   }
 }
