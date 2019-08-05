@@ -25,9 +25,9 @@ export class DSLayoutSidebarComponent implements OnInit {
       console.log(url);
     });
     this.items = [
-      { icon: 'ds icon-booking', routerLinkActiveOptions: {activeItem: true}, routerLink: ['/booking']},
-      { icon: 'ds icon-maintain', routerLinkActiveOptions: {activeItem: true}, routerLink: ['/maintain']},
-      { icon: 'ds icon-summary' }
+      { icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/booking'] },
+      { icon: 'ds icon-maintain', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/maintain'] },
+      { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/stock'] }
     ];
     this.activeItem = this.items[0];
   }
