@@ -3,39 +3,25 @@
     库存管理
   </div>
   <div class="action-wrap">
-      <section class="form-wrap">
-          <div class="ui-g ui-fluid">
-            <div class="ui-g-5">
-              <span class="ui-float-label">
-                <input id="float-input" type="text" size="30" pInputText>
-                <label for="float-input">模糊搜索查询姓名/手机号/底盘号/…</label>
-              </span>
-            </div>
-    
-            <div class="ui-g-2">
-              <span class="ui-float-label">
-                <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
-                <label for="float-input">开始日期</label>
-              </span>
-            </div>
-    
-            <div class="ui-g-2">
-              <span class="ui-float-label">
-                <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
-                <label for="float-input">结束日期</label>
-              </span>
-            </div>
-          </div>
-        </section>
-        <section class="button-wrap">
-          <p-button label="搜索" (onClick)="handleClick($event)"></p-button>
-        </section>
+    <section class="form-wrap">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-4">
+          <p-calendar [(ngModel)]="rangeDates" [showIcon]="true" selectionMode="range"></p-calendar>
+        </div>
+        <div class="ui-g-5">
+          <input id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+        </div>
+      </div>
+    </section>
+    <section class="button-wrap">
+      <p-button label="搜索" (click)="getCarList()"></p-button>
+    </section>
   </div>
   <div class="content-wrap">
     <p-table [columns]="cols" [value]="cars" [lazy]="true" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          <th *ngFor="let col of columns">
             {{col.header}}
           </th>
           <th>
@@ -44,7 +30,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr [pSelectableRow]="rowData">
+        <tr>
           <td *ngFor="let col of columns">
             {{rowData[col.field]}}
           </td>
@@ -55,11 +41,11 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
-          <tr style="height:34px">
-              <td *ngFor="let col of columns">
-                  <div class="loading-text">加载数据中</div>
-              </td>
-          </tr>
+        <tr style="height:34px">
+          <td *ngFor="let col of columns">
+            <div class="loading-text">加载数据中</div>
+          </td>
+        </tr>
       </ng-template>
     </p-table>
 
@@ -67,37 +53,48 @@
 </div>
 
 <p-dialog header="Car Details" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '500px'}">
+
+  <!-- { field: 'vehicleModelConfig', header: '车型配置代码' },
+  { field: 'model', header: '型号' },
+  { field: 'color', header: '车身颜色' },
+  { field: 'decoration', header: '装饰' },
+  { field: 'vehicleChassisNumber', header: '底盘号' },
+  { field: 'status', header: '进度代码' },
+  { field: 'color', header: '本店车辆' } -->
+
+
+
   <div class="ui-g ui-fluid" *ngIf="car">
     <div class="ui-g-12">
       <div class="ui-g-4">
-        <label for="vin">Vin</label>
+        <label for="vin">标识号</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="vin" [(ngModel)]="car.vin" />
+        <input pInputText id="vin" [(ngModel)]="car.sotckId" />
       </div>
     </div>
     <div class="ui-g-12">
       <div class="ui-g-4">
-        <label for="year">Year</label>
+        <label for="year">生产日期</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="year" [(ngModel)]="car.year" />
+        <input pInputText id="year" [(ngModel)]="car.productionDate" />
       </div>
     </div>
     <div class="ui-g-12">
       <div class="ui-g-4">
-        <label for="brand">Brand</label>
+        <label for="brand">车系代码</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="brand" [(ngModel)]="car.brand" />
+        <input pInputText id="brand" [(ngModel)]="car.vehicleSeriesCode" />
       </div>
     </div>
     <div class="ui-g-12">
       <div class="ui-g-4">
-        <label for="color">Color</label>
+        <label for="color">车型代码</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="color" [(ngModel)]="car.color" />
+        <input pInputText id="color" [(ngModel)]="car.vehicleModelCode" />
       </div>
     </div>
   </div>

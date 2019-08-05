@@ -129,13 +129,14 @@ export class RestService {
   }
 
   // 车辆管理
-  getCarList(role): Observable<Car> {
-    return this.httpGet(this.url + `/event/all?role=${role}`);
+  getCarList(role, startTime, endTime): Observable<any> {
+    // return this.httpGet(this.url + `/event/all?role=${role}`);
+    return this.httpGet(`../../assets/mock.json?role=${role}&s=${startTime}&e=${endTime}`);
   }
-  editCar(): Observable<Car> {
+  editCar(): Observable<any> {
     return this.httpGet(this.url + '/event/all');
   }
-  delCar(): Observable<Car> {
+  delCar(): Observable<any> {
     return this.httpGet(this.url + '/event/all');
   }
 }

@@ -3,12 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { RestService } from 'src/app/services/rest.service';
 
-interface Car {
-  vin;
-  year;
-  brand;
-  color;
-}
+import { Car } from '../../../domain/car';
 
 @Component({
   selector: 'app-stock',
@@ -24,77 +19,32 @@ export class StockComponent implements OnInit {
 
   userRole: string = JSON.parse(localStorage.getItem('user')).uId;
 
-  cars: Array<object> = [];
+  cars: Car[];
 
   cols: Array<object> = [];
 
+  rangeDates: Date[];
+
   displayDialog: boolean;
-loading: boolean = true;
+
+  loading: boolean;
+
   car: any = {};
-
-  selectedCar: any;
-
-  newCar: boolean;
 
   ngOnInit() {
     console.log(JSON.parse(localStorage.getItem('user')).uId);
-    this.getCarList(this.userRole);
     this.cols = [
-      { field: 'vin', header: '标识号' },
-      { field: 'year', header: '生产日期' },
-      { field: 'brand', header: '车系代码' },
-      { field: 'color', header: '车型代码' },
-      { field: 'color', header: '车型配置代码' },
-      { field: 'color', header: '型号' },
+      { field: 'sotckId', header: '标识号' },
+      { field: 'productionDate', header: '生产日期' },
+      { field: 'vehicleSeriesCode', header: '车系代码' },
+      { field: 'vehicleModelCode', header: '车型代码' },
+      { field: 'vehicleModelConfig', header: '车型配置代码' },
+      { field: 'model', header: '型号' },
       { field: 'color', header: '车身颜色' },
-      { field: 'color', header: '装饰' },
-      { field: 'color', header: '底盘号' },
-      { field: 'color', header: '进度代码' },
+      { field: 'decoration', header: '装饰' },
+      { field: 'vehicleChassisNumber', header: '底盘号' },
+      { field: 'status', header: '进度代码' },
       { field: 'color', header: '本店车辆' }
-    ];
-    this.cars = [
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
-      { vin: '111', year: '222', brand: '333', color: '444' },
-      { vin: '222', year: '222', brand: '333', color: '444' },
-      { vin: '333', year: '222', brand: '333', color: '444' },
-      { vin: '444', year: '222', brand: '333', color: '444' },
-      { vin: '555', year: '222', brand: '333', color: '444' },
-      { vin: '666', year: '222', brand: '333', color: '444' },
     ];
   }
 
@@ -115,8 +65,12 @@ loading: boolean = true;
   }
 
   getCarList(role) {
-    this.rest.getCarList(role).subscribe(f => {
-      console.log(f);
+    this.loading = true;
+    const [startTime, endTime] = this.rangeDates;
+    console.log(this.rangeDates);
+    this.rest.getCarList(role, startTime, endTime).subscribe(carslist => {
+      console.log(carslist.data);
+      this.cars = carslist.data;
       this.loading = false;
     });
   }
