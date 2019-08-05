@@ -41,20 +41,29 @@
       </div>
 
       <div class="list-wrap">
-        <div class="item-content" (click)="vehicleActiveFlag = i" [ngClass]="{'active': vehicleActiveFlag === i}" *ngFor="let item of [1,2,3];let i = index;">
-          <div class="chassis-label">底盘号</div>
-          <div class="chassis-number">LBVVA96096SA23</div>
-          <div class="item-label">
-            <div>日期</div>
-            <div>201907/31 12:00-12:45</div>
-          </div>
-          <div class="item-label">
-            <div>客户姓名</div>
-            <div>马越女士</div>
-          </div>
-          <div class="item-label">
-            <div>牌照号</div>
-            <div>辽BD1L23</div>
+        <div class="item-wrap" (click)="vehicleActiveFlag = i" [ngClass]="{'active': vehicleActiveFlag === i}"
+          *ngFor="let item of [1,2,3];let i = index;">
+          <div class="item-content">
+            <div class="item-label">
+              <div>底盘号</div>
+              <div>
+                <p-button label="活动" styleClass="ui-button-rounded rounded-button" (onClick)="handleClick($event)">
+                </p-button>
+              </div>
+            </div>
+            <div class="chassis-number">LBVVA96096SA23</div>
+            <div class="item-label">
+              <div>日期</div>
+              <div>201907/31 12:00-12:45</div>
+            </div>
+            <div class="item-label">
+              <div>客户姓名</div>
+              <div>马越女士</div>
+            </div>
+            <div class="item-label">
+              <div>牌照号</div>
+              <div>辽BD1L23</div>
+            </div>
           </div>
         </div>
       </div>
@@ -133,7 +142,7 @@
               <label for="float-input">客户反映：进行发动机油保养</label>
             </span>
             <section class="button-wrap">
-              <p-button label="技术活动" (onClick)="handleClick($event)"></p-button>
+              <p-button label="技术活动" styleClass="border-button" (onClick)="handleClick($event)"></p-button>
               <p-button label="维修历史" (onClick)="handleClick($event)"></p-button>
             </section>
           </div>
