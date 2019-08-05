@@ -1,0 +1,176 @@
+.board-progress {
+  height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+
+  .form-wrap {
+    height: 60px;
+    background: #F3F3F3;
+    box-shadow: 0 1px 0 0 #DCDCDC;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+    .title-wrap {
+      flex: 1;
+      font-size: 16px;
+      color: #565656;
+    }
+
+    // .search-wrap {
+    //   width: 34%;
+    // }
+  }
+
+  .progress-wrap {
+    flex: 1;
+    height: calc(100vh - 108px);
+    padding: 0 20px 10px;
+    display: flex;
+    flex-direction: row;
+
+    .maintain-wrap {
+      flex: 3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .title-wrap {
+        height: 50px;
+        background: #fff;
+        border-bottom: 3px solid #82C600;
+      }
+
+      .content-wrap {
+        flex: 1;
+        height: calc(100% - 50px);
+        display: flex;
+        flex-direction: row;
+
+        .column-wrap {
+          flex: 1;
+          margin-left: 10px;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+
+          .subTitle-wrap {
+            height: 40px;
+            background: #fff;
+            border-bottom: 1px solid #F3F3F3;
+            font-size: 14px;
+            line-height: 40px;
+            padding: 0 16px;
+          }
+
+          .column-content {
+            flex: 1;
+            height: calc(100% - 40px);
+            padding: 16px 16px 0 16px;
+
+            .card-content {
+                height: 100%;
+                overflow-y: auto;
+            }
+          }
+        }
+
+        .column-wrap:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .secondary-wrap {
+      flex: 1;
+      height: 100%;
+      margin-left: 10px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+
+      .title-wrap {
+        height: 50px;
+      }
+
+      .title-wrap.blue {
+        border-bottom: 3px solid #0062FF;
+      }
+
+      .title-wrap.purple {
+        border-bottom: 3px solid #8A3FFC;
+      }
+
+      .title-wrap.red {
+        border-bottom: 3px solid #FB4B53;
+      }
+
+      .secondary-content {
+        flex: 1;
+        height: calc(100% - 50px);
+        padding: 16px 16px 0 16px;
+
+        .card-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+      }
+    }
+
+    .maintain-wrap .title-wrap,
+    .secondary-wrap .title-wrap {
+      padding: 0 17px;
+      font-size: 16px;
+      color: #565656;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .text span {
+        color: #A4A4A4;
+      }
+    }
+  }
+
+  .card-wrap {
+    background-color: #F3F3F3;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #A4A4A4;
+    border: 1px solid transparent;
+    padding: 10px 12px;
+
+    .chassis-number {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #565656;
+    }
+
+    .item-label {
+      display: flex;
+      justify-content: space-between;
+      line-height: 18px;
+    }
+  }
+
+  .card-wrap:hover {
+    background-color: #82C600;
+    color: #fff;
+    border: 1px solid transparent;
+
+    .chassis-number {
+        color: #fff;
+      }
+  }
+  .card-wrap.blue:hover {
+    background-color: #0062FF;
+  }
+  .card-wrap.purple:hover {
+    background-color: #8A3FFC;
+  }
+  .card-wrap.red:hover {
+    background-color: #FB4B53;
+  }
+}

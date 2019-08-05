@@ -1,1 +1,182 @@
-<p>board-progress works!</p>
+<div class="board-progress">
+  <div class="form-wrap">
+    <div class="title-wrap">
+      总进度看板
+    </div>
+    <div class="search-wrap">
+      <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText>
+        <label for="float-input">查询车牌号/车架号</label>
+      </span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="maintain-wrap">
+      <div class="title-wrap">
+        <div class="text">维修区<span>（26）</span></div>
+        <div class="icon"></div>
+      </div>
+      <div class="content-wrap">
+        <div class="column-wrap">
+          <div class="subTitle-wrap">待维修</div>
+          <div class="column-content">
+            <div class="card-content">
+              <div class="card-wrap" *ngFor="let item of [1,2,3];let i = index;">
+                <div class="item-label">
+                  <div>牌照号</div>
+                </div>
+                <div class="chassis-number">辽BD1L23</div>
+                <div class="item-label">
+                  <div>工单</div>
+                  <div>10001</div>
+                </div>
+                <div class="item-label">
+                  <div>服务顾问</div>
+                  <div>王斯伟</div>
+                </div>
+                <div class="item-label">
+                  <div>交车时间</div>
+                  <div>201907/31 12:45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column-wrap">
+          <div class="subTitle-wrap">维修中</div>
+          <div class="column-content">
+            <div class="card-content">
+              <div class="card-wrap" *ngFor="let item of [1,2,3,4,5];let i = index;">
+                <div class="item-label">
+                  <div>牌照号</div>
+                </div>
+                <div class="chassis-number">辽BD1L23</div>
+                <div class="item-label">
+                  <div>工单</div>
+                  <div>10001</div>
+                </div>
+                <div class="item-label">
+                  <div>服务顾问</div>
+                  <div>王斯伟</div>
+                </div>
+                <div class="item-label">
+                  <div>交车时间</div>
+                  <div>201907/31 12:45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column-wrap">
+          <div class="subTitle-wrap">增项维修</div>
+          <div class="column-content">
+            <div class="card-content">
+              <div class="card-wrap" *ngFor="let item of [1];let i = index;">
+                <div class="item-label">
+                  <div>牌照号</div>
+                </div>
+                <div class="chassis-number">辽BD1L23</div>
+                <div class="item-label">
+                  <div>工单</div>
+                  <div>10001</div>
+                </div>
+                <div class="item-label">
+                  <div>服务顾问</div>
+                  <div>王斯伟</div>
+                </div>
+                <div class="item-label">
+                  <div>交车时间</div>
+                  <div>201907/31 12:45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="secondary-wrap">
+      <div class="title-wrap blue">
+        <div class="text">洗车区<span>（4）</span></div>
+        <div class="icon"></div>
+      </div>
+      <div class="secondary-content">
+        <div class="card-content">
+          <div class="card-wrap blue" *ngFor="let item of [1,2,3,4];let i = index;">
+            <div class="item-label">
+              <div>牌照号</div>
+            </div>
+            <div class="chassis-number">辽BD1L23</div>
+            <div class="item-label">
+              <div>工单</div>
+              <div>10001</div>
+            </div>
+            <div class="item-label">
+              <div>服务顾问</div>
+              <div>王斯伟</div>
+            </div>
+            <div class="item-label">
+              <div>交车时间</div>
+              <div>201907/31 12:45</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="secondary-wrap">
+      <div class="title-wrap purple">
+        <div class="text">交车区<span>（18）</span></div>
+        <div class="icon"></div>
+      </div>
+      <div class="secondary-content">
+        <div class="card-content">
+          <div class="card-wrap purple" *ngFor="let item of [1,2,3,4,5];let i = index;">
+            <div class="item-label">
+              <div>牌照号</div>
+            </div>
+            <div class="chassis-number">辽BD1L23</div>
+            <div class="item-label">
+              <div>工单</div>
+              <div>10001</div>
+            </div>
+            <div class="item-label">
+              <div>服务顾问</div>
+              <div>王斯伟</div>
+            </div>
+            <div class="item-label">
+              <div>交车时间</div>
+              <div>201907/31 12:45</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="secondary-wrap">
+      <div class="title-wrap red">
+        <div class="text">滞留区<span>（2）</span></div>
+        <div class="icon"></div>
+      </div>
+      <div class="secondary-content">
+        <div class="card-content">
+          <div class="card-wrap red" *ngFor="let item of [1,2];let i = index;">
+            <div class="item-label">
+              <div>牌照号</div>
+            </div>
+            <div class="chassis-number">辽BD1L23</div>
+            <div class="item-label">
+              <div>工单</div>
+              <div>10001</div>
+            </div>
+            <div class="item-label">
+              <div>服务顾问</div>
+              <div>王斯伟</div>
+            </div>
+            <div class="item-label">
+              <div>交车时间</div>
+              <div>201907/31 12:45</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
