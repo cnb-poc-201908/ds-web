@@ -6,19 +6,23 @@
     <section class="form-wrap" style="width: 700px;">
       <div class="ui-g ui-fluid">
         <div class="ui-g-5">
-          <p-calendar [(ngModel)]="rangeDates" selectionMode="range" placeholder="开始日期～结束日期" [showIcon]="true"></p-calendar>
+          <p-calendar [(ngModel)]="rangeDates" selectionMode="range" placeholder="开始日期～结束日期" [showIcon]="true">
+          </p-calendar>
         </div>
         <div class="ui-g-7">
-          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText
+            placeholder="模糊搜索查询姓名/手机号/底盘号/…">
         </div>
       </div>
     </section>
     <section class="button-wrap">
-      <p-button label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" (click)="getCarList()"></p-button>
+      <p-button label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" (click)="getCarList()">
+      </p-button>
     </section>
   </div>
   <div class="content-wrap">
-    <p-table [value]="cars" [lazy]="true" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
+    <p-table [value]="cars" [lazy]="true" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]"
+      [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
       <ng-template pTemplate="header">
         <tr>
           <th>标识号</th>
@@ -33,14 +37,11 @@
           <th>进度代码</th>
           <th>本店车辆</th>
           <th>操作</th>
-          <th>
-            操作
-          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-car let-columns="columns">
         <tr>
-          <td>{{car.sotckId}}</td>
+          <td>{{car.stockId}}</td>
           <td>{{car.productionDate}}</td>
           <td>{{car.vehicleSeriesCode}}</td>
           <td>{{car.vehicleModelCode}}</td>
@@ -52,8 +53,8 @@
           <td>{{car.status}}</td>
           <td>{{car.isBelongTo? "是" : "否"}}</td>
           <td>
-            <p-button icon="pi pi-pencil" (click)="onEdit(rowData)"></p-button>
-            <p-button icon="pi pi-times" (click)="onDelete(rowData)"></p-button>
+            <p-button icon="pi pi-pencil" (click)="onEdit(car)"></p-button>
+            <p-button icon="pi pi-times" (click)="onDelete(car)"></p-button>
           </td>
         </tr>
       </ng-template>
@@ -69,43 +70,86 @@
   </div>
 </div>
 
-<p-dialog header="Car Details" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '500px'}">
-  <div class="ui-g ui-fluid" *ngIf="car">
-    <div class="ui-g-12">
-      <div class="ui-g-4">
-        <label for="vin">标识号</label>
+<p-dialog header="Car Details" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '800px'}">
+  <div class="dialog-content">
+    <div class="ui-g ui-fluid content-left" *ngIf="car">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="vin">标识号</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="vin" [(ngModel)]="car.sotckId" />
+        </div>
       </div>
-      <div class="ui-g-8">
-        <input pInputText id="vin" [(ngModel)]="car.sotckId" />
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="year">生产日期</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="year" [(ngModel)]="car.productionDate" />
+        </div>
       </div>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="brand">车系代码</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="brand" [(ngModel)]="car.vehicleSeriesCode" />
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="color">车型代码</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="color" [(ngModel)]="car.vehicleModelCode" />
+        </div>
+      </div>
+      <!-- <table class="ui-table">
+        <tr>
+          <th>日期</th>
+          <td>1111</td>
+        </tr>
+      </table> -->
     </div>
-    <div class="ui-g-12">
-      <div class="ui-g-4">
-        <label for="year">生产日期</label>
+    <div class="ui-g ui-fluid content-right" *ngIf="car">
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="vin">标识号</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="vin" [(ngModel)]="car.sotckId" />
+        </div>
       </div>
-      <div class="ui-g-8">
-        <input pInputText id="year" [(ngModel)]="car.productionDate" />
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="year">生产日期</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="year" [(ngModel)]="car.productionDate" />
+        </div>
       </div>
-    </div>
-    <div class="ui-g-12">
-      <div class="ui-g-4">
-        <label for="brand">车系代码</label>
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="brand">车系代码</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="brand" [(ngModel)]="car.vehicleSeriesCode" />
+        </div>
       </div>
-      <div class="ui-g-8">
-        <input pInputText id="brand" [(ngModel)]="car.vehicleSeriesCode" />
-      </div>
-    </div>
-    <div class="ui-g-12">
-      <div class="ui-g-4">
-        <label for="color">车型代码</label>
-      </div>
-      <div class="ui-g-8">
-        <input pInputText id="color" [(ngModel)]="car.vehicleModelCode" />
+      <div class="ui-g-12">
+        <div class="ui-g-4">
+          <label for="color">车型代码</label>
+        </div>
+        <div class="ui-g-8">
+          <input pInputText id="color" [(ngModel)]="car.vehicleModelCode" />
+        </div>
       </div>
     </div>
   </div>
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa fa-check" (click)="cancel()" label="Cancel"></button>
       <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
     </div>
   </p-footer>
