@@ -18,23 +18,39 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table [columns]="cols" [value]="cars" [lazy]="true" [paginator]="true" [rows]="10"
-      [rowsPerPageOptions]="[10,20,30]" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
-      <ng-template pTemplate="header" let-columns>
+    <p-table [value]="cars" [lazy]="true" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
+      <ng-template pTemplate="header">
         <tr>
-          <th *ngFor="let col of columns">
-            {{col.header}}
-          </th>
+          <th>标识号</th>
+          <th>生产日期</th>
+          <th>车系代码</th>
+          <th>车型代码</th>
+          <th>车型配置代码</th>
+          <th>型号</th>
+          <th>车身颜色</th>
+          <th>装饰</th>
+          <th>底盘号</th>
+          <th>进度代码</th>
+          <th>本店车辆</th>
+          <th>操作</th>
           <th>
             操作
           </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <ng-template pTemplate="body" let-car let-columns="columns">
         <tr>
-          <td *ngFor="let col of columns">
-            {{rowData[col.field]}}
-          </td>
+          <td>{{car.sotckId}}</td>
+          <td>{{car.productionDate}}</td>
+          <td>{{car.vehicleSeriesCode}}</td>
+          <td>{{car.vehicleModelCode}}</td>
+          <td>{{car.vehicleModelConfig}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.color}}</td>
+          <td>{{car.decoration}}</td>
+          <td>{{car.vehicleChassisNumber}}</td>
+          <td>{{car.status}}</td>
+          <td>{{car.isBelongTo? "是" : "否"}}</td>
           <td>
             <p-button icon="pi pi-pencil" (click)="onEdit(rowData)"></p-button>
             <p-button icon="pi pi-times" (click)="onDelete(rowData)"></p-button>
@@ -54,17 +70,6 @@
 </div>
 
 <p-dialog header="Car Details" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '500px'}">
-
-  <!-- { field: 'vehicleModelConfig', header: '车型配置代码' },
-  { field: 'model', header: '型号' },
-  { field: 'color', header: '车身颜色' },
-  { field: 'decoration', header: '装饰' },
-  { field: 'vehicleChassisNumber', header: '底盘号' },
-  { field: 'status', header: '进度代码' },
-  { field: 'color', header: '本店车辆' } -->
-
-
-
   <div class="ui-g ui-fluid" *ngIf="car">
     <div class="ui-g-12">
       <div class="ui-g-4">
