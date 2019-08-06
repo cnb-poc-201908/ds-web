@@ -4022,6 +4022,11 @@ body .ui-fluid .ui-inplace.ui-inplace-closable .ui-inplace-content > :first-chil
 }
 
 /* Add your customizations of theme here */
+html,body{
+  font-size: 10px;
+  /* min-width: 1200px; */
+  /* overflow: hidden; */
+}
 .ui-float-label > label {
   font-size: 14px;
 }
