@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
-import { Car } from '../../../domain/car';
+import { Stock } from '../../../domain/stock';
 import { format } from 'date-fns';
 import { SCHEDULE_CODE } from '../../../../assets/static-data/static-data';
 
@@ -14,7 +14,7 @@ export class StockComponent implements OnInit {
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
 
-  cars: Car[];
+  cars: Stock[];
 
   cols: Array<object> = [];
 
@@ -93,15 +93,15 @@ export class StockComponent implements OnInit {
     const [role, roleId] = this.userRole;
     this.rest.getStockList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
       // if (carslist.message === 'success') {
-        carslist.data.forEach(element => {
-          SCHEDULE_CODE.forEach(item => {
-            if (element.status === item.code){
-              element.status = item.text;
-            }
-          });
+      carslist.data.forEach(element => {
+        SCHEDULE_CODE.forEach(item => {
+          if (element.status === item.code) {
+            element.status = item.text;
+          }
         });
-        this.cars = carslist.data;
-        this.loading = false;
+      });
+      this.cars = carslist.data;
+      this.loading = false;
       // }
     });
   }
