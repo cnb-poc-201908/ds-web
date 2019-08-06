@@ -16,6 +16,24 @@
     </div>
     <div *ngIf="activeIndex == 1">
       222
+        <div class="p-grid">
+            <div class="p-col-3" *ngFor="let item of tickets">
+              <p-card>
+                <p-header>单号 {{item.ticket}}</p-header>
+                <div>车架号 {{item.vin}}</div>
+                <div>车牌号 {{item.serial}}</div>
+              </p-card>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="activeIndex == 1">
+      222
+    </div>
+    <div *ngIf="activeIndex == 2">
+      维修中
+    </div>
+    <div *ngIf="activeIndex == 3">
+      增项
     </div>
   </div>
 </div>

@@ -1,3 +1,15 @@
 .content-wrap {
   height: calc(100% - 130px);
 }
+
+.dialog-content {
+  display: flex;
+  justify-content: space-between;
+
+  .content-left {
+    border-right: 0.5px solid #c8c8c8;
+  }
+  .content-right {
+    border-left: 0.5px solid #c8c8c8;
+  }
+}

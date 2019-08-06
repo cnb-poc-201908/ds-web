@@ -19,22 +19,58 @@ export class BoardTaskComponent implements OnInit {
   constructor(
     public dialogService: DialogService
   ) { }
+  tickets: any[];
 
   ngOnInit() {
     this.items = [
-      { label: '已到店未进厂', icon: 'fa fa-fw fa-bar-chart' },
-      { label: '已在厂维修', icon: 'fa fa-fw fa-calendar' },
-      { label: '已出厂结算', icon: 'fa fa-fw fa-book' }
+      { label: '待派工', icon: 'fa fa-fw fa-bar-chart' },
+      { label: '待维修', icon: 'fa fa-fw fa-calendar' },
+      { label: '维修中', icon: 'fa fa-fw fa-book' },
+      { label: '增项', icon: 'fa fa-fw fa-book' },
     ];
-    this.activeIndex = 0;
-    // console.log();
 
-  }
-
-  change(e, i) {
-    console.log(e);
-    console.log(i);
-    this.activeIndex = i;
+    this.tickets = [
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+      {
+        ticket : 'B20190806001',
+        vin: 'XLB09930LB1233',
+        serial : '辽BCF915'
+      },
+    ];
   }
 
   show() {
@@ -42,6 +78,12 @@ export class BoardTaskComponent implements OnInit {
     //   header: 'Choose a Car',
     //   width: '70%'
     // });
+    this.activeIndex = 0;
+    this.activeItem = this.items[0];
+  }
+
+  change(index) {
+    this.activeIndex = index;
   }
 
 }

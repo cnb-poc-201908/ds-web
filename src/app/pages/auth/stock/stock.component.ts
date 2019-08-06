@@ -1,10 +1,8 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
 import { RestService } from 'src/app/services/rest.service';
-
 import { Car } from '../../../domain/car';
 import { format } from 'date-fns';
+import { SCHEDULE_CODE } from '../../../../assets/static-data/static-data';
 
 @Component({
   selector: 'app-stock',
@@ -13,10 +11,6 @@ import { format } from 'date-fns';
 })
 
 export class StockComponent implements OnInit {
-
-  constructor(
-    private rest: RestService
-  ) { }
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
 
@@ -34,10 +28,14 @@ export class StockComponent implements OnInit {
 
   car: any = {};
 
+  constructor(
+    private rest: RestService
+  ) { }
+
   ngOnInit() {
     console.log(JSON.parse(localStorage.getItem('user')).uId);
     this.cols = [
-      { field: 'sotckId', header: '标识号' },
+      { field: 'stockId', header: '标识号' },
       { field: 'productionDate', header: '生产日期' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
@@ -49,11 +47,15 @@ export class StockComponent implements OnInit {
       { field: 'status', header: '进度代码' },
       { field: 'color', header: '本店车辆' }
     ];
-    this.getCarList();
+    this.getStockList();
   }
 
   save() {
     console.log('save', this.car);
+    this.displayDialog = false;
+  }
+  cancel() {
+    console.log('cancel', this.car);
     this.displayDialog = false;
   }
 
@@ -68,7 +70,7 @@ export class StockComponent implements OnInit {
     this.displayDialog = true;
   }
 
-  getCarList() {
+  getStockList() {
     this.loading = true;
     let startTime = '';
     let endTime = '';
@@ -76,10 +78,19 @@ export class StockComponent implements OnInit {
       startTime = format(this.rangeDates[0], 'YYYY-MM-DD');
       endTime = format(this.rangeDates[1], 'YYYY-MM-DD');
     }
-    const [role, roleId] = this.userRole
-    this.rest.getCarList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
-      this.cars = carslist.data;
-      this.loading = false;
+    const [role, roleId] = this.userRole;
+    this.rest.getStockList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
+      // if (carslist.message === 'success') {
+        carslist.data.forEach(element => {
+          SCHEDULE_CODE.forEach(item => {
+            if (element.status === item.code){
+              element.status = item.text;
+            }
+          });
+        });
+        this.cars = carslist.data;
+        this.loading = false;
+      // }
     });
   }
 }

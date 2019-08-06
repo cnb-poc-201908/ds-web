@@ -1924,7 +1924,10 @@ body .ui-toolbar .ui-toolbar-separator {
 
 body .ui-card {
   background-color: #fff;
-  color: #dedede;
+  /* color: #dedede; */
+  color: #A4A4A4;
+  border-radius: 0px;
+  font-size: 12px;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
      -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
@@ -4059,4 +4062,12 @@ body .board-progress .ui-virtualscroller .ui-virtualscroller-content {
 
 body .board-progress .ui-virtualscroller .ui-virtualscroller-content .ui-virtualscroller-list li {
   border: none;
+}
+
+body .board-task .ui-card-header {
+  padding : 10px;
+}
+
+body .board-task .p-col-3 {
+  padding : 1.5em;
 }
