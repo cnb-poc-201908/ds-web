@@ -6,12 +6,11 @@
   .form-wrap {
     height: 60px;
     background: #F3F3F3;
-    box-shadow: 0 1px 0 0 #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
 
     .title-wrap {
       flex: 4;
@@ -160,6 +159,10 @@
       display: flex;
       justify-content: space-between;
       line-height: 18px;
+
+      div {
+        white-space: nowrap;
+      }
     }
   }
 

@@ -13,6 +13,7 @@ export class RestService {
 
   // 具体业务的 url
   // url = 'http://9.119.123.37:8080';
+  // url = 'http://9.200.40.146:9001';
   // private url = 'http://localhost:3000/api';
 
   private url;
@@ -25,8 +26,8 @@ export class RestService {
   ) {
     if (!environment.production) {
       console.log('dev');
-      this.url = 'http://localhost:3000/api';
-      // this.url = 'http://9.197.248.240:20003';
+      // this.url = 'http://localhost:3000/api';
+      this.url = 'http://9.200.40.146:9001';
     } else {
       console.log('prod');
       this.url = 'http://9.119.123.37:8080';
@@ -145,6 +146,6 @@ export class RestService {
 
   // 总进度看板
   getBoardProgressList(): Observable<any> {
-    return this.httpGet(this.url + `/progress/all`);
+    return this.httpGet(this.url + `/repairOrder/repair-orders`);
   }
 }
