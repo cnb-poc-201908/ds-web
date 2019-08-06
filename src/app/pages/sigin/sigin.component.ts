@@ -39,26 +39,42 @@ export class SiginComponent implements OnInit {
     private messageService: MessageService
   ) {
 
-    this.user = { upwd: '', uId: '' };
+    this.user = { upwd: '', uId: '', role: '', roleId: '' };
   }
 
   ngOnInit() { }
 
   login() {
+    switch (this.user.uId) {
+      case '002':
+        this.user.role = 'dealerIds';
+        this.user.roleId = 'DL-10006661';
+        break;
+      case '003':
+        this.user.role = 'groupIds';
+        this.user.roleId = 'GP-10001';
+        break;
+
+      case '004':
+        this.user.role = 'regionIds';
+        this.user.roleId = 'RG-10001';
+        break;
+
+      default:
+        break;
+    }
     if (this.user.uId === '001' && this.user.upwd === '111') {
       console.log('login success');
-      const userStr: string = JSON.stringify(this.user);
-      localStorage.setItem('user', userStr);
       this.router.navigateByUrl('/board-progress');
-    } else if (this.user.uId === '002' && this.user.upwd === '111') {
+    } else if ((this.user.uId === '002' || this.user.uId === '003' || this.user.uId === '004') && this.user.upwd === '111') {
       console.log('login success');
-      const userStr: string = JSON.stringify(this.user);
-      localStorage.setItem('user', userStr);
       this.router.navigateByUrl('/stock');
     } else {
       console.log('login failure');
       this.showError();
     }
+    const userStr: string = JSON.stringify(this.user);
+    localStorage.setItem('user', userStr);
   }
 
   showError() {

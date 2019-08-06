@@ -19,6 +19,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  min-width: 1200px;
   font: #{$font-size-base} / #{$font-line-height-base} $font-family-base;
   color: $color-font-base;
   background-color: $color-body-background;
