@@ -31,44 +31,84 @@ export class BoardTaskComponent implements OnInit {
 
     this.tickets = [
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
       {
-        ticket : 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial : '辽BCF915',
+        totalHours : 9,
+        expact : '2019/07/31 12:00',
+        submit : '2019/07/31 12:45',
+        model : 'BMW0011',
+        sa : '王经理',
+        remark : '钣金喷漆',
       },
     ];
 
