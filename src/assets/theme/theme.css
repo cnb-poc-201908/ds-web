@@ -4055,6 +4055,10 @@ body .ui-button.maintain-rounded-button.ui-button-text-only .ui-button-text {
 }
 
 /* Board Progress */
+body .board-progress .search-wrap .ui-inputtext {
+  background: transparent;
+}
+
 body .board-progress .ui-virtualscroller .ui-virtualscroller-content {
   border: none;
   background-color: #fff;
