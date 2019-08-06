@@ -129,9 +129,17 @@ export class RestService {
   }
 
   // 车辆管理
-  getCarList(role, startTime, endTime): Observable<any> {
+  getCarList(role, roleId, startDate, endDate, keyword): Observable<any> {
     // return this.httpGet(this.url + `/event/all?role=${role}`);
-    return this.httpGet(`../../assets/mock.json?role=${role}&s=${startTime}&e=${endTime}`);
+    // const params = [
+    //   startDate? `startDate=${startDate}`
+    // ]=
+    let params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
+    `;
+    // if (startTime)
+
+    return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
+    // return this.httpGet(`../../assets/mock.json?role=${role}&startDate=${startTime}&e=${endTime}&t=${searchContent}`);
   }
   editCar(): Observable<any> {
     return this.httpGet(this.url + '/event/all');

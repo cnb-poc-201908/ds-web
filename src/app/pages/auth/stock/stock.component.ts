@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { RestService } from 'src/app/services/rest.service';
 
 import { Car } from '../../../domain/car';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-stock',
@@ -17,13 +18,15 @@ export class StockComponent implements OnInit {
     private rest: RestService
   ) { }
 
-  userRole: string = JSON.parse(localStorage.getItem('user')).uId;
+  userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
 
   cars: Car[];
 
   cols: Array<object> = [];
 
   rangeDates: Date[];
+
+  searchContent: string = '';
 
   displayDialog: boolean;
 
@@ -64,12 +67,16 @@ export class StockComponent implements OnInit {
     this.displayDialog = true;
   }
 
-  getCarList(role) {
+  getCarList() {
     this.loading = true;
-    const [startTime, endTime] = this.rangeDates;
-    console.log(this.rangeDates);
-    this.rest.getCarList(role, startTime, endTime).subscribe(carslist => {
-      console.log(carslist.data);
+    let startTime = '';
+    let endTime = '';
+    if (this.rangeDates) {
+      startTime = format(this.rangeDates[0], 'YYYY-MM-DD');
+      endTime = format(this.rangeDates[1], 'YYYY-MM-DD');
+    }
+    const [role, roleId] = this.userRole
+    this.rest.getCarList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
       this.cars = carslist.data;
       this.loading = false;
     });

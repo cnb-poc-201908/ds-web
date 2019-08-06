@@ -23,6 +23,8 @@ export class User {
 
   public uId: string;
   public upwd: string;
+  public role: string;
+  public roleId: string;
 }
 
 @Component({
