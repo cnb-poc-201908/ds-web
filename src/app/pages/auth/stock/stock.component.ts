@@ -70,16 +70,24 @@ export class StockComponent implements OnInit {
 
   onDelete(data) {
     console.log('delete', data);
-    this.displayDialog = false;
+    this.rest.delStock(data.stockId).subscribe(result => {
+      if (result.message === 'success') {
+        alert('库存删除成功！');
+        // 删除成功后，删除图标不再显示，反而显示文件图标
+      }
+    });
   }
 
   onEdit(data) {
-    console.log('edit', data);
     if (data.stockId !== this.car.stockId) {
       this.car = data;
       this.storageDate = null;
     }
     this.displayDialog = true;
+  }
+
+  onFile(data) {
+    window.open(`url${data.stockId}`, '_blank');
   }
 
   getStockList() {

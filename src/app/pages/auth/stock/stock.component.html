@@ -1,6 +1,17 @@
 <div class="DS-main">
-  <div class="title">
-    库存管理
+  <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/stock'>
+          <span class="ui-menuitem-text ">库存管理</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/vehicle'>
+          <span class="ui-menuitem-text">车辆管理</span>
+        </a>
+      </li>
+    </ul>
   </div>
   <div class="action-wrap">
     <section class="form-wrap" style="width: 700px;">
@@ -21,8 +32,7 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table [value]="cars" [lazy]="true" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]"
-      [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
+    <p-table [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
       <ng-template pTemplate="header">
         <tr>
           <th>标识号</th>
@@ -53,8 +63,9 @@
           <td>{{car.status}}</td>
           <td>{{car.isBelongTo? "是" : "否"}}</td>
           <td>
-            <p-button icon="pi pi-pencil" (click)="onEdit(car)"></p-button>
-            <p-button icon="pi pi-times" (click)="onDelete(car)"></p-button>
+            <button class="ds icon-edit icon-btn edit-btn" (click)="onEdit(car)"></button>
+            <button *ngIf="!car.deleted" class="ds icon-delete icon-btn del-btn" (click)="onDelete(car)" [disabled]="!car.deletable"></button>
+            <button *ngIf="car.deleted" class="ds icon-summary icon-btn" (click)="onFile(car)"></button>
           </td>
         </tr>
       </ng-template>
@@ -102,7 +113,7 @@
   </div>
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton  (click)="cancel()" label="Cancel" class="ui-button-secondary"></button>
+      <button type="button" pButton (click)="cancel()" label="Cancel" class="ui-button-secondary"></button>
       <button type="button" pButton (click)="save()" label="Save"></button>
     </div>
   </p-footer>

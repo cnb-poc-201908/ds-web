@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpRequest } from '@angula
 import { catchError, tap, map } from 'rxjs/operators';
 // import { Event } from '../domain/event.model';
 import { environment } from '../../environments/environment';
-import { Stock } from '../domain/Stock';
+import { Stock } from '../domain/stock';
 
 @Injectable({
   providedIn: 'root'
@@ -144,11 +144,12 @@ export class RestService {
       storageDate,
       licensePlate
     };
-    // return this.httpPost(`../../assets/success-mock.json`, body);
+    // return this.httpPost(this.url + `/stock/stocks/${id}`, body);
     return this.httpGet(`../../assets/success-mock.json`);
   }
-  delStock(): Observable<any> {
-    return this.httpGet(this.url + '/event/all');
+  delStock(id): Observable<any> {
+    return this.httpGet(this.url + `/stock/stocks/${id}`);
+    // return this.httpDelete(this.url + `/stock/stocks/${id}`);
   }
 
   // 车辆管理
