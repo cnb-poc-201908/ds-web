@@ -49,6 +49,7 @@ export class StockComponent implements OnInit {
       { field: 'status', header: '进度代码' },
       { field: 'color', header: '本店车辆' }
     ];
+    this.getCarList();
   }
 
   save() {

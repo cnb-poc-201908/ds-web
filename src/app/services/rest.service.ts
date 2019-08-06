@@ -23,9 +23,10 @@ export class RestService {
   constructor(
     private http: HttpClient
   ) {
-    if (environment.production) {
+    if (!environment.production) {
       console.log('dev');
       this.url = 'http://localhost:3000/api';
+      // this.url = 'http://9.197.248.240:20003';
     } else {
       console.log('prod');
       this.url = 'http://9.119.123.37:8080';
@@ -130,16 +131,10 @@ export class RestService {
 
   // 车辆管理
   getCarList(role, roleId, startDate, endDate, keyword): Observable<any> {
-    // return this.httpGet(this.url + `/event/all?role=${role}`);
-    // const params = [
-    //   startDate? `startDate=${startDate}`
-    // ]=
     let params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
     `;
-    // if (startTime)
-
     return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
-    // return this.httpGet(`../../assets/mock.json?role=${role}&startDate=${startTime}&e=${endTime}&t=${searchContent}`);
+    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
   editCar(): Observable<any> {
     return this.httpGet(this.url + '/event/all');
