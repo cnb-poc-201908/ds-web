@@ -120,7 +120,7 @@ body {
 body .ui-inputtext {
   font-size: 14px;
   color: #333333;
-  background: #ffffff;
+  /* background: #ffffff; */
   padding: 0.429em;
   border: 1px solid #a6a6a6;
   -moz-transition: border-color 0.2s;
