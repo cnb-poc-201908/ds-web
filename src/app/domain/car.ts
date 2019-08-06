@@ -1,5 +1,5 @@
 export interface Car {
-    sotckId: string;
+    stockId: string;
     productionDate: string;
     vehicleSeriesCode: string;
     vehicleModelCode: string;

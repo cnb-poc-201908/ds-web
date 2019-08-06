@@ -17,6 +17,8 @@ import { CalendarModule } from 'primeng/calendar';
 
 import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { MenubarModule } from 'primeng/menubar';
     MenuModule,
     CalendarModule,
     TableModule,
-    MenubarModule
+    MenubarModule,
+    DropdownModule
   ]
 })
 export class PrimengModule { }

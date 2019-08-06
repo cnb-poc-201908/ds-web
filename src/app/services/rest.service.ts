@@ -137,8 +137,14 @@ export class RestService {
     return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
     // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
-  editStock(): Observable<any> {
-    return this.httpGet(this.url + '/event/all');
+  editStock(id, storageDate, licensePlate): Observable<any> {
+    let body = {
+      id: id,
+      storageDate: storageDate,
+      licensePlate: licensePlate
+    };
+    // return this.httpPost(`../../assets/success-mock.json`, body);
+    return this.httpGet(`../../assets/success-mock.json`);
   }
   delStock(): Observable<any> {
     return this.httpGet(this.url + '/event/all');

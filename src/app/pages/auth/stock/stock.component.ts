@@ -28,6 +28,13 @@ export class StockComponent implements OnInit {
 
   car: any = {};
 
+  selectedStatus;
+
+  status: Array<object> = SCHEDULE_CODE;
+
+  storageDate: string;
+  licensePlate: '';
+
   constructor(
     private rest: RestService
   ) { }
@@ -52,7 +59,9 @@ export class StockComponent implements OnInit {
 
   save() {
     console.log('save', this.car);
+    this.rest.editStock(this.car.id, this.storageDate, this.licensePlate).subscribe();
     this.displayDialog = false;
+
   }
   cancel() {
     console.log('cancel', this.car);
@@ -66,7 +75,10 @@ export class StockComponent implements OnInit {
 
   onEdit(data) {
     console.log('edit', data);
-    this.car = data;
+    if (data.stockId !== this.car.stockId) {
+      this.car = data;
+      this.storageDate = null;
+    }
     this.displayDialog = true;
   }
 

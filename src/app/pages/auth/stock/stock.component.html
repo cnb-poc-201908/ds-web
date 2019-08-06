@@ -70,87 +70,40 @@
   </div>
 </div>
 
-<p-dialog header="Car Details" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '800px'}">
-  <div class="dialog-content">
-    <div class="ui-g ui-fluid content-left" *ngIf="car">
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="vin">标识号</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="vin" [(ngModel)]="car.sotckId" />
-        </div>
+<p-dialog header="Stock Edit" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '550px'}">
+  <div class="ui-g ui-fluid" *ngIf="car">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="vin">库存状态</label>
       </div>
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="year">生产日期</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="year" [(ngModel)]="car.productionDate" />
-        </div>
+      <div class="ui-g-8">
+        <p-dropdown [options]="status" [(ngModel)]="selectedStatus" placeholder="请选择库存状态" optionLabel="text"
+          [showClear]="true"></p-dropdown>
+        <!-- <input pInputText id="vin" [(ngModel)]="car.sotckId" /> -->
       </div>
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="brand">车系代码</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="brand" [(ngModel)]="car.vehicleSeriesCode" />
-        </div>
-      </div>
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="color">车型代码</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="color" [(ngModel)]="car.vehicleModelCode" />
-        </div>
-      </div>
-      <!-- <table class="ui-table">
-        <tr>
-          <th>日期</th>
-          <td>1111</td>
-        </tr>
-      </table> -->
     </div>
-    <div class="ui-g ui-fluid content-right" *ngIf="car">
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="vin">标识号</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="vin" [(ngModel)]="car.sotckId" />
-        </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="year">入库日期</label>
       </div>
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="year">生产日期</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="year" [(ngModel)]="car.productionDate" />
-        </div>
+      <div class="ui-g-8">
+        <!-- <input pInputText id="year" [(ngModel)]="car.productionDate" /> -->
+        <p-calendar [(ngModel)]="storageDate " placeholder="请选择入库日期"></p-calendar>
       </div>
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="brand">车系代码</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="brand" [(ngModel)]="car.vehicleSeriesCode" />
-        </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">牌照号</label>
       </div>
-      <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="color">车型代码</label>
-        </div>
-        <div class="ui-g-8">
-          <input pInputText id="color" [(ngModel)]="car.vehicleModelCode" />
-        </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="licensePlate" />
       </div>
     </div>
   </div>
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton icon="fa fa-check" (click)="cancel()" label="Cancel"></button>
-      <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+      <button type="button" pButton  (click)="cancel()" label="Cancel" class="ui-button-secondary"></button>
+      <button type="button" pButton (click)="save()" label="Save"></button>
     </div>
   </p-footer>
 </p-dialog>

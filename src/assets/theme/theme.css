@@ -119,7 +119,7 @@ body {
 
 body .ui-inputtext {
   font-size: 14px;
-  color: #333333;
+  /* color: #333333; */
   /* background: #ffffff; */
   padding: 0.429em;
   border: 1px solid #a6a6a6;
@@ -480,7 +480,7 @@ body .ui-chips > ul.ui-inputtext .ui-chips-token {
 
 body .ui-dropdown {
   /* background: #585858; */
-  border: 1px solid #585858;
+  border: 1px solid #a6a6a6;
      -moz-transition: border-color .2s;
        -o-transition: border-color .2s;
   -webkit-transition: border-color .2s;
@@ -488,11 +488,11 @@ body .ui-dropdown {
 }
 
 body .ui-dropdown:not(.ui-state-disabled):hover {
-  border-color: #1ea04c;
+  border-color: #212121;;
 }
 
 body .ui-dropdown:not(.ui-state-disabled).ui-state-focus {
-  border-color: #1ea04c;
+  border-color: #82C600;
   outline: 0 none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
@@ -1487,27 +1487,27 @@ body .ui-splitbutton.ui-buttonset .ui-menu {
 }
 
 body .ui-button.ui-state-default.ui-button-secondary, body .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default {
-  color: #333;
-  background-color: #f4f4f4;
-  border: 1px solid #f4f4f4;
+  color: #82C600;
+  background-color: #fff;
+  border: 1px solid #82C600;
 }
 
 body .ui-button.ui-state-default.ui-button-secondary:enabled:hover, body .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default:enabled:hover {
-  background-color: #c8c8c8;
-  color: #333;
-  border-color: #c8c8c8;
+  background-color: #f4f4f4;
+  color: #82C600;
+  border-color: #82C600;
 }
 
 body .ui-button.ui-state-default.ui-button-secondary:enabled:focus, body .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default:enabled:focus {
-  -webkit-box-shadow: 0 0 0 .2em #88e9aa;
-     -moz-box-shadow: 0 0 0 .2em #88e9aa;
-          box-shadow: 0 0 0 .2em #88e9aa;
+  -webkit-box-shadow: 0 0 0 .2em #82C600;
+     -moz-box-shadow: 0 0 0 .2em #82C600;
+          box-shadow: 0 0 0 .2em #82C600;
 }
 
 body .ui-button.ui-state-default.ui-button-secondary:enabled:active, body .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default:enabled:active {
-  background-color: #a0a0a0;
-  color: #333;
-  border-color: #a0a0a0;
+  background-color: #f4f4f4;
+  color: #82C600;
+  border-color: #82C600;
 }
 
 body .ui-button.ui-state-default.ui-button-info, body .ui-buttonset.ui-button-info > .ui-button.ui-state-default {
