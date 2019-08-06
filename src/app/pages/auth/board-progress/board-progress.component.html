@@ -4,24 +4,31 @@
       总进度看板
     </div>
     <div class="search-wrap">
-      <span class="ui-float-label">
-        <input id="float-input" type="text" size="30" pInputText>
-        <label for="float-input">查询车牌号/车架号</label>
-      </span>
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-12" style="padding: 0;">
+          <span class="ui-float-label">
+            <input id="float-input" type="text" size="30" pInputText>
+            <label for="float-input">查询车牌号/车架号</label>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="progress-wrap">
     <div class="maintain-wrap">
       <div class="title-wrap">
         <div class="text">维修区<span>（26）</span></div>
-        <div class="icon"></div>
+        <!-- <div class="icon"></div> -->
       </div>
       <div class="content-wrap">
         <div class="column-wrap">
-          <div class="subTitle-wrap">待维修</div>
+          <div class="subTitle-wrap">
+            <div class="text">待维修</div>
+            <div class="icon"></div>
+          </div>
           <div class="column-content">
-            <div class="card-content">
-              <div class="card-wrap" *ngFor="let item of [1,2,3];let i = index;">
+            <div class="card-content" style="overflow-y: hidden">
+              <!-- <div class="card-wrap" *ngFor="let item of [1,2,3];let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
@@ -38,12 +45,38 @@
                   <div>交车时间</div>
                   <div>201907/31 12:45</div>
                 </div>
-              </div>
+              </div> -->
+              <p-virtualScroller styleClass="board-progress" [value]="lazyCars" scrollHeight="600px" [itemSize]="130" [rows]="5" [cache]="false"
+                [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [totalRecords]="totalLazyCarsLength">
+                <ng-template let-car pTemplate="item" let-i="index">
+                  <div class="card-wrap">
+                    <div class="item-label">
+                      <div>牌照号</div>
+                    </div>
+                    <div class="chassis-number">{{car?.vin}}</div>
+                    <div class="item-label">
+                      <div>工单</div>
+                      <div>{{car?.brand}}</div>
+                    </div>
+                    <div class="item-label">
+                      <div>服务顾问</div>
+                      <div>{{car?.color}}</div>
+                    </div>
+                    <div class="item-label">
+                      <div>交车时间</div>
+                      <div>{{car?.year}}</div>
+                    </div>
+                  </div>
+                </ng-template>
+              </p-virtualScroller>
             </div>
           </div>
         </div>
         <div class="column-wrap">
-          <div class="subTitle-wrap">维修中</div>
+          <div class="subTitle-wrap">
+            <div class="text">维修中</div>
+            <div class="icon"></div>
+          </div>
           <div class="column-content">
             <div class="card-content">
               <div class="card-wrap" *ngFor="let item of [1,2,3,4,5];let i = index;">
@@ -68,7 +101,10 @@
           </div>
         </div>
         <div class="column-wrap">
-          <div class="subTitle-wrap">增项维修</div>
+          <div class="subTitle-wrap">
+            <div class="text">增项维修</div>
+            <div class="icon"></div>
+          </div>
           <div class="column-content">
             <div class="card-content">
               <div class="card-wrap" *ngFor="let item of [1];let i = index;">

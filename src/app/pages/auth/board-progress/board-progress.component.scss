@@ -14,14 +14,14 @@
     z-index: 1;
 
     .title-wrap {
-      flex: 1;
+      flex: 4;
       font-size: 16px;
       color: #565656;
     }
 
-    // .search-wrap {
-    //   width: 34%;
-    // }
+    .search-wrap {
+      flex: 2;
+    }
   }
 
   .progress-wrap {
@@ -63,6 +63,9 @@
             font-size: 14px;
             line-height: 40px;
             padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
 
           .column-content {
