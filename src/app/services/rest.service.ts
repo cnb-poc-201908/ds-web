@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpRequest } from '@angula
 import { catchError, tap, map } from 'rxjs/operators';
 // import { Event } from '../domain/event.model';
 import { environment } from '../../environments/environment';
-import { Car } from '../domain/car';
+import { Stock } from '../domain/car';
 
 @Injectable({
   providedIn: 'root'
@@ -126,28 +126,35 @@ export class RestService {
   //   return Observable.throw(errMsg);
   // }
 
-  getEventAll(): Observable<Car> {
+  getEventAll(): Observable<Stock> {
     return this.httpGet(this.url + '/event/all');
   }
 
-  // 车辆管理
+  // 库存管理
   getStockList(role, roleId, startDate, endDate, keyword): Observable<any> {
-    let params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
+    // tslint:disable-next-line:max-line-length
+    const params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
     `;
     return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
     // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
   editStock(id, storageDate, licensePlate): Observable<any> {
-    let body = {
-      id: id,
-      storageDate: storageDate,
-      licensePlate: licensePlate
+    const body = {
+      id,
+      storageDate,
+      licensePlate
     };
     // return this.httpPost(`../../assets/success-mock.json`, body);
     return this.httpGet(`../../assets/success-mock.json`);
   }
   delStock(): Observable<any> {
     return this.httpGet(this.url + '/event/all');
+  }
+
+  // 车辆管理
+  getCarList(role, roleId): Observable<any> {
+    return this.httpGet(`../../assets/car_mock.json?${role}=${roleId}=`);
+    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
 
   // 总进度看板
