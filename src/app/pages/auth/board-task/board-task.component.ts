@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { DialogService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-board-task',
   templateUrl: './board-task.component.html',
-  styleUrls: ['./board-task.component.scss']
+  styleUrls: ['./board-task.component.scss'],
+  providers: [DialogService]
 })
 export class BoardTaskComponent implements OnInit {
 
@@ -13,7 +16,9 @@ export class BoardTaskComponent implements OnInit {
   activeItem: MenuItem;
   activeIndex: number;
 
-  constructor() { }
+  constructor(
+    public dialogService: DialogService
+  ) { }
 
   ngOnInit() {
     this.items = [
@@ -30,7 +35,13 @@ export class BoardTaskComponent implements OnInit {
     console.log(e);
     console.log(i);
     this.activeIndex = i;
+  }
 
+  show() {
+    // const ref = this.dialogService.open(CarsListDemo, {
+    //   header: 'Choose a Car',
+    //   width: '70%'
+    // });
   }
 
 }
