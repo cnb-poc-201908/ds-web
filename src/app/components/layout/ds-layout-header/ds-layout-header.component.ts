@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ds-layout-header',
@@ -17,16 +18,30 @@ export class DSLayoutHeaderComponent implements OnInit {
   }];
   isActive = 2;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.items = [
-      { label: 'Stats', icon: 'fa fa-fw fa-bar-chart' },
-      { label: 'Calendar', icon: 'fa fa-fw fa-calendar' },
-      { label: 'Documentation', icon: 'fa fa-fw fa-book' },
-      { label: 'Support', icon: 'fa fa-fw fa-support' },
-      { label: 'Social', icon: 'fa fa-fw fa-twitter' }
+      {
+        label: 'File',
+        items: [{
+          label: 'New',
+          icon: 'pi pi-fw pi-plus',
+          items: [
+            { label: 'Project' },
+            { label: 'Other' },
+          ]
+        },
+        { label: 'Quit' }
+        ]
+      },
     ];
+  }
+
+  sigout() {
+    this.router.navigateByUrl('/sigin');
   }
 
 }

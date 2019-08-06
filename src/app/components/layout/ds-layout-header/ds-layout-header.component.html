@@ -2,11 +2,11 @@
   <div class="logo">
     <img src="../../../../assets/image/driveSmart.svg">
   </div>
-  <nav class="DS-menu-box">
+  <!-- <nav class="DS-menu-box">
     <ul>
       <li *ngFor="let item of menus" [ngClass]="{'active':isActive == item.key}">{{item.text}}</li>
     </ul>
-  </nav>
+  </nav> -->
   <div class="DS-tool-box">
     <img src="../../../../assets/image/20.svg">
     <img src="../../../../assets/image/message.svg">
@@ -16,5 +16,6 @@
     <div class="DS-tool-avatar">
       <img src="../../../../assets/image/avatar.png">
     </div>
+    <button pButton label="Logout" style="margin-left:1.25em" (click)="sigout()"></button>
   </div>
 </header>

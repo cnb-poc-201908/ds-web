@@ -14,7 +14,7 @@ export class StockGuard implements CanActivate {
         // console.log('user', userStr);
 
         const user: User = JSON.parse(userStr);
-        if (user && user.uId) {
+        if (user && user.uId === '002') {
             // alert(user.userName);
             console.log('路由守卫验证通过!');
             // alert('路由守卫验证通过!');

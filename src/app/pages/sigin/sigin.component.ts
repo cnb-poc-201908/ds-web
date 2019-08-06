@@ -37,7 +37,7 @@ export class SiginComponent implements OnInit {
   constructor(
     public router: Router,
     private messageService: MessageService
-    ) {
+  ) {
 
     this.user = { upwd: '', uId: '' };
   }
@@ -49,7 +49,12 @@ export class SiginComponent implements OnInit {
       console.log('login success');
       const userStr: string = JSON.stringify(this.user);
       localStorage.setItem('user', userStr);
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/board-progress');
+    } else if (this.user.uId === '002' && this.user.upwd === '111') {
+      console.log('login success');
+      const userStr: string = JSON.stringify(this.user);
+      localStorage.setItem('user', userStr);
+      this.router.navigateByUrl('/stock');
     } else {
       console.log('login failure');
       this.showError();

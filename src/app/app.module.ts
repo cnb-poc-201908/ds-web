@@ -11,6 +11,8 @@ import { LoginGuard } from './guard/login.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { StockGuard } from './guard/stock.guard';
+import { BoardGuard } from './guard/board.guard';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { MessageService } from 'primeng/api';
     PrimengModule,
     ServicesModule,
   ],
-  providers: [LoginGuard, MessageService],
+  providers: [LoginGuard, StockGuard, BoardGuard, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

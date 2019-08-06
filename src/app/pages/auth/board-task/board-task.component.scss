@@ -1,4 +1,8 @@
 .board-task{
     padding: 20px;
     width: 100%;
+    .tabContent{
+        width: 100%;
+        height: calc(100% - 100px);
+    }
 }
