@@ -9,72 +9,81 @@
 
         .p-grid {
           margin : 0px;
+
+          p-card {
+            position: relative;
+            p-header {
+
+              .serial-label {
+                font-family: PingFangSC-Regular;
+                font-size: 10px;
+                color: #A4A4A4;
+                letter-spacing: 0;
+              }
+
+              .serial-value {
+                font-family: PingFangSC-Semibold;
+                font-size: 16px;
+                color: #565656;
+                letter-spacing: 0;
+                float:left;
+              }
+
+              .serial-image {
+                color : black;
+                float: right;
+                font-size: 20px;
+              }
+              .icon-envelop {
+                color : #FDD13A;
+                cursor: pointer;
+              }
+
+              .icon-eye {
+                color : #0062FF;
+                cursor: pointer;
+              }
+
+              .clearfix:after{
+                display: block;
+                content: '';
+                clear: both;
+              }
+
+              .hot-job {
+                margin-left: -15px;
+                margin-top: -5px;
+                position: absolute;
+                color: #fff;
+              }
+
+            }
+
+            p-header:before {
+              width: 0;
+              height: 0;
+              border-top: 28px solid #82C600;
+              border-right: 28px solid transparent;
+              position: absolute;
+              top: 0;
+              left: 0;
+              content: "";
+
+            }
+
+            .ui-g {
+              height : 24px;
+            }
+
+            .ui-g .item-right {
+              text-align: right;
+            }
+
+          }
+
         }
 
-        p-card {
-          position: relative;
-          p-header {
 
-            .serial-label {
-              font-family: PingFangSC-Regular;
-              font-size: 10px;
-              color: #A4A4A4;
-              letter-spacing: 0;
-            }
-
-            .serial-value {
-              font-family: PingFangSC-Semibold;
-              font-size: 16px;
-              color: #565656;
-              letter-spacing: 0;
-              float:left;
-            }
-
-            .serial-image {
-              color : black;
-              float: right;
-              font-size: 20px;
-            }
-            .icon-envelop {
-              color : #FDD13A;
-              cursor: pointer;
-            }
-
-            .icon-eye {
-              color : #0062FF;
-              cursor: pointer;
-            }
-
-            .clearfix:after{
-              display: block;
-              content: '';
-              clear: both;
-            }
-
-          }
-
-          p-header:before {
-            width: 0;
-            height: 0;
-            border-top: 28px solid #82C600;
-            border-right: 28px solid transparent;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-
-          }
-
-          .ui-g {
-            height : 24px;
-          }
-
-          .ui-g .item-right {
-            text-align: right;
-          }
-
-        }
 
     }
 }
-
