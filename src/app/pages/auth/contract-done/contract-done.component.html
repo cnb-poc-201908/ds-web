@@ -1,0 +1,84 @@
+<div class="DS-main">
+  <div class="title">
+    合同管理
+  </div>
+  <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/contract-undone'>
+          <span class="ui-menuitem-text ">未创建合同</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-done'>
+          <span class="ui-menuitem-text">已创建合同</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/invoice'>
+          <span class="ui-menuitem-text">已开票</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="action-wrap">
+    <section class="form-wrap" style="width: 700px;">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-5">
+          <p-calendar [(ngModel)]="rangeDates" selectionMode="range" placeholder="开始日期～结束日期" [showIcon]="true">
+          </p-calendar>
+        </div>
+        <div class="ui-g-7">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+        </div>
+      </div>
+    </section>
+    <section class="button-wrap">
+      <p-button label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" (click)="getCarList()">
+      </p-button>
+    </section>
+  </div>
+  <div class="content-wrap">
+    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 100px)">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>
+            <span [ngClass]="car.stockStatus" class="tip"></span>
+          </td>
+          <td>{{car.stockId}}</td>
+          <td>{{car.productionDate}}</td>
+          <td>{{car.vehicleSeriesCode}}</td>
+          <td>{{car.vehicleModelCode}}</td>
+          <td>{{car.vehicleModelConfig}}</td>
+          <td>{{car.licensePlate}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.color}}</td>
+          <td>{{car.decoration}}</td>
+          <td>{{car.vehicleChassisNumber}}</td>
+          <td>{{car.storageDate}}</td>
+          <td>{{car.stockCost | currency:'￥'}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        总计: {{totalCost | currency:'￥'}}
+      </ng-template>
+      <ng-template pTemplate="loadingbody" let-columns="columns">
+        <tr style="height:34px">
+          <td *ngFor="let col of columns">
+            <div class="loading-text">加载数据中</div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>
