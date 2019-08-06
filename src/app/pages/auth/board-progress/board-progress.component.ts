@@ -1,6 +1,7 @@
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { Component, OnInit } from '@angular/core';
 import { LazyLoadEvent } from 'primeng/api';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-board-progress',
@@ -9,11 +10,7 @@ import { LazyLoadEvent } from 'primeng/api';
 })
 export class BoardProgressComponent implements OnInit {
 
-  lazyCars = [];
-  totalLazyCarsLength: number;
-  timeout: any;
-
-  waitingMaintainList = [
+  carList = [
     {
       vin: '辽BD1L23',
       brand: '10001',
@@ -51,22 +48,53 @@ export class BoardProgressComponent implements OnInit {
       year: '201907/31 12:45'
     }
   ];
+  waitingMaintainList = [];
+  maintenanceList = [];
+  AdditionalMaintenanceList = [];
+  washAreaList = [];
+  deliveryAreaList = [];
+  stayAreaList = [];
 
-  constructor() { }
+  progressAllObj = {
+    waitingMaintainList: this.carList,
+    maintenanceList: [],
+    AdditionalMaintenanceList: [],
+    washAreaList: [],
+    deliveryAreaList: [],
+    stayAreaList: [],
+  };
+
+  totalLazyCarsLength: number;
+  timeout: any;
+
+  constructor(
+    private rest: RestService,
+  ) { }
 
   ngOnInit() {
-    this.totalLazyCarsLength = this.waitingMaintainList.length;
+    // this.getProgressAll();
+    this.totalLazyCarsLength = this.progressAllObj.waitingMaintainList.length;
   }
 
-  loadCarsLazy(event: LazyLoadEvent) {
+  getProgressAll() {
+    this.rest.getBoardProgressList().subscribe(res => {
+      if (res.status !== 0) {
+        this.progressAllObj = res;
+      }
+    });
+  }
+
+  loadCarsLazy(event: LazyLoadEvent, type) {
+    this.totalLazyCarsLength = this.progressAllObj[type].length;
+    // console.log(event, this.progressAllObj[type], this[type], type, this.totalLazyCarsLength);
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
 
     this.timeout = setTimeout(() => {
-      this.lazyCars = [];
-      if (this.waitingMaintainList) {
-        this.lazyCars = this.waitingMaintainList.slice(event.first, (event.first + event.rows));
+      this[type] = [];
+      if (this.progressAllObj[type]) {
+        this[type] = this.progressAllObj[type].slice(event.first, (event.first + event.rows));
       }
     }, 1000);
   }

@@ -147,4 +147,9 @@ export class RestService {
   delCar(): Observable<any> {
     return this.httpGet(this.url + '/event/all');
   }
+
+  // 总进度看板
+  getBoardProgressList(): Observable<any> {
+    return this.httpGet(this.url + `/progress/all`);
+  }
 }

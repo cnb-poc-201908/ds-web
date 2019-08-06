@@ -17,7 +17,7 @@
   <div class="progress-wrap">
     <div class="maintain-wrap">
       <div class="title-wrap">
-        <div class="text">维修区<span>（26）</span></div>
+        <div class="text">维修区<span>（11）</span></div>
         <!-- <div class="icon"></div> -->
       </div>
       <div class="content-wrap">
@@ -46,8 +46,9 @@
                   <div>201907/31 12:45</div>
                 </div>
               </div> -->
-              <p-virtualScroller styleClass="board-progress" [value]="lazyCars" scrollHeight="600px" [itemSize]="130" [rows]="5" [cache]="false"
-                [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [totalRecords]="totalLazyCarsLength">
+              <p-virtualScroller styleClass="board-progress" [value]="waitingMaintainList" scrollHeight="600px"
+                [itemSize]="130" [rows]="5" [cache]="false" [lazy]="true"
+                (onLazyLoad)="loadCarsLazy($event, 'waitingMaintainList')" [totalRecords]="totalLazyCarsLength">
                 <ng-template let-car pTemplate="item" let-i="index">
                   <div class="card-wrap">
                     <div class="item-label">
@@ -160,7 +161,7 @@
     </div>
     <div class="secondary-wrap">
       <div class="title-wrap purple">
-        <div class="text">交车区<span>（18）</span></div>
+        <div class="text">交车区<span>（5）</span></div>
         <div class="icon"></div>
       </div>
       <div class="secondary-content">
