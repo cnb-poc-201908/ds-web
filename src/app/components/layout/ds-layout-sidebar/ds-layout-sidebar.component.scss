@@ -18,18 +18,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      &:hover,
-      &.active {
+      &:hover, &.active {
         background-color: #282828;
-        border-left: 4px solid #82C600;
+        border-left: 4px solid #82c600;
       }
       img {
         width: 14px;
         height: 15px;
       }
-
     }
-
   }
-
 }

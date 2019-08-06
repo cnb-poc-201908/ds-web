@@ -17,9 +17,7 @@ import { CalendarModule } from 'primeng/calendar';
 
 import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
-import {DropdownModule} from 'primeng/dropdown';
-
-
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   exports: [
