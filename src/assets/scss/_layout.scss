@@ -14,6 +14,8 @@ app-ds-layout-header {
 }
 app-ds-layout-sidebar {
   width: 50px;
+  position: relative;
+  z-index: 1;
 }
 app-home {
   @include flex();
@@ -70,6 +72,13 @@ app-home {
     padding-bottom: 20px;
     height: 40px;
   }
+  .ui-menuitem-link {
+    text-align: center;
+
+    .ui-menuitem-text {
+      margin-right: 0 !important;
+    }
+  }
   .action-wrap {
     height: 70px;
     padding: 20px;
@@ -81,6 +90,7 @@ app-home {
     align-items: center;
     font-size: 14px;
     border-radius: 2px;
+    margin-bottom: 20px;
   }
 
   .title-wrap {
@@ -95,7 +105,6 @@ app-home {
     border-radius: 2px;
   }
   .content-wrap {
-    margin-top: 20px;
     padding: 20px;
     background-color: #fff;
     border-radius: 2px;
@@ -103,5 +112,22 @@ app-home {
     .ui-paginator {
       padding-top: 16px;
     }
+  }
+  .ui-table {
+    .ui-table-tbody {
+      word-break: break-all;
+    }
+    .ui-table-summary {
+      padding: 1em;
+      text-align: right;
+    }
+  }
+}
+.vehicle-filter {
+  margin-bottom: 20px;
+  text-align: right;
+
+  .ui-dropdown-label {
+    text-align: left;
   }
 }
