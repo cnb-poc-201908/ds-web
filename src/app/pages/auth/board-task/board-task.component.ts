@@ -11,6 +11,7 @@ export class BoardTaskComponent implements OnInit {
   date: Date;
   items: MenuItem[];
   activeItem: MenuItem;
+  activeIndex: number;
 
   constructor() { }
 
@@ -20,6 +21,16 @@ export class BoardTaskComponent implements OnInit {
       { label: '已在厂维修', icon: 'fa fa-fw fa-calendar' },
       { label: '已出厂结算', icon: 'fa fa-fw fa-book' }
     ];
+    this.activeIndex = 0;
+    // console.log();
+
+  }
+
+  change(e, i) {
+    console.log(e);
+    console.log(i);
+    this.activeIndex = i;
+
   }
 
 }

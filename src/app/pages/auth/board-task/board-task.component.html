@@ -1,6 +1,19 @@
 <div class="board-task">
-  <p-tabMenu [model]="items" [activeItem]="items[0]" class="DS-tabMenu"></p-tabMenu>
+  <!-- <p-tabMenu [model]="items" [activeItem]="items[0]" class="DS-tabMenu" (click)="change($event)"></p-tabMenu> -->
+  <p-tabMenu [model]="items" class="DS-tabMenu" [activeItem]="items[0]">
+    <ng-template pTemplate="item" let-item let-i="index">
+      <a tabindex="0" class="ui-menuitem-icon" (click)="change($event, i)">
+        {{item.label}}
+      </a>
+    </ng-template>
+  </p-tabMenu>
+
   <div class="tabContent">
-    去1111
+    <div *ngIf="activeIndex == 0">
+111
+    </div>
+    <div *ngIf="activeIndex == 1">
+222
+    </div>
   </div>
 </div>
