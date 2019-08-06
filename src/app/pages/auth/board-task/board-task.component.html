@@ -2,7 +2,7 @@
   <!-- <p-tabMenu [model]="items" [activeItem]="items[0]" class="DS-tabMenu" (click)="change($event)"></p-tabMenu> -->
   <p-tabMenu [model]="items" class="DS-tabMenu" [activeItem]="items[0]">
     <ng-template pTemplate="item" let-item let-i="index">
-      <a tabindex="0" class="ui-menuitem-icon" (click)="change($event, i)">
+      <a tabindex="0" class="ui-menuitem-icon" (click)="change($event, i, item)">
         {{item.label}}
       </a>
     </ng-template>
@@ -10,24 +10,18 @@
 
   <div class="tabContent">
     <div *ngIf="activeIndex == 0">
-      111
-      <button type="button" (click)="show()" pButton icon="pi pi-info-circle" label="Show"></button>
-
+      <div class="p-grid">
+          <div class="p-col-3" *ngFor="let item of tickets">
+            <p-card>
+              <p-header>单号 {{item.ticket}}</p-header>
+              <div>车架号 {{item.vin}}</div>
+              <div>车牌号 {{item.serial}}</div>
+            </p-card>
+          </div>
+      </div>
     </div>
     <div *ngIf="activeIndex == 1">
-      222
-        <div class="p-grid">
-            <div class="p-col-3" *ngFor="let item of tickets">
-              <p-card>
-                <p-header>单号 {{item.ticket}}</p-header>
-                <div>车架号 {{item.vin}}</div>
-                <div>车牌号 {{item.serial}}</div>
-              </p-card>
-            </div>
-        </div>
-    </div>
-    <div *ngIf="activeIndex == 1">
-      222
+      待维修
     </div>
     <div *ngIf="activeIndex == 2">
       维修中

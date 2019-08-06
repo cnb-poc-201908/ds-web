@@ -71,19 +71,14 @@ export class BoardTaskComponent implements OnInit {
         serial : '辽BCF915'
       },
     ];
-  }
 
-  show() {
-    // const ref = this.dialogService.open(CarsListDemo, {
-    //   header: 'Choose a Car',
-    //   width: '70%'
-    // });
     this.activeIndex = 0;
     this.activeItem = this.items[0];
   }
 
-  change(index) {
+  change(event, index, item) {
     this.activeIndex = index;
+    this.activeItem = item;
   }
 
 }
