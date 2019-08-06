@@ -27,7 +27,7 @@ export class VehicleComponent implements OnInit {
   cars: Car[];
   dataSource: Car[];
   loading: boolean;
-  totalCost: sting = '';
+  totalCost: string = '';
   cols: Array<object> = [];
 
   car: any = {};

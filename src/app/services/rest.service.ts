@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpRequest } from '@angula
 import { catchError, tap, map } from 'rxjs/operators';
 // import { Event } from '../domain/event.model';
 import { environment } from '../../environments/environment';
-import { Stock } from '../domain/car';
+import { Stock } from '../domain/Stock';
 
 @Injectable({
   providedIn: 'root'
