@@ -47,7 +47,7 @@ export class DSLayoutSidebarComponent implements OnInit {
     } else {
       this.items = [
         { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/stock'] },
-        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-done'] }
+        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-undone'] }
       ];
     }
   }

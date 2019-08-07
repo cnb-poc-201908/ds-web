@@ -104,4 +104,9 @@ export class ContractUndoneComponent implements OnInit {
     console.log(this.totalCost);
   }
 
+  onCreate(data) {
+    console.log('chuangjianhetong')
+
+  }
+
 }
