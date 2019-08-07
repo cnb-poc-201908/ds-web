@@ -40,7 +40,7 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table #dt [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 100px)">
+    <p-table #dt [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th>底盘号</th>
@@ -77,9 +77,6 @@
             <button class="ds icon-edit icon-btn edit-btn" (click)="onCreate(car)"></button>
           </td>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="summary">
-        总计: {{totalCost | currency:'￥'}}
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
         <tr style="height:34px">

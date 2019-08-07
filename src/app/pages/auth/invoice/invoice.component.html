@@ -40,7 +40,7 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 100px)">
+    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th *ngFor="let col of columns">
@@ -67,9 +67,6 @@
           <td>{{car.storageDate}}</td>
           <td>{{car.stockCost | currency:'￥'}}</td>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="summary">
-        总计: {{totalCost | currency:'￥'}}
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
         <tr style="height:34px">

@@ -109,7 +109,7 @@ export class ContractUndoneComponent implements OnInit {
 
   onCreate(data) {
     console.log('chuangjianhetong');
-    this.router.navigate(['/contract-create']);
+    this.router.navigate(['/sales/contract-create']);
   }
 
 }
