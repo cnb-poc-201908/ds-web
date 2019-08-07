@@ -5,17 +5,17 @@
   <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
     <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/contract-undone'>
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/sales/contract-undone'>
           <span class="ui-menuitem-text ">未创建合同</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-done'>
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/contract-done'>
           <span class="ui-menuitem-text">已创建合同</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/invoice'>
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/invoice'>
           <span class="ui-menuitem-text">已开票</span>
         </a>
       </li>
@@ -40,7 +40,7 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 100px)">
+    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th *ngFor="let col of columns">
@@ -67,9 +67,6 @@
           <td>{{car.storageDate}}</td>
           <td>{{car.stockCost | currency:'￥'}}</td>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="summary">
-        总计: {{totalCost | currency:'￥'}}
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
         <tr style="height:34px">

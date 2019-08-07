@@ -5,13 +5,13 @@
   <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
     <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
-        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/stock'>
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/sales/stock'>
           <span class="ui-menuitem-text ">库存基本信息</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon" *ngIf="userFlag !== 'sa'">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/vehicle'>
-          <span class="ui-menuitem-text">车辆管理</span>
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/vehicle'>
+          <span class="ui-menuitem-text">360车辆管理</span>
         </a>
       </li>
     </ul>
@@ -34,20 +34,12 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
-      <ng-template pTemplate="header">
+    <p-table [columns]="cols" [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
+      <ng-template pTemplate="header" let-columns>
         <tr>
-          <th>标识号</th>
-          <th>入库日期</th>
-          <th>车系代码</th>
-          <th>车型代码</th>
-          <th>车型配置代码</th>
-          <th>型号</th>
-          <th>车身颜色</th>
-          <th>装饰</th>
-          <th>底盘号</th>
-          <th>库存状态</th>
-          <th>本店车辆</th>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
           <th>操作</th>
         </tr>
       </ng-template>
@@ -55,6 +47,9 @@
         <tr>
           <td>{{car.stockId}}</td>
           <td>{{car.storageDate}}</td>
+          <td>{{car.dealerName}}</td>
+          <td>{{car.groupName}}</td>
+          <td>{{car.regionName}}</td>
           <td>{{car.vehicleSeriesCode}}</td>
           <td>{{car.vehicleModelCode}}</td>
           <td>{{car.vehicleModelConfig}}</td>
