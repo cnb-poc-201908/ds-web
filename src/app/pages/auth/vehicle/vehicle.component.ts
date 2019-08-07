@@ -21,7 +21,6 @@ export class VehicleComponent implements OnInit {
   ) { }
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
-
   stockStatus: SelectItem[];
 
   cars: Car[];

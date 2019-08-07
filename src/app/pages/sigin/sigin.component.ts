@@ -41,7 +41,7 @@ export class SiginComponent implements OnInit {
     private messageService: MessageService
   ) {
 
-    this.user = { upwd: '', uId: '', role: '', roleId: '' };
+    this.user = { upwd: '', uId: '', role: '', roleId: '', flag: '' };
   }
 
   ngOnInit() { }
@@ -49,16 +49,22 @@ export class SiginComponent implements OnInit {
   login() {
     switch (this.user.uId) {
       case '002':
-        this.user.role = 'dealerIds';
+        this.user.role = 'dealerId';
         this.user.roleId = 'DL-10006661';
+        this.user.flag = 'sm';
+        break;
+      case '005':
+        this.user.role = 'dealerId';
+        this.user.roleId = 'D-10006662';
+        this.user.flag = 'sa';
         break;
       case '003':
-        this.user.role = 'groupIds';
+        this.user.role = 'groupId';
         this.user.roleId = 'GP-10001';
         break;
 
       case '004':
-        this.user.role = 'regionIds';
+        this.user.role = 'regionId';
         this.user.roleId = 'RG-10001';
         break;
 
@@ -68,7 +74,8 @@ export class SiginComponent implements OnInit {
     if (this.user.uId === '001' && this.user.upwd === '111') {
       console.log('login success');
       this.router.navigateByUrl('/board-progress');
-    } else if ((this.user.uId === '002' || this.user.uId === '003' || this.user.uId === '004') && this.user.upwd === '111') {
+      // tslint:disable-next-line:max-line-length
+    } else if ((this.user.uId === '002' || this.user.uId === '003' || this.user.uId === '004' || this.user.uId === '005') && this.user.upwd === '111') {
       console.log('login success');
       this.router.navigateByUrl('/stock');
     } else {

@@ -13,7 +13,7 @@ import { STOCK_STATUS } from '../../../../assets/static-data/static-data';
 export class StockComponent implements OnInit {
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
-
+  userFlag: string = JSON.parse(localStorage.getItem('user')).flag;
   cars: Stock[];
 
   cols: Array<object> = [];

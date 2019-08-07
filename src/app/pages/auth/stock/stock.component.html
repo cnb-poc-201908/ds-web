@@ -9,7 +9,7 @@
           <span class="ui-menuitem-text ">库存基本信息</span>
         </a>
       </li>
-      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon" *ngIf="userFlag !== 'sa'">
         <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/vehicle'>
           <span class="ui-menuitem-text">车辆管理</span>
         </a>
