@@ -17,6 +17,7 @@ export class RestService {
   // private url = 'http://localhost:3000/api';
 
   private url;
+  private url1;
   private options = {
     headers: new HttpHeaders()
   };
@@ -28,9 +29,11 @@ export class RestService {
       console.log('dev');
       // this.url = 'http://localhost:3000/api';
       this.url = 'http://bmwpoc.cdkapps.cn:30090';
+      this.url1 = 'http://bmwpoc.cdkapps.cn:30091';
     } else {
       console.log('prod');
       this.url = 'http://bmwpoc.cdkapps.cn:30090';
+      this.url1 = 'http://bmwpoc.cdkapps.cn:30091';
     }
     this.setToken('token');
   }
@@ -168,6 +171,6 @@ export class RestService {
 
   // 总进度看板
   getBoardProgressList(): Observable<any> {
-    return this.httpGet(this.url + `/repairOrder/repair-orders`);
+    return this.httpGet(this.url1 + `/repairOrder/repair-orders`);
   }
 }
