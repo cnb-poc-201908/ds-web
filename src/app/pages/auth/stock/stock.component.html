@@ -1,9 +1,12 @@
 <div class="DS-main">
+  <div class="title">
+    库存管理
+  </div>
   <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
     <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
         <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/stock'>
-          <span class="ui-menuitem-text ">库存管理</span>
+          <span class="ui-menuitem-text ">库存基本信息</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
@@ -21,8 +24,7 @@
           </p-calendar>
         </div>
         <div class="ui-g-7">
-          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText
-            placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
         </div>
       </div>
     </section>
@@ -32,7 +34,7 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 80px)">
+    <p-table [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header">
         <tr>
           <th>标识号</th>
@@ -87,8 +89,7 @@
         <label for="vin">库存状态</label>
       </div>
       <div class="ui-g-8">
-        <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
-          [showClear]="true"></p-dropdown>
+        <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text" [showClear]="true"></p-dropdown>
       </div>
     </div>
     <div class="ui-g-12">
