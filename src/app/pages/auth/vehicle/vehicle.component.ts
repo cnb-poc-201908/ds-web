@@ -21,7 +21,6 @@ export class VehicleComponent implements OnInit {
   ) { }
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
-
   stockStatus: SelectItem[];
 
   cars: Car[];
@@ -35,17 +34,19 @@ export class VehicleComponent implements OnInit {
   ngOnInit() {
     this.stockStatus = [
       { label: '库存时间', value: 'all' },
-      { label: '0-60天', value: 'red' },
+      { label: '0-30天', value: 'white' },
+      { label: '30天-60天', value: 'green' },
       { label: '60天-120天', value: 'yellow' },
-      { label: '120天以上', value: 'green' }
+      { label: '120天以上', value: 'red' }
     ];
     this.cols = [
       { field: 'stockStatus', header: '库龄状态' },
       { field: 'sotckId', header: '标识号' },
+      { field: 'stockAge', header: '库龄' },
       { field: 'productionDate', header: '生产日期' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
-      { field: 'vehicleModelConfig', header: '车型配置代码' },
+      { field: 'vehicleModelConfig', header: '配置代码' },
       { field: 'licensePlate', header: '车牌号' },
       { field: 'model', header: '型号' },
       // { field: 'model', header: '生产订单号' },
@@ -56,6 +57,7 @@ export class VehicleComponent implements OnInit {
       { field: 'storageDate', header: '到库日期/预计到库日期' },
       { field: 'stockCost', header: '价格' },
       // { field: 'color', header: '报零售状态' },
+      // 追加“订金”“签约日期”，“签约金额”“新增成本”“备注”字段，删除“型号”“车牌号”字段。
     ];
     this.getCarList();
   }
@@ -63,14 +65,17 @@ export class VehicleComponent implements OnInit {
   switchStockStatus(age) {
 
     switch (true) {
-      case age >= 0 && age < 60:
-        return 'red';
+      case age >= 0 && age < 30:
+        return 'white';
+        break;
+      case age >= 30 && age < 60:
+        return 'green';
         break;
       case age >= 60 && age < 120:
         return 'yellow';
         break;
       case age >= 120:
-        return 'green';
+        return 'red';
         break;
       default:
         break;
