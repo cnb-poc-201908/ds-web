@@ -98,7 +98,7 @@ export class BoardTaskComponent implements OnInit {
         model : 'BMW0011',
         sa : '王经理',
         remark : '钣金喷漆',
-        hot : true,
+        hot : false,
       },
       {
         vin: 'XLB09930LB1233',
@@ -109,7 +109,7 @@ export class BoardTaskComponent implements OnInit {
         model : 'BMW0011',
         sa : '王经理',
         remark : '钣金喷漆',
-        hot : true,
+        hot : false,
       },
       {
         vin: 'XLB09930LB1233',
