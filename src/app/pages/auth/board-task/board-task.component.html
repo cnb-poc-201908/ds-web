@@ -12,7 +12,7 @@
     <div *ngIf="activeIndex == 0">
       <div class="p-grid">
           <div class="p-col-3" *ngFor="let item of dataList">
-            <p-card (click)="showTech()">
+            <p-card (click)="dispatch(item)">
               <p-header [ngClass]="{'red-brand':item.hot == true}">
                 <i class="pi pi-star hot-job"></i>
                 <span class="serial-label">牌照号</span>
@@ -98,6 +98,6 @@
           <button type="button" pButton icon="pi pi-close" (click)="closeDetail()" label="关闭"></button>
       </p-footer>
   </p-dialog>
-
+  
 
 </div>

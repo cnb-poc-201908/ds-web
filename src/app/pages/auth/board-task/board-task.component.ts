@@ -18,6 +18,7 @@ export class BoardTaskComponent implements OnInit {
   activeIndex: number;
   displaySendMessage: boolean = false;
   displayTaskDetail: boolean = false;
+  displayDispatch: boolean = false;
 
   constructor(
     public dialogService: DialogService,
@@ -157,12 +158,18 @@ export class BoardTaskComponent implements OnInit {
     this.activeItem = item;
   }
 
-  showTech() {
-    console.log(111);
+  dispatch(item) {
     const ref = this.dialogService.open(TechSelect, {
       header: 'Choose a Car',
-      width: '70%'
+      width: '70%',
+      baseZIndex: 10000
     });
+
+    ref.onClose.subscribe((car) => {
+      if (car) {
+          console.log(car);
+      }
+  });
 
   }
 
