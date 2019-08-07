@@ -40,17 +40,20 @@
           <td>{{car.vehicleSeriesCode}}</td>
           <td>{{car.vehicleModelCode}}</td>
           <td>{{car.vehicleModelConfig}}</td>
-          <td>{{car.licensePlate}}</td>
-          <td>{{car.model}}</td>
           <td>{{car.color}}</td>
           <td>{{car.decoration}}</td>
           <td>{{car.vehicleChassisNumber}}</td>
           <td>{{car.storageDate}}</td>
-          <td>{{car.stockCost | currency:'￥'}}</td>
+          <td>{{car.cost | currency:'￥'}}</td>
+          <td>{{car.deposit | currency:'￥'}}</td>
+          <td>{{car.contractDate}}</td>
+          <td>{{car.contractAmount | currency:'￥'}}</td>
+          <td>{{car.additionalCost | currency:'￥'}}</td>
+          <td>{{car.comment}}</td>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
-        总计: {{totalCost | currency:'￥'}}
+        订金总计: {{totalDeposit | currency:'￥'}}, &nbsp;&nbsp;&nbsp;新增成本总计: {{totalAdditionalCost | currency:'￥'}}
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
         <tr style="height:34px">

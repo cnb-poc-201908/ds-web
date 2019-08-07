@@ -26,7 +26,8 @@ export class VehicleComponent implements OnInit {
   cars: Car[];
   dataSource: Car[];
   loading: boolean;
-  totalCost: string = '';
+  totalDeposit: string = '';
+  totalAdditionalCost: string = '';
   cols: Array<object> = [];
 
   car: any = {};
@@ -47,15 +48,20 @@ export class VehicleComponent implements OnInit {
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
       { field: 'vehicleModelConfig', header: '配置代码' },
-      { field: 'licensePlate', header: '车牌号' },
-      { field: 'model', header: '型号' },
+      // { field: 'licensePlate', header: '车牌号' },
+      // { field: 'model', header: '型号' },
       // { field: 'model', header: '生产订单号' },
       { field: 'color', header: '车身颜色' },
       { field: 'decoration', header: '装饰' },
       { field: 'vehicleChassisNumber', header: '底盘号' },
       // { field: 'status', header: '进度代码' },
-      { field: 'storageDate', header: '到库日期/预计到库日期' },
-      { field: 'stockCost', header: '价格' },
+      { field: 'storageDate', header: '到库日期' },
+      { field: 'cost', header: '价格' },
+      { field: 'deposit', header: '订金' },
+      { field: 'contractDate', header: '签约日期' },
+      { field: 'contractAmount', header: '签约金额' },
+      { field: 'additionalCost', header: '新增成本' },
+      { field: 'comment', header: '备注' },
       // { field: 'color', header: '报零售状态' },
       // 追加“订金”“签约日期”，“签约金额”“新增成本”“备注”字段，删除“型号”“车牌号”字段。
     ];
@@ -90,12 +96,13 @@ export class VehicleComponent implements OnInit {
         element.stockStatus = this.switchStockStatus(element.stockAge);
       });
       this.cars = this.dataSource;
-      this.totalCostSum(this.cars);
+      this.totalDeposit = this.totalCostSum(this.cars, 'deposit');
+      this.totalAdditionalCost = this.totalCostSum(this.cars, 'additionalCost');
       this.loading = false;
     });
   }
-  totalCostSum(car) {
-    this.totalCost = _.sum(_.map(car, 'stockCost'));
+  totalCostSum(arr, item) {
+    return _.sum(_.map(arr, item));
   }
   onFilter(event) {
     if (event.value === 'all') {
@@ -105,7 +112,8 @@ export class VehicleComponent implements OnInit {
         return o.stockStatus === event.value;
       });
     }
-    this.totalCostSum(this.cars);
+    this.totalDeposit = this.totalCostSum(this.cars, 'deposit');
+    this.totalAdditionalCost = this.totalCostSum(this.cars, 'additionalCost');
     console.log(this.totalCost);
   }
 }
