@@ -1,8 +1,8 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
-import { Car } from '../../../domain/car';
+import { Stock } from '../../../domain/stock';
 import { format } from 'date-fns';
-import { SCHEDULE_CODE } from '../../../../assets/static-data/static-data';
+import { STOCK_STATUS } from '../../../../assets/static-data/static-data';
 
 @Component({
   selector: 'app-stock',
@@ -13,8 +13,8 @@ import { SCHEDULE_CODE } from '../../../../assets/static-data/static-data';
 export class StockComponent implements OnInit {
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
-
-  cars: Car[];
+  userFlag: string = JSON.parse(localStorage.getItem('user')).flag;
+  cars: Stock[];
 
   cols: Array<object> = [];
 
@@ -28,15 +28,32 @@ export class StockComponent implements OnInit {
 
   car: any = {};
 
+  stockStatus = {
+    code: '',
+    text: ''
+  };
+  stockId: any = '';
+
+  status: Array<object> = STOCK_STATUS;
+
+  statusList = STOCK_STATUS;
+
+  storageDate: Date;
+
+  licensePlate: string = '';
+
   constructor(
     private rest: RestService
   ) { }
 
   ngOnInit() {
-    console.log(JSON.parse(localStorage.getItem('user')).uId);
+    console.log(JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId);
     this.cols = [
       { field: 'stockId', header: '标识号' },
-      { field: 'productionDate', header: '生产日期' },
+      { field: 'storageDate', header: '入库日期' },
+      { field: 'dealerName', header: '经销商' },
+      { field: 'groupName', header: '集团' },
+      { field: 'regionName', header: '所属大区' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
       { field: 'vehicleModelConfig', header: '车型配置代码' },
@@ -44,7 +61,7 @@ export class StockComponent implements OnInit {
       { field: 'color', header: '车身颜色' },
       { field: 'decoration', header: '装饰' },
       { field: 'vehicleChassisNumber', header: '底盘号' },
-      { field: 'status', header: '进度代码' },
+      { field: 'status', header: '库存状态' },
       { field: 'color', header: '本店车辆' }
     ];
     this.getStockList();
@@ -52,7 +69,13 @@ export class StockComponent implements OnInit {
 
   save() {
     console.log('save', this.car);
-    this.displayDialog = false;
+    this.rest.editStock(this.stockId, this.stockStatus.code, format(this.storageDate, 'YYYY-MM-DD'), this.licensePlate).subscribe(
+      result => {
+        console.log('success');
+        this.getStockList();
+        this.displayDialog = false;
+      }
+    );
   }
   cancel() {
     console.log('cancel', this.car);
@@ -60,14 +83,25 @@ export class StockComponent implements OnInit {
   }
 
   onDelete(data) {
-    console.log('delete', data);
-    this.displayDialog = false;
+    this.rest.delStock(data.stockId).subscribe(result => {
+      if (result.message === 'success') {
+        alert('库存删除成功！');
+        this.getStockList();
+      }
+    });
   }
 
   onEdit(data) {
-    console.log('edit', data);
-    this.car = data;
+    this.stockId = data.stockId;
+    this.storageDate = new Date(data.storageDate);
+    this.licensePlate = data.licensePlate;
+    const i = this.statusList.find(item => item.text === data.status);
+    this.stockStatus = i ? i : this.stockStatus;
     this.displayDialog = true;
+  }
+
+  onFile(data) {
+    window.open(`url${data.stockId}`, '_blank');
   }
 
   getStockList() {
@@ -80,17 +114,17 @@ export class StockComponent implements OnInit {
     }
     const [role, roleId] = this.userRole;
     this.rest.getStockList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
-      // if (carslist.message === 'success') {
+      if (carslist.message === 'success') {
         carslist.data.forEach(element => {
-          SCHEDULE_CODE.forEach(item => {
-            if (element.status === item.code){
+          this.statusList.forEach(item => {
+            if (element.status === item.code) {
               element.status = item.text;
             }
           });
         });
         this.cars = carslist.data;
         this.loading = false;
-      // }
+      }
     });
   }
 }

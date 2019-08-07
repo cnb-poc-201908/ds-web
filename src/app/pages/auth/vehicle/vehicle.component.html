@@ -1,1 +1,68 @@
-<p>vehicle works!</p>
+<div class="DS-main">
+  <div class="title">
+    库存管理
+  </div>
+  <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/sales/stock'>
+          <span class="ui-menuitem-text ">库存基本信息</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/vehicle'>
+          <span class="ui-menuitem-text">360车辆管理</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content-wrap">
+    <section class="vehicle-filter">
+      <p-dropdown [options]="stockStatus" (onChange)="onFilter($event)"></p-dropdown>
+    </section>
+    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 100px)">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>
+            <span [ngClass]="car.stockStatus" class="tip"></span>
+          </td>
+          <td>{{car.stockId}}</td>
+          <td>{{car.stockAge}}</td>
+          <td>{{car.productionDate}}</td>
+          <td>{{car.vehicleSeriesCode}}</td>
+          <td>{{car.vehicleModelCode}}</td>
+          <td>{{car.vehicleModelConfig}}</td>
+          <td>{{car.color}}</td>
+          <td>{{car.decoration}}</td>
+          <td>{{car.vehicleChassisNumber}}</td>
+          <td>{{car.storageDate}}</td>
+          <td>{{car.cost | currency:'￥'}}</td>
+          <td>{{car.deposit | currency:'￥'}}</td>
+          <td>{{car.contractDate}}</td>
+          <td>{{car.contractAmount | currency:'￥'}}</td>
+          <td>{{car.additionalCost | currency:'￥'}}</td>
+          <td>{{car.comment}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        订金总计: {{totalDeposit | currency:'￥'}}, &nbsp;&nbsp;&nbsp;新增成本总计: {{totalAdditionalCost | currency:'￥'}}
+      </ng-template>
+      <ng-template pTemplate="loadingbody" let-columns="columns">
+        <tr style="height:34px">
+          <td *ngFor="let col of columns">
+            <div class="loading-text">加载数据中</div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>

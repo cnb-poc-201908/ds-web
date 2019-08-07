@@ -20,6 +20,6 @@ import { FormsModule } from '@angular/forms';
     AuthRoutingModule,
     FormsModule,
     PrimengModule,
-  ]
+  ],
 })
 export class AuthModule { }

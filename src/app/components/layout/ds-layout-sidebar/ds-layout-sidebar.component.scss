@@ -6,30 +6,26 @@
   background-color: #171717;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 50px;
+  width: 120px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
     li {
-      width: 50px;
+      width: 120px;
       height: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
-      &:hover,
-      &.active {
+      &:hover, &.active {
         background-color: #282828;
-        border-left: 4px solid #82C600;
+        border-left: 4px solid #82c600;
       }
       img {
         width: 14px;
         height: 15px;
       }
-
     }
-
   }
-
 }

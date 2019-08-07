@@ -41,13 +41,15 @@ export class DSLayoutSidebarComponent implements OnInit {
     const user: User = JSON.parse(userStr);
     if (user.uId === '001') {
       this.items = [
-        { icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-progress'] },
+        { icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-monitor'] },
         { icon: 'ds icon-maintain', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-task'] },
       ];
     } else {
       this.items = [
-        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/stock'] },
-        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/vehicle'] }
+        { label: '库存管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/stock'] },
+        { label: '合同管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/contract-undone'] },
+        { label: '交车报告', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/retail'] },
+        { label: '报表管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/report'] }
       ];
     }
   }

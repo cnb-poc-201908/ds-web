@@ -10,44 +10,8 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class BoardProgressComponent implements OnInit {
 
-  carList = [
-    {
-      vin: '辽BD1L23',
-      brand: '10001',
-      color: '王斯伟',
-      year: '201907/31 12:45'
-    },
-    {
-      vin: '辽BD1L23',
-      brand: '10001',
-      color: '王斯伟',
-      year: '201907/31 12:45'
-    },
-    {
-      vin: '辽BD1L23',
-      brand: '10001',
-      color: '王斯伟',
-      year: '201907/31 12:45'
-    },
-    {
-      vin: '辽BD1L23',
-      brand: '10001',
-      color: '王斯伟',
-      year: '201907/31 12:45'
-    },
-    {
-      vin: '辽BD1L23',
-      brand: '10001',
-      color: '王斯伟',
-      year: '201907/31 12:45'
-    },
-    {
-      vin: '辽BD1L23',
-      brand: '10001',
-      color: '王斯伟',
-      year: '201907/31 12:45'
-    }
-  ];
+  STATUS_OBJ = ['CREATED', 'CHECKEDIN', 'WORKSTARTED', 'WORKCOMPLETED', 'CHECKEDOUT', 'CLOSED'];
+
   waitingMaintainList = [];
   maintenanceList = [];
   AdditionalMaintenanceList = [];
@@ -56,12 +20,18 @@ export class BoardProgressComponent implements OnInit {
   stayAreaList = [];
 
   progressAllObj = {
-    waitingMaintainList: this.carList,
+    waitingMaintainList: [],
     maintenanceList: [],
     AdditionalMaintenanceList: [],
     washAreaList: [],
     deliveryAreaList: [],
     stayAreaList: [],
+    CREATED: [],
+    CHECKEDIN: [],
+    WORKSTARTED: [],
+    WORKCOMPLETED: [],
+    CHECKEDOUT: [],
+    CLOSED: [],
   };
 
   totalLazyCarsLength: number;
@@ -72,21 +42,23 @@ export class BoardProgressComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.getProgressAll();
-    this.totalLazyCarsLength = this.progressAllObj.waitingMaintainList.length;
+    this.getProgressAll();
+    // this.totalLazyCarsLength = this.progressAllObj.waitingMaintainList.length;
   }
 
   getProgressAll() {
     this.rest.getBoardProgressList().subscribe(res => {
-      if (res.status !== 0) {
-        this.progressAllObj = res;
+      if (res.code === 0) {
+        this.STATUS_OBJ.forEach(element => {
+          this.progressAllObj[element] = [];
+        });
+        this.getSortList(res.data.items);
       }
     });
   }
 
   loadCarsLazy(event: LazyLoadEvent, type) {
     this.totalLazyCarsLength = this.progressAllObj[type].length;
-    // console.log(event, this.progressAllObj[type], this[type], type, this.totalLazyCarsLength);
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
@@ -97,6 +69,25 @@ export class BoardProgressComponent implements OnInit {
         this[type] = this.progressAllObj[type].slice(event.first, (event.first + event.rows));
       }
     }, 1000);
+  }
+
+  getSortList(list) {
+    for (let i = 0; i <= list.length - 1; i++) {
+      for (let j = 0; j <= this.STATUS_OBJ.length - 1; j++) {
+        if (list[i].status === this.STATUS_OBJ[j]) {
+          this.progressAllObj[this.STATUS_OBJ[j]].push(list[i]);
+          break;
+        }
+      }
+    }
+  }
+
+  getRepairOrderId(val) {
+    let arr = [];
+    if (val) {
+      arr = val.split('-');
+    }
+    return arr[2] || '-';
   }
 
 }
