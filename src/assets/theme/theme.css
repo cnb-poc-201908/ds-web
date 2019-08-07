@@ -2122,6 +2122,7 @@ body .ui-table .ui-table-tbody > tr > td {
   background-color: inherit;
   border-bottom: 1px solid #c8c8c8;
   border-top: 1px solid #c8c8c8;
+  text-align: center;
   /* border-top: 1px so\ */
 }
 

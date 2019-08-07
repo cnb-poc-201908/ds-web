@@ -24,7 +24,7 @@
           </p-calendar>
         </div>
         <div class="ui-g-7">
-          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询型号/车型代码/底盘号/…">
         </div>
       </div>
     </section>
@@ -38,7 +38,7 @@
       <ng-template pTemplate="header">
         <tr>
           <th>标识号</th>
-          <th>生产日期</th>
+          <th>入库日期</th>
           <th>车系代码</th>
           <th>车型代码</th>
           <th>车型配置代码</th>
@@ -54,7 +54,7 @@
       <ng-template pTemplate="body" let-car let-columns="columns">
         <tr>
           <td>{{car.stockId}}</td>
-          <td>{{car.productionDate}}</td>
+          <td>{{car.storageDate}}</td>
           <td>{{car.vehicleSeriesCode}}</td>
           <td>{{car.vehicleModelCode}}</td>
           <td>{{car.vehicleModelConfig}}</td>

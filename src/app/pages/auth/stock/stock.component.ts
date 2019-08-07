@@ -50,7 +50,7 @@ export class StockComponent implements OnInit {
     console.log(JSON.parse(localStorage.getItem('user')).uId);
     this.cols = [
       { field: 'stockId', header: '标识号' },
-      { field: 'productionDate', header: '生产日期' },
+      { field: 'storageDate', header: '入库日期' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
       { field: 'vehicleModelConfig', header: '车型配置代码' },
@@ -58,7 +58,7 @@ export class StockComponent implements OnInit {
       { field: 'color', header: '车身颜色' },
       { field: 'decoration', header: '装饰' },
       { field: 'vehicleChassisNumber', header: '底盘号' },
-      { field: 'status', header: '进度代码' },
+      { field: 'status', header: '库存状态' },
       { field: 'color', header: '本店车辆' }
     ];
     this.getStockList();
