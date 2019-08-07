@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { DialogService } from 'primeng/api';
-import { TechSelect } from './components/tech-select';
+import { TechSelect } from './components/tech-select/tech-select';
 
 // import { SelectTechComponent } from 'src/app/components/dialog/select-tech/select-tech.component';
 
@@ -28,9 +28,9 @@ export class BoardTaskComponent implements OnInit {
   ngOnInit() {
     this.items = [
       { label: '待派工', icon: 'fa fa-fw fa-bar-chart' },
-      { label: '待维修', icon: 'fa fa-fw fa-calendar' },
-      { label: '维修中', icon: 'fa fa-fw fa-book' },
+      // { label: '待维修', icon: 'fa fa-fw fa-calendar' },
       { label: '增项', icon: 'fa fa-fw fa-book' },
+      { label: '待交车', icon: 'fa fa-fw fa-book' },
     ];
 
     this.tickets = [
@@ -137,7 +137,8 @@ export class BoardTaskComponent implements OnInit {
     console.log(111);
     const ref = this.dialogService.open(TechSelect, {
       header: '派工',
-      width: '70%'
+      width: '70%',
+      height: '60%'
     });
   }
 
