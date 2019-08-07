@@ -22,6 +22,7 @@ export class RetailComponent implements OnInit {
 
   dataSource: Array<object> = [];
   loading: boolean;
+  displayDialog: boolean;
   cols: Array<object> = [];
   apply: object = {};
   car: any = {};
