@@ -46,11 +46,15 @@
       height: calc(100vh - 168px);
       padding: 10px;
       background: #fff;
+      overflow-y: auto;
 
       .monitor-card {
         background: #F3F3F3;
         margin: -4px -10px;
         padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .item-right {
           text-align: right;
