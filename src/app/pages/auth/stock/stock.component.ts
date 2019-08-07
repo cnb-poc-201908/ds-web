@@ -93,7 +93,7 @@ export class StockComponent implements OnInit {
     this.storageDate = new Date(data.storageDate);
     this.licensePlate = data.licensePlate;
     const i = this.statusList.find(item => item.text === data.status);
-    this.stockStatus = i;
+    this.stockStatus = i ? i : this.stockStatus;
     this.displayDialog = true;
   }
 
