@@ -4098,3 +4098,10 @@ body .board-task .ui-card-header .title {
   letter-spacing: 0;
 }
 
+body .ui-card:hover {
+  border: 1px solid #82C600;
+  -moz-box-shadow: 2px 2px 10px #909090;
+  -webkit-box-shadow: 2px 2px 10px #909090;
+  box-shadow:2px 2px 10px #909090;
+}
+

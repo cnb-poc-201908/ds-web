@@ -138,6 +138,7 @@ export class BoardTaskComponent implements OnInit {
           return item.status == status && item.checkInDateTime == null;
         });
 
+        // If item has more than 1 job, it means Hot Job
         this.dataList.forEach(item=>{
           if (item.jobs && item.jobs.length > 0) {
             item.hot = true;
