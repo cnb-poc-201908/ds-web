@@ -12,10 +12,47 @@
     <div *ngIf="activeIndex == 0">
       <div class="p-grid">
           <div class="p-col-3" *ngFor="let item of tickets">
-            <p-card>
-              <p-header>单号 {{item.ticket}}</p-header>
-              <div>车架号 {{item.vin}}</div>
-              <div>车牌号 {{item.serial}}</div>
+            <p-card (click)="showTech()">
+              <p-header [ngClass]="{'red-brand':item.hot == true}">
+                <i class="pi pi-star hot-job"></i>
+                <span class="serial-label">牌照号</span>
+                <p></p>
+                <div class="clearfix">
+                  <div class="serial-value">{{item.serial}}</div>
+                  <div class="serial-image">
+                    <i class="pi pi-envelope icon-envelop"></i>&nbsp;
+                    <i class="pi pi-eye icon-eye"></i>
+                  </div>
+                </div>
+              </p-header>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">总工时</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.totalHours}}</div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">期待交车时间</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.expact}}</div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">提车时间</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.submit}}</div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">车型</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.model}}</div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">车架号</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vin}}</div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">SA</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.sa}}</div>
+              </div>
+              <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-6">备注</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.remark}}</div>
+              </div>
             </p-card>
           </div>
       </div>

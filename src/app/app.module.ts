@@ -30,6 +30,8 @@ import { BoardGuard } from './guard/board.guard';
     ServicesModule,
   ],
   providers: [LoginGuard, StockGuard, BoardGuard, MessageService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+  ]
 })
 export class AppModule { }

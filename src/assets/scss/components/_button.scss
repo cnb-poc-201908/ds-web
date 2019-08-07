@@ -1,3 +1,32 @@
 .button {
   background-color: $color-green;
 }
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: #408BFC;
+
+  &:hover,
+  &.active {
+    color: #3576d8;
+  }
+}
+
+.del-btn {
+  color: #FB4B53;
+
+  &:hover,
+  &.active {
+    color: #d83f46;
+  }
+
+  &:disabled {
+    color: #8C8C8C;
+    cursor: not-allowed;
+  }
+}

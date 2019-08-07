@@ -1,8 +1,8 @@
 {
-  "message": "success",
   "data": [
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -12,10 +12,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 123141
   },
   {
-    "stockId": "321",
+    "stockAge": 50,
+    "stockId": "12",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -25,10 +27,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 80,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -38,10 +42,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 245454
   },
   {
-    "stockId": "123",
+    "stockAge": 520,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -51,10 +57,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 254345
   },
   {
-    "stockId": "123",
+    "stockAge": 110,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -64,10 +72,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 500,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -77,10 +87,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -90,10 +102,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 123141
   },
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "12",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -103,10 +117,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 80,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -116,10 +132,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 245454
   },
   {
-    "stockId": "123",
+    "stockAge": 520,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -129,10 +147,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 254345
   },
   {
-    "stockId": "123",
+    "stockAge": 110,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -142,10 +162,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 500,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -155,10 +177,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -168,10 +192,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 123141
   },
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "12",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -181,10 +207,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 80,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -194,10 +222,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 245454
   },
   {
-    "stockId": "123",
+    "stockAge": 520,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -207,10 +237,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 254345
   },
   {
-    "stockId": "123",
+    "stockAge": 110,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -220,10 +252,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 500,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -233,10 +267,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -246,10 +282,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 123141
   },
   {
-    "stockId": "123",
+    "stockAge": 50,
+    "stockId": "12",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -259,10 +297,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 80,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -272,10 +312,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 245454
   },
   {
-    "stockId": "123",
+    "stockAge": 520,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -285,10 +327,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 254345
   },
   {
-    "stockId": "123",
+    "stockAge": 110,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -298,10 +342,12 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   },
   {
-    "stockId": "123",
+    "stockAge": 500,
+    "stockId": "1",
     "productionDate": "20190810",
     "vehicleSeriesCode": "111",
     "vehicleModelCode": "223",
@@ -311,110 +357,7 @@
     "decoration": "Light Beige",
     "vehicleChassisNumber": "LBVNU15097SA91471",
     "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
-  },
-  {
-    "stockId": "123",
-    "productionDate": "20190810",
-    "vehicleSeriesCode": "111",
-    "vehicleModelCode": "223",
-    "vehicleModelConfig": "fig",
-    "model": "宝马 3",
-    "color": "红色",
-    "decoration": "Light Beige",
-    "vehicleChassisNumber": "LBVNU15097SA91471",
-    "status": "到库",
-    "isBelongTo": true
+    "licensePlate": "辽B 1234567",
+    "stockCost": 31234
   }]
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { RestService } from 'src/app/services/rest.service';
-import { Car } from 'src/app/domain/car';
 
 @Component({
   selector: 'app-maintain',
