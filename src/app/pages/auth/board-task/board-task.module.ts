@@ -13,7 +13,7 @@ import { TechSelect } from './components/tech-select';
 @NgModule({
   declarations: [
     BoardTaskComponent,
-    TechSelect
+    TechSelect,
   ],
   imports: [
     CommonModule,
@@ -22,7 +22,7 @@ import { TechSelect } from './components/tech-select';
     PrimengModule,
   ],
   entryComponents: [
-    TechSelect
+    TechSelect,
   ]
 })
 export class BoardTaskModule { }

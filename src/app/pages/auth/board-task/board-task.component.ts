@@ -3,9 +3,6 @@ import { MenuItem } from 'primeng/api';
 import { DialogService } from 'primeng/api';
 import { TechSelect } from './components/tech-select';
 
-// import { SelectTechComponent } from 'src/app/components/dialog/select-tech/select-tech.component';
-
-
 @Component({
   selector: 'app-board-task',
   templateUrl: './board-task.component.html',
@@ -18,6 +15,8 @@ export class BoardTaskComponent implements OnInit {
   items: MenuItem[];
   activeItem: MenuItem;
   activeIndex: number;
+  displaySendMessage: boolean = false;
+  displayTaskDetail: boolean = false;
 
   constructor(
     public dialogService: DialogService
@@ -139,6 +138,20 @@ export class BoardTaskComponent implements OnInit {
       header: 'Choose a Car',
       width: '70%'
     });
+
+  }
+
+  showSendMsg(event) {
+    this.displaySendMessage = true;
+    event.stopPropagation();
+  }
+
+  showDetail(event) {
+    event.stopPropagation();
+  }
+
+  sendMessage() {
+    this.displaySendMessage = false;
   }
 
 }

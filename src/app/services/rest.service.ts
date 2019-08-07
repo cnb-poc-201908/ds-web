@@ -30,7 +30,7 @@ export class RestService {
       this.url = 'http://bmwpoc.cdkapps.cn:30091';
     } else {
       console.log('prod');
-      this.url = 'http://9.119.123.37:8080';
+      this.url = 'http://bmwpoc.cdkapps.cn:30090';
     }
     this.setToken('token');
   }
@@ -135,8 +135,8 @@ export class RestService {
     // tslint:disable-next-line:max-line-length
     const params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
     `;
-    return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
-    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
+    // return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
+    return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
   editStock(id, storageDate, licensePlate): Observable<any> {
     const body = {
