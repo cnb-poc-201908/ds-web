@@ -136,7 +136,7 @@ export class BoardTaskComponent implements OnInit {
   showTech() {
     console.log(111);
     const ref = this.dialogService.open(TechSelect, {
-      header: 'Choose a Car',
+      header: '派工',
       width: '70%'
     });
   }
