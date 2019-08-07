@@ -15,7 +15,8 @@ const routes: Routes = [
       { path: 'stock', loadChildren: './stock/stock.module#StockModule', canActivate: [StockGuard] },
       { path: 'vehicle', loadChildren: './vehicle/vehicle.module#VehicleModule', canActivate: [StockGuard] },
       { path: 'board-progress', loadChildren: './board-progress/board-progress.module#BoardProgressModule', canActivate: [BoardGuard] },
-      { path: 'board-task', loadChildren: './board-task/board-task.module#BoardTaskModule', canActivate: [BoardGuard] }
+      { path: 'board-task', loadChildren: './board-task/board-task.module#BoardTaskModule', canActivate: [BoardGuard] },
+      { path: 'board-monitor', loadChildren: './board-monitor/board-monitor.module#BoardMonitorModule', canActivate: [BoardGuard] }
     ]
   }
 ];
