@@ -19,21 +19,16 @@
     <div class="ui-g">
       <div class="ui-g-6">
         <div class="title-wrap">
-          车
+          车辆信息
         </div>
         <div class="content-wrap">
           <div class="ui-g">
-            <div class="ui-g-6 ">
-                1
-            </div>
-            <div class="ui-g-6">
-                2
-            </div>
-            <div class="ui-g-6">
-                3
-            </div>
-            <div class="ui-g-6">
-                4
+            <div class="ui-g-6" *ngFor="let item of itemList; let i = index;">
+              <p-card header="{{item.title}}">
+                <div class="monitor-card" style="min-height: 260px;">
+                  {{item.num}}
+                </div>
+              </p-card>
             </div>
           </div>
         </div>
@@ -41,10 +36,10 @@
       </div>
       <div class="ui-g-3">
         <div class="title-wrap">
-          人
+          技师
         </div>
         <div class="content-wrap">
-          车
+          技师
         </div>
       </div>
       <div class="ui-g-3">
@@ -52,7 +47,7 @@
           工位
         </div>
         <div class="content-wrap">
-          车
+          技师
         </div>
       </div>
     </div>

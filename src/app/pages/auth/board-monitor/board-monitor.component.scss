@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
 
+  .ui-g-6, .ui-g-3 {
+    padding: 0 0.5em !important;
+  }
+
   .form-wrap {
     height: 60px;
     background: #F3F3F3;
@@ -40,8 +44,18 @@
 
     .content-wrap {
       height: calc(100vh - 168px);
-      padding: 0 10px;
+      padding: 10px;
       background: #fff;
+
+      .monitor-card {
+        background: #F3F3F3;
+        margin: -4px -10px;
+        padding: 10px;
+
+        .item-right {
+          text-align: right;
+        }
+      }
     }
 
   }

@@ -27,7 +27,7 @@ export class RestService {
     if (!environment.production) {
       console.log('dev');
       // this.url = 'http://localhost:3000/api';
-      this.url = 'http://9.200.40.146:9001';
+      this.url = 'http://bmwpoc.cdkapps.cn:30091';
     } else {
       console.log('prod');
       this.url = 'http://9.119.123.37:8080';

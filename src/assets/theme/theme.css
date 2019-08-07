@@ -4076,11 +4076,6 @@ body .board-progress .ui-virtualscroller .ui-virtualscroller-content .ui-virtual
   border: none;
 }
 
-/* Board Monitor */
-body .board-monitor .ui-g-6, body .board-monitor .ui-g-3 {
-  padding: 0 0.5em;
-}
-
 body .board-task .ui-card-header {
   padding : 10px;
 }
