@@ -20,8 +20,8 @@
                 <div class="clearfix">
                   <div class="serial-value">{{item.serial}}</div>
                   <div class="serial-image">
-                    <i class="pi pi-envelope icon-envelop"></i>&nbsp;
-                    <i class="pi pi-eye icon-eye"></i>
+                    <i class="pi pi-envelope icon-envelop" (click)="showSendMsg($event)"></i>&nbsp;
+                    <i class="pi pi-eye icon-eye" (click)="showDetail($event)"></i>
                   </div>
                 </div>
               </p-header>
@@ -67,4 +67,20 @@
       增项
     </div>
   </div>
+
+
+  <p-dialog header="发送消息" [(visible)]="displaySendMessage" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}" [minY]="70"
+        [maximizable]="true" [baseZIndex]="10000">
+      <p>
+        <span class="ui-float-label" style="margin-top: 10px;">
+          <textarea id="float-input" rows="5" cols="30" style="width:100%;" pInputTextarea></textarea>
+          <label for="float-input">消息内容</label>
+        </span>
+      </p>
+      <p-footer>
+          <button type="button" pButton icon="pi pi-check" (click)="sendMessage()" label="发送"></button>
+      </p-footer>
+  </p-dialog>
+
+
 </div>
