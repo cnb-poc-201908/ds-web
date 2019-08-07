@@ -47,10 +47,13 @@ export class StockComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(JSON.parse(localStorage.getItem('user')).uId);
+    console.log(JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId);
     this.cols = [
       { field: 'stockId', header: '标识号' },
       { field: 'storageDate', header: '入库日期' },
+      { field: 'dealerName', header: '经销商' },
+      { field: 'groupName', header: '集团' },
+      { field: 'regionName', header: '所属大区' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
       { field: 'vehicleModelConfig', header: '车型配置代码' },
