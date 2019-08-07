@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -17,7 +18,9 @@ import * as _ from 'lodash';
 export class ContractUndoneComponent implements OnInit {
 
   constructor(
-    private rest: RestService
+    private rest: RestService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
@@ -105,8 +108,8 @@ export class ContractUndoneComponent implements OnInit {
   }
 
   onCreate(data) {
-    console.log('chuangjianhetong')
-
+    console.log('chuangjianhetong');
+    this.router.navigate(['/contract-create']);
   }
 
 }

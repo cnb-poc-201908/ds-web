@@ -19,7 +19,8 @@ const routes: Routes = [
       { path: 'invoice', loadChildren: './invoice/invoice.module#InvoiceModule', canActivate: [StockGuard] },
       { path: 'board-progress', loadChildren: './board-progress/board-progress.module#BoardProgressModule', canActivate: [BoardGuard] },
       { path: 'board-task', loadChildren: './board-task/board-task.module#BoardTaskModule', canActivate: [BoardGuard] },
-      { path: 'board-monitor', loadChildren: './board-monitor/board-monitor.module#BoardMonitorModule', canActivate: [BoardGuard] }
+      { path: 'board-monitor', loadChildren: './board-monitor/board-monitor.module#BoardMonitorModule', canActivate: [BoardGuard] },
+      { path: 'contract-create', loadChildren: './contract-create/contract-create.module#ContractCreateModule', canActivate: [StockGuard] }
     ]
   }
 ];
