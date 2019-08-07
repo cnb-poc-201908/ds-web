@@ -11,13 +11,13 @@
   <div class="tabContent">
     <div *ngIf="activeIndex == 0">
       <div class="p-grid">
-          <div class="p-col-3" *ngFor="let item of tickets">
-            <p-card>
-              <p-header>单号 {{item.ticket}}</p-header>
-              <div>车架号 {{item.vin}}</div>
-              <div>车牌号 {{item.serial}}</div>
-            </p-card>
-          </div>
+        <div class="p-col-3" *ngFor="let item of tickets">
+          <p-card (click)="showTech()">
+            <p-header>单号 {{item.ticket}}</p-header>
+            <div>车架号 {{item.vin}}</div>
+            <div>车牌号 {{item.serial}}</div>
+          </p-card>
+        </div>
       </div>
     </div>
     <div *ngIf="activeIndex == 1">

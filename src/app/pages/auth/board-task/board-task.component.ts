@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { DialogService } from 'primeng/api';
+import { TechSelect } from './components/tech-select';
+
+// import { SelectTechComponent } from 'src/app/components/dialog/select-tech/select-tech.component';
 
 
 @Component({
@@ -19,6 +22,7 @@ export class BoardTaskComponent implements OnInit {
   constructor(
     public dialogService: DialogService
   ) { }
+
   tickets: any[];
 
   ngOnInit() {
@@ -31,44 +35,44 @@ export class BoardTaskComponent implements OnInit {
 
     this.tickets = [
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
       {
-        ticket : 'B20190806001',
+        ticket: 'B20190806001',
         vin: 'XLB09930LB1233',
-        serial : '辽BCF915'
+        serial: '辽BCF915'
       },
     ];
 
@@ -79,6 +83,14 @@ export class BoardTaskComponent implements OnInit {
   change(event, index, item) {
     this.activeIndex = index;
     this.activeItem = item;
+  }
+
+  showTech() {
+    console.log(111);
+    const ref = this.dialogService.open(TechSelect, {
+      header: 'Choose a Car',
+      width: '70%'
+    });
   }
 
 }
