@@ -46,8 +46,10 @@ export class DSLayoutSidebarComponent implements OnInit {
       ];
     } else {
       this.items = [
-        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/stock'] },
-        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-undone'] }
+        { label: '库存管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/stock'] },
+        { label: '合同管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-undone'] },
+        { label: '提交交车报告', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-undone'] },
+        { label: '经销商报表管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-undone'] }
       ];
     }
   }
