@@ -147,7 +147,7 @@ export class RetailComponent implements OnInit {
       contractId: data.contractId,
       name: data.name,
       vehicleChassisNumber: data.vehicleChassisNumber,
-    }
+    };
     this.displayDialog = true;
   }
 }

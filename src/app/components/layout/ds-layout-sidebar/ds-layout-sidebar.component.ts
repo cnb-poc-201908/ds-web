@@ -48,8 +48,8 @@ export class DSLayoutSidebarComponent implements OnInit {
       this.items = [
         { label: '库存管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/stock'] },
         { label: '合同管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/contract-undone'] },
-        { label: '提交交车报告', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/retail'] },
-        { label: '经销商报表管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/contract-undone'] }
+        { label: '交车报告', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/retail'] },
+        { label: '报表管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/report'] }
       ];
     }
   }
