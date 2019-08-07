@@ -27,10 +27,10 @@ export class RestService {
     if (!environment.production) {
       console.log('dev');
       // this.url = 'http://localhost:3000/api';
-      this.url = 'http://9.200.40.146:9001';
+      this.url = 'http://bmwpoc.cdkapps.cn:30090';
     } else {
       console.log('prod');
-      this.url = 'http://9.119.123.37:8080';
+      this.url = 'http://bmwpoc.cdkapps.cn:30090';
     }
     this.setToken('token');
   }
@@ -135,8 +135,8 @@ export class RestService {
     // tslint:disable-next-line:max-line-length
     const params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
     `;
-    return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
-    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
+    // return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
+    return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
   editStock(id, storageDate, licensePlate): Observable<any> {
     const body = {
