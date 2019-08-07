@@ -17,6 +17,7 @@ export class RestService {
   // private url = 'http://localhost:3000/api';
 
   private url;
+  private url1;
   private options = {
     headers: new HttpHeaders()
   };
@@ -27,10 +28,12 @@ export class RestService {
     if (!environment.production) {
       console.log('dev');
       // this.url = 'http://localhost:3000/api';
-      this.url = 'http://9.200.40.146:9001';
+      this.url = 'http://bmwpoc.cdkapps.cn:30090';
+      this.url1 = 'http://bmwpoc.cdkapps.cn:30091';
     } else {
       console.log('prod');
-      this.url = 'http://9.119.123.37:8080';
+      this.url = 'http://bmwpoc.cdkapps.cn:30090';
+      this.url1 = 'http://bmwpoc.cdkapps.cn:30091';
     }
     this.setToken('token');
   }
@@ -75,6 +78,14 @@ export class RestService {
   private httpPost(url: string, body: object): Observable<any> {
     this.options.headers.append('Content-Type', 'application/json');
     return this.http.post(url, body, this.options).pipe(
+      map(this.extractDate),
+      catchError(this.handleError([])),
+    );
+  }
+
+  private httpPut(url: string, body: object): Observable<any> {
+    this.options.headers.append('Content-Type', 'application/json');
+    return this.http.put(url, body, this.options).pipe(
       map(this.extractDate),
       catchError(this.handleError([])),
     );
@@ -135,31 +146,31 @@ export class RestService {
     // tslint:disable-next-line:max-line-length
     const params = `${startDate ? '&startDate=' + startDate : ''}${endDate ? '&endDate=' + endDate : ''}${keyword ? '&keyword=' + keyword : ''}
     `;
-    return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
-    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
+    // return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
+    return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
-  editStock(id, storageDate, licensePlate): Observable<any> {
+  editStock(id, status, storageDate, licensePlate): Observable<any> {
     const body = {
       id,
+      status,
       storageDate,
       licensePlate
     };
-    // return this.httpPost(this.url + `/stock/stocks/${id}`, body);
-    return this.httpGet(`../../assets/success-mock.json`);
+    return this.httpPut(this.url + `/stock/stocks/${id}`, body);
   }
   delStock(id): Observable<any> {
-    return this.httpGet(this.url + `/stock/stocks/${id}`);
+    return this.httpDelete(this.url + `/stock/stocks/${id}`);
     // return this.httpDelete(this.url + `/stock/stocks/${id}`);
   }
 
   // 车辆管理
   getCarList(role, roleId): Observable<any> {
     return this.httpGet(`../../assets/car_mock.json?${role}=${roleId}=`);
-    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
+    // return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
   }
 
   // 总进度看板
   getBoardProgressList(): Observable<any> {
-    return this.httpGet(this.url + `/repairOrder/repair-orders`);
+    return this.httpGet(this.url1 + `/repairOrder/repair-orders`);
   }
 }

@@ -1,0 +1,284 @@
+<div class="DS-main">
+  <div class="title">
+    <span>合同管理</span>
+    <img src="../../../../assets/image/16.svg">
+    <span class="text">创建合同</span>
+  </div>
+  <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/contract-create'>
+          <span class="ui-menuitem-text ">销售概要</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-create'>
+          <span class="ui-menuitem-text">基本信息</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-create'>
+          <span class="ui-menuitem-text">客户信息</span>
+        </a>
+      </li>
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-create'>
+          <span class="ui-menuitem-text">备注</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content ui-g ui-fluid">
+    <div class="form-content ui-g-9">
+      <div class="content-wrap content-form">
+        <section class="form-wrap form-border">
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">销售类型</label>
+              <!-- <input id="input" type="text" size="30" pInputText [(ngModel)]="text"> -->
+              <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                [showClear]="true"></p-dropdown>
+            </div>
+            <div class="ui-g-1"></div>
+            <div class="ui-g-3">
+              <label class="first">计划交车日期</label>
+              <p-calendar [(ngModel)]="planDate" placeholder=""></p-calendar>
+            </div>
+            <div class="ui-g-1"></div>
+            <div class="ui-g-3">
+              <label class="first">合同日期</label>
+              <p-calendar [(ngModel)]="contractDate" placeholder=""></p-calendar>
+            </div>
+            <div class="ui-g-1"></div>
+          </div>
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">销售总监</label>
+              <input id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+            </div>
+            <div class="ui-g-1"></div>
+            <div class="ui-g-3">
+              <label class="first">销售经理</label>
+              <input id="input" type="text" size="30" pInputText [(ngModel)]="sManager">
+            </div>
+            <div class="ui-g-1"></div>
+            <div class="ui-g-3">
+              <label class="first">销售顾问</label>
+              <input id="input" type="text" size="30" pInputText [(ngModel)]="sConsult">
+            </div>
+          </div>
+        </section>
+        <section class="form-wrap form-border">
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">整车价格</label>
+              <input id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+            </div>
+          </div>
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="form-wrap form-border">
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">颜色</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+          </div>
+        </section>
+        <section class="form-wrap form-border">
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">经销商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+
+          </div>
+        </section>
+        <section class="form-wrap form-border">
+          <div class="ui-g ui-fluid">
+            <div class="ui-g-3">
+              <label class="first">厂商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+            <div class="ui-g-3">
+              <label class="first">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <div class="action-wrap" style="margin-top: 20px;">
+        <section class="form-wrap" style="width: 700px;">
+        </section>
+        <section class="button-wrap">
+          <p-button style="margin-right:20px;" label="取消" (click)="getStockList()">
+          </p-button>
+          <p-button label="保存" (click)="getStockList()">
+          </p-button>
+        </section>
+      </div>
+    </div>
+    <div class="view-content ui-g-3">
+      <div class="content-wrap">
+        <section class="form-border">
+          销售金额
+        </section>
+        <section class="form-border">
+          <label for="">整车</label>
+          <span>600000.00</span>
+        </section>
+        <section class="form-border">
+          附件
+        </section>
+        <section class="form-border">
+          经销商选择件
+        </section>
+        <section class="form-border">
+          厂商选择件
+        </section>
+        <section class="form-border">
+          保险
+        </section>
+        <section class="form-border">
+          内饰
+        </section>
+        <section class="form-border">
+          总计
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>

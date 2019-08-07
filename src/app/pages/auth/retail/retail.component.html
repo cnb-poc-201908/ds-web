@@ -1,0 +1,129 @@
+<div class="DS-main">
+  <div class="title">
+    提交交车报告
+  </div>
+  <div class="action-wrap">
+    <section class="form-wrap" style="width: 700px;">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-5">
+          <p-calendar [(ngModel)]="rangeDates" selectionMode="range" placeholder="开始日期～结束日期" [showIcon]="true">
+          </p-calendar>
+        </div>
+        <div class="ui-g-7">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+        </div>
+      </div>
+    </section>
+    <section class="button-wrap">
+      <p-button label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" (click)="getCarList()">
+      </p-button>
+    </section>
+  </div>
+  <div class="content-wrap">
+    <p-table #dt [value]="dataSource" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+          <th>申报</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-retail>
+        <tr>
+          <td>{{retail.contractId}}</td>
+          <td>{{retail.clientId}}</td>
+          <td>{{retail.name}}</td>
+          <td>{{retail.comment}}</td>
+          <td>{{retail.vehicleChassisNumber}}</td>
+          <td>{{retail.status}}</td>
+          <td>{{retail.isNewEnergy ? '是' : '否'}}</td>
+          <td>
+            <button pButton [ngClass]="{'ui-button-secondary': retail.status !== 'Z: 已交车'}" [disabled]="retail.status !== 'Z: 已交车'" label="申报" (click)="onApply(retail)"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="loadingbody" let-columns="columns">
+        <tr style="height:34px">
+          <td *ngFor="let col of columns">
+            <div class="loading-text">加载数据中</div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>
+<p-dialog header="交车申报" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '550px'}" [draggable]="false" [resizable]="false">
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">客户编号</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="apply.contractId" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">客户姓名</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="apply.name" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">底盘号</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="apply.vehicleChassisNumber" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">三包发票日期</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="vin">出席交车 SA</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">交易类型</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">车辆用途</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="brand">验证码</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton label="确定"></button>
+    </div>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,47 @@
+.DS-main {
+  .title {
+    .text {
+      color: #82C600;
+      font-weight: 300;
+    }
+    img {
+      margin: 0 10px;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    .form-border {
+      padding-bottom: 5px;
+      border-bottom: 1px solid #F3F3F3;
+    }
+    .form-content {
+      padding: 0 1em 0 0;
+    }
+    .view-content {
+      padding: 0;
+    }
+    .add {
+      margin-left: 10px;
+    }
+    .add-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .dropdown {
+      width: 60%;
+    }
+
+  }
+}
+.content-form {
+  height: calc( 100% - 180px);
+  overflow: auto;
+}
+// .content-wrap {
+//   height: 100%;
+// }
+// .content {
+
+//   // height: calc( 100% - 180px);
+// }

@@ -13,6 +13,7 @@
 
           p-card {
             position: relative;
+            cursor: pointer;
             p-header {
 
               .serial-label {
@@ -77,13 +78,17 @@
 
             .ui-g .item-right {
               text-align: right;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
             }
 
           }
 
+          p-card .ui-card:hover{
+            border: 1px solid #82C600;
+          }
         }
-
-
 
     }
 }

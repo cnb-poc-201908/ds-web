@@ -5,7 +5,7 @@
   background: url('../../../assets/image/sigin.png') no-repeat center / cover;
 }
 .DS-login-container {
-  background-color: rgba(#060606, .6);
+  background-color: rgba(#060606, .2);
   @include flexbox();
   @include flex();
   @include justify-content(center);

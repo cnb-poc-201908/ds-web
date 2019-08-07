@@ -16,7 +16,7 @@ import { MomentModule } from 'ngx-moment';
 @NgModule({
   declarations: [
     BoardTaskComponent,
-    TechSelect
+    TechSelect,
   ],
   imports: [
     CommonModule,
@@ -30,7 +30,7 @@ import { MomentModule } from 'ngx-moment';
     MomentModule
   ],
   entryComponents: [
-    TechSelect
+    TechSelect,
   ]
 })
 export class BoardTaskModule { }

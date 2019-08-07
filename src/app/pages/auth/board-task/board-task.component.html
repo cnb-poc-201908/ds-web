@@ -11,47 +11,53 @@
   <div class="tabContent">
     <div *ngIf="activeIndex == 0">
       <div class="p-grid">
-          <div class="p-col-3" *ngFor="let item of tickets">
-            <p-card (click)="showTech()">
+          <div class="p-col-3" *ngFor="let item of dataList">
+            <p-card (click)="dispatch(item)">
               <p-header [ngClass]="{'red-brand':item.hot == true}">
                 <i class="pi pi-star hot-job"></i>
                 <span class="serial-label">牌照号</span>
                 <p></p>
                 <div class="clearfix">
-                  <div class="serial-value">{{item.serial}}</div>
+                  <div class="serial-value">{{item.vehiclelicensePlate}}</div>
                   <div class="serial-image">
-                    <i class="pi pi-envelope icon-envelop"></i>&nbsp;
+                    <i class="pi pi-envelope icon-envelop" (click)="showSendMsg($event)"></i>&nbsp;
                     <i class="pi pi-eye icon-eye"></i>
                   </div>
                 </div>
               </p-header>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">总工时</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.totalHours}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">预估交车时间</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">
+                  {{item.plannedOut | date :'yyyy-MM-dd HH:MM'}}
+                </div>
               </div>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">期待交车时间</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.expact}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">期待交车时间</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">
+                  {{item.dueOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
+                </div>
               </div>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">提车时间</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.submit}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">预计出厂时间</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">
+                  {{item.plannedOut | date : 'yyyy-MM-dd HH:MM'}}
+                </div>
               </div>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">车型</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.model}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">车型</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right" title="{{item.vehicleDescription}}">{{item.vehicleDescription}}</div>
               </div>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">车架号</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vin}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">车架号</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">{{item.vehicleVin}}</div>
               </div>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">SA</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.sa}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">SA</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">{{item.assignedAdvisorName}}</div>
               </div>
               <div class="ui-g">
-                <div class="ui-g-12 ui-md-6 ui-lg-6">备注</div>
-                <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.remark}}</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-5">备注</div>
+                <div class="ui-g-12 ui-md-6 ui-lg-7 item-right" title="{{item.notes}}">{{item.notes}}</div>
               </div>
             </p-card>
           </div>
@@ -67,4 +73,31 @@
       增项
     </div>
   </div>
+
+
+  <p-dialog header="发送消息" [(visible)]="displaySendMessage" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}" [minY]="70"
+        [maximizable]="true" [baseZIndex]="10000">
+      <p>
+        <span class="ui-float-label" style="margin-top: 10px;">
+          <textarea id="float-input" rows="5" cols="30" style="width:100%;" pInputTextarea></textarea>
+          <label for="float-input">消息内容</label>
+        </span>
+      </p>
+      <p-footer>
+          <button type="button" pButton icon="pi pi-check" (click)="sendMessage()" label="发送"></button>
+      </p-footer>
+  </p-dialog>
+
+  <p-dialog header="详细信息" [(visible)]="displayTaskDetail" [modal]="true" [responsive]="true" [style]="{width: '600px', minWidth: '450px'}" [minY]="70"
+        [maximizable]="true" [baseZIndex]="10000">
+        <div class="ui-g">
+            <div class="ui-g-4">Col1</div>
+            <div class="ui-g-8">Col2</div>
+        </div>
+      <p-footer>
+          <button type="button" pButton icon="pi pi-close" (click)="closeDetail()" label="关闭"></button>
+      </p-footer>
+  </p-dialog>
+  
+
 </div>
