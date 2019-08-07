@@ -131,3 +131,9 @@ app-home {
     text-align: left;
   }
 }
+
+app-retail {
+  .ui-button.ui-button-text-only .ui-button-text {
+    padding: .25em 1em !important;
+  }
+}
