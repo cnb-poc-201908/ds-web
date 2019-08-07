@@ -5,17 +5,17 @@
   <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
     <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
-        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/contract-undone'>
+        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/sales/contract-undone'>
           <span class="ui-menuitem-text ">未创建合同</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-done'>
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/contract-done'>
           <span class="ui-menuitem-text">已创建合同</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/invoice'>
+        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/invoice'>
           <span class="ui-menuitem-text">已开票</span>
         </a>
       </li>
@@ -74,7 +74,7 @@
           <td>{{car.vehicleChassisNumber}}</td>
           <td>{{car.storageDate}}</td>
           <td>
-          <button class="ds icon-edit icon-btn edit-btn" (click)="onCreate(car)"></button>
+            <button class="ds icon-edit icon-btn edit-btn" (click)="onCreate(car)"></button>
           </td>
         </tr>
       </ng-template>

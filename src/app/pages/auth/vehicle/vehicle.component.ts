@@ -114,6 +114,5 @@ export class VehicleComponent implements OnInit {
     }
     this.totalDeposit = this.totalCostSum(this.cars, 'deposit');
     this.totalAdditionalCost = this.totalCostSum(this.cars, 'additionalCost');
-    console.log(this.totalCost);
   }
 }
