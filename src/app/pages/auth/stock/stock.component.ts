@@ -2,7 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { Stock } from '../../../domain/stock';
 import { format } from 'date-fns';
-import { SCHEDULE_CODE } from '../../../../assets/static-data/static-data';
+import { STOCK_STATUS } from '../../../../assets/static-data/static-data';
 
 @Component({
   selector: 'app-stock',
@@ -28,12 +28,19 @@ export class StockComponent implements OnInit {
 
   car: any = {};
 
-  selectedStatus;
+  stockStatus = {
+    code: '',
+    text: ''
+  };
+  stockId: any = '';
 
-  status: Array<object> = SCHEDULE_CODE;
+  status: Array<object> = STOCK_STATUS;
 
-  storageDate: string;
-  licensePlate: '';
+  statusList = STOCK_STATUS;
+
+  storageDate: Date;
+
+  licensePlate: string = '';
 
   constructor(
     private rest: RestService
@@ -59,9 +66,13 @@ export class StockComponent implements OnInit {
 
   save() {
     console.log('save', this.car);
-    this.rest.editStock(this.car.id, this.storageDate, this.licensePlate).subscribe();
-    this.displayDialog = false;
-
+    this.rest.editStock(this.stockId, this.stockStatus.code, format(this.storageDate, 'YYYY-MM-DD'), this.licensePlate).subscribe(
+      result => {
+        console.log('success');
+        this.getStockList();
+        this.displayDialog = false;
+      }
+    );
   }
   cancel() {
     console.log('cancel', this.car);
@@ -69,20 +80,20 @@ export class StockComponent implements OnInit {
   }
 
   onDelete(data) {
-    console.log('delete', data);
     this.rest.delStock(data.stockId).subscribe(result => {
       if (result.message === 'success') {
         alert('库存删除成功！');
-        // 删除成功后，删除图标不再显示，反而显示文件图标
+        this.getStockList();
       }
     });
   }
 
   onEdit(data) {
-    if (data.stockId !== this.car.stockId) {
-      this.car = data;
-      this.storageDate = null;
-    }
+    this.stockId = data.stockId;
+    this.storageDate = new Date(data.storageDate);
+    this.licensePlate = data.licensePlate;
+    const i = this.statusList.find(item => item.text === data.status);
+    this.stockStatus = i;
     this.displayDialog = true;
   }
 
@@ -100,17 +111,17 @@ export class StockComponent implements OnInit {
     }
     const [role, roleId] = this.userRole;
     this.rest.getStockList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
-      // if (carslist.message === 'success') {
-      carslist.data.forEach(element => {
-        SCHEDULE_CODE.forEach(item => {
-          if (element.status === item.code) {
-            element.status = item.text;
-          }
+      if (carslist.message === 'success') {
+        carslist.data.forEach(element => {
+          this.statusList.forEach(item => {
+            if (element.status === item.code) {
+              element.status = item.text;
+            }
+          });
         });
-      });
-      this.cars = carslist.data;
-      this.loading = false;
-      // }
+        this.cars = carslist.data;
+        this.loading = false;
+      }
     });
   }
 }

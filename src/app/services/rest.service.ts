@@ -80,6 +80,14 @@ export class RestService {
     );
   }
 
+  private httpPut(url: string, body: object): Observable<any> {
+    this.options.headers.append('Content-Type', 'application/json');
+    return this.http.put(url, body, this.options).pipe(
+      map(this.extractDate),
+      catchError(this.handleError([])),
+    );
+  }
+
   private httpPostForm(url: string, body: FormData): Observable<any> {
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/form-data');
@@ -138,17 +146,17 @@ export class RestService {
     // return this.httpGet(`../../assets/mock.json?${role}=${roleId}${params}`);
     return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
   }
-  editStock(id, storageDate, licensePlate): Observable<any> {
+  editStock(id, status, storageDate, licensePlate): Observable<any> {
     const body = {
       id,
+      status,
       storageDate,
       licensePlate
     };
-    // return this.httpPost(this.url + `/stock/stocks/${id}`, body);
-    return this.httpGet(`../../assets/success-mock.json`);
+    return this.httpPut(this.url + `/stock/stocks/${id}`, body);
   }
   delStock(id): Observable<any> {
-    return this.httpGet(this.url + `/stock/stocks/${id}`);
+    return this.httpDelete(this.url + `/stock/stocks/${id}`);
     // return this.httpDelete(this.url + `/stock/stocks/${id}`);
   }
 

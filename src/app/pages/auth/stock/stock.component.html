@@ -27,7 +27,7 @@
       </div>
     </section>
     <section class="button-wrap">
-      <p-button label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" (click)="getCarList()">
+      <p-button label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" (click)="getStockList()">
       </p-button>
     </section>
   </div>
@@ -44,7 +44,7 @@
           <th>车身颜色</th>
           <th>装饰</th>
           <th>底盘号</th>
-          <th>进度代码</th>
+          <th>库存状态</th>
           <th>本店车辆</th>
           <th>操作</th>
         </tr>
@@ -77,20 +77,18 @@
         </tr>
       </ng-template>
     </p-table>
-
   </div>
 </div>
 
 <p-dialog header="Stock Edit" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '550px'}">
-  <div class="ui-g ui-fluid" *ngIf="car">
+  <div class="ui-g ui-fluid">
     <div class="ui-g-12">
       <div class="ui-g-4">
         <label for="vin">库存状态</label>
       </div>
       <div class="ui-g-8">
-        <p-dropdown [options]="status" [(ngModel)]="selectedStatus" placeholder="请选择库存状态" optionLabel="text"
+        <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
           [showClear]="true"></p-dropdown>
-        <!-- <input pInputText id="vin" [(ngModel)]="car.sotckId" /> -->
       </div>
     </div>
     <div class="ui-g-12">
@@ -98,8 +96,7 @@
         <label for="year">入库日期</label>
       </div>
       <div class="ui-g-8">
-        <!-- <input pInputText id="year" [(ngModel)]="car.productionDate" /> -->
-        <p-calendar [(ngModel)]="storageDate " placeholder="请选择入库日期"></p-calendar>
+        <p-calendar [(ngModel)]="storageDate" placeholder="请选择入库日期"></p-calendar>
       </div>
     </div>
     <div class="ui-g-12">
