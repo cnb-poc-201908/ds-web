@@ -35,17 +35,18 @@ export class VehicleComponent implements OnInit {
   ngOnInit() {
     this.stockStatus = [
       { label: '库存时间', value: 'all' },
-      { label: '0-60天', value: 'red' },
+      { label: '0-60天', value: 'green' },
       { label: '60天-120天', value: 'yellow' },
-      { label: '120天以上', value: 'green' }
+      { label: '120天以上', value: 'red' }
     ];
     this.cols = [
       { field: 'stockStatus', header: '库龄状态' },
       { field: 'sotckId', header: '标识号' },
+      { field: 'stockAge', header: '库龄' },
       { field: 'productionDate', header: '生产日期' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },
-      { field: 'vehicleModelConfig', header: '车型配置代码' },
+      { field: 'vehicleModelConfig', header: '配置代码' },
       { field: 'licensePlate', header: '车牌号' },
       { field: 'model', header: '型号' },
       // { field: 'model', header: '生产订单号' },
@@ -64,13 +65,13 @@ export class VehicleComponent implements OnInit {
 
     switch (true) {
       case age >= 0 && age < 60:
-        return 'red';
+        return 'green';
         break;
       case age >= 60 && age < 120:
         return 'yellow';
         break;
       case age >= 120:
-        return 'green';
+        return 'red';
         break;
       default:
         break;
