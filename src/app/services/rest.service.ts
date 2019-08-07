@@ -162,8 +162,8 @@ export class RestService {
 
   // 车辆管理
   getCarList(role, roleId): Observable<any> {
-    return this.httpGet(`../../assets/car_mock.json?${role}=${roleId}=`);
-    // return this.httpGet(this.url + `/stock/stocks?${role}=${roleId}${params}`);
+    // return this.httpGet(`../../assets/car_mock.json?${role}=${roleId}=`);
+    return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
   }
 
   // 总进度看板

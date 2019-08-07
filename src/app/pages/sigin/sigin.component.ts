@@ -25,6 +25,7 @@ export class User {
   public upwd: string;
   public role: string;
   public roleId: string;
+  public flag: string;
 }
 
 @Component({

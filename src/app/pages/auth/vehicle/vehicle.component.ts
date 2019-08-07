@@ -34,7 +34,8 @@ export class VehicleComponent implements OnInit {
   ngOnInit() {
     this.stockStatus = [
       { label: '库存时间', value: 'all' },
-      { label: '0-60天', value: 'green' },
+      { label: '0-30天', value: 'white' },
+      { label: '30天-60天', value: 'green' },
       { label: '60天-120天', value: 'yellow' },
       { label: '120天以上', value: 'red' }
     ];
@@ -56,6 +57,7 @@ export class VehicleComponent implements OnInit {
       { field: 'storageDate', header: '到库日期/预计到库日期' },
       { field: 'stockCost', header: '价格' },
       // { field: 'color', header: '报零售状态' },
+      // 追加“订金”“签约日期”，“签约金额”“新增成本”“备注”字段，删除“型号”“车牌号”字段。
     ];
     this.getCarList();
   }
@@ -63,7 +65,10 @@ export class VehicleComponent implements OnInit {
   switchStockStatus(age) {
 
     switch (true) {
-      case age >= 0 && age < 60:
+      case age >= 0 && age < 30:
+        return 'white';
+        break;
+      case age >= 30 && age < 60:
         return 'green';
         break;
       case age >= 60 && age < 120:
