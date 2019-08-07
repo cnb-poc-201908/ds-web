@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { VehicleRoutingModule } from './vehicle-routing.module';
-import { VehicleComponent } from './vehicle.component';
+import { ContractUndoneRoutingModule } from './contract-undone-routing.module';
+import { ContractUndoneComponent } from './contract-undone.component';
 import { FormsModule } from '@angular/forms';
 import { PrimengModule } from 'src/app/modules/primeng.modules';
 
 @NgModule({
-  declarations: [VehicleComponent],
+  declarations: [ContractUndoneComponent],
   imports: [
     CommonModule,
-    VehicleRoutingModule,
+    ContractUndoneRoutingModule,
     PrimengModule,
     FormsModule
   ]
 })
-export class VehicleModule { }
+export class ContractUndoneModule { }

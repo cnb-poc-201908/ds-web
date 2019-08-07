@@ -10,11 +10,11 @@ import { SelectItem } from 'primeng/api';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-vehicle',
-  templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.scss']
+  selector: 'app-invoice',
+  templateUrl: './invoice.component.html',
+  styleUrls: ['./invoice.component.scss']
 })
-export class VehicleComponent implements OnInit {
+export class InvoiceComponent implements OnInit {
 
   constructor(
     private rest: RestService
@@ -103,4 +103,5 @@ export class VehicleComponent implements OnInit {
     this.totalCostSum(this.cars);
     console.log(this.totalCost);
   }
+
 }

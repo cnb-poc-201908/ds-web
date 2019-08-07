@@ -1,0 +1,21 @@
+.content-wrap {
+  height: calc(100% - 40px);
+
+  .tip {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+
+    &.red {
+      background-color: #fb4b53;
+    }
+    &.yellow {
+      background-color: #ffd33e;
+    }
+    &.green {
+      background-color: #82c600;
+    }
+  }
+}

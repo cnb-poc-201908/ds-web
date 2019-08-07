@@ -10,11 +10,11 @@ import { SelectItem } from 'primeng/api';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-vehicle',
-  templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.scss']
+  selector: 'app-contract-done',
+  templateUrl: './contract-done.component.html',
+  styleUrls: ['./contract-done.component.scss']
 })
-export class VehicleComponent implements OnInit {
+export class ContractDoneComponent implements OnInit {
 
   constructor(
     private rest: RestService

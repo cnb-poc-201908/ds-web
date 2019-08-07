@@ -17,7 +17,7 @@
   <div class="progress-wrap">
     <div class="maintain-wrap">
       <div class="title-wrap">
-        <div class="text">维修区<span>（11）</span></div>
+        <div class="text">维修区<span>（{{progressAllObj.CREATED.length + progressAllObj.CHECKEDIN.length + progressAllObj.WORKSTARTED.length}}）</span></div>
         <!-- <div class="icon"></div> -->
       </div>
       <div class="content-wrap">
@@ -27,26 +27,26 @@
             <div class="icon"></div>
           </div>
           <div class="column-content">
-            <div class="card-content" style="overflow-y: hidden">
-              <!-- <div class="card-wrap" *ngFor="let item of [1,2,3];let i = index;">
+            <div class="card-content">
+              <div class="card-wrap" *ngFor="let item of progressAllObj.CREATED;let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
-                <div class="chassis-number">辽BD1L23</div>
+                <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
                 <div class="item-label">
                   <div>工单</div>
-                  <div>10001</div>
+                  <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
                   <div>服务顾问</div>
-                  <div>王斯伟</div>
+                  <div>{{item.contactAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
                   <div>交车时间</div>
-                  <div>201907/31 12:45</div>
+                  <div>{{item.checkOutDateTime || '-'}}</div>
                 </div>
-              </div> -->
-              <p-virtualScroller styleClass="board-progress" [value]="waitingMaintainList" scrollHeight="600px"
+              </div>
+              <!-- <p-virtualScroller styleClass="board-progress" [value]="waitingMaintainList" scrollHeight="600px"
                 [itemSize]="130" [rows]="5" [cache]="false" [lazy]="true"
                 (onLazyLoad)="loadCarsLazy($event, 'waitingMaintainList')" [totalRecords]="totalLazyCarsLength">
                 <ng-template let-car pTemplate="item" let-i="index">
@@ -69,7 +69,7 @@
                     </div>
                   </div>
                 </ng-template>
-              </p-virtualScroller>
+              </p-virtualScroller> -->
             </div>
           </div>
         </div>
@@ -80,22 +80,22 @@
           </div>
           <div class="column-content">
             <div class="card-content">
-              <div class="card-wrap" *ngFor="let item of [1,2,3,4,5];let i = index;">
+              <div class="card-wrap" *ngFor="let item of progressAllObj.CHECKEDIN;let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
-                <div class="chassis-number">辽BD1L23</div>
+                <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
                 <div class="item-label">
                   <div>工单</div>
-                  <div>10001</div>
+                  <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
                   <div>服务顾问</div>
-                  <div>王斯伟</div>
+                  <div>{{item.contactAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
                   <div>交车时间</div>
-                  <div>201907/31 12:45</div>
+                  <div>{{item.checkOutDateTime || '-'}}</div>
                 </div>
               </div>
             </div>
@@ -108,22 +108,22 @@
           </div>
           <div class="column-content">
             <div class="card-content">
-              <div class="card-wrap" *ngFor="let item of [1];let i = index;">
+              <div class="card-wrap" *ngFor="let item of progressAllObj.WORKSTARTED;let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
-                <div class="chassis-number">辽BD1L23</div>
+                <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
                 <div class="item-label">
                   <div>工单</div>
-                  <div>10001</div>
+                  <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
                   <div>服务顾问</div>
-                  <div>王斯伟</div>
+                  <div>{{item.contactAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
                   <div>交车时间</div>
-                  <div>201907/31 12:45</div>
+                  <div>{{item.checkOutDateTime || '-'}}</div>
                 </div>
               </div>
             </div>
@@ -133,27 +133,27 @@
     </div>
     <div class="secondary-wrap">
       <div class="title-wrap blue">
-        <div class="text">洗车区<span>（4）</span></div>
+        <div class="text">洗车区<span>（{{progressAllObj.WORKCOMPLETED.length}}）</span></div>
         <div class="icon"></div>
       </div>
       <div class="secondary-content">
         <div class="card-content">
-          <div class="card-wrap blue" *ngFor="let item of [1,2,3,4];let i = index;">
+          <div class="card-wrap blue" *ngFor="let item of progressAllObj.WORKCOMPLETED;let i = index;">
             <div class="item-label">
               <div>牌照号</div>
             </div>
-            <div class="chassis-number">辽BD1L23</div>
+            <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
             <div class="item-label">
               <div>工单</div>
-              <div>10001</div>
+              <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
               <div>服务顾问</div>
-              <div>王斯伟</div>
+              <div>{{item.contactAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
               <div>交车时间</div>
-              <div>201907/31 12:45</div>
+              <div>{{item.checkOutDateTime || '-'}}</div>
             </div>
           </div>
         </div>
@@ -161,27 +161,27 @@
     </div>
     <div class="secondary-wrap">
       <div class="title-wrap purple">
-        <div class="text">交车区<span>（5）</span></div>
+        <div class="text">交车区<span>（{{progressAllObj.CHECKEDOUT.length}}）</span></div>
         <div class="icon"></div>
       </div>
       <div class="secondary-content">
         <div class="card-content">
-          <div class="card-wrap purple" *ngFor="let item of [1,2,3,4,5];let i = index;">
+          <div class="card-wrap purple" *ngFor="let item of progressAllObj.CHECKEDOUT;let i = index;">
             <div class="item-label">
               <div>牌照号</div>
             </div>
-            <div class="chassis-number">辽BD1L23</div>
+            <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
             <div class="item-label">
               <div>工单</div>
-              <div>10001</div>
+              <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
               <div>服务顾问</div>
-              <div>王斯伟</div>
+              <div>{{item.contactAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
               <div>交车时间</div>
-              <div>201907/31 12:45</div>
+              <div>{{item.checkOutDateTime || '-'}}</div>
             </div>
           </div>
         </div>
@@ -189,27 +189,27 @@
     </div>
     <div class="secondary-wrap">
       <div class="title-wrap red">
-        <div class="text">滞留区<span>（2）</span></div>
+        <div class="text">滞留区<span>（{{progressAllObj.CLOSED.length}}）</span></div>
         <div class="icon"></div>
       </div>
       <div class="secondary-content">
         <div class="card-content">
-          <div class="card-wrap red" *ngFor="let item of [1,2];let i = index;">
+          <div class="card-wrap red" *ngFor="let item of progressAllObj.CLOSED;let i = index;">
             <div class="item-label">
               <div>牌照号</div>
             </div>
-            <div class="chassis-number">辽BD1L23</div>
+            <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
             <div class="item-label">
               <div>工单</div>
-              <div>10001</div>
+              <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
               <div>服务顾问</div>
-              <div>王斯伟</div>
+              <div>{{item.contactAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
               <div>交车时间</div>
-              <div>201907/31 12:45</div>
+              <div>{{item.checkOutDateTime || '-'}}</div>
             </div>
           </div>
         </div>

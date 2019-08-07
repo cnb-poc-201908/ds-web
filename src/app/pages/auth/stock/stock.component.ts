@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
-import { Car } from '../../../domain/car';
+import { Stock } from '../../../domain/stock';
 import { format } from 'date-fns';
 import { SCHEDULE_CODE } from '../../../../assets/static-data/static-data';
 
@@ -14,7 +14,7 @@ export class StockComponent implements OnInit {
 
   userRole: Array<string> = [JSON.parse(localStorage.getItem('user')).role, JSON.parse(localStorage.getItem('user')).roleId];
 
-  cars: Car[];
+  cars: Stock[];
 
   cols: Array<object> = [];
 
@@ -27,6 +27,13 @@ export class StockComponent implements OnInit {
   loading: boolean;
 
   car: any = {};
+
+  selectedStatus;
+
+  status: Array<object> = SCHEDULE_CODE;
+
+  storageDate: string;
+  licensePlate: '';
 
   constructor(
     private rest: RestService
@@ -52,7 +59,9 @@ export class StockComponent implements OnInit {
 
   save() {
     console.log('save', this.car);
+    this.rest.editStock(this.car.id, this.storageDate, this.licensePlate).subscribe();
     this.displayDialog = false;
+
   }
   cancel() {
     console.log('cancel', this.car);
@@ -61,13 +70,24 @@ export class StockComponent implements OnInit {
 
   onDelete(data) {
     console.log('delete', data);
-    this.displayDialog = false;
+    this.rest.delStock(data.stockId).subscribe(result => {
+      if (result.message === 'success') {
+        alert('库存删除成功！');
+        // 删除成功后，删除图标不再显示，反而显示文件图标
+      }
+    });
   }
 
   onEdit(data) {
-    console.log('edit', data);
-    this.car = data;
+    if (data.stockId !== this.car.stockId) {
+      this.car = data;
+      this.storageDate = null;
+    }
     this.displayDialog = true;
+  }
+
+  onFile(data) {
+    window.open(`url${data.stockId}`, '_blank');
   }
 
   getStockList() {
@@ -81,15 +101,15 @@ export class StockComponent implements OnInit {
     const [role, roleId] = this.userRole;
     this.rest.getStockList(role, roleId, startTime, endTime, this.searchContent).subscribe(carslist => {
       // if (carslist.message === 'success') {
-        carslist.data.forEach(element => {
-          SCHEDULE_CODE.forEach(item => {
-            if (element.status === item.code){
-              element.status = item.text;
-            }
-          });
+      carslist.data.forEach(element => {
+        SCHEDULE_CODE.forEach(item => {
+          if (element.status === item.code) {
+            element.status = item.text;
+          }
         });
-        this.cars = carslist.data;
-        this.loading = false;
+      });
+      this.cars = carslist.data;
+      this.loading = false;
       // }
     });
   }

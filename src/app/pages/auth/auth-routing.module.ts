@@ -14,6 +14,9 @@ const routes: Routes = [
       { path: 'maintain', loadChildren: './maintain/maintain.module#MaintainModule', canActivate: [BoardGuard] },
       { path: 'stock', loadChildren: './stock/stock.module#StockModule', canActivate: [StockGuard] },
       { path: 'vehicle', loadChildren: './vehicle/vehicle.module#VehicleModule', canActivate: [StockGuard] },
+      { path: 'contract-done', loadChildren: './contract-done/contract-done.module#ContractDoneModule', canActivate: [StockGuard] },
+      { path: 'contract-undone', loadChildren: './contract-undone/contract-undone.module#ContractUndoneModule', canActivate: [StockGuard] },
+      { path: 'invoice', loadChildren: './invoice/invoice.module#InvoiceModule', canActivate: [StockGuard] },
       { path: 'board-progress', loadChildren: './board-progress/board-progress.module#BoardProgressModule', canActivate: [BoardGuard] },
       { path: 'board-task', loadChildren: './board-task/board-task.module#BoardTaskModule', canActivate: [BoardGuard] }
     ]

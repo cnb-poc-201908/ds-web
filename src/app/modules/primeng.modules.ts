@@ -18,7 +18,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
 import { DynamicDialogModule } from 'primeng/components/dynamicdialog/dynamicdialog';
-
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   exports: [
@@ -36,7 +36,8 @@ import { DynamicDialogModule } from 'primeng/components/dynamicdialog/dynamicdia
     CalendarModule,
     TableModule,
     MenubarModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    DropdownModule
   ]
 })
 export class PrimengModule { }
