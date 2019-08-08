@@ -1,7 +1,7 @@
 .DS-main {
   .title {
     .text {
-      color: #82C600;
+      color: #82c600;
       font-weight: 300;
     }
 
@@ -36,7 +36,7 @@
 
     .form-border {
       padding-bottom: 5px;
-      border-bottom: 1px solid #F3F3F3;
+      border-bottom: 1px solid #f3f3f3;
 
       .margin-t {
         margin-top: 5px;
@@ -48,7 +48,7 @@
 
       .deck {
         font-size: 10px;
-        color: #8F8F8F;
+        color: #8f8f8f;
       }
 
       .block {
@@ -66,6 +66,10 @@
 
     .view-content {
       padding: 0;
+
+      .content-wrap {
+        height: 100%;
+      }
     }
 
     .add {
@@ -80,15 +84,31 @@
     .dropdown {
       width: 60%;
     }
-
   }
 }
-
+.content {
+  height: calc(100% - 80px);
+  background-color: transparent;
+}
+.form-wrap {
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+}
 .content-form {
-  height: calc(100% - 180px);
+  height: calc(100% - 90px);
   overflow: auto;
 }
-
+.button-wrap {
+  text-align: right;
+  flex: 1;
+  padding-right: 20px;
+}
+.action-wrap {
+  padding: 0;
+}
 // .content-wrap {
 //   height: 100%;
 // }
