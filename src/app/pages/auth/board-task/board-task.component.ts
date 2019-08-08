@@ -139,7 +139,31 @@ export class BoardTaskComponent implements OnInit {
   }
 
   search() {
-
+    if (this.inputStr === '') {
+      // this.getData('');
+      this.getMockData('');
+    } else {
+      this.rest.searchCar(this.inputStr).subscribe(res => {
+        if (res.code === 200) {
+          if (status && status !== '') {
+            this.dataList = res.data.filter(item => {
+              // this.dataList = res.data.filter(item=>{
+              return item.status === status && item.checkInDateTime == null;
+            });
+          } else {
+            this.dataList = res.data;
+          }
+          // If item has more than 1 job, it means Hot Job
+          this.dataList.forEach(item => {
+            if (item.jobs && item.jobs.length > 0) {
+              item.hot = true;
+            } else {
+              item.hot = false;
+            }
+          });
+        }
+      });
+    }
   }
 
 }
