@@ -30,7 +30,7 @@ export class TechSelect implements OnInit {
         private rest: RestService,
     ) { }
     ngOnInit() {
-      this.rest.getStationList().subscribe(res1=>{
+      this.rest.getStationlist().subscribe(res1=>{
         if (res1.code === 200) {
           this.stations = res1.items;
           this.rest.getEmployeeGlist().subscribe(res2=>{
