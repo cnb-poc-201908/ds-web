@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CardModule} from 'primeng/card';
 import { RestService } from 'src/app/services/rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-board-monitor',
@@ -16,6 +17,7 @@ export class BoardMonitorComponent implements OnInit {
   stationlist = [];
 
   constructor(
+    private router: Router,
     private rest: RestService,
   ) { }
 
@@ -65,5 +67,9 @@ export class BoardMonitorComponent implements OnInit {
     } else {
       return '钣喷';
     }
+  }
+
+  jumpPage() {
+    this.router.navigate([`/board-task`]);
   }
 }
