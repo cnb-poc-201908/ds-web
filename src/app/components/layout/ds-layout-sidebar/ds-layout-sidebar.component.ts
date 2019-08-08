@@ -44,6 +44,10 @@ export class DSLayoutSidebarComponent implements OnInit {
         { icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-monitor'] },
         { icon: 'ds icon-maintain', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-task'] },
       ];
+    } else if (user.uId === 'sa') {
+      this.items = [
+        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sa/board'] },
+      ];
     } else {
       this.items = [
         { label: '库存管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/stock'] },

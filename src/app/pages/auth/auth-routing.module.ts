@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { StockGuard } from 'src/app/guard/stock.guard';
 import { BoardGuard } from 'src/app/guard/board.guard';
+import { SaGuard } from 'src/app/guard/sa.guard';
 
 const routes: Routes = [
   {
@@ -24,7 +25,9 @@ const routes: Routes = [
       // tslint:disable-next-line:max-line-length
       { path: 'sales/contract-create', loadChildren: './contract-create/contract-create.module#ContractCreateModule', canActivate: [StockGuard] },
       { path: 'sales/retail', loadChildren: './retail/retail.module#RetailModule', canActivate: [StockGuard] },
-      { path: 'sales/report', loadChildren: './report/report.module#ReportModule', canActivate: [StockGuard] }
+      { path: 'sales/report', loadChildren: './report/report.module#ReportModule', canActivate: [StockGuard] },
+      // SA
+      { path: 'sa/board', loadChildren: './board-progress/board-progress.module#BoardProgressModule', canActivate: [SaGuard] },
     ]
   }
 ];
