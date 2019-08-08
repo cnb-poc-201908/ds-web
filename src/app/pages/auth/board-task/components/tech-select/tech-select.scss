@@ -41,35 +41,6 @@
         }
       }
 
-      .station-warp {
-        padding: 15px 20px;
-        background: #F3F3F3;
-        border: 1px solid #F3F3F3;
-        border-radius: 2px;
-        text-align: center;
-
-        &.free {
-          background: #FFFFFF;
-          border: 1px solid #82C600;
-        }
-        &.selected {
-          color : #FFFFFF;
-          background: #82C600;
-          border: 1px solid #82C600;
-        }
-
-      }
-
-      // .station-warp.free {
-      //   background: #FFFFFF;
-      //   border: 1px solid #82C600;
-      // }
-
-      // .station-warp.selected {
-      //   color : #FFFFFF;
-      //   background: #82C600;
-      // }
-
       .bottom {
         font-size: 14px;
         color: #565656;
@@ -189,6 +160,11 @@
 
       .station-warp.free {
         background: #FFFFFF;
+        border: 1px solid #82C600;
+      }
+      .station-warp.selected {
+        color : #FFFFFF;
+        background: #82C600;
         border: 1px solid #82C600;
       }
     }
