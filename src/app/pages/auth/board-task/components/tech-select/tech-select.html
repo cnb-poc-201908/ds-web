@@ -50,7 +50,7 @@
         <div class="content-wrap">
           <div class="ui-g">
             <div class="ui-g-3" *ngFor="let item of availableStations;">
-              <div class="station-warp"
+              <div class="station-warp" (click)="selectStation(item)"
                 [ngClass]="{'free': item.status == 'Y' && !item.selected,
                             'selected' : item.status == 'Y' && item.selected}">
                 <div>

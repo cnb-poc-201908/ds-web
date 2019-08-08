@@ -58,6 +58,7 @@ export class BoardTaskComponent implements OnInit {
         this.dataListObj.CREATED = [];
         this.dataListObj.INPROGRESS = [];
         this.dataListObj.CHECKEDOUT = [];
+        this.getPlanOutDateTime(res.data);
         res.data.forEach(element => {
           if (element.status === 'CREATED') {
             this.dataListObj.CREATED.push(element);
@@ -148,6 +149,7 @@ export class BoardTaskComponent implements OnInit {
           this.dataListObj.CREATED = [];
           this.dataListObj.INPROGRESS = [];
           this.dataListObj.CHECKEDOUT = [];
+          this.getPlanOutDateTime(res.data);
           res.data.forEach(element => {
             if (element.status === 'CREATED') {
               this.dataListObj.CREATED.push(element);
@@ -159,6 +161,29 @@ export class BoardTaskComponent implements OnInit {
           });
         }
       });
+    }
+  }
+
+  getPlanOutDateTime(data:any[]) {
+    if (data && data.length > 0) {
+      data.forEach(item=>{
+        let date = new Date();
+        let labor = item.amountLabor.split(".")
+        let laborHour = 0;
+        let laborMins = 0;
+        if (labor && labor.length === 1) {
+          laborHour = Number(labor[0]);
+        } else if (labor && labor.length === 2) {
+          laborHour = Number(labor[0]);
+          const minStr = labor[1];
+          if (minStr === '5') {
+            laborMins = 30;
+          }
+        }
+        date.setHours(date.getHours() + laborHour);
+        date.setMinutes(date.getMinutes() + laborMins);
+        item.planOutDateTime = date.toString();
+      })
     }
   }
 

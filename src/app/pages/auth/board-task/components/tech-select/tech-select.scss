@@ -14,6 +14,7 @@
       background: #F2F4F8;
       padding: 20px 30px;
       border : 1px solid #FFFFFF;
+      cursor: pointer;
       &.selected{
         border: 1px solid #82C600;
       }
@@ -162,6 +163,7 @@
         border: 1px solid #F3F3F3;
         border-radius: 2px;
         text-align: center;
+        cursor: pointer;
       }
 
       .station-warp.free {

@@ -150,7 +150,6 @@ export class TechSelect implements OnInit {
 
     }
 
-
     selectTeam(item) {
       this.dataList.forEach(res=>{
         res.selected = false;
@@ -160,4 +159,14 @@ export class TechSelect implements OnInit {
       this.drawEvent();
       this.drawStations();
     }
+
+    selectStation(item) {
+      if (item.status !== 'Y') return;
+      this.availableStations.forEach(it=>{
+        it.selected = false;
+      });
+      item.selected = true;
+    }
+
+
 }
