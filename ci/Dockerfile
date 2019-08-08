@@ -11,3 +11,4 @@ COPY dist/ds-web /usr/share/nginx/html/
 COPY ci/report.html /usr/share/nginx/html/
 COPY README.md /usr/share/nginx/html/
 RUN ls -la /etc/nginx/conf.d
+RUN cat /etc/nginx/conf.d/default.conf
