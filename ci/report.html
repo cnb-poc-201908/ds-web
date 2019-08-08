@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+
 <head>
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/easyui/themes/icon.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="http://www.jeasyui.net/easyui/jquery.easyui.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/easyui/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/easyui/themes/icon.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="http://www.jeasyui.net/easyui/jquery.easyui.min.js"></script>
 </head>
 <style>
-    body{
-        width:1060px;
-        margin:50px auto;
-    }
-    path {  stroke: #fff; }
-    path:hover {  opacity:0.9; }
-    rect:hover {  fill:blue; }
-    .axis {  font: 10px sans-serif; }
-    .legend tr{    border-bottom:1px solid grey; }
-    .legend tr:first-child{    border-top:1px solid grey; }
+  body {
+    width: 1060px;
+    margin: 50px auto;
+  }
 
-    .axis path,
-    .axis line {
-        fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-    }
+  path {
+    stroke: #fff;
+  }
 
-    .x.axis path {  display: none; }
-    .legend{
-        margin-bottom:76px;
-        display:inline-block;
-        border-collapse: collapse;
-        border-spacing: 0px;
-    }
-    .legend td{
-        padding:4px 5px;
-        vertical-align:bottom;
-    }
-    .legendFreq, .legendPerc{
-        align:right;
-        width:50px;
-    }
+  path:hover {
+    opacity: 0.9;
+  }
+
+  rect:hover {
+    fill: blue;
+  }
+
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .legend tr {
+    border-bottom: 1px solid grey;
+  }
+
+  .legend tr:first-child {
+    border-top: 1px solid grey;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .legend {
+    margin-bottom: 76px;
+    display: inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+  }
+
+  .legend td {
+    padding: 4px 5px;
+    vertical-align: bottom;
+  }
+
+  .legendFreq,
+  .legendPerc {
+    text-align: right;
+    width: 50px;
+  }
 
 </style>
+
 <body>
 
-<table id="tt" class="easyui-datagrid" style="height: 540px;">
+  <table id="tt" class="easyui-datagrid" style="height: 340px;">
     <thead>
-    <tr>
+      <tr>
         <th field="name1" width="90">标识号</th>
         <th field="name2" width="50">库龄</th>
         <th field="name3" width="80">生产日期</th>
@@ -59,10 +85,10 @@
         <th field="name10" width="80">签约日期</th>
         <th field="name11" width="100">新增成本</th>
         <th field="name12" width="300">备注</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
-    <tr>
+      <tr>
         <td>ST-1000001</td>
         <td>20</td>
         <td>2019-07-08</td>
@@ -75,8 +101,8 @@
         <td>2019-08-07</td>
         <td>￥600.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000002</td>
         <td>40</td>
         <td>2019-05-09</td>
@@ -89,8 +115,8 @@
         <td>2019-08-04</td>
         <td>￥800.00</td>
         <td>高利润</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000004</td>
         <td>80</td>
         <td>2019-04-12</td>
@@ -103,8 +129,8 @@
         <td>2019-08-06</td>
         <td>￥320.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000005</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -117,8 +143,8 @@
         <td>2019-08-04</td>
         <td>￥320.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000006</td>
         <td>120</td>
         <td>2019-02-08</td>
@@ -131,8 +157,8 @@
         <td>2019-08-05</td>
         <td>￥80.00</td>
         <td>紧急</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000007</td>
         <td>140</td>
         <td>2019-01-09</td>
@@ -145,8 +171,8 @@
         <td>2019-08-04</td>
         <td>￥80.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000008</td>
         <td>160</td>
         <td>2018-12-10</td>
@@ -159,8 +185,8 @@
         <td>2019-08-04</td>
         <td>￥560.00</td>
         <td>高利润</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000009</td>
         <td>180</td>
         <td>2019-03-10</td>
@@ -173,8 +199,8 @@
         <td>2019-08-03</td>
         <td>￥800.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000010</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -187,8 +213,8 @@
         <td>2019-08-04</td>
         <td>￥720.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000011</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -201,8 +227,8 @@
         <td>2019-08-04</td>
         <td>￥640.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000012</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -215,8 +241,8 @@
         <td>2019-08-04</td>
         <td>￥880.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000005</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -229,8 +255,8 @@
         <td>2019-08-04</td>
         <td>￥80.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000013</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -243,8 +269,8 @@
         <td>2019-08-04</td>
         <td>￥800.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000014</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -257,8 +283,8 @@
         <td>2019-08-04</td>
         <td>￥160.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000015</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -271,8 +297,8 @@
         <td>2019-08-04</td>
         <td>￥400.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000016</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -285,8 +311,8 @@
         <td>2019-08-04</td>
         <td>￥720.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000017</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -299,8 +325,8 @@
         <td>2019-08-04</td>
         <td>￥800.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000018</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -313,8 +339,8 @@
         <td>2019-08-04</td>
         <td>￥560.00</td>
         <td>VIP客户</td>
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td>ST-1000019</td>
         <td>100</td>
         <td>2019-03-10</td>
@@ -327,236 +353,238 @@
         <td>2019-08-04</td>
         <td>￥160.00</td>
         <td>VIP客户</td>
-    </tr>
+      </tr>
     </tbody>
-</table>
+  </table>
 
-<br/>
-<br/>
+  <br />
+  <br />
 
-<div id='dashboard'>
-</div>
+  <div id='dashboard'>
+  </div>
 
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
-    function dashboard(id, fData){
-        var barColor = 'steelblue';
-        function segColor(c){ return {l1:"#807dba", l2:"#e08214",l3:"#41ab5d",l4:"#C0392B"}[c]; }
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script>
+    function dashboard(id, fData) {
+      var barColor = 'steelblue';
 
-        // compute total for each state.
-        fData.forEach(function(d){d.total=d.freq.l1+d.freq.l2+d.freq.l3+d.freq.l4;});
+      function segColor(c) { return { l1: "#807dba", l2: "#e08214", l3: "#41ab5d", l4: "#C0392B" } [c]; }
 
-        // function to handle histogram.
-        function histoGram(fD){
-            var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
-            hGDim.w = 500 - hGDim.l - hGDim.r,
-                hGDim.h = 300 - hGDim.t - hGDim.b;
+      // compute total for each state.
+      fData.forEach(function (d) { d.total = d.freq.l1 + d.freq.l2 + d.freq.l3 + d.freq.l4; });
 
-            //create svg for histogram.
-            var hGsvg = d3.select(id).append("svg")
-                .attr("width", hGDim.w + hGDim.l + hGDim.r)
-                .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
-                .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+      // function to handle histogram.
+      function histoGram(fD) {
+        var hG = {},
+          hGDim = { t: 60, r: 0, b: 30, l: 0 };
+        hGDim.w = 500 - hGDim.l - hGDim.r,
+          hGDim.h = 300 - hGDim.t - hGDim.b;
 
-            // create function for x-axis mapping.
-            var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
-                .domain(fD.map(function(d) { return d[0]; }));
+        //create svg for histogram.
+        var hGsvg = d3.select(id).append("svg")
+          .attr("width", hGDim.w + hGDim.l + hGDim.r)
+          .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
+          .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
 
-            // Add x-axis to the histogram svg.
-            hGsvg.append("g").attr("class", "x axis")
-                .attr("transform", "translate(0," + hGDim.h + ")")
-                .call(d3.svg.axis().scale(x).orient("bottom"));
+        // create function for x-axis mapping.
+        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+          .domain(fD.map(function (d) { return d[0]; }));
 
-            // Create function for y-axis map.
-            var y = d3.scale.linear().range([hGDim.h, 0])
-                .domain([0, d3.max(fD, function(d) { return d[1]; })]);
+        // Add x-axis to the histogram svg.
+        hGsvg.append("g").attr("class", "x axis")
+          .attr("transform", "translate(0," + hGDim.h + ")")
+          .call(d3.svg.axis().scale(x).orient("bottom"));
 
-            // Create bars for histogram to contain rectangles and freq labels.
-            var bars = hGsvg.selectAll(".bar").data(fD).enter()
-                .append("g").attr("class", "bar");
+        // Create function for y-axis map.
+        var y = d3.scale.linear().range([hGDim.h, 0])
+          .domain([0, d3.max(fD, function (d) { return d[1]; })]);
 
-            //create the rectangles.
-            bars.append("rect")
-                .attr("x", function(d) { return x(d[0]); })
-                .attr("y", function(d) { return y(d[1]); })
-                .attr("width", x.rangeBand())
-                .attr("height", function(d) { return hGDim.h - y(d[1]); })
-                .attr('fill',barColor)
-                .on("mouseover",mouseover)// mouseover is defined below.
-                .on("mouseout",mouseout);// mouseout is defined below.
+        // Create bars for histogram to contain rectangles and freq labels.
+        var bars = hGsvg.selectAll(".bar").data(fD).enter()
+          .append("g").attr("class", "bar");
 
-            //Create the frequency labels above the rectangles.
-            bars.append("text").text(function(d){ return d3.format(",")(d[1])})
-                .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
-                .attr("y", function(d) { return y(d[1])-5; })
-                .attr("text-anchor", "middle");
+        //create the rectangles.
+        bars.append("rect")
+          .attr("x", function (d) { return x(d[0]); })
+          .attr("y", function (d) { return y(d[1]); })
+          .attr("width", x.rangeBand())
+          .attr("height", function (d) { return hGDim.h - y(d[1]); })
+          .attr('fill', barColor)
+          .on("mouseover", mouseover) // mouseover is defined below.
+          .on("mouseout", mouseout); // mouseout is defined below.
 
-            function mouseover(d){  // utility function to be called on mouseover.
-                // filter for selected state.
-                var st = fData.filter(function(s){ return s.State == d[0];})[0],
-                    nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
+        //Create the frequency labels above the rectangles.
+        bars.append("text").text(function (d) { return d3.format(",")(d[1]) })
+          .attr("x", function (d) { return x(d[0]) + x.rangeBand() / 2; })
+          .attr("y", function (d) { return y(d[1]) - 5; })
+          .attr("text-anchor", "middle");
 
-                // call update functions of pie-chart and legend.
-                pC.update(nD);
-                leg.update(nD);
-            }
+        function mouseover(d) { // utility function to be called on mouseover.
+          // filter for selected state.
+          var st = fData.filter(function (s) { return s.State == d[0]; })[0],
+            nD = d3.keys(st.freq).map(function (s) { return { type: s, freq: st.freq[s] }; });
 
-            function mouseout(d){    // utility function to be called on mouseout.
-                // reset the pie-chart and legend.
-                pC.update(tF);
-                leg.update(tF);
-            }
-
-            // create function to update the bars. This will be used by pie-chart.
-            hG.update = function(nD, color){
-                // update the domain of the y-axis map to reflect change in frequencies.
-                y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
-
-                // Attach the new data to the bars.
-                var bars = hGsvg.selectAll(".bar").data(nD);
-
-                // transition the height and color of rectangles.
-                bars.select("rect").transition().duration(500)
-                    .attr("y", function(d) {return y(d[1]); })
-                    .attr("height", function(d) { return hGDim.h - y(d[1]); })
-                    .attr("fill", color);
-
-                // transition the frequency labels location and change value.
-                bars.select("text").transition().duration(500)
-                    .text(function(d){ return d3.format(",")(d[1])})
-                    .attr("y", function(d) {return y(d[1])-5; });
-            }
-            return hG;
+          // call update functions of pie-chart and legend.
+          pC.update(nD);
+          leg.update(nD);
         }
 
-        // function to handle pieChart.
-        function pieChart(pD){
-            var pC ={},    pieDim ={w:250, h: 250};
-            pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
-
-            // create svg for pie chart.
-            var piesvg = d3.select(id).append("svg")
-                .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
-                .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
-
-            // create function to draw the arcs of the pie slices.
-            var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
-
-            // create a function to compute the pie slice angles.
-            var pie = d3.layout.pie().sort(null).value(function(d) { return d.freq; });
-
-            // Draw the pie slices.
-            piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
-                .each(function(d) { this._current = d; })
-                .style("fill", function(d) { return segColor(d.data.type); })
-                .on("mouseover",mouseover).on("mouseout",mouseout);
-
-            // create function to update pie-chart. This will be used by histogram.
-            pC.update = function(nD){
-                piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
-                    .attrTween("d", arcTween);
-            }
-            // Utility function to be called on mouseover a pie slice.
-            function mouseover(d){
-                // call the update function of histogram with new data.
-                hG.update(fData.map(function(v){
-                    return [v.State,v.freq[d.data.type]];}),segColor(d.data.type));
-            }
-            //Utility function to be called on mouseout a pie slice.
-            function mouseout(d){
-                // call the update function of histogram with all data.
-                hG.update(fData.map(function(v){
-                    return [v.State,v.total];}), barColor);
-            }
-            // Animating the pie-slice requiring a custom function which specifies
-            // how the intermediate paths should be drawn.
-            function arcTween(a) {
-                var i = d3.interpolate(this._current, a);
-                this._current = i(0);
-                return function(t) { return arc(i(t));    };
-            }
-            return pC;
+        function mouseout(d) { // utility function to be called on mouseout.
+          // reset the pie-chart and legend.
+          pC.update(tF);
+          leg.update(tF);
         }
 
-        // function to handle legend.
-        function legend(lD){
-            var leg = {};
+        // create function to update the bars. This will be used by pie-chart.
+        hG.update = function (nD, color) {
+          // update the domain of the y-axis map to reflect change in frequencies.
+          y.domain([0, d3.max(nD, function (d) { return d[1]; })]);
 
-            // create table for legend.
-            var legend = d3.select(id).append("table").attr('class','legend');
+          // Attach the new data to the bars.
+          var bars = hGsvg.selectAll(".bar").data(nD);
 
-            // create one row per segment.
-            var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+          // transition the height and color of rectangles.
+          bars.select("rect").transition().duration(500)
+            .attr("y", function (d) { return y(d[1]); })
+            .attr("height", function (d) { return hGDim.h - y(d[1]); })
+            .attr("fill", color);
 
-            // create the first column for each segment.
-            tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
-                .attr("width", '16').attr("height", '16')
-                .attr("fill",function(d){ return segColor(d.type); });
-
-            // create the second column for each segment.
-            tr.append("td").text(function(d){
-                if(d.type == 'l1'){
-                    return '0 - 30 days';
-                }else if(d.type == 'l2'){
-                    return '30 - 60 days';
-                }else if(d.type == 'l3'){
-                    return '60 - 120 days';
-                }else if(d.type == 'l4'){
-                    return 'more than 120 days';
-                }
-            });
-
-            // create the third column for each segment.
-            tr.append("td").attr("class",'legendFreq')
-                .text(function(d){ return d3.format(",")(d.freq);});
-
-            // create the fourth column for each segment.
-            tr.append("td").attr("class",'legendPerc')
-                .text(function(d){ return getLegend(d,lD);});
-
-            // Utility function to be used to update the legend.
-            leg.update = function(nD){
-                // update the data attached to the row elements.
-                var l = legend.select("tbody").selectAll("tr").data(nD);
-
-                // update the frequencies.
-                l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
-
-                // update the percentage column.
-                l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});
-            }
-
-            function getLegend(d,aD){ // Utility function to compute percentage.
-                return d3.format("%")(d.freq/d3.sum(aD.map(function(v){ return v.freq; })));
-            }
-
-            return leg;
+          // transition the frequency labels location and change value.
+          bars.select("text").transition().duration(500)
+            .text(function (d) { return d3.format(",")(d[1]) })
+            .attr("y", function (d) { return y(d[1]) - 5; });
         }
+        return hG;
+      }
 
-        // calculate total frequency by segment for all state.
-        var tF = ['l1','l2','l3','l4'].map(function(d){
-            return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))};
+      // function to handle pieChart.
+      function pieChart(pD) {
+        var pC = {},
+          pieDim = { w: 250, h: 250 };
+        pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
+
+        // create svg for pie chart.
+        var piesvg = d3.select(id).append("svg")
+          .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+          .attr("transform", "translate(" + pieDim.w / 2 + "," + pieDim.h / 2 + ")");
+
+        // create function to draw the arcs of the pie slices.
+        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
+
+        // create a function to compute the pie slice angles.
+        var pie = d3.layout.pie().sort(null).value(function (d) { return d.freq; });
+
+        // Draw the pie slices.
+        piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
+          .each(function (d) { this._current = d; })
+          .style("fill", function (d) { return segColor(d.data.type); })
+          .on("mouseover", mouseover).on("mouseout", mouseout);
+
+        // create function to update pie-chart. This will be used by histogram.
+        pC.update = function (nD) {
+          piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
+            .attrTween("d", arcTween);
+        }
+        // Utility function to be called on mouseover a pie slice.
+        function mouseover(d) {
+          // call the update function of histogram with new data.
+          hG.update(fData.map(function (v) {
+            return [v.State, v.freq[d.data.type]];
+          }), segColor(d.data.type));
+        }
+        //Utility function to be called on mouseout a pie slice.
+        function mouseout(d) {
+          // call the update function of histogram with all data.
+          hG.update(fData.map(function (v) {
+            return [v.State, v.total];
+          }), barColor);
+        }
+        // Animating the pie-slice requiring a custom function which specifies
+        // how the intermediate paths should be drawn.
+        function arcTween(a) {
+          var i = d3.interpolate(this._current, a);
+          this._current = i(0);
+          return function (t) { return arc(i(t)); };
+        }
+        return pC;
+      }
+
+      // function to handle legend.
+      function legend(lD) {
+        var leg = {};
+
+        // create table for legend.
+        var legend = d3.select(id).append("table").attr('class', 'legend');
+
+        // create one row per segment.
+        var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+
+        // create the first column for each segment.
+        tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
+          .attr("width", '16').attr("height", '16')
+          .attr("fill", function (d) { return segColor(d.type); });
+
+        // create the second column for each segment.
+        tr.append("td").text(function (d) {
+          if (d.type == 'l1') {
+            return '0 - 30 days';
+          } else if (d.type == 'l2') {
+            return '30 - 60 days';
+          } else if (d.type == 'l3') {
+            return '60 - 120 days';
+          } else if (d.type == 'l4') {
+            return 'more than 120 days';
+          }
         });
 
-        // calculate total frequency by state for all segment.
-        var sF = fData.map(function(d){return [d.State,d.total];});
+        // create the third column for each segment.
+        tr.append("td").attr("class", 'legendFreq')
+          .text(function (d) { return d3.format(",")(d.freq); });
 
-        var hG = histoGram(sF), // create the histogram.
-            pC = pieChart(tF), // create the pie-chart.
-            leg= legend(tF);  // create the legend.
+        // create the fourth column for each segment.
+        tr.append("td").attr("class", 'legendPerc')
+          .text(function (d) { return getLegend(d, lD); });
+
+        // Utility function to be used to update the legend.
+        leg.update = function (nD) {
+          // update the data attached to the row elements.
+          var l = legend.select("tbody").selectAll("tr").data(nD);
+
+          // update the frequencies.
+          l.select(".legendFreq").text(function (d) { return d3.format(",")(d.freq); });
+
+          // update the percentage column.
+          l.select(".legendPerc").text(function (d) { return getLegend(d, nD); });
+        }
+
+        function getLegend(d, aD) { // Utility function to compute percentage.
+          return d3.format("%")(d.freq / d3.sum(aD.map(function (v) { return v.freq; })));
+        }
+
+        return leg;
+      }
+
+      // calculate total frequency by segment for all state.
+      var tF = ['l1', 'l2', 'l3', 'l4'].map(function (d) {
+        return { type: d, freq: d3.sum(fData.map(function (t) { return t.freq[d]; })) };
+      });
+
+      // calculate total frequency by state for all segment.
+      var sF = fData.map(function (d) { return [d.State, d.total]; });
+
+      var hG = histoGram(sF), // create the histogram.
+        pC = pieChart(tF), // create the pie-chart.
+        leg = legend(tF); // create the legend.
     }
-</script>
 
-<script>
-    var freqData=[
-        {State:'Aug 2019',freq:{l1:4786,  l2:1319, l3:249, l4:2600}}
-        ,{State:'Jul 2019',freq:{l1:1101, l2:412,  l3:674, l4:397}}
-        ,{State:'Jun 2019',freq:{l1:932,  l2:2149, l3:418, l4:500}}
-        ,{State:'May 2019',freq:{l1:832,  l2:1152, l3:1862,l4:700}}
-        ,{State:'Apr 2019',freq:{l1:4481, l2:3304, l3:948, l4:900}}
-        ,{State:'Mar 2019',freq:{l1:1619, l2:167,  l3:1063,l4:1000}}
+  </script>
+
+  <script>
+    var freqData = [
+      { State: 'Aug 2019', freq: { l1: 4786, l2: 1319, l3: 249, l4: 2600 } }, { State: 'Jul 2019', freq: { l1: 1101, l2: 412, l3: 674, l4: 397 } }, { State: 'Jun 2019', freq: { l1: 932, l2: 2149, l3: 418, l4: 500 } }, { State: 'May 2019', freq: { l1: 832, l2: 1152, l3: 1862, l4: 700 } }, { State: 'Apr 2019', freq: { l1: 4481, l2: 3304, l3: 948, l4: 900 } }, { State: 'Mar 2019', freq: { l1: 1619, l2: 167, l3: 1063, l4: 1000 } }
     ];
 
-    dashboard('#dashboard',freqData);
-</script>
+    dashboard('#dashboard', freqData);
+
+  </script>
