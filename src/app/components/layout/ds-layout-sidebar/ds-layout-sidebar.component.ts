@@ -46,13 +46,13 @@ export class DSLayoutSidebarComponent implements OnInit {
       ];
     } else if (user.uId === 'sa') {
       this.items = [
-        {  label: '进度看板', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sa/board'] },
+        { label: '进度看板', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sa/board'] },
       ];
     } else {
       this.items = [
         { label: '库存管理', icon: 'ds icon-application', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/stock'] },
         { label: '合同管理', icon: 'ds icon-document', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/contract-undone'] },
-        { label: '交车报告', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/retail'] },
+        { label: '交车管理', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/retail'] },
         { label: '报表管理', icon: 'ds icon-report', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sales/report'] }
       ];
     }

@@ -50,4 +50,7 @@ export class ContractDoneComponent implements OnInit {
       this.loading = false;
     });
   }
+  onFile() {
+    this.router.navigate(['/sales/contract-print']);
+  }
 }
