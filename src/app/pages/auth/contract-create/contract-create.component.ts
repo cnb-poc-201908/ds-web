@@ -75,8 +75,8 @@ export class ContractCreateComponent implements OnInit {
   firmExpandFlag = false;
   colorList = [
     { code: '1', text: 'Alpine White' },
-    { code: '2', text: 'Carbon Black Metalic' },
-    { code: '3', text: 'Silverstone Metalic' },
+    { code: '2', text: 'Carbon Black' },
+    { code: '3', text: 'Silverstone' },
   ];
   salesType = [
     { code: '1', text: '试驾车' },
@@ -84,19 +84,19 @@ export class ContractCreateComponent implements OnInit {
     { code: '1', text: '大客户销售' },
   ];
   deckList = [
-    { code: '1', text: 'hat' },
-    { code: '1', text: 'glasses' },
-    { code: '1', text: 'bag' }
+    { code: '1', text: 'Hat' },
+    { code: '1', text: 'Glasses' },
+    { code: '1', text: 'Bag' }
   ];
   dealerList = [
-    { code: '1', text: 'Radio control Oceania' },
-    { code: '1', text: 'VIN, visible from outside' },
-    { code: '1', text: '书包Locking wheel bolts' }
+    { code: '1', text: 'Radio' },
+    { code: '1', text: 'VIN' },
+    { code: '1', text: 'Locking' }
   ];
   firmList = [
     { code: '1', text: 'BMW APP' },
     { code: '1', text: 'Combox' },
-    { code: '1', text: 'Bad-Road Package' }
+    { code: '1', text: 'Bad-Road' }
   ];
 
   constructor(

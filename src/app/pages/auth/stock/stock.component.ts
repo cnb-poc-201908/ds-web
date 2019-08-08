@@ -75,7 +75,7 @@ export class StockComponent implements OnInit {
   save() {
     console.log('save', this.car);
     if (!this.stockStatus) {
-      this.stockStatus =  {code: '', text: ''};
+      this.stockStatus = { code: '', text: '' };
     }
     this.rest.editStock(this.stockId, this.stockStatus.code, format(this.storageDate, 'YYYY-MM-DD'), this.licensePlate).subscribe(
       result => {
@@ -100,7 +100,7 @@ export class StockComponent implements OnInit {
   }
 
   onEdit(data) {
-    this.color =data.color;
+    this.color = data.color;
     this.vehicleSeriesCode = data.vehicleSeriesCode;
     this.vehicleModelCode = data.vehicleModelCode;
     this.model = data.model;
@@ -109,7 +109,7 @@ export class StockComponent implements OnInit {
     this.storageDate = new Date(data.storageDate);
     this.licensePlate = data.licensePlate;
     const i = this.statusList.find(item => item.text === data.status);
-    this.stockStatus = i ? i : {code: '', text: ''};
+    this.stockStatus = i ? i : { code: '', text: '' };
     this.displayDialog = true;
   }
 

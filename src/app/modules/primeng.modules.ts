@@ -19,8 +19,8 @@ import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
 import { DynamicDialogModule } from 'primeng/components/dynamicdialog/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
-import {TooltipModule} from 'primeng/tooltip';
-
+import { TooltipModule } from 'primeng/tooltip';
+import { TieredMenuModule } from 'primeng/tieredmenu';
 
 @NgModule({
   exports: [
@@ -40,7 +40,8 @@ import {TooltipModule} from 'primeng/tooltip';
     MenubarModule,
     DynamicDialogModule,
     DropdownModule,
-    TooltipModule
+    TooltipModule,
+    TieredMenuModule
   ]
 })
 export class PrimengModule { }

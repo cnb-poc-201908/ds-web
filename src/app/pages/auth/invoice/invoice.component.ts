@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
-
+import { MenuModule } from 'primeng/menu';
+import { MenuItem } from 'primeng/api';
 import { RestService } from 'src/app/services/rest.service';
 @Component({
   selector: 'app-invoice',
@@ -21,6 +22,7 @@ export class InvoiceComponent implements OnInit {
 
   dataSource: Array<object> = [];
   loading: boolean;
+  panel: boolean;
   cols: Array<object> = [];
 
   ngOnInit() {
@@ -48,6 +50,14 @@ export class InvoiceComponent implements OnInit {
       this.dataSource = contractlist.data;
       this.loading = false;
     });
+  }
+  onMore(car) {
+
+    if (car.panelShow) {
+      car.panelShow = false;
+    } else {
+      car.panelShow = true;
+    }
   }
 
 }

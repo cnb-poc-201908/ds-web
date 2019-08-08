@@ -9,7 +9,7 @@
           <span class="ui-menuitem-text ">库存基本信息</span>
         </a>
       </li>
-      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon" *ngIf="userFlag !== 'sa'">
+      <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon" *ngIf="userRole[0] !== 'regionId'">
         <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/sales/vehicle'>
           <span class="ui-menuitem-text">360车辆管理</span>
         </a>
@@ -40,7 +40,7 @@
           <th *ngFor="let col of columns">
             {{col.header}}
           </th>
-          <th *ngIf="userFlag !== 'sa'">操作</th>
+          <th *ngIf="userRole[0] !== 'regionId'">操作</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-car let-columns="columns">
@@ -59,8 +59,8 @@
           <td>{{car.vehicleChassisNumber}}</td>
           <td>{{car.status}}</td>
           <td>{{car.isBelongTo? "是" : "否"}}</td>
-          <td *ngIf="userFlag !== 'sa'">
-            <button *ngIf="!car.deleted" class="ds icon-edit icon-btn edit-btn" (click)="onEdit(car)" pTooltip="编辑"></button>
+          <td *ngIf="userRole[0] !== 'regionId'">
+            <button *ngIf=" !car.deleted" class="ds icon-edit icon-btn edit-btn" (click)="onEdit(car)" pTooltip="编辑"></button>
             <button *ngIf="!car.deleted" class="ds icon-delete icon-btn del-btn" (click)="onDelete(car)" [disabled]="!car.deletable" pTooltip="删除"></button>
             <button *ngIf="car.deleted" class="ds icon-document icon-btn" (click)="onFile(car)" pTooltip="查看"></button>
           </td>

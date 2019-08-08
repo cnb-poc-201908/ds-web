@@ -45,7 +45,7 @@ export class BoardTaskComponent implements OnInit {
 
     this.activeIndex = 0;
     this.activeItem = this.items[0];
-    this.getData('');
+    this.getData('CREATED');
     // this.getMockData("");
 
     // this.dispatch({});
@@ -112,9 +112,9 @@ export class BoardTaskComponent implements OnInit {
       }
     });
 
-    ref.onClose.subscribe((car) => {
-      if (car) {
-        console.log(car);
+    ref.onClose.subscribe((res) => {
+      if (res === 'submit') {
+        this.getData("CREATED");
       }
     });
 

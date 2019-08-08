@@ -44,7 +44,11 @@
               </div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-6">预估交车时间</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">
+                <span [ngClass]="{'alert': (item.dueOutDateTime != '' && item.dueOutDateTime != null)
+                  && (item.plannedOut != '' && item.plannedOut != null)
+                  && (item.dueOutDateTime >= item.plannedOut) }">预估交车时间</span>
+              </div>
               <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
                 {{item.dueOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
               </div>

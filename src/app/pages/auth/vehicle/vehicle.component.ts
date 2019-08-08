@@ -34,7 +34,7 @@ export class VehicleComponent implements OnInit {
 
   ngOnInit() {
     this.stockStatus = [
-      { label: '库存时间', value: 'all' },
+      { label: '库龄/天', value: 'all' },
       { label: '0-30天', value: 'white' },
       { label: '30天-60天', value: 'green' },
       { label: '60天-120天', value: 'yellow' },
@@ -43,7 +43,7 @@ export class VehicleComponent implements OnInit {
     this.cols = [
       { field: 'stockStatus', header: '库龄状态' },
       { field: 'sotckId', header: '标识号' },
-      { field: 'stockAge', header: '库龄' },
+      { field: 'stockAge', header: '库龄/天' },
       { field: 'productionDate', header: '生产日期' },
       { field: 'vehicleSeriesCode', header: '车系代码' },
       { field: 'vehicleModelCode', header: '车型代码' },

@@ -46,6 +46,7 @@
           <th *ngFor="let col of columns">
             {{col.header}}
           </th>
+          <th>操作</th>
         </tr>
       </ng-template>
 
@@ -62,6 +63,17 @@
           <td>{{car.basicInfo.salesPersonId}}</td>
           <td>{{car.basicInfo.deliveryDate}}</td>
           <td>{{car.basicInfo.invoiceTotal | currency:'￥'}}</td>
+          <td>
+            <div class="menu_panel">
+              <button class="ds icon-Other icon-btn" (click)="onMore(car)" pTooltip="其他操作"></button>
+              <ul *ngIf="car.panelShow">
+                <li>查看</li>
+                <li>修改信息</li>
+                <li>保存为失败的销售</li>
+                <li>打印退账单</li>
+              </ul>
+            </div>
+          </td>
         </tr>
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
