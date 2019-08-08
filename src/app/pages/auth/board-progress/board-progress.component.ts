@@ -92,17 +92,18 @@ export class BoardProgressComponent implements OnInit {
   }
 
   search() {
-    // this.inputStr = '111';
-    console.log(this.inputStr);
-    this.rest.searchCar(this.inputStr).subscribe(res => {
-      console.log(res);
-      if (res.code === 200) {
-        this.STATUS_OBJ.forEach(element => {
-          this.progressAllObj[element] = [];
-        });
-        this.getSortList(res.data);
-      }
-    });
+    if (this.inputStr === '') {
+      this.getProgressAll();
+    } else {
+      this.rest.searchCar(this.inputStr).subscribe(res => {
+        if (res.code === 200) {
+          this.STATUS_OBJ.forEach(element => {
+            this.progressAllObj[element] = [];
+          });
+          this.getSortList(res.data);
+        }
+      });
+    }
   }
 
 }
