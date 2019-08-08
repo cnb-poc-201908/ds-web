@@ -40,39 +40,30 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table #dt [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
+    <p-table [value]="dataSource" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <th>底盘号</th>
-          <th>客户</th>
-          <th>发票账户</th>
-          <th>联系方式</th>
-          <th>销售位置</th>
-          <th>进程代码</th>
-          <th>销售类型</th>
-          <th>销售员ID</th>
-          <th>预计叫车日期</th>
-          <th>发票日期</th>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
           <th>操作</th>
         </tr>
       </ng-template>
 
       <ng-template pTemplate="body" let-car>
         <tr>
-          <td>
-            <span [ngClass]="car.stockStatus" class="tip"></span>
-          </td>
-          <td>{{car.vehicleChassisNumber}}</td>
-          <td>{{car.productionDate}}</td>
-          <td>{{car.vehicleSeriesCode}}</td>
-          <td>{{car.vehicleModelCode}}</td>
-          <td>{{car.vehicleModelConfig}}</td>
-          <td>{{car.licensePlate}}</td>
-          <td>{{car.model}}</td>
-          <td>{{car.color}}</td>
-          <td>{{car.decoration}}</td>
-          <td>{{car.vehicleChassisNumber}}</td>
-          <td>{{car.storageDate}}</td>
+          <td>{{car.contractId}}</td>
+          <td>{{car.processCode}}</td>
+          <td>{{car.customerId}}</td>
+          <td>{{car.customerName}}</td>
+          <td>{{car.orderNumber}}</td>
+          <td>{{car.orderDate}}</td>
+          <td>{{car.invoiceNumber}}</td>
+          <td>{{car.invoiceDate}}</td>
+          <td>{{car.chassisNumber}}</td>
+          <td>{{car.salesPersonId}}</td>
+          <td>{{car.deliveryDate}}</td>
+          <td>{{car.InvoiceTotal}}</td>
           <td>
             <button class="ds icon-edit icon-btn edit-btn" (click)="onCreate(car)"></button>
           </td>
