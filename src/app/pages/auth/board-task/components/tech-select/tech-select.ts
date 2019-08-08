@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DynamicDialogRef } from 'primeng/api';
+import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
 import { CalendarEvent, CalendarEventTimesChangedEvent } from 'angular-calendar';
 import { Subject } from 'rxjs';
 import { RestService } from 'src/app/services/rest.service';
@@ -27,9 +27,11 @@ export class TechSelect implements OnInit {
 
     constructor(
         public ref: DynamicDialogRef,
+        public config: DynamicDialogConfig,
         private rest: RestService,
     ) { }
     ngOnInit() {
+      console.log(this.config.data);
       this.rest.getStationlist().subscribe(res1=>{
         if (res1.code === 200) {
           this.stations = res1.items;
@@ -87,6 +89,12 @@ export class TechSelect implements OnInit {
       this.refresh.next();
     }
 
+    submit() {
+      const repairOrderId = this.config.data.repairOrderId;
+      const status = ""
+      this.ref.close('car');
+    }
+
     close() {
         this.ref.close('car');
     }
@@ -135,7 +143,6 @@ export class TechSelect implements OnInit {
         this.availableStations = Array.from(set);
       }
 
-      console.log(this.availableStations);
     }
 
 

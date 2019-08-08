@@ -8,7 +8,7 @@
       background-color: #fff;
       ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
         background-color: transparent !important;
-      } 
+      }
       ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active {
         border-bottom: 1px solid #82C600;
       }
@@ -24,18 +24,18 @@
       .tab-wrap{
 
       }
-      .search-wrap {  
+      .search-wrap {
         display: flex;
         justify-content: space-between;
         align-items: center;
-  
+
         section.input-wrap {
           flex: 1;
           .ui-inputtext{
             width: 300px;
           }
         }
-  
+
         section.button-wrap {
           display: flex;
           justify-content: flex-end;
@@ -133,6 +133,7 @@
           ::ng-deep p-card .ui-card:hover{
             border: 1px solid #82C600;
           }
+
         }
 
     }

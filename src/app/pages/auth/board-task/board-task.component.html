@@ -33,44 +33,39 @@
                 <div class="serial-value">{{item.vehiclelicensePlate}}</div>
                 <div class="serial-image">
                   <i class="pi pi-envelope icon-envelop" (click)="showSendMsg($event)"></i>&nbsp;
-                  <i class="pi pi-eye icon-eye"></i>
+                  <!-- <i class="pi pi-eye icon-eye"></i> -->
                 </div>
               </div>
             </p-header>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">预估交车时间</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">
+              <div class="ui-g-12 ui-md-6 ui-lg-6">客户预约交车时间</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
                 {{item.plannedOut | date :'yyyy-MM-dd HH:MM'}}
               </div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">期待交车时间</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">
+              <div class="ui-g-12 ui-md-6 ui-lg-6">预估交车时间</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
                 {{item.dueOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
               </div>
             </div>
+
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">预计出厂时间</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">
-                {{item.plannedOut | date : 'yyyy-MM-dd HH:MM'}}
-              </div>
-            </div>
-            <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">车型</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right" title="{{item.vehicleDescription}}">
+              <div class="ui-g-12 ui-md-6 ui-lg-6">车型</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.vehicleDescription}}">
                 {{item.vehicleDescription}}</div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">车架号</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">{{item.vehicleVin}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">车架号</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vehicleVin}}</div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">SA</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right">{{item.assignedAdvisorName}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">SA</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.assignedAdvisorName}}</div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-5">备注</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-7 item-right" title="{{item.notes}}">{{item.notes}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">备注</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.notes}}">{{item.notes}}</div>
             </div>
           </p-card>
         </div>

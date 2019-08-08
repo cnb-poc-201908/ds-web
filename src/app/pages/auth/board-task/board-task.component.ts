@@ -48,14 +48,14 @@ export class BoardTaskComponent implements OnInit {
   getData(status) {
     // this.rest.getBoardTaskList().subscribe(res=>{
     this.rest.getBoardProgressList().subscribe(res => {
-      if (res.code === 0) {
+      if (res.code === 200) {
         if (status && status != "") {
-          this.dataList = res.data.items.filter(item => {
+          this.dataList = res.data.filter(item => {
             // this.dataList = res.data.filter(item=>{
             return item.status == status && item.checkInDateTime == null;
           });
         } else {
-          this.dataList = res.data.items;
+          this.dataList = res.data;
         }
         // If item has more than 1 job, it means Hot Job
         this.dataList.forEach(item=>{
@@ -84,7 +84,7 @@ export class BoardTaskComponent implements OnInit {
         }
         // If item has more than 1 job, it means Hot Job
         this.dataList.forEach(item => {
-          if (item.jobs && item.jobs.length > 0) {
+          if (item.jobs && item.jobs.length > 1) {
             item.hot = true;
           } else {
             item.hot = false;
@@ -106,7 +106,10 @@ export class BoardTaskComponent implements OnInit {
       header: '派工',
       width: '95%',
       height: '70%',
-      baseZIndex: 10000
+      baseZIndex: 10000,
+      data: {
+        repairOrderId: item.repairOrderId
+      }
     });
 
     ref.onClose.subscribe((car) => {
