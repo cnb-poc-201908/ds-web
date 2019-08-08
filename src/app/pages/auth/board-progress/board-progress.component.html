@@ -1,21 +1,19 @@
 <div class="board-progress">
   <div class="form-wrap">
     <div class="title-wrap">
-      总进度看板
+      进度看板
     </div>
     <div class="search-wrap">
       <section class="input-wrap">
         <div class="ui-g ui-fluid">
           <div class="ui-g-12" style="padding-left: 0;">
-            <span class="ui-float-label">
-              <input id="float-input" type="text" size="30" pInputText>
-              <label for="float-input">查询车牌号/车架号</label>
-            </span>
+              <input [(ngModel)]="inputStr" id="float-input" type="text" size="30" pInputText placeholder="查询车牌号/车架号">
+              <!-- <label for="float-input">查询车牌号/车架号</label> -->
           </div>
         </div>
       </section>
       <section class="button-wrap">
-        <p-button label="搜索" (onClick)="handleClick($event)"></p-button>
+        <p-button label="搜索" (onClick)="search()"></p-button>
       </section>
     </div>
   </div>

@@ -174,10 +174,7 @@ export class RestService {
     return this.httpGet(this.url + `/contract/contracts?${role}=${roleId}&contractStatus=${contractStatus}`);
     // return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
   }
-  // 总进度看板
-  getBoardProgressList(): Observable<any> {
-    return this.httpGet(this.url1 + `/repairOrder/repair-orders`);
-  }
+  
   // 派工看板
   getBoardTaskList(): Observable<any> {
     return this.httpGet(`../../assets/board-task.json`);
@@ -191,4 +188,12 @@ export class RestService {
     return this.httpGet(this.url1 + `/repairOrder/employeeGlist`);
   }
 
+  // SA 总进度看板
+  getBoardProgressList(): Observable<any> {
+    return this.httpGet(this.url1 + `/repair-orders/orders`);
+  }
+  // SA 搜索汽车
+  searchCar(str): Observable<any> {
+    return this.httpGet(this.url1 + `/main/repair-orders/queryRepairOrder/` + str);
+  }
 }

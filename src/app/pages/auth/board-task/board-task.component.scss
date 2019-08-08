@@ -1,7 +1,49 @@
 .board-task{
-    padding: 20px;
+    // padding: 20px;
     width: 100%;
-    height: calc(100vh - 48px);
+    // height: calc(100vh - 56px);
+    .tab-menu{
+      display: flex;
+      padding: 0 20px;
+      background-color: #fff;
+      ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
+        background-color: transparent !important;
+      } 
+      ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active {
+        border-bottom: 1px solid #82C600;
+      }
+      ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-icon {
+        margin-right: 0;
+      }
+      ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+      align-items: center;
+      justify-content: space-between;
+      .tab-wrap{
+
+      }
+      .search-wrap {  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        section.input-wrap {
+          flex: 1;
+          .ui-inputtext{
+            width: 300px;
+          }
+        }
+  
+        section.button-wrap {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin-left: 10px;
+        }
+      }
+    }
     .tabContent{
         width: 100%;
         height: calc(100% - 40px);

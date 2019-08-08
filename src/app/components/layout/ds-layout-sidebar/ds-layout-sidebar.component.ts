@@ -46,7 +46,7 @@ export class DSLayoutSidebarComponent implements OnInit {
       ];
     } else if (user.uId === 'sa') {
       this.items = [
-        { icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sa/board'] },
+        {  label: '进度看板', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sa/board'] },
       ];
     } else {
       this.items = [

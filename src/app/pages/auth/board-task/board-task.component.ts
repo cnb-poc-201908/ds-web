@@ -19,6 +19,7 @@ export class BoardTaskComponent implements OnInit {
   displaySendMessage: boolean = false;
   displayTaskDetail: boolean = false;
   displayDispatch: boolean = false;
+  inputStr: string;
 
   constructor(
     public dialogService: DialogService,
@@ -26,7 +27,7 @@ export class BoardTaskComponent implements OnInit {
   ) { }
 
   tickets: any[];
-  dataList : any[];
+  dataList: any[];
 
   ngOnInit() {
     this.items = [
@@ -45,13 +46,13 @@ export class BoardTaskComponent implements OnInit {
 
   getData(status) {
     // this.rest.getBoardTaskList().subscribe(res=>{
-    this.rest.getBoardProgressList().subscribe(res=>{
+    this.rest.getBoardProgressList().subscribe(res => {
       if (res.code === 0) {
         if (status && status != "") {
-          this.dataList = res.data.items.filter(item=>{
+          this.dataList = res.data.items.filter(item => {
             // this.dataList = res.data.filter(item=>{
-              return item.status == status && item.checkInDateTime == null;
-            });
+            return item.status == status && item.checkInDateTime == null;
+          });
         } else {
           this.dataList = res.data.items;
         }
@@ -59,7 +60,7 @@ export class BoardTaskComponent implements OnInit {
 
 
         // If item has more than 1 job, it means Hot Job
-        this.dataList.forEach(item=>{
+        this.dataList.forEach(item => {
           if (item.jobs && item.jobs.length > 0) {
             item.hot = true;
           } else {
@@ -87,9 +88,9 @@ export class BoardTaskComponent implements OnInit {
 
     ref.onClose.subscribe((car) => {
       if (car) {
-          console.log(car);
+        console.log(car);
       }
-  });
+    });
 
   }
 
@@ -109,6 +110,10 @@ export class BoardTaskComponent implements OnInit {
 
   closeDetail() {
     this.displayTaskDetail = false;
+  }
+
+  search() {
+
   }
 
 }

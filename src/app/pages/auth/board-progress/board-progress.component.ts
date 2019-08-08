@@ -36,6 +36,7 @@ export class BoardProgressComponent implements OnInit {
 
   totalLazyCarsLength: number;
   timeout: any;
+  inputStr: string;
 
   constructor(
     private rest: RestService,
@@ -48,7 +49,7 @@ export class BoardProgressComponent implements OnInit {
 
   getProgressAll() {
     this.rest.getBoardProgressList().subscribe(res => {
-      if (res.code === 0) {
+      if (res.code === 200) {
         this.STATUS_OBJ.forEach(element => {
           this.progressAllObj[element] = [];
         });
@@ -88,6 +89,20 @@ export class BoardProgressComponent implements OnInit {
       arr = val.split('-');
     }
     return arr[2] || '-';
+  }
+
+  search() {
+    // this.inputStr = '111';
+    console.log(this.inputStr);
+    this.rest.searchCar(this.inputStr).subscribe(res => {
+      console.log(res);
+      if (res.code === 200) {
+        this.STATUS_OBJ.forEach(element => {
+          this.progressAllObj[element] = [];
+        });
+        this.getSortList(res.data.items);
+      }
+    });
   }
 
 }
