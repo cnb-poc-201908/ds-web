@@ -79,7 +79,7 @@ export class SiginComponent implements OnInit {
     } else if ((this.user.uId === '002' || this.user.uId === '003' || this.user.uId === '004' || this.user.uId === '005') && this.user.upwd === '111') {
       console.log('login success');
       this.router.navigateByUrl('/sales/stock');
-    } else if (this.user.uId === 'sa' && this.user.upwd === '111') {
+    } else if (this.user.uId === '006' && this.user.upwd === '111') {
       this.router.navigateByUrl('/sa/board');
     } else {
       console.log('login failure');
