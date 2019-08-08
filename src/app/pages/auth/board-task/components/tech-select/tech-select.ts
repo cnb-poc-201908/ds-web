@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicDialogRef} from 'primeng/api';
+import { DynamicDialogRef } from 'primeng/api';
 import { CalendarEvent, CalendarEventTimesChangedEvent } from 'angular-calendar';
 import { Subject } from 'rxjs';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
     templateUrl: 'tech-select.html',
@@ -10,111 +11,60 @@ import { Subject } from 'rxjs';
 
 export class TechSelect implements OnInit {
 
-    dataList : any[];
+    dataList : any[] = [];
+    stations : any[];
+    teams : any[];
 
     viewDate: Date = new Date();
     events: Array<CalendarEvent<{ id: number }>>;
     refresh: Subject<any> = new Subject();
 
     defaultSelectedTeam : any;
-    defaultSelectedSchedule : any;
-    defaultSelectedStation : any;
+    defaultStations : any[] = [];
+    availableStations : any[] = [];
 
     currentEvent : CalendarEvent[] = [];
 
     constructor(
-        public ref: DynamicDialogRef
+        public ref: DynamicDialogRef,
+        private rest: RestService,
     ) { }
     ngOnInit() {
-      this.dataList = [
-        {
-          name : "技师组1",
-          skill : "钣金",
-          default_stations : ["S1", "S2"],
-          dailyTotalHours : 7,
-          monthlyTotalHours : 120,
-          dailyHotJobs : 2,
-          monthlyHotJobs : 5,
-          effective : 80,
-          used_time : [
-            {startTime: "8:30", endTime: "9:30"},
-            {startTime: "10:00", endTime: "10:30"},
-            {startTime: "10:30", endTime: "11:00"},
-          ],
-          stations : [
-            {station_No : 'S1', isused : true},
-            {station_No : 'S2', isused : false},
-            {station_No : 'S3', isused : true},
-            {station_No : 'S4', isused : true},
-            {station_No : 'S5', isused : true},
-            {station_No : 'S6', isused : false},
-          ]
-        },
-        {
-          name : "技师组2",
-          skill : "钣金",
-          default_stations : ["S3", "S4"],
-          dailyTotalHours : 1,
-          monthlyTotalHours : 160,
-          dailyHotJobs : 6,
-          monthlyHotJobs : 10,
-          effective : 78,
-          used_time : [
-            {startTime: "9:00", endTime: "9:30"},
-            {startTime: "10:00", endTime: "10:30"},
-          ],
-          stations : [
-            {station_No : 'S1', isused : true},
-            {station_No : 'S2', isused : true},
-            {station_No : 'S3', isused : true},
-            {station_No : 'S4', isused : true},
-            {station_No : 'S5', isused : false},
-            {station_No : 'S6', isused : false},
-          ]
-        },
-        {
-          name : "技师组3",
-          skill : "钣金",
-          default_stations : ["S5", "S6"],
-          dailyTotalHours : 3,
-          monthlyTotalHours : 100,
-          dailyHotJobs : 8,
-          monthlyHotJobs : 13,
-          effective : 85,
-          used_time : [
-            {startTime: "9:30", endTime: "11:30"},
-          ],
-          stations : [
-            {station_No : 'S1', isused : false},
-            {station_No : 'S2', isused : false},
-            {station_No : 'S3', isused : true},
-            {station_No : 'S4', isused : true},
-            {station_No : 'S5', isused : false},
-            {station_No : 'S6', isused : false},
-          ]
+      this.rest.getStationList().subscribe(res1=>{
+        if (res1.code === 200) {
+          this.stations = res1.items;
+          this.rest.getEmployeeGlist().subscribe(res2=>{
+            this.teams = res2.employGroupData;
+
+            this.teams.forEach(item=>{
+
+              this.defaultStations = this.stations.filter(st=>{
+                return item.groupid === st.techid;
+              });
+
+              this.dataList.push({
+                name : item.groupname ? item.groupname : item.Desc,
+                skill : item.skills == "A" ? "机修" : "钣喷",
+                dailyTotalHours : item.current_day_hours,
+                monthlyTotalHours : item.current_month_hours,
+                dailyHotJobs : item.current_day_big_task,
+                monthlyHotJobs : item.current_month_big_task,
+                effective : item.effort,
+                used_time : item.used_time,
+                default_stations :this.defaultStations,
+                selected : false,
+              });
+            })
+
+            this.dataList[0].selected = true;
+            this.defaultSelectedTeam = this.dataList[0];
+
+            this.drawEvent();
+            this.drawStations();
+
+          })
         }
-      ]
-
-      this.defaultSelectedTeam = this.dataList[0];
-
-      this.defaultSelectedTeam.used_time.forEach(item=>{
-        this.currentEvent.push({
-          title : '已预订',
-          color: {primary: '#e3bc08', secondary: '#FDF1BA'},
-          start: this.getTodayTime(item.startTime),
-          end : this.getTodayTime(item.endTime),
-          meta: {}
-        })
-      })
-
-      this.currentEvent.push({
-        title : '当前派工',
-        color: {primary: '#1e90ff', secondary: '#D1E8FF'},
-        start: this.getTodayTime("14:00"),
-        end : this.getTodayTime("15:00"),
-        meta: {},
-        draggable : true,
-      })
+      });
 
     }
 
@@ -139,5 +89,63 @@ export class TechSelect implements OnInit {
 
     close() {
         this.ref.close('car');
+    }
+
+    drawEvent() {
+      this.currentEvent = [];
+      this.defaultSelectedTeam.used_time.forEach(item=>{
+        this.currentEvent.push({
+          title : '已预订',
+          color: {primary: '#e3bc08', secondary: '#FDF1BA'},
+          start: this.getTodayTime(item.startTime),
+          end : this.getTodayTime(item.endTime),
+          meta: {}
+        })
+      })
+
+      this.currentEvent.push({
+        title : '当前派工',
+        color: {primary: '#1e90ff', secondary: '#D1E8FF'},
+        start: this.getTodayTime("8:00"),
+        end : this.getTodayTime("8:15"),
+        meta: {},
+        draggable : true,
+      });
+
+      this.refresh.next();
+    }
+
+    drawStations() {
+      this.defaultStations = this.defaultSelectedTeam.default_stations;
+      let availables = this.stations.filter(item=>{
+        return item.status === 'Y';
+      });
+      let temp = [...this.defaultStations, ...availables];
+      if (temp && temp.length > 0) {
+        temp.forEach(item=>{
+          item.selected = false;
+        });
+        for (let i = 0; i < temp.length; i ++) {
+          if(temp[i].status == 'Y') {
+            temp[i].selected = true;
+            break;
+          }
+        }
+        let set = new Set(temp);
+        this.availableStations = Array.from(set);
+      }
+
+      console.log(this.availableStations);
+    }
+
+
+    selectTeam(item) {
+      this.dataList.forEach(res=>{
+        res.selected = false;
+      });
+      item.selected = true;
+      this.defaultSelectedTeam = item;
+      this.drawEvent();
+      this.drawStations();
     }
 }

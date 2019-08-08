@@ -37,7 +37,7 @@ export class ContractDoneComponent implements OnInit {
       { field: 'chassisNumber', header: '车架号' },
       { field: 'salesPersonId', header: '销售员号' },
       { field: 'deliveryDate', header: '预计交付日期' },
-      { field: 'InvoiceTotal', header: '发票总金额' },
+      { field: 'invoiceTotal', header: '发票总金额' },
     ];
     this.getContractList();
   }

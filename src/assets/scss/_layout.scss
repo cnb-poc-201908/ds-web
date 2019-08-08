@@ -137,3 +137,39 @@ app-retail {
     padding: .25em 1em !important;
   }
 }
+.pi.pi-calendar {
+  font-family: 'ds' !important;
+
+  &:before {
+    content: '\e664';
+  }
+}
+.ui-button.ui-calendar-button {
+  // display: none;
+  float: right;
+  background-color: #fff !important;
+  border: 0 none !important;
+  margin-top: -32px;
+  margin-right: 2px;
+  width: 30px !important;
+  height: 30px !important;
+  color: #ccc !important;
+
+  &:focus {
+    outline: 0 none;
+    box-shadow: none !important;
+  }
+}
+.ui-calendar.ui-calendar-w-btn input.ui-inputtext {
+  width: 100% !important;
+  border-radius: 3px !important;
+  padding-right: 20px;
+  border-right: 1px solid #a6a6a6 !important;
+
+  &:hover {
+    border-right: 1px solid #212121 !important;
+  }
+  &:focus {
+    border-right: 1px solid #82c600 !important;
+  }
+}

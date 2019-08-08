@@ -174,18 +174,17 @@ export class RestService {
     return this.httpGet(this.url + `/contract/contracts?${role}=${roleId}&contractStatus=${contractStatus}`);
     // return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
   }
-  
-  // 派工看板
-  getBoardTaskList(): Observable<any> {
-    return this.httpGet(`../../assets/board-task.json`);
-  }
-  // 获取所有工位
-  getStationList(): Observable<any> {
-    return this.httpGet(this.url1 + `/repairOrder/stationlist`);
-  }
-  // 获取所有技师组
+
+  // 调度总看板
   getEmployeeGlist(): Observable<any> {
     return this.httpGet(this.url1 + `/repairOrder/employeeGlist`);
+  }
+  getStationlist(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/stationlist`);
+  }
+
+  getBoardTaskList(): Observable<any> {
+    return this.httpGet(`../../assets/board-task.json`);
   }
 
   // SA 总进度看板

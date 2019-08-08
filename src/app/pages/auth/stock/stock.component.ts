@@ -41,6 +41,11 @@ export class StockComponent implements OnInit {
   storageDate: Date;
 
   licensePlate: string = '';
+  vehicleSeriesCode: string = '';
+  vehicleModelCode: string = '';
+  model: string = '';
+  color: string = '';
+  vehicleChassisNumber: string = '';
 
   constructor(
     private rest: RestService
@@ -69,6 +74,9 @@ export class StockComponent implements OnInit {
 
   save() {
     console.log('save', this.car);
+    if (!this.stockStatus) {
+      this.stockStatus =  {code: '', text: ''};
+    }
     this.rest.editStock(this.stockId, this.stockStatus.code, format(this.storageDate, 'YYYY-MM-DD'), this.licensePlate).subscribe(
       result => {
         console.log('success');
@@ -92,11 +100,16 @@ export class StockComponent implements OnInit {
   }
 
   onEdit(data) {
+    this.color =data.color;
+    this.vehicleSeriesCode = data.vehicleSeriesCode;
+    this.vehicleModelCode = data.vehicleModelCode;
+    this.model = data.model;
+    this.vehicleChassisNumber = data.vehicleChassisNumber;
     this.stockId = data.stockId;
     this.storageDate = new Date(data.storageDate);
     this.licensePlate = data.licensePlate;
     const i = this.statusList.find(item => item.text === data.status);
-    this.stockStatus = i ? i : this.stockStatus;
+    this.stockStatus = i ? i : {code: '', text: ''};
     this.displayDialog = true;
   }
 

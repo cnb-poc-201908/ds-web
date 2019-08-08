@@ -53,16 +53,16 @@
         <tr>
           <td>{{car.contractId}}</td>
           <td>{{car.processCode}}</td>
-          <td>{{car.customerId}}</td>
-          <td>{{car.customerName}}</td>
-          <td>{{car.orderNumber}}</td>
-          <td>{{car.orderDate}}</td>
-          <td>{{car.invoiceNumber}}</td>
-          <td>{{car.invoiceDate}}</td>
-          <td>{{car.chassisNumber}}</td>
-          <td>{{car.salesPersonId}}</td>
-          <td>{{car.deliveryDate}}</td>
-          <td>{{car.InvoiceTotal}}</td>
+          <td>{{car.customerInfo.customerId}}</td>
+          <td>{{car.customerInfo.customerName}}</td>
+          <td>{{car.basicInfo.orderNumber}}</td>
+          <td>{{car.basicInfo.orderDate}}</td>
+          <td>{{car.basicInfo.invoiceNumber}}</td>
+          <td>{{car.basicInfo.invoiceDate}}</td>
+          <td>{{car.basicInfo.chassisNumber}}</td>
+          <td>{{car.basicInfo.salesPersonId}}</td>
+          <td>{{car.basicInfo.deliveryDate}}</td>
+          <td>{{car.basicInfo.invoiceTotal | currency:'￥'}}</td>
         </tr>
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">

@@ -39,7 +39,8 @@ export class BoardTaskComponent implements OnInit {
 
     this.activeIndex = 0;
     this.activeItem = this.items[0];
-    this.getData("");
+    // this.getData("");
+    this.getMockData("");
 
     // this.dispatch({});
   }
@@ -56,9 +57,31 @@ export class BoardTaskComponent implements OnInit {
         } else {
           this.dataList = res.data.items;
         }
+        // If item has more than 1 job, it means Hot Job
+        this.dataList.forEach(item=>{
+          if (item.jobs && item.jobs.length > 0) {
+            item.hot = true;
+          } else {
+            item.hot = false;
+          }
+        });
 
+        console.log(this.dataList);
+      }
+    });
+  }
 
-
+  getMockData(status) {
+    this.rest.getBoardTaskList().subscribe(res=>{
+      if (res.code === 0) {
+        if (status && status != "") {
+          this.dataList = res.data.filter(item=>{
+            // this.dataList = res.data.filter(item=>{
+              return item.status == status && item.checkInDateTime == null;
+            });
+        } else {
+          this.dataList = res.data;
+        }
         // If item has more than 1 job, it means Hot Job
         this.dataList.forEach(item => {
           if (item.jobs && item.jobs.length > 0) {

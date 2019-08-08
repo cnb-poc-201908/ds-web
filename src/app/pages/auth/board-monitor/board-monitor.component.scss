@@ -45,18 +45,17 @@
       overflow-y: auto;
 
       .car-warp {
-        padding: 20px 0;
+        padding: 20px;
         color: #fff;
         background-image: linear-gradient(135deg, #00BAB6 0%, #92EEEE 100%);
         border-radius: 2px;
         display: flex;
         justify-content: space-between;
 
-        div {
+        .info {
           flex: 1;
           display: flex;
           flex-direction: column;
-          align-items: center;
           height: 100%;
 
           .num {
@@ -68,12 +67,19 @@
             font-size: 16px;
             line-height: 22px;
           }
+        }
+
+        .image {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          height: 100%;
   
-          .image {
+          img {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            // display: block;
             width: 65px;
             height: 100%;
           }
@@ -95,10 +101,15 @@
       .tech-warp {
         opacity: 0.98;
         background: #F2F4F8;
-        padding: 20px 30px;
+        padding: 20px;
 
         .title {
           font-size: 18px;
+          overflow: hidden;
+          /*自动隐藏文字*/
+          text-overflow: ellipsis;
+          /*文字隐藏后添加省略号*/
+          white-space: nowrap;
         }
 
         .type {
@@ -112,12 +123,13 @@
           justify-content: flex-end;
 
           div {
-            width: 20px;
+            min-width: 20px;
             height: 20px;
             margin-left: 20px;
             text-align: center;
             line-height: 30px;
             background: url('../../../../assets/image/board_monitor/tech_station.svg');
+            background-size: cover;
           }
         }
 
@@ -140,6 +152,7 @@
             div {
               width: 100%;
               text-align: right;
+              line-height: 30px;
             }
           }
         }
@@ -176,8 +189,11 @@
 }
 
 @media (max-width: 1200px) {
+  .board-monitor .monitor-wrap .content-wrap .car-warp {
+    padding: 20px 10px;
+  }
   .board-monitor .monitor-wrap .content-wrap .tech-warp {
-    padding: 20px 15px;
+    padding: 20px 10px;
     .station div {
       margin-left: 15px;
     }
