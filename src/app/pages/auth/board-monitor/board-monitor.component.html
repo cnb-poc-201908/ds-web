@@ -72,11 +72,11 @@
             <div class="ui-g-6" *ngFor="let item of employeeGlist; let i = index;">
               <div class="tech-warp">
                 <div class="ui-g">
-                  <div class="ui-g-6">
+                  <div class="ui-g-7">
                     <div class="title">{{item.groupname || '-'}}</div>
                     <div class="type">{{formatSkill(item.skills) || '-'}}</div>
                   </div>
-                  <div class="ui-g-6 station" *ngIf="stationObj[item.groupid]">
+                  <div class="ui-g-5 station" *ngIf="stationObj[item.groupid]">
                     <div *ngFor="let station of stationObj[item.groupid]"><span>{{station || '-'}}</span></div>
                   </div>
                 </div>
