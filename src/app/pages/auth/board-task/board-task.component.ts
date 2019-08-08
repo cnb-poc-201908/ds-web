@@ -39,8 +39,8 @@ export class BoardTaskComponent implements OnInit {
 
     this.activeIndex = 0;
     this.activeItem = this.items[0];
-    // this.getData("");
-    this.getMockData("");
+    this.getData("CREATED");
+    // this.getMockData("");
 
     // this.dispatch({});
   }
@@ -65,8 +65,6 @@ export class BoardTaskComponent implements OnInit {
             item.hot = false;
           }
         });
-
-        console.log(this.dataList);
       }
     });
   }
@@ -91,7 +89,6 @@ export class BoardTaskComponent implements OnInit {
           }
         });
 
-        console.log(this.dataList);
       }
     });
   }
@@ -112,9 +109,9 @@ export class BoardTaskComponent implements OnInit {
       }
     });
 
-    ref.onClose.subscribe((car) => {
-      if (car) {
-        console.log(car);
+    ref.onClose.subscribe((res) => {
+      if (res == 'submit') {
+        this.getData("CREATED");
       }
     });
 

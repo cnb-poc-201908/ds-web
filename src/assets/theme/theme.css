@@ -2123,6 +2123,8 @@ body .ui-table .ui-table-tbody > tr > td {
   border-bottom: 1px solid #c8c8c8;
   border-top: 1px solid #c8c8c8;
   text-align: center;
+  word-wrap: break-word;
+  word-break: break-word;
   /* border-top: 1px so\ */
 }
 

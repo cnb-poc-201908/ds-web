@@ -136,6 +136,15 @@ app-retail {
   .ui-button.ui-button-text-only .ui-button-text {
     padding: .25em 1em !important;
   }
+  table {
+    .ui-button {
+      cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
 }
 .pi.pi-calendar {
   font-family: 'ds' !important;

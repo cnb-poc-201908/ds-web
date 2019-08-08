@@ -10,7 +10,7 @@
           </p-calendar>
         </div>
         <div class="ui-g-7">
-          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询姓名/手机号/底盘号/…">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询合同号/客户号/姓名/…">
         </div>
       </div>
     </section>
@@ -124,7 +124,7 @@
   </div>
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton label="确定"></button>
+      <button type="button" pButton label="确定" (click)="cancel()"></button>
     </div>
   </p-footer>
 </p-dialog>
