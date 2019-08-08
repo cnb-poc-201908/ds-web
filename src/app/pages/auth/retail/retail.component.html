@@ -85,7 +85,8 @@
         <label for="brand">三包发票日期</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+        <p-calendar placeholder="选择时间" [showIcon]="true">
+        </p-calendar>
       </div>
     </div>
     <div class="ui-g-12">
@@ -93,7 +94,7 @@
         <label for="vin">出席交车 SA</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+        <p-dropdown [options]="sa"></p-dropdown>
       </div>
     </div>
     <div class="ui-g-12">
@@ -101,7 +102,7 @@
         <label for="brand">交易类型</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="brand" [(ngModel)]="licensePlate" />
+        <p-dropdown [options]="dealType"></p-dropdown>
       </div>
     </div>
     <div class="ui-g-12">
