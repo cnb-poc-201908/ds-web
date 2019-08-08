@@ -46,6 +46,9 @@
           <th *ngFor="let col of columns">
             {{col.header}}
           </th>
+          <th>
+            操作
+          </th>
         </tr>
       </ng-template>
 
@@ -62,6 +65,9 @@
           <td>{{car.basicInfo.salesPersonId}}</td>
           <td>{{car.basicInfo.deliveryDate}}</td>
           <td>{{car.basicInfo.invoiceTotal | currency:'￥'}}</td>
+          <td>
+            <button class="ds icon-print icon-btn" (click)="onFile()" pTooltip="打印账单" style="font-size:18px"></button>
+          </td>
         </tr>
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">

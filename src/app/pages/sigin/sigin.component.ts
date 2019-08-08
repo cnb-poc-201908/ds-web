@@ -66,7 +66,7 @@ export class SiginComponent implements OnInit {
 
       case '004':
         this.user.role = 'regionId';
-        this.user.roleId = 'RG-10001';
+        this.user.roleId = 'RG-10002';
         break;
 
       default:

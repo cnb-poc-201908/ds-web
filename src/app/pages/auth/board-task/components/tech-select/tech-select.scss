@@ -19,6 +19,11 @@
       }
       .title {
         font-size: 18px;
+        overflow: hidden;
+        /*自动隐藏文字*/
+        text-overflow: ellipsis;
+        /*文字隐藏后添加省略号*/
+        white-space: nowrap;
       }
 
       .type {
@@ -32,43 +37,15 @@
         justify-content: flex-end;
 
         div {
-          width: 20px;
+          min-width: 20px;
           height: 20px;
           margin-left: 20px;
           text-align: center;
           line-height: 30px;
           background: url('../../../../../../assets/image/board_monitor/tech_station.svg');
+          background-size: cover;
         }
       }
-
-      .station-warp {
-        padding: 15px 20px;
-        background: #F3F3F3;
-        border: 1px solid #F3F3F3;
-        border-radius: 2px;
-        text-align: center;
-
-        &.free {
-          background: #FFFFFF;
-          border: 1px solid #82C600;
-        }
-        &.selected {
-          color : #FFFFFF;
-          background: #82C600;
-          border: 1px solid #82C600;
-        }
-
-      }
-
-      // .station-warp.free {
-      //   background: #FFFFFF;
-      //   border: 1px solid #82C600;
-      // }
-
-      // .station-warp.selected {
-      //   color : #FFFFFF;
-      //   background: #82C600;
-      // }
 
       .bottom {
         font-size: 14px;
@@ -191,6 +168,23 @@
         background: #FFFFFF;
         border: 1px solid #82C600;
       }
+      .station-warp.selected {
+        color : #FFFFFF;
+        background: #82C600;
+        border: 1px solid #82C600;
+      }
     }
 
+}
+
+@media (max-width: 1200px) {
+  .board-monitor .monitor-wrap .content-wrap .car-warp {
+    padding: 20px 10px;
+  }
+  .board-monitor .monitor-wrap .content-wrap .tech-warp {
+    padding: 20px 10px;
+    .station div {
+      margin-left: 15px;
+    }
+  }
 }

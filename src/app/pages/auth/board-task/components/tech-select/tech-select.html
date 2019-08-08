@@ -5,11 +5,11 @@
           <div class="tech-warp" (click)="selectTeam(item)"
             [ngClass]="{'selected': item.selected}">
             <div class="ui-g">
-              <div class="ui-g-6">
+              <div class="ui-g-7">
                 <div class="title">{{item.name}}</div>
                 <div class="type">{{item.skill}}</div>
               </div>
-              <div class="ui-g-6 station">
+              <div class="ui-g-5 station">
                 <div *ngFor="let st of item.default_stations"><span>{{st.stationid}}</span></div>
               </div>
             </div>
@@ -57,7 +57,7 @@
                   <img src="../../../../../../assets/image/board_monitor/station.svg">
                 </div>
                 <div>
-                  {{item.stationid}} - {{item.status}} - {{item.selected}}
+                  {{item.stationid}}
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@
           <button pButton icon="pi" label="取消" (click)="close()" class="ui-button-secondary"></button>
         </div>
         <div class="ui-g-1" style="text-align: right">
-          <button pButton icon="pi" label="确认"></button>
+          <button pButton icon="pi" (click)="submit()" label="确认"></button>
         </div>
     </div>
 
