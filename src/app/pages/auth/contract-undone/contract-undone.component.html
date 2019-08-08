@@ -63,7 +63,7 @@
           <td>{{car.basicInfo.deliveryDate}}</td>
           <td>{{car.basicInfo.invoiceTotal | currency:'￥'}}</td>
           <td>
-            <button class="ds icon-document_plus icon-btn edit-btn" (click)="onCreate(car)"></button>
+            <button class="ds icon-document_plus icon-btn edit-btn" (click)="onCreate(car)" pTooltip="创建合同"></button>
           </td>
         </tr>
       </ng-template>
