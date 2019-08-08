@@ -74,7 +74,7 @@ export class SiginComponent implements OnInit {
     }
     if (this.user.uId === '001' && this.user.upwd === '111') {
       console.log('login success');
-      this.router.navigateByUrl('/board-progress');
+      this.router.navigateByUrl('/board-monitor');
       // tslint:disable-next-line:max-line-length
     } else if ((this.user.uId === '002' || this.user.uId === '003' || this.user.uId === '004' || this.user.uId === '005') && this.user.upwd === '111') {
       console.log('login success');
