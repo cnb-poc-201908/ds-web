@@ -53,7 +53,7 @@ export class BoardProgressComponent implements OnInit {
         this.STATUS_OBJ.forEach(element => {
           this.progressAllObj[element] = [];
         });
-        this.getSortList(res.data.items);
+        this.getSortList(res.data);
       }
     });
   }

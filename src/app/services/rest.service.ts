@@ -189,7 +189,7 @@ export class RestService {
 
   // SA 总进度看板
   getBoardProgressList(): Observable<any> {
-    return this.httpGet(this.url1 + `/repair-orders/orders`);
+    return this.httpGet(this.url1 + `/main/repair-orders/orders`);
   }
   // SA 搜索汽车
   searchCar(str): Observable<any> {
