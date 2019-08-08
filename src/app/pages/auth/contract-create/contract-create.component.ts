@@ -84,9 +84,9 @@ export class ContractCreateComponent implements OnInit {
     { code: '1', text: '大客户销售' },
   ];
   deckList = [
-    { code: '1', text: '帽子' },
-    { code: '1', text: '眼睛' },
-    { code: '1', text: '书包' }
+    { code: '1', text: 'hat' },
+    { code: '1', text: 'glasses' },
+    { code: '1', text: 'bag' }
   ];
   dealerList = [
     { code: '1', text: 'Radio control Oceania' },
@@ -170,10 +170,10 @@ export class ContractCreateComponent implements OnInit {
         this.delete1 = false;
         break;
       case 2:
-        this.delete2 = false;
+        this.deckExpandFlag = false;
         break;
       case 3:
-        this.delete3 = false;
+        this.dealerExpandFlag = false;
         break;
       case 4:
         this.colorExpandFlag = false;
@@ -182,7 +182,7 @@ export class ContractCreateComponent implements OnInit {
         this.delete5 = false;
         break;
       case 6:
-        this.delete6 = false;
+        this.firmExpandFlag = false;
         break;
       case 7:
         this.delete7 = false;
