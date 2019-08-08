@@ -45,28 +45,38 @@
       overflow-y: auto;
 
       .car-warp {
-        padding: 20px;
+        padding: 20px 0;
         color: #fff;
         background-image: linear-gradient(135deg, #00BAB6 0%, #92EEEE 100%);
         border-radius: 2px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
 
-        .num {
-          font-size: 60px;
-          line-height: 70px;
-        }
+        div {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 100%;
 
-        .label {
-          font-size: 16px;
-          line-height: 22px;
-        }
-
-        .image {
-          display: block;
-          width: 65px;
-          height: 63px
+          .num {
+            font-size: 60px;
+            line-height: 70px;
+          }
+  
+          .label {
+            font-size: 16px;
+            line-height: 22px;
+          }
+  
+          .image {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // display: block;
+            width: 65px;
+            height: 100%;
+          }
         }
       }
 
@@ -126,24 +136,50 @@
             justify-content: space-between;
             align-items: flex-end;
             height: 100%;
+
+            div {
+              width: 100%;
+              text-align: right;
+            }
           }
         }
       }
 
       .station-warp {
-        padding: 15px 20px;
-        background: #F3F3F3;
-        border: 1px solid #F3F3F3;
+        padding: 15px 0;
+        background: #DCDCDC;
+        border: 1px solid #DCDCDC;
         border-radius: 2px;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+          flex: 1;
+        }
       }
 
-      .station-warp.free {
+      .station-warp.free-select {
         background: #FFFFFF;
+        color: #82C600;
         border: 1px solid #82C600;
+      }
+
+      .station-warp.feature-select {
+        background: #F3F3F3;
+        border: 1px solid #F3F3F3;
       }
     }
 
   }
 
+}
+
+@media (max-width: 1200px) {
+  .board-monitor .monitor-wrap .content-wrap .tech-warp {
+    padding: 20px 15px;
+    .station div {
+      margin-left: 15px;
+    }
+  }
 }

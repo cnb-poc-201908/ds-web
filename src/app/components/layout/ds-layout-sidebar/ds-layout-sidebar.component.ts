@@ -41,8 +41,8 @@ export class DSLayoutSidebarComponent implements OnInit {
     const user: User = JSON.parse(userStr);
     if (user.uId === '001') {
       this.items = [
-        { icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-monitor'] },
-        { icon: 'ds icon-maintain', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-task'] },
+        { label: '调度总看版', icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-monitor'] },
+        { label: '派工', icon: 'ds icon-maintain', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-task'] },
       ];
     } else {
       this.items = [

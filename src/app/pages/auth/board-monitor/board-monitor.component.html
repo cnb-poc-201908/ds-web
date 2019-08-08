@@ -75,9 +75,10 @@
         <div class="content-wrap">
           <div class="ui-g">
             <div class="ui-g-3" *ngFor="let item of [1,2,3,4,5]; let i = index;">
-              <div class="station-warp" [ngClass]="{'free': i === 2}">
+              <div class="station-warp" [ngClass]="{'free-select': i === 2, 'feature-select': i === 4}">
                 <div>
-                  <img src="../../../../assets/image/board_monitor/station.svg">
+                  <img *ngIf="i !== 2"  src="../../../../assets/image/board_monitor/station.svg">
+                  <img *ngIf="i === 2" src="../../../../assets/image/board_monitor/free_station.svg">
                 </div>
                 <div>
                   工位{{i+1}}
