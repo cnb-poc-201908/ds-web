@@ -13,7 +13,7 @@ app-ds-layout-header {
   @include flex();
 }
 app-ds-layout-sidebar {
-  width: 150px;
+  width: 120px;
   position: relative;
   z-index: 1;
 }
@@ -129,5 +129,11 @@ app-home {
 
   .ui-dropdown-label {
     text-align: left;
+  }
+}
+
+app-retail {
+  .ui-button.ui-button-text-only .ui-button-text {
+    padding: .25em 1em !important;
   }
 }

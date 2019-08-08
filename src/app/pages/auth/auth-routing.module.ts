@@ -23,7 +23,8 @@ const routes: Routes = [
       { path: 'board-monitor', loadChildren: './board-monitor/board-monitor.module#BoardMonitorModule', canActivate: [BoardGuard] },
       // tslint:disable-next-line:max-line-length
       { path: 'sales/contract-create', loadChildren: './contract-create/contract-create.module#ContractCreateModule', canActivate: [StockGuard] },
-      { path: 'sales/retail', loadChildren: './retail/retail.module#RetailModule', canActivate: [StockGuard] }
+      { path: 'sales/retail', loadChildren: './retail/retail.module#RetailModule', canActivate: [StockGuard] },
+      { path: 'sales/report', loadChildren: './report/report.module#ReportModule', canActivate: [StockGuard] }
     ]
   }
 ];
