@@ -54,8 +54,8 @@
         <tr>
           <td>{{car.contractId}}</td>
           <td>{{car.processCode}}</td>
-          <td>{{car.customerId}}</td>
-          <td>{{car.customerName}}</td>
+          <td>{{car.customerInfo.customerId}}</td>
+          <td>{{car.customerInfo.customerName}}</td>
           <td>{{car.orderNumber}}</td>
           <td>{{car.orderDate}}</td>
           <td>{{car.invoiceNumber}}</td>
@@ -65,7 +65,7 @@
           <td>{{car.deliveryDate}}</td>
           <td>{{car.InvoiceTotal}}</td>
           <td>
-            <button class="ds icon-edit icon-btn edit-btn" (click)="onCreate(car)"></button>
+            <button class="ds icon-document_plus icon-btn edit-btn" (click)="onCreate(car)"></button>
           </td>
         </tr>
       </ng-template>
