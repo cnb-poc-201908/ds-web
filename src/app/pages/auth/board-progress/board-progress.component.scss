@@ -20,6 +20,20 @@
 
     .search-wrap {
       flex: 2;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      section.input-wrap {
+        flex: 1;
+      }
+
+      section.button-wrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
     }
   }
 
@@ -75,8 +89,8 @@
             padding: 16px 10px 0 10px;
 
             .card-content {
-                height: 100%;
-                overflow-y: auto;
+              height: 100%;
+              overflow-y: auto;
             }
           }
         }
@@ -118,8 +132,8 @@
         padding: 16px 10px 0 10px;
 
         .card-content {
-            height: 100%;
-            overflow-y: auto;
+          height: 100%;
+          overflow-y: auto;
         }
       }
     }
@@ -172,15 +186,18 @@
     border: 1px solid transparent;
 
     .chassis-number {
-        color: #fff;
-      }
+      color: #fff;
+    }
   }
+
   .card-wrap.blue:hover {
     background-color: #0062FF;
   }
+
   .card-wrap.purple:hover {
     background-color: #8A3FFC;
   }
+
   .card-wrap.red:hover {
     background-color: #FB4B53;
   }

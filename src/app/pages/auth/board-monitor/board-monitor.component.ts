@@ -9,10 +9,10 @@ import {CardModule} from 'primeng/card';
 export class BoardMonitorComponent implements OnInit {
 
   itemList = [
-    {title: '待派工', num: '4'},
-    {title: '维修中', num: '4'},
-    {title: '增项', num: '4'},
-    {title: '待交车', num: '8'}
+    {label: '待派工', class: 'green', num: '26', img: '../../../../assets/image/board_monitor/waiting_work.svg'},
+    {label: '维修中', class: 'purple', num: '30', img: '../../../../assets/image/board_monitor/maintenance.svg'},
+    {label: '增项', class: 'red', num: '30', img: '../../../../assets/image/board_monitor/addition.svg'},
+    {label: '待交车', class: 'blue', num: '16', img: '../../../../assets/image/board_monitor/waiting_delivery.svg'}
   ];
 
   constructor() { }

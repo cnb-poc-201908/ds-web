@@ -4,20 +4,27 @@
       总进度看板
     </div>
     <div class="search-wrap">
-      <div class="ui-g ui-fluid">
-        <div class="ui-g-12" style="padding: 0;">
-          <span class="ui-float-label">
-            <input id="float-input" type="text" size="30" pInputText>
-            <label for="float-input">查询车牌号/车架号</label>
-          </span>
+      <section class="input-wrap">
+        <div class="ui-g ui-fluid">
+          <div class="ui-g-12" style="padding-left: 0;">
+            <span class="ui-float-label">
+              <input id="float-input" type="text" size="30" pInputText>
+              <label for="float-input">查询车牌号/车架号</label>
+            </span>
+          </div>
         </div>
-      </div>
+      </section>
+      <section class="button-wrap">
+        <p-button label="搜索" (onClick)="handleClick($event)"></p-button>
+      </section>
     </div>
   </div>
   <div class="progress-wrap">
     <div class="maintain-wrap">
       <div class="title-wrap">
-        <div class="text">维修区<span>（{{progressAllObj.CREATED.length + progressAllObj.CHECKEDIN.length + progressAllObj.WORKSTARTED.length}}）</span></div>
+        <div class="text">
+          维修区<span>（{{progressAllObj.CREATED.length + progressAllObj.CHECKEDIN.length + progressAllObj.WORKSTARTED.length}}）</span>
+        </div>
         <!-- <div class="icon"></div> -->
       </div>
       <div class="content-wrap">
