@@ -90,13 +90,18 @@ export class TechSelect implements OnInit {
     }
 
     submit() {
-      const repairOrderId = this.config.data.repairOrderId;
-      const status = ""
-      this.ref.close('car');
+      const param = {
+        repairOrderId : this.config.data.repairOrderId,
+        status : "CHECKEDIN",
+      }
+      this.rest.updateRepairOrder(param).subscribe(res=>{
+        console.log(JSON.stringify(res));
+         this.ref.close('submit');
+      })
     }
 
     close() {
-        this.ref.close('car');
+        this.ref.close('close');
     }
 
     drawEvent() {
