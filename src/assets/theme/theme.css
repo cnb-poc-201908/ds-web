@@ -3784,7 +3784,7 @@ body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):not(.ui-s
 }
 
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):not(.ui-state-disabled):hover .ui-menuitem-link .ui-menuitem-text {
-  color: #1ea04c;
+  color: #82C600;
 }
 
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):not(.ui-state-disabled):hover .ui-menuitem-link .ui-menuitem-icon {
@@ -3797,11 +3797,11 @@ body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active {
 }
 
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link .ui-menuitem-text {
-  color: #1ea04c;
+  color: #82C600;
 }
 
 body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link .ui-menuitem-icon {
-  color: #1ea04c;
+  color: #82C600;
 }
 
 body .ui-megamenu {
