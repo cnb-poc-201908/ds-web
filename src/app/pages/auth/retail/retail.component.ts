@@ -4,11 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { RestService } from 'src/app/services/rest.service';
 
-import { Car } from '../../../domain/car';
-import { format } from 'date-fns';
 import { SelectItem } from 'primeng/api';
-import * as _ from 'lodash';
-
 @Component({
   selector: 'app-retail',
   templateUrl: './retail.component.html',
@@ -27,7 +23,26 @@ export class RetailComponent implements OnInit {
   apply: object = {};
   car: any = {};
 
+  dealType: SelectItem[];
+  sa: SelectItem[];
+
   ngOnInit() {
+    this.dealType = [
+      { label: '空', value: null },
+      { label: '正常零售', value: '01' },
+      { label: '试驾车', value: ' 02' },
+      { label: '大客户销售', value: '03' },
+      { label: '政府采购', value: '04' },
+      { label: '大使馆采购', value: ' 06' }
+    ];
+    this.sa = [
+      { label: '空', value: null },
+      { label: 'Service Manager', value: 'WS01T801' },
+      { label: 'Manager Assistant', value: 'WS02T801' },
+      { label: 'Workshop Manager', value: 'WS03T801' },
+      { label: 'Warranty', value: 'WS04T801' },
+      { label: 'Workshop Suervisor', value: ' WS05T801' }
+    ];
     this.cols = [
       { field: 'contractId', header: '合同号' },
       { field: 'clientId', header: '客户号' },

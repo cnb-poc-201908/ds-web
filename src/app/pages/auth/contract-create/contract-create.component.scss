@@ -4,40 +4,91 @@
       color: #82C600;
       font-weight: 300;
     }
+
     img {
       margin: 0 10px;
     }
+
+    .button {
+      float: right;
+    }
   }
+
   .content {
     display: flex;
     justify-content: space-between;
+
+    .unit {
+      display: flex;
+      justify-content: space-between;
+
+      // margin-top: 10px;
+      .name {
+        font-size: 12px;
+        font-weight: 400;
+        color: #565656;
+      }
+
+      .b-name {
+        font-size: 14px;
+      }
+    }
+
     .form-border {
       padding-bottom: 5px;
       border-bottom: 1px solid #F3F3F3;
+
+      .margin-t {
+        margin-top: 5px;
+      }
+
+      .margin-b {
+        margin-bottom: 5px;
+      }
+
+      .deck {
+        font-size: 10px;
+        color: #8F8F8F;
+      }
+
+      .block {
+        margin-left: 5px;
+      }
     }
+
+    .summary {
+      padding-top: 17px;
+    }
+
     .form-content {
       padding: 0 1em 0 0;
     }
+
     .view-content {
       padding: 0;
     }
+
     .add {
       margin-left: 10px;
     }
+
     .add-content {
       display: flex;
       justify-content: space-between;
     }
+
     .dropdown {
       width: 60%;
     }
 
   }
 }
+
 .content-form {
-  height: calc( 100% - 180px);
+  height: calc(100% - 180px);
   overflow: auto;
 }
+
 // .content-wrap {
 //   height: 100%;
 // }

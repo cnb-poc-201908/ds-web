@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DynamicDialogRef} from 'primeng/api';
+import { CalendarEvent, CalendarEventTimesChangedEvent } from 'angular-calendar';
+import { Subject } from 'rxjs';
 
 @Component({
     templateUrl: 'tech-select.html',
@@ -10,9 +12,15 @@ export class TechSelect implements OnInit {
 
     dataList : any[];
 
+    viewDate: Date = new Date();
+    events: Array<CalendarEvent<{ id: number }>>;
+    refresh: Subject<any> = new Subject();
+
     defaultSelectedTeam : any;
     defaultSelectedSchedule : any;
     defaultSelectedStation : any;
+
+    currentEvent : CalendarEvent[] = [];
 
     constructor(
         public ref: DynamicDialogRef
@@ -89,7 +97,44 @@ export class TechSelect implements OnInit {
 
       this.defaultSelectedTeam = this.dataList[0];
 
+      this.defaultSelectedTeam.used_time.forEach(item=>{
+        this.currentEvent.push({
+          title : '已预订',
+          color: {primary: '#e3bc08', secondary: '#FDF1BA'},
+          start: this.getTodayTime(item.startTime),
+          end : this.getTodayTime(item.endTime),
+          meta: {}
+        })
+      })
 
+      this.currentEvent.push({
+        title : '当前派工',
+        color: {primary: '#1e90ff', secondary: '#D1E8FF'},
+        start: this.getTodayTime("14:00"),
+        end : this.getTodayTime("15:00"),
+        meta: {},
+        draggable : true,
+      })
+
+    }
+
+
+    getTodayTime(dateStr){
+      const time = dateStr.split(":")
+      let mydate = new Date();
+      mydate.setHours(time[0]);
+      mydate.setMinutes(time[1]);
+      return mydate;
+    }
+
+    eventTimesChanged({
+      event,
+      newStart,
+      newEnd
+    }: CalendarEventTimesChangedEvent) {
+      event.start = newStart;
+      event.end = newEnd;
+      this.refresh.next();
     }
 
     close() {

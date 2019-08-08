@@ -40,7 +40,7 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table #dt [value]="cars" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
+    <p-table #dt [value]="dataSource" [columns]="cols" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th *ngFor="let col of columns">
@@ -51,21 +51,18 @@
 
       <ng-template pTemplate="body" let-car>
         <tr>
-          <td>
-            <span [ngClass]="car.stockStatus" class="tip"></span>
-          </td>
-          <td>{{car.stockId}}</td>
-          <td>{{car.productionDate}}</td>
-          <td>{{car.vehicleSeriesCode}}</td>
-          <td>{{car.vehicleModelCode}}</td>
-          <td>{{car.vehicleModelConfig}}</td>
-          <td>{{car.licensePlate}}</td>
-          <td>{{car.model}}</td>
-          <td>{{car.color}}</td>
-          <td>{{car.decoration}}</td>
-          <td>{{car.vehicleChassisNumber}}</td>
-          <td>{{car.storageDate}}</td>
-          <td>{{car.stockCost | currency:'￥'}}</td>
+          <td>{{car.contractId}}</td>
+          <td>{{car.processCode}}</td>
+          <td>{{car.customerInfo.customerId}}</td>
+          <td>{{car.customerInfo.customerName}}</td>
+          <td>{{car.basicInfo.orderNumber}}</td>
+          <td>{{car.basicInfo.orderDate}}</td>
+          <td>{{car.basicInfo.invoiceNumber}}</td>
+          <td>{{car.basicInfo.invoiceDate}}</td>
+          <td>{{car.basicInfo.chassisNumber}}</td>
+          <td>{{car.basicInfo.salesPersonId}}</td>
+          <td>{{car.basicInfo.deliveryDate}}</td>
+          <td>{{car.basicInfo.invoiceTotal | currency:'￥'}}</td>
         </tr>
       </ng-template>
       <ng-template pTemplate="loadingbody" let-columns="columns">
