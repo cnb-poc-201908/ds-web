@@ -195,4 +195,9 @@ export class RestService {
   searchCar(str): Observable<any> {
     return this.httpGet(this.url1 + `/main/repair-orders/queryRepairOrder/` + str);
   }
+
+  // 确认派工
+  updateRepairOrder(param:any) :Observable<any> {
+    return this.httpPost(this.url1 + `/main/repair-orders/updateRepairOrder`, param);
+  }
 }
