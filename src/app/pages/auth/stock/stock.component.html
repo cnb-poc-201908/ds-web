@@ -24,8 +24,7 @@
           </p-calendar>
         </div>
         <div class="ui-g-7">
-          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText
-            placeholder="模糊搜索查询型号/车型代码/底盘号/…">
+          <input [(ngModel)]="searchContent" id="float-input" type="text" size="30" pInputText placeholder="模糊搜索查询型号/车型代码/底盘号/…">
         </div>
       </div>
     </section>
@@ -35,14 +34,13 @@
     </section>
   </div>
   <div class="content-wrap">
-    <p-table [columns]="cols" [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true"
-      scrollHeight="calc(100% - 40px)">
+    <p-table [columns]="cols" [value]="cars" [lazy]="true" [loading]="loading" [scrollable]="true" scrollHeight="calc(100% - 40px)">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th *ngFor="let col of columns">
             {{col.header}}
           </th>
-          <th>操作</th>
+          <th *ngIf="userFlag !== 'sa'">操作</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-car let-columns="columns">
@@ -61,10 +59,9 @@
           <td>{{car.vehicleChassisNumber}}</td>
           <td>{{car.status}}</td>
           <td>{{car.isBelongTo? "是" : "否"}}</td>
-          <td>
+          <td *ngIf="userFlag !== 'sa'">
             <button class="ds icon-edit icon-btn edit-btn" (click)="onEdit(car)"></button>
-            <button *ngIf="!car.deleted" class="ds icon-delete icon-btn del-btn" (click)="onDelete(car)"
-              [disabled]="!car.deletable"></button>
+            <button *ngIf="!car.deleted" class="ds icon-delete icon-btn del-btn" (click)="onDelete(car)" [disabled]="!car.deletable"></button>
             <button *ngIf="car.deleted" class="ds icon-summary icon-btn" (click)="onFile(car)"></button>
           </td>
         </tr>
@@ -80,8 +77,7 @@
   </div>
 </div>
 
-<p-dialog header="车辆标识号 {{stockId}}" [(visible)]="displayDialog" showEffect="fade" [modal]="true"
-  [style]="{width: '550px'}" [draggable]="false" [resizable]="false">
+<p-dialog header="车辆标识号 {{stockId}}" [(visible)]="displayDialog" showEffect="fade" [modal]="true" [style]="{width: '550px'}" [draggable]="false" [resizable]="false">
   <div class="ui-g ui-fluid">
     <div class="ui-g-12">
       <div class="ui-g-4">
@@ -92,44 +88,43 @@
       </div>
     </div>
     <div class="ui-g-12">
-        <div class="ui-g-4">
-          <label for="vin">车型代码</label>
-        </div>
-        <div class="ui-g-8">
-          <span>{{vehicleModelCode}}</span>
-        </div>
+      <div class="ui-g-4">
+        <label for="vin">车型代码</label>
       </div>
-      <div class="ui-g-12">
-          <div class="ui-g-4">
-            <label for="vin">型号</label>
-          </div>
-          <div class="ui-g-8">
-            <span>{{model}}</span>
-          </div>
-        </div>
-        <div class="ui-g-12">
-          <div class="ui-g-4">
-            <label for="vin">车身颜色</label>
-          </div>
-          <div class="ui-g-8">
-            <span>{{color}}</span>
-          </div>
-        </div>
-        <div class="ui-g-12">
-          <div class="ui-g-4">
-            <label for="vin">底盘号</label>
-          </div>
-          <div class="ui-g-8">
-            <span>{{vehicleChassisNumber}}</span>
-          </div>
-        </div>
+      <div class="ui-g-8">
+        <span>{{vehicleModelCode}}</span>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="vin">型号</label>
+      </div>
+      <div class="ui-g-8">
+        <span>{{model}}</span>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="vin">车身颜色</label>
+      </div>
+      <div class="ui-g-8">
+        <span>{{color}}</span>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="vin">底盘号</label>
+      </div>
+      <div class="ui-g-8">
+        <span>{{vehicleChassisNumber}}</span>
+      </div>
+    </div>
     <div class="ui-g-12">
       <div class="ui-g-4">
         <label for="vin">库存状态</label>
       </div>
       <div class="ui-g-8">
-        <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
-          [showClear]="true"></p-dropdown>
+        <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text" [showClear]="true"></p-dropdown>
       </div>
     </div>
     <div class="ui-g-12">
