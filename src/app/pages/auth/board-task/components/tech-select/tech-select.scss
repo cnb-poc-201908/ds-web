@@ -5,7 +5,7 @@
     }
 
     .ui-g .section {
-        height: 380px;
+        height: calc(100vh - 263px);
         overflow-y: auto;
     }
 
@@ -71,10 +71,8 @@
     }
 
     .content-wrap {
-      height: calc(100vh - 163px);
       padding: 5px;
       background: #fff;
-      overflow-y: auto;
 
       .car-warp {
         padding: 20px;

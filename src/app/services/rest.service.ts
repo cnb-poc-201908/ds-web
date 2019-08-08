@@ -178,9 +178,17 @@ export class RestService {
   getBoardProgressList(): Observable<any> {
     return this.httpGet(this.url1 + `/repairOrder/repair-orders`);
   }
-
+  // 派工看板
   getBoardTaskList(): Observable<any> {
     return this.httpGet(`../../assets/board-task.json`);
+  }
+  // 获取所有工位
+  getStationList(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/stationlist`);
+  }
+  // 获取所有技师组
+  getEmployeeGlist(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/employeeGlist`);
   }
 
 }
