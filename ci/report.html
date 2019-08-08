@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<head>
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/easyui/themes/icon.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="http://www.jeasyui.net/easyui/jquery.easyui.min.js"></script>
+</head>
 <style>
     body{
         width:1060px;
@@ -37,7 +43,300 @@
 
 </style>
 <body>
-<div id='dashboard'></div>
+
+<table id="tt" class="easyui-datagrid" style="height: 540px;">
+    <thead>
+    <tr>
+        <th field="name1" width="90">标识号</th>
+        <th field="name2" width="50">库龄</th>
+        <th field="name3" width="80">生产日期</th>
+        <th field="name4" width="80">车系代码</th>
+        <th field="name5" width="80">车型代码</th>
+        <th field="name6" width="130">底盘号</th>
+        <th field="name7" width="80">到库日期</th>
+        <th field="name8" width="100">价格</th>
+        <th field="name9" width="100">订金</th>
+        <th field="name10" width="80">签约日期</th>
+        <th field="name11" width="100">新增成本</th>
+        <th field="name12" width="300">备注</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>ST-1000001</td>
+        <td>20</td>
+        <td>2019-07-08</td>
+        <td>E66</td>
+        <td>HN21</td>
+        <td>WBAHN81027DT22501</td>
+        <td>2019-07-18</td>
+        <td>￥850,000.00</td>
+        <td>￥2,000.00</td>
+        <td>2019-08-07</td>
+        <td>￥600.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000002</td>
+        <td>40</td>
+        <td>2019-05-09</td>
+        <td>E46</td>
+        <td>AY97</td>
+        <td>WBAHN81027DT22</td>
+        <td>2019-06-08</td>
+        <td>￥850,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥800.00</td>
+        <td>高利润</td>
+    </tr>
+    <tr>
+        <td>ST-1000004</td>
+        <td>80</td>
+        <td>2019-04-12</td>
+        <td>E90</td>
+        <td>VA96</td>
+        <td>WBA81027DT22504</td>
+        <td>2019-05-19</td>
+        <td>￥850,000.00</td>
+        <td>￥2,000.00</td>
+        <td>2019-08-06</td>
+        <td>￥320.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000005</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥320.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000006</td>
+        <td>120</td>
+        <td>2019-02-08</td>
+        <td>E66</td>
+        <td>HN21</td>
+        <td>WBAHN81027DT22506</td>
+        <td>2019-04-09</td>
+        <td>￥600,000.00</td>
+        <td>￥5,000.00</td>
+        <td>2019-08-05</td>
+        <td>￥80.00</td>
+        <td>紧急</td>
+    </tr>
+    <tr>
+        <td>ST-1000007</td>
+        <td>140</td>
+        <td>2019-01-09</td>
+        <td>E70</td>
+        <td>GY01</td>
+        <td>WBAHN81027DT22507</td>
+        <td>2019-03-20</td>
+        <td>￥850,000.00</td>
+        <td>￥2,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥80.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000008</td>
+        <td>160</td>
+        <td>2018-12-10</td>
+        <td>E46</td>
+        <td>AY97</td>
+        <td>WBAHN81027DT22508</td>
+        <td>2019-02-28</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥560.00</td>
+        <td>高利润</td>
+    </tr>
+    <tr>
+        <td>ST-1000009</td>
+        <td>180</td>
+        <td>2019-03-10</td>
+        <td>E90</td>
+        <td>VA96</td>
+        <td>WBAHN81027DT22509</td>
+        <td>2019-04-29</td>
+        <td>￥800,000.00</td>
+        <td>￥2,000.00</td>
+        <td>2019-08-03</td>
+        <td>￥800.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000010</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥720.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000011</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥640.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000012</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥880.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000005</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥80.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000013</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥800.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000014</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥160.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000015</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥400.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000016</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥720.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000017</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥800.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000018</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥560.00</td>
+        <td>VIP客户</td>
+    </tr>
+    <tr>
+        <td>ST-1000019</td>
+        <td>100</td>
+        <td>2019-03-10</td>
+        <td>E60</td>
+        <td>NU15</td>
+        <td>WBAHN81027DT22505</td>
+        <td>2019-04-29</td>
+        <td>￥600,000.00</td>
+        <td>￥6,000.00</td>
+        <td>2019-08-04</td>
+        <td>￥160.00</td>
+        <td>VIP客户</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+<br/>
+
+<div id='dashboard'>
+</div>
+
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -204,7 +503,7 @@
                 }else if(d.type == 'l3'){
                     return '60 - 120 days';
                 }else if(d.type == 'l4'){
-                    return 'more Then 120 days';
+                    return 'more than 120 days';
                 }
             });
 

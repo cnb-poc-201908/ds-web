@@ -32,12 +32,10 @@ export class ContractUndoneComponent implements OnInit {
       { field: 'customerName', header: '客户姓名' },
       { field: 'orderNumber', header: '订单号' },
       { field: 'orderDate', header: '订单日期' },
-      { field: 'invoiceNumber', header: '发票账号' },
-      { field: 'invoiceDate', header: '发票日期' },
       { field: 'chassisNumber', header: '车架号' },
       { field: 'salesPersonId', header: '销售员号' },
       { field: 'deliveryDate', header: '预计交付日期' },
-      { field: 'InvoiceTotal', header: '发票总金额' },
+      { field: 'invoiceTotal', header: '发票总金额' },
     ];
     this.getContractList();
   }
