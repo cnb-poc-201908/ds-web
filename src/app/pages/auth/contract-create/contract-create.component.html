@@ -39,7 +39,7 @@
           <div class="ui-g ui-fluid">
             <div class="ui-g-3">
               <label class="first">销售类型</label>
-              <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="销售类型" optionLabel="text"
+              <p-dropdown [options]="salesType" [(ngModel)]="stockStatus" placeholder="销售类型" optionLabel="text"
                 [showClear]="true"></p-dropdown>
             </div>
             <div class="ui-g-1"></div>
@@ -85,7 +85,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" (click)="deckExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="deck1" placeholder="精品类型" optionLabel="text"
+                  <p-dropdown [options]="deckList" [(ngModel)]="deck1" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck1input">
@@ -100,7 +100,7 @@
               <img class="add" style="visibility:hidden" src="../../../../assets/image/16 2.svg">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="deck2" placeholder="精品类型" optionLabel="text"
+                  <p-dropdown [options]="deckList" [(ngModel)]="deck2" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck2input">
@@ -115,7 +115,7 @@
               <img class="add" style="visibility: hidden;" src="../../../../assets/image//16 2.svg">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="deck3" placeholder="精品类型" optionLabel="text"
+                  <p-dropdown [options]="deckList" [(ngModel)]="deck3" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck3input">
@@ -132,7 +132,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="deck4" placeholder="精品类型" optionLabel="text"
+                  <p-dropdown [options]="deckList" [(ngModel)]="deck4" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck4input">
@@ -147,7 +147,7 @@
               <img class="add" style="visibility:hidden" src="../../../../assets/image/16 2.svg">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="deck5" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="deckList" [(ngModel)]="deck5" placeholder="请选择库存状态" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck5input">
@@ -162,7 +162,7 @@
               <img class="add" style="visibility: hidden;" src="../../../../assets/image//16 2.svg">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="deck6" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="deckList" [(ngModel)]="deck6" placeholder="请选择库存状态" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck6input">
@@ -182,7 +182,7 @@
               <img class="add" src="../../../../assets/image/16 2.svg" (click)="colorExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="color1" placeholder="颜色" optionLabel="text"
+                  <p-dropdown [options]="colorList" [(ngModel)]="color1" placeholder="颜色" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="color1Input">
@@ -198,7 +198,7 @@
                 style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="color2" placeholder="颜色" optionLabel="text"
+                  <p-dropdown [options]="colorList" [(ngModel)]="color2" placeholder="颜色" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="color2Input">
@@ -218,7 +218,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" (click)="dealerExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="dealer1" placeholder="经销商选装" optionLabel="text"
+                  <p-dropdown [options]="dealerList" [(ngModel)]="dealer1" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer1input">
@@ -233,7 +233,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="dealer2" placeholder="经销商选装" optionLabel="text"
+                  <p-dropdown [options]="dealerList" [(ngModel)]="dealer2" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer2input">
@@ -248,7 +248,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="dealer3" placeholder="经销商选装" optionLabel="text"
+                  <p-dropdown [options]="dealerList" [(ngModel)]="dealer3" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer3input">
@@ -266,7 +266,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="dealer4" placeholder="经销商选装" optionLabel="text"
+                  <p-dropdown [options]="dealerList" [(ngModel)]="dealer4" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer4input">
@@ -281,7 +281,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="dealer5" placeholder="经销商选装" optionLabel="text"
+                  <p-dropdown [options]="dealerList" [(ngModel)]="dealer5" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer5input">
@@ -296,7 +296,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="dealer6" placeholder="经销商选装" optionLabel="text"
+                  <p-dropdown [options]="dealerList" [(ngModel)]="dealer6" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer6input">
@@ -316,7 +316,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" (click)="firmExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="firm1" placeholder="厂商选装件" optionLabel="text"
+                  <p-dropdown [options]="firmList" [(ngModel)]="firm1" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm1input">
@@ -331,7 +331,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="firm2" placeholder="厂商选装件" optionLabel="text"
+                  <p-dropdown [options]="firmList" [(ngModel)]="firm2" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm2input">
@@ -346,7 +346,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="firm3" placeholder="厂商选装件" optionLabel="text"
+                  <p-dropdown [options]="firmList" [(ngModel)]="firm3" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm3input">
@@ -363,7 +363,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="firm4" placeholder="厂商选装件" optionLabel="text"
+                  <p-dropdown [options]="firmList" [(ngModel)]="firm4" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm4input">
@@ -378,7 +378,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="firm5" placeholder="厂商选装件" optionLabel="text"
+                  <p-dropdown [options]="firmList" [(ngModel)]="firm5" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm5input">
@@ -393,7 +393,7 @@
               <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="firm6" placeholder="厂商选装件" optionLabel="text"
+                  <p-dropdown [options]="firmList" [(ngModel)]="firm6" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
                 <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm6input">

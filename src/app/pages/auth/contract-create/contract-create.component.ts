@@ -73,6 +73,32 @@ export class ContractCreateComponent implements OnInit {
   firm6 = {};
   firm6input = '';
   firmExpandFlag = false;
+  colorList = [
+    { code: '1', text: 'Alpine White' },
+    { code: '2', text: 'Carbon Black Metalic' },
+    { code: '3', text: 'Silverstone Metalic' },
+  ];
+  salesType = [
+    { code: '1', text: '试驾车' },
+    { code: '1', text: '大使馆采购' },
+    { code: '1', text: '大客户销售' },
+  ];
+  deckList = [
+    { code: '1', text: '帽子' },
+    { code: '1', text: '眼睛' },
+    { code: '1', text: '书包' }
+  ];
+  dealerList = [
+    { code: '1', text: 'Radio control Oceania' },
+    { code: '1', text: 'VIN, visible from outside' },
+    { code: '1', text: '书包Locking wheel bolts' }
+  ];
+  firmList = [
+    { code: '1', text: 'BMW APP' },
+    { code: '1', text: 'Combox' },
+    { code: '1', text: 'Bad-Road Package' }
+  ];
+
   constructor(
     private router: Router
   ) { }
