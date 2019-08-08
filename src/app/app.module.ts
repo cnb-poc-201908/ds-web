@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { StockGuard } from './guard/stock.guard';
 import { BoardGuard } from './guard/board.guard';
+import { SaGuard } from './guard/sa.guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { BoardGuard } from './guard/board.guard';
     PrimengModule,
     ServicesModule,
   ],
-  providers: [LoginGuard, StockGuard, BoardGuard, MessageService],
+  providers: [LoginGuard, StockGuard, BoardGuard, SaGuard, MessageService],
   bootstrap: [AppComponent],
   entryComponents: [
   ]

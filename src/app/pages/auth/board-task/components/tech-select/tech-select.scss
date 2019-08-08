@@ -1,0 +1,60 @@
+.tech-select{
+    .ui-dialog .ui-dialog-content.ui-widget-content {
+        overflow: auto;
+        height: 80% !important;
+    }
+
+    .ui-g .section {
+        height: 380px;
+        overflow-y: auto;
+    }
+
+    .tech-warp {
+      opacity: 0.98;
+      background: #F2F4F8;
+      padding: 20px 30px;
+
+      .title {
+        font-size: 18px;
+      }
+
+      .type {
+        font-size: 12px;
+        color: #8C8C8C;
+      }
+
+      .station {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        div {
+          width: 20px;
+          height: 20px;
+          margin-left: 20px;
+          text-align: center;
+          line-height: 30px;
+          background: url('../../../../../../assets/image/board_monitor/tech_station.svg');
+        }
+      }
+
+      .bottom {
+        font-size: 14px;
+        color: #565656;
+        line-height: 26px;
+
+        .info-warp div {
+          border-right: 1px solid #DCDCDC;
+        }
+
+        .per-label {
+          font-size: 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          height: 100%;
+        }
+      }
+    }
+
+}

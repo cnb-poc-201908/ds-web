@@ -1,0 +1,41 @@
+<div class="tech-select">
+    <div class="ui-g">
+      <div class="ui-g-4 section" >
+        <div class="ui-g-12" *ngFor="let item of dataList">
+          <div class="tech-warp">
+            <div class="ui-g">
+              <div class="ui-g-6">
+                <div class="title">{{item.name}}</div>
+                <div class="type">{{item.skill}}</div>
+              </div>
+              <div class="ui-g-6 station">
+                <div *ngFor="let st of item.default_stations"><span>{{st}}</span></div>
+              </div>
+            </div>
+            <div class="ui-g bottom">
+              <div class="ui-g-4 info-warp">
+                <div>{{item.dailyTotalHours}}</div>
+                <div>{{item.monthlyTotalHours}}</div>
+              </div>
+              <div class="ui-g-4 info-warp">
+                <div>{{item.dailyHotJobs}}</div>
+                <div>{{item.monthlyHotJobs}}</div>
+              </div>
+              <div class="ui-g-4">
+                <div class="per-label">
+                  <div>{{item.effective}}%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-g-4 section" >
+        <div class="content-wrap">2</div>
+      </div>
+      <div class="ui-g-4 section" >
+        <div class="content-wrap">3</div>
+      </div>
+    </div>
+</div>

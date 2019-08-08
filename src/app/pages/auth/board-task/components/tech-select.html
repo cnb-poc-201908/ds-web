@@ -1,11 +1,22 @@
-<div class="ui-g">
-  <div class="ui-g-4">
-    <div class="content-wrap">1</div>
-  </div>
-  <div class="ui-g-4">
-    <div class="content-wrap">2</div>
-  </div>
-  <div class="ui-g-4">
-    <div (click)="close()" class="content-wrap">3</div>
+<div class="tech-select">
+  <div class="ui-g">
+    <div class="ui-g-4">
+      <div class="content-wrap">
+        <div class="ui-g" *ngFor="let item of dataList">
+          <div class="ui-g-12 ui-md-12 ui-lg-12">
+            {{item.name}}<br>
+            {{item.skill}}<br>
+            {{item.todayHours}}<br>
+            {{item.name}}<br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g-4">
+      <div class="content-wrap">2</div>
+    </div>
+    <div class="ui-g-4">
+      <div class="content-wrap">3</div>
+    </div>
   </div>
 </div>
