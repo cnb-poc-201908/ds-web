@@ -3,26 +3,30 @@
     <span>合同管理</span>
     <img src="../../../../assets/image/16.svg">
     <span class="text">创建合同</span>
+    <!-- <div class="button"> -->
+      <p-button class="button" label="生成合同" (click)="goback()">
+      </p-button>
+    <!-- </div> -->
   </div>
   <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
     <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon ui-state-active">
-        <a class="ui-menuitem-link ui-corner-all " href="#" routerLink='/contract-create'>
+        <a class="ui-menuitem-link ui-corner-all" routerLink='/sales/contract-create'>
           <span class="ui-menuitem-text ">销售概要</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-create'>
+        <a class="ui-menuitem-link ui-corner-all" routerLink='/sales/contract-create'>
           <span class="ui-menuitem-text">基本信息</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-create'>
+        <a class="ui-menuitem-link ui-corner-all" routerLink='/sales/contract-create'>
           <span class="ui-menuitem-text">客户信息</span>
         </a>
       </li>
       <li class="ui-tabmenuitem ui-state-default ui-corner-top ui-tabmenuitem-hasicon">
-        <a class="ui-menuitem-link ui-corner-all" href="#" routerLink='/contract-create'>
+        <a class="ui-menuitem-link ui-corner-all" routerLink='/sales/contract-create'>
           <span class="ui-menuitem-text">备注</span>
         </a>
       </li>
@@ -35,8 +39,7 @@
           <div class="ui-g ui-fluid">
             <div class="ui-g-3">
               <label class="first">销售类型</label>
-              <!-- <input id="input" type="text" size="30" pInputText [(ngModel)]="text"> -->
-              <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+              <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="销售类型" optionLabel="text"
                 [showClear]="true"></p-dropdown>
             </div>
             <div class="ui-g-1"></div>
@@ -76,162 +79,329 @@
             </div>
           </div>
           <div class="ui-g ui-fluid">
+            <!-- 精品1 -->
             <div class="ui-g-3">
               <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <img class="add" src="../../../../assets/image//16 2.svg" (click)="deckExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="deck1" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck1input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(1)"></button>
             </div>
+            <!-- 精品2 -->
             <div class="ui-g-3">
-              <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" style="visibility:hidden" src="../../../../assets/image/16 2.svg">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="deck2" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck2input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(2)"></button>
             </div>
+            <!-- 精品3 -->
             <div class="ui-g-3">
-              <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" style="visibility: hidden;" src="../../../../assets/image//16 2.svg">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="deck3" placeholder="精品类型" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck3input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(3)"></button>
             </div>
-
+          </div>
+          <div class="ui-g ui-fluid" *ngIf="deckExpandFlag">
+            <!-- 精品4 -->
+            <div class="ui-g-3" *ngIf="decktrash1">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="deck4" placeholder="精品类型" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck4input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="decktrash1">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="trash1()"></button>
+            </div>
+            <!-- 精品5 -->
+            <div class="ui-g-3" *ngIf="delete2">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" style="visibility:hidden" src="../../../../assets/image/16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="deck5" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck5input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete2">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(2)"></button>
+            </div>
+            <!-- 精品6 -->
+            <div class="ui-g-3" *ngIf="delete3">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" style="visibility: hidden;" src="../../../../assets/image//16 2.svg">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="deck6" placeholder="请选择库存状态" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="deck6input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete3">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(3)"></button>
+            </div>
           </div>
         </section>
-
+        <!-- 颜色 -->
         <section class="form-wrap form-border">
           <div class="ui-g ui-fluid">
+            <!-- 颜色1 -->
             <div class="ui-g-3">
               <label class="first">颜色</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <img class="add" src="../../../../assets/image/16 2.svg" (click)="colorExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="color1" placeholder="颜色" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="color1Input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(4)"></button>
+            </div>
+            <!-- 颜色2 -->
+            <div class="ui-g-3" *ngIf="colorExpandFlag">
+              <label class="first" style="visibility: hidden;">颜色</label>
+              <img class="add" src="../../../../assets/image/16 2.svg" (click)="colorExpand()"
+                style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="color2" placeholder="颜色" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="color2Input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="colorExpandFlag">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(4)"></button>
             </div>
           </div>
         </section>
+        <!-- 经销商选装件 -->
         <section class="form-wrap form-border">
           <div class="ui-g ui-fluid">
+            <!-- 经销商选装件1 -->
             <div class="ui-g-3">
               <label class="first">经销商选装件</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <img class="add" src="../../../../assets/image//16 2.svg" (click)="dealerExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="dealer1" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer1input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(5)"></button>
             </div>
+            <!-- 经销商选装件2 -->
             <div class="ui-g-3">
-              <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <label class="first" style="visibility: hidden;">经销商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="dealer2" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer2input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(6)"></button>
             </div>
+            <!-- 经销商选装件3 -->
             <div class="ui-g-3">
-              <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <label class="first" style="visibility: hidden;">经销商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="dealer3" placeholder="经销商选装" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer3input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(7)"></button>
             </div>
 
           </div>
+          <div class="ui-g ui-fluid" *ngIf="dealerExpandFlag">
+            <!-- 经销商选装件4 -->
+            <div class="ui-g-3" *ngIf="delete5">
+              <label class="first" style="visibility: hidden;">经销商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="dealer4" placeholder="经销商选装" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer4input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete5">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(5)"></button>
+            </div>
+            <!-- 经销商选装件5 -->
+            <div class="ui-g-3" *ngIf="delete6">
+              <label class="first" style="visibility: hidden;">经销商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="dealer5" placeholder="经销商选装" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer5input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete6">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(6)"></button>
+            </div>
+            <!-- 经销商选装件6 -->
+            <div class="ui-g-3" *ngIf="delete7">
+              <label class="first" style="visibility: hidden;">经销商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="dealer6" placeholder="经销商选装" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="dealer6input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete7">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(7)"></button>
+            </div>
+          </div>
         </section>
+        <!-- 厂商选装件 -->
         <section class="form-wrap form-border">
           <div class="ui-g ui-fluid">
+            <!-- 厂商选装件1 -->
             <div class="ui-g-3">
               <label class="first">厂商选装件</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <img class="add" src="../../../../assets/image//16 2.svg" (click)="firmExpand()">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="firm1" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm1input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(8)"></button>
             </div>
+            <!-- 厂商选装件2 -->
             <div class="ui-g-3">
-              <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="firm2" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm2input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(9)"></button>
             </div>
+            <!-- 厂商选装件3 -->
             <div class="ui-g-3">
-              <label class="first">精品</label>
-              <img class="add" src="../../../../assets/image//16 2.svg">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
               <div class="add-content">
                 <div class="dropdown">
-                  <p-dropdown [options]="status" [(ngModel)]="stockStatus" placeholder="请选择库存状态" optionLabel="text"
+                  <p-dropdown [options]="status" [(ngModel)]="firm3" placeholder="厂商选装件" optionLabel="text"
                     [showClear]="true"></p-dropdown>
                 </div>
-                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="sBoss">
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm3input">
               </div>
             </div>
             <div class="ui-g-1">
-              <button style="padding-top:25px;" class="ds icon-delete icon-btn"></button>
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="clean(10)"></button>
             </div>
-
+          </div>
+          <div class="ui-g ui-fluid" *ngIf="firmExpandFlag">
+            <!-- 厂商选装件4 -->
+            <div class="ui-g-3" *ngIf="delete8">
+              <label class="first" style="visibility: hidden;">厂商选装件</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="firm4" placeholder="厂商选装件" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm4input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete8">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(8)"></button>
+            </div>
+            <!-- 厂商选装件5 -->
+            <div class="ui-g-3" *ngIf="delete9">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="firm5" placeholder="厂商选装件" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm5input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete9">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(9)"></button>
+            </div>
+            <!-- 厂商选装件6 -->
+            <div class="ui-g-3" *ngIf="delete10">
+              <label class="first" style="visibility: hidden;">精品</label>
+              <img class="add" src="../../../../assets/image//16 2.svg" style="visibility: hidden;">
+              <div class="add-content">
+                <div class="dropdown">
+                  <p-dropdown [options]="status" [(ngModel)]="firm6" placeholder="厂商选装件" optionLabel="text"
+                    [showClear]="true"></p-dropdown>
+                </div>
+                <input style="width:35%" id="input" type="text" size="30" pInputText [(ngModel)]="firm6input">
+              </div>
+            </div>
+            <div class="ui-g-1" *ngIf="delete10">
+              <button style="padding-top:25px;" class="ds icon-delete icon-btn" (click)="delete(10)"></button>
+            </div>
           </div>
         </section>
       </div>
@@ -239,9 +409,9 @@
         <section class="form-wrap" style="width: 700px;">
         </section>
         <section class="button-wrap">
-          <p-button style="margin-right:20px;" label="取消" (click)="getStockList()">
+          <p-button class="ui-button-secondary" style="margin-right:20px;" label="取消" (click)="goback()">
           </p-button>
-          <p-button label="保存" (click)="getStockList()">
+          <p-button label="保存" (click)="goback()">
           </p-button>
         </section>
       </div>
@@ -249,29 +419,97 @@
     <div class="view-content ui-g-3">
       <div class="content-wrap">
         <section class="form-border">
-          销售金额
+          <div class="unit">
+            <div class="b-name">销售金额</div>
+          </div>
         </section>
         <section class="form-border">
-          <label for="">整车</label>
-          <span>600000.00</span>
+          <div class="unit margin-t">
+            <div class="name">整车</div>
+            <div>600000.00</div>
+          </div>
         </section>
         <section class="form-border">
-          附件
+          <div class="unit margin-t margin-b">
+            <div class="name">附件</div>
+          </div>
+          <div class="deck margin-b">精品</div>
+          <div class="block">
+            <div class="unit">
+              <div class="name">精品1</div>
+              <div>999.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">精品1</div>
+              <div>888.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">精品1</div>
+              <div>333.00</div>
+            </div>
+          </div>
         </section>
         <section class="form-border">
-          经销商选择件
+          <div class="deck margin-t margin-b">经销商选择件 </div>
+          <div class="block">
+            <div class="unit">
+              <div class="name">经销商选择件 1</div>
+              <div>1356.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">经销商选择件 2</div>
+              <div>5678.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">经销商选择件 3</div>
+              <div>2233.00</div>
+            </div>
+          </div>
         </section>
         <section class="form-border">
-          厂商选择件
+          <div class="deck margin-t margin-b">厂商选择件 </div>
+          <div class="block">
+            <div class="unit">
+              <div class="name">厂商选装件 1</div>
+              <div>765.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">厂商选装件 2</div>
+              <div>666.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">厂商选装件 3</div>
+              <div>40000.00</div>
+            </div>
+          </div>
         </section>
         <section class="form-border">
-          保险
+          <div class="deck margin-t margin-b">保险 </div>
+          <div class="block">
+            <div class="unit">
+              <div class="name">保险 1</div>
+              <div>1234.00</div>
+            </div>
+            <div class="unit">
+              <div class="name">保险 2</div>
+              <div>7456.88</div>
+            </div>
+          </div>
         </section>
         <section class="form-border">
-          内饰
+          <div class="deck margin-t margin-b">内饰 </div>
+          <div class="block">
+            <div class="unit">
+              <div class="name">内饰 1</div>
+              <div>6789.00</div>
+            </div>
+          </div>
         </section>
-        <section class="form-border">
-          总计
+        <section class="summary">
+          <div class="unit">
+            <div class="b-name">总计</div>
+            <div>1000000.00</div>
+          </div>
         </section>
       </div>
     </div>

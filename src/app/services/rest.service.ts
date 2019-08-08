@@ -165,18 +165,30 @@ export class RestService {
 
   // 车辆管理
   getCarList(role, roleId): Observable<any> {
-    return this.httpGet(`../../assets/car_mock.json?${role}=${roleId}=`);
-    // return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
+    // return this.httpGet(`../../assets/car_mock.json?${role}=${roleId}=`);
+    return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
   }
 
+  // 合同管理
+  getContractList(role, roleId, contractStatus): Observable<any> {
+    return this.httpGet(this.url + `/contract/contracts?${role}=${roleId}&contractStatus=${contractStatus}`);
+    // return this.httpGet(this.url + `/stock/stock-insights?${role}=${roleId}`);
+  }
   // 总进度看板
   getBoardProgressList(): Observable<any> {
     return this.httpGet(this.url1 + `/repairOrder/repair-orders`);
   }
-
-
+  // 派工看板
   getBoardTaskList(): Observable<any> {
     return this.httpGet(`../../assets/board-task.json`);
+  }
+  // 获取所有工位
+  getStationList(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/stationlist`);
+  }
+  // 获取所有技师组
+  getEmployeeGlist(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/employeeGlist`);
   }
 
 }

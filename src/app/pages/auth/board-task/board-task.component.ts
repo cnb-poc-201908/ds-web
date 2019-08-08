@@ -38,18 +38,25 @@ export class BoardTaskComponent implements OnInit {
 
     this.activeIndex = 0;
     this.activeItem = this.items[0];
-    this.getData("CREATED");
+    this.getData("");
 
-    this.dispatch({});
+    // this.dispatch({});
   }
 
   getData(status) {
-    this.rest.getBoardTaskList().subscribe(res=>{
+    // this.rest.getBoardTaskList().subscribe(res=>{
+    this.rest.getBoardProgressList().subscribe(res=>{
       if (res.code === 0) {
-        // this.dataList = res.data.items.filter(item=>{
-        this.dataList = res.data.filter(item=>{
-          return item.status == status && item.checkInDateTime == null;
-        });
+        if (status && status != "") {
+          this.dataList = res.data.items.filter(item=>{
+            // this.dataList = res.data.filter(item=>{
+              return item.status == status && item.checkInDateTime == null;
+            });
+        } else {
+          this.dataList = res.data.items;
+        }
+
+
 
         // If item has more than 1 job, it means Hot Job
         this.dataList.forEach(item=>{
@@ -73,7 +80,7 @@ export class BoardTaskComponent implements OnInit {
   dispatch(item) {
     const ref = this.dialogService.open(TechSelect, {
       header: '派工',
-      width: '80%',
+      width: '95%',
       height: '70%',
       baseZIndex: 10000
     });
