@@ -15,14 +15,47 @@
         </div>
         <div class="content-wrap">
           <div class="ui-g">
-            <div class="ui-g-12" *ngFor="let item of itemList; let i = index;">
-              <div class="car-warp" [ngClass]="{'purple': i===1, 'red': i===2, 'blue': i===3}">
-                <div>
-                  <div class="num">{{item.num}}</div>
-                  <div class="label">{{item.label}}</div>
+            <div class="ui-g-12">
+              <div class="car-warp">
+                <div class="info">
+                  <div class="num">26</div>
+                  <div class="label">待派工</div>
                 </div>
-                <div>
-                  <img class="image" src="{{item.img}}">
+                <div class="image">
+                  <img src="../../../../assets/image/board_monitor/waiting_work.svg">
+                </div>
+              </div>
+            </div>
+            <div class="ui-g-12">
+              <div class="car-warp purple">
+                <div class="info">
+                  <div class="num">30</div>
+                  <div class="label">维修中</div>
+                </div>
+                <div class="image">
+                  <img src="../../../../assets/image/board_monitor/maintenance.svg">
+                </div>
+              </div>
+            </div>
+            <div class="ui-g-12">
+              <div class="car-warp red">
+                <div class="info">
+                  <div class="num">30</div>
+                  <div class="label">增项</div>
+                </div>
+                <div class="image">
+                  <img src="../../../../assets/image/board_monitor/addition.svg">
+                </div>
+              </div>
+            </div>
+            <div class="ui-g-12">
+              <div class="car-warp blue">
+                <div class="info">
+                  <div class="num">16</div>
+                  <div class="label">待交车</div>
+                </div>
+                <div class="image">
+                  <img src="../../../../assets/image/board_monitor/waiting_delivery.svg">
                 </div>
               </div>
             </div>
@@ -36,30 +69,29 @@
         </div>
         <div class="content-wrap">
           <div class="ui-g">
-            <div class="ui-g-6" *ngFor="let item of [1,2,3,4,5]; let i = index;">
+            <div class="ui-g-6" *ngFor="let item of employeeGlist; let i = index;">
               <div class="tech-warp">
                 <div class="ui-g">
                   <div class="ui-g-6">
-                    <div class="title">技师组1</div>
-                    <div class="type">钣金</div>
+                    <div class="title">{{item.groupname || '-'}}</div>
+                    <div class="type">{{formatSkill(item.skills) || '-'}}</div>
                   </div>
-                  <div class="ui-g-6 station">
-                    <div><span>1</span></div>
-                    <div><span>2</span></div>
+                  <div class="ui-g-6 station" *ngIf="stationObj[item.groupid]">
+                    <div *ngFor="let station of stationObj[item.groupid]"><span>{{station || '-'}}</span></div>
                   </div>
                 </div>
                 <div class="ui-g bottom">
                   <div class="ui-g-4 info-warp">
-                    <div>260</div>
-                    <div>2.5K</div>
+                    <div>{{item.current_day_hours || '-'}}</div>
+                    <div>{{item.current_month_hours || '-'}}</div>
                   </div>
                   <div class="ui-g-4 info-warp">
-                      <div>1</div>
-                      <div>20</div>
+                      <div>{{item.current_day_big_task || '-'}}</div>
+                      <div>{{item.current_month_big_task || '-'}}</div>
                   </div>
                   <div class="ui-g-4">
                     <div class="per-label">
-                      <div>30%</div>
+                      <div>{{item.effort || '-'}}</div>
                     </div>
                   </div>
                 </div>
@@ -74,14 +106,15 @@
         </div>
         <div class="content-wrap">
           <div class="ui-g">
-            <div class="ui-g-3" *ngFor="let item of [1,2,3,4,5]; let i = index;">
-              <div class="station-warp" [ngClass]="{'free-select': i === 2, 'feature-select': i === 4}">
+            <div class="ui-g-3" *ngFor="let item of stationlist; let i = index;">
+              <div class="station-warp" [ngClass]="{'free-select': item.status === 'Y', 'feature-select': item.status === 'F'}">
                 <div>
-                  <img *ngIf="i !== 2"  src="../../../../assets/image/board_monitor/station.svg">
-                  <img *ngIf="i === 2" src="../../../../assets/image/board_monitor/free_station.svg">
+                  <img *ngIf="item.status === 'Y'" src="../../../../assets/image/board_monitor/free_station.svg">
+                  <img *ngIf="item.status === 'N'" src="../../../../assets/image/board_monitor/unavailable_station.svg">
+                  <img *ngIf="item.status === 'F'"  src="../../../../assets/image/board_monitor/station.svg">
                 </div>
                 <div>
-                  工位{{i+1}}
+                  {{item.stationid || '-'}}
                 </div>
               </div>
             </div>

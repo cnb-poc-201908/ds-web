@@ -174,6 +174,13 @@ export class RestService {
     return this.httpGet(this.url1 + `/repairOrder/repair-orders`);
   }
 
+  // 调度总看板
+  getEmployeeGlist(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/employeeGlist`);
+  }
+  getStationlist(): Observable<any> {
+    return this.httpGet(this.url1 + `/repairOrder/stationlist`);
+  }
 
   getBoardTaskList(): Observable<any> {
     return this.httpGet(`../../assets/board-task.json`);
