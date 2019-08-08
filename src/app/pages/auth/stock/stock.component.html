@@ -60,9 +60,9 @@
           <td>{{car.status}}</td>
           <td>{{car.isBelongTo? "是" : "否"}}</td>
           <td *ngIf="userFlag !== 'sa'">
-            <button class="ds icon-edit icon-btn edit-btn" (click)="onEdit(car)" pTooltip="编辑"></button>
+            <button *ngIf="!car.deleted" class="ds icon-edit icon-btn edit-btn" (click)="onEdit(car)" pTooltip="编辑"></button>
             <button *ngIf="!car.deleted" class="ds icon-delete icon-btn del-btn" (click)="onDelete(car)" [disabled]="!car.deletable" pTooltip="删除"></button>
-            <button *ngIf="car.deleted" class="ds icon-summary icon-btn" (click)="onFile(car)" pTooltip="删除"></button>
+            <button *ngIf="car.deleted" class="ds icon-document icon-btn" (click)="onFile(car)" pTooltip="查看"></button>
           </td>
         </tr>
       </ng-template>

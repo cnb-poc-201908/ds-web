@@ -27,7 +27,6 @@ export class ContractDoneComponent implements OnInit {
   ngOnInit() {
     this.cols = [
       { field: 'contractId', header: '合同号' },
-      { field: 'processCode', header: '进程代码' },
       { field: 'customerId', header: '客户号' },
       { field: 'customerName', header: '客户姓名' },
       { field: 'orderNumber', header: '订单号' },
