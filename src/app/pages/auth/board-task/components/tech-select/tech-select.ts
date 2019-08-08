@@ -1,117 +1,98 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarEvent } from 'calendar-utils';
-import { CalendarView, CalendarEventAction } from 'angular-calendar';
-import { addHours } from 'date-fns';
-// import {Car} from '../../components/domain/car';
-// import {CarService} from '../../service/carservice';
-// import {DynamicDialogRef} from 'primeng/api';
-// import {DynamicDialogConfig} from 'primeng/api';
-
-const colors: any = {
-    red: {
-      primary: '#ad2121',
-      secondary: '#FAE3E3'
-    },
-    blue: {
-      primary: '#1e90ff',
-      secondary: '#D1E8FF'
-    },
-    yellow: {
-      primary: '#e3bc08',
-      secondary: '#FDF1BA'
-    }
-  };
+import {DynamicDialogRef} from 'primeng/api';
 
 @Component({
-    templateUrl: './tech-select.html',
-    styleUrls: ['./tech-select.scss'],
+    templateUrl: 'tech-select.html',
+    styleUrls: ['tech-select.scss'],
 })
 
-// tslint:disable-next-line:component-class-suffix
 export class TechSelect implements OnInit {
 
-    view: CalendarView = CalendarView.Day;
+    dataList : any[];
 
-    viewDate: Date = new Date();
+    defaultSelectedTeam : any;
+    defaultSelectedSchedule : any;
+    defaultSelectedStation : any;
 
-    display: boolean = false;
-    modalData: {
-        action: string;
-        event: CalendarEvent;
-      };
-    actions: CalendarEventAction[] = [
-        {
-            label: 'Edit',
-            onClick: ({ event }: { event: CalendarEvent }): void => {
-                this.handleEvent('Edited', event);
-            }
-        },
-        {
-            label: 'delete',
-            onClick: ({ event }: { event: CalendarEvent }): void => {
-                this.events = this.events.filter(iEvent => iEvent !== event);
-                this.handleEvent('Deleted', event);
-            }
-        }
-    ];
-
-    events: CalendarEvent[] = [
-        {
-            id: 1,
-            start: new Date('2019-08-01T09:00:00'),
-            end: addHours(new Date('2019-08-01T09:00:00'), 2),
-            title: '马悦女士预约保养',
-            color: colors.yellow,
-            meta: {
-                sales_id: 51,
-                sales_name: '王思维',
-                customer_name: '马悦女士',
-                tel: '138888888',
-                license_id: '辽B D1L23',
-                baseplate_id: 'LBVAJS938459292',
-                model: 'E90LI',
-                description: '329I A CHN CKD A',
-                mileage: '30000',
-                WIP: '20177',
-                orderer: '王思维',
-                contact_date: '2019/07/31',
-                contact_time: '10.08',
-                pre_entrance_date: '2019/07/31',
-                pre_entrance_time: '10.08',
-                entrance_date: '2019/07/31',
-                entrance_time: '10.08',
-                plan_entrance_date: '2019/07/31',
-                mileage_current: '21000',
-                source: '客户来电'
-            }
-        },
-        {
-            id: 2,
-            start: new Date('2019-08-01T10:45:00'),
-            end: addHours(new Date('2019-08-01T10:45:00'), 2),
-            title: '事件 two',
-            color: colors.blue,
-        },
-        {
-            id: 3,
-            start: new Date('2019-08-01T10:45:00'),
-            end: addHours(new Date('2019-08-01T10:45:00'), 2),
-            title: '事件 three',
-            color: colors.red
-        }
-    ];
-
-    constructor() { }
+    constructor(
+        public ref: DynamicDialogRef
+    ) { }
     ngOnInit() {
-        // this.carService.getCarsSmall(id).then(cars => this.cars = cars);
+      this.dataList = [
+        {
+          name : "技师组1",
+          skill : "钣金",
+          default_stations : ["S1", "S2"],
+          dailyTotalHours : 7,
+          monthlyTotalHours : 120,
+          dailyHotJobs : 2,
+          monthlyHotJobs : 5,
+          effective : 80,
+          used_time : [
+            {startTime: "8:30", endTime: "9:30"},
+            {startTime: "10:00", endTime: "10:30"},
+            {startTime: "10:30", endTime: "11:00"},
+          ],
+          stations : [
+            {station_No : 'S1', isused : true},
+            {station_No : 'S2', isused : false},
+            {station_No : 'S3', isused : true},
+            {station_No : 'S4', isused : true},
+            {station_No : 'S5', isused : true},
+            {station_No : 'S6', isused : false},
+          ]
+        },
+        {
+          name : "技师组2",
+          skill : "钣金",
+          default_stations : ["S3", "S4"],
+          dailyTotalHours : 1,
+          monthlyTotalHours : 160,
+          dailyHotJobs : 6,
+          monthlyHotJobs : 10,
+          effective : 78,
+          used_time : [
+            {startTime: "9:00", endTime: "9:30"},
+            {startTime: "10:00", endTime: "10:30"},
+          ],
+          stations : [
+            {station_No : 'S1', isused : true},
+            {station_No : 'S2', isused : true},
+            {station_No : 'S3', isused : true},
+            {station_No : 'S4', isused : true},
+            {station_No : 'S5', isused : false},
+            {station_No : 'S6', isused : false},
+          ]
+        },
+        {
+          name : "技师组3",
+          skill : "钣金",
+          default_stations : ["S5", "S6"],
+          dailyTotalHours : 3,
+          monthlyTotalHours : 100,
+          dailyHotJobs : 8,
+          monthlyHotJobs : 13,
+          effective : 85,
+          used_time : [
+            {startTime: "9:30", endTime: "11:30"},
+          ],
+          stations : [
+            {station_No : 'S1', isused : false},
+            {station_No : 'S2', isused : false},
+            {station_No : 'S3', isused : true},
+            {station_No : 'S4', isused : true},
+            {station_No : 'S5', isused : false},
+            {station_No : 'S6', isused : false},
+          ]
+        }
+      ]
+
+      this.defaultSelectedTeam = this.dataList[0];
+
+
     }
 
-    handleEvent(action: string, event: CalendarEvent): void {
-        console.log(event);
-        if (event.id === 1) {
-            this.modalData = { event, action };
-            this.display = true;
-        }
-        // this.modal.open(this.modalContent, { size: 'lg' });
+    close() {
+        this.ref.close('car');
     }
 }
