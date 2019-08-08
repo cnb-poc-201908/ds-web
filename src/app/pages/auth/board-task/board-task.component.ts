@@ -73,7 +73,7 @@ export class BoardTaskComponent implements OnInit {
   dispatch(item) {
     const ref = this.dialogService.open(TechSelect, {
       header: '派工',
-      width: '80%',
+      width: '95%',
       height: '70%',
       baseZIndex: 10000
     });

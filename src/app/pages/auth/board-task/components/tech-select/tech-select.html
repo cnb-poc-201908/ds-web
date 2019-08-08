@@ -1,6 +1,6 @@
 <div class="tech-select">
     <div class="ui-g">
-      <div class="ui-g-4 section" >
+      <div class="ui-g-3 section">
         <div class="ui-g-12" *ngFor="let item of dataList">
           <div class="tech-warp">
             <div class="ui-g">
@@ -32,10 +32,47 @@
       </div>
 
       <div class="ui-g-4 section" >
-        <div class="content-wrap">2</div>
+        <div class="ui-g-12">
+          <mwl-calendar-day-view
+                [viewDate]="viewDate"
+                [events]="currentEvent"
+                [dayStartHour]="8"
+                [dayEndHour]="17"
+                [hourSegments]="4"
+                [refresh]="refresh"
+                (eventTimesChanged)="eventTimesChanged($event)"
+              >
+          </mwl-calendar-day-view>
+        </div>
       </div>
-      <div class="ui-g-4 section" >
-        <div class="content-wrap">3</div>
+      <div class="ui-g-5 section" >
+        <div class="content-wrap">
+          <div class="ui-g">
+            <div class="ui-g-3" *ngFor="let item of [1,2,3,4,5]; let i = index;">
+              <div class="station-warp" [ngClass]="{'free': i === 2}">
+                <div>
+                  <img src="../../../../../../assets/image/board_monitor/station.svg">
+                </div>
+                <div>
+                  工位{{i+1}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <div class="ui-g" style="margin-top:10px;">
+        <div class="ui-g-10">&nbsp;</div>
+        <div class="ui-g-1" style="text-align: right">
+          <button pButton icon="pi" label="取消" class="ui-button-secondary"></button>
+        </div>
+        <div class="ui-g-1" style="text-align: right">
+          <button pButton icon="pi" label="确认"></button>
+        </div>
+    </div>
+
+
 </div>
