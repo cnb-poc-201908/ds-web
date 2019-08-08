@@ -101,7 +101,7 @@ export class StockComponent implements OnInit {
   }
 
   onFile(data) {
-    window.open(`url${data.stockId}`, '_blank');
+    window.open(`http://bmwpoc.cdkapps.cn:30090/stock/interface/stock/return/${data.stockId}`, '_blank');
   }
 
   getStockList() {
