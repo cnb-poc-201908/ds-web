@@ -199,7 +199,7 @@ export class ContractPrintComponent implements OnInit {
     }
   }
   goback() {
-    this.router.navigate(['/sales/contract-undone']);
+    this.router.navigate(['/sales/contract-done']);
   }
 
 }
