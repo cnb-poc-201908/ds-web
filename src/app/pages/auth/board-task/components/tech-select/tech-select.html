@@ -5,11 +5,11 @@
           <div class="tech-warp" (click)="selectTeam(item)"
             [ngClass]="{'selected': item.selected}">
             <div class="ui-g">
-              <div class="ui-g-6">
+              <div class="ui-g-7">
                 <div class="title">{{item.name}}</div>
                 <div class="type">{{item.skill}}</div>
               </div>
-              <div class="ui-g-6 station">
+              <div class="ui-g-5 station">
                 <div *ngFor="let st of item.default_stations"><span>{{st.stationid}}</span></div>
               </div>
             </div>
