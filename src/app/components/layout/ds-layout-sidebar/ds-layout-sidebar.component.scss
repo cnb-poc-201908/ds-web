@@ -28,4 +28,8 @@
       }
     }
   }
+  ::ng-deep .ui-menu {
+    width: 100%;
+    padding: 0;
+  }
 }

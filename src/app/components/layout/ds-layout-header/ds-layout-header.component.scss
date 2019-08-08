@@ -120,3 +120,7 @@ header {
     color: #fff;
   }
 }
+
+::ng-deep .sigout .ui-button-text {
+  padding: .25em 1em !important;
+}
