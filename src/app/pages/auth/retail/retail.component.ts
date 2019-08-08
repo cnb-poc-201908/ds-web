@@ -165,4 +165,8 @@ export class RetailComponent implements OnInit {
     };
     this.displayDialog = true;
   }
+
+  cancel() {
+    this.displayDialog = false;
+  }
 }
