@@ -7,8 +7,8 @@
       <section class="input-wrap">
         <div class="ui-g ui-fluid">
           <div class="ui-g-12" style="padding-left: 0;">
-              <input [(ngModel)]="inputStr" id="float-input" type="text" size="30" pInputText placeholder="查询车牌号/车架号">
-              <!-- <label for="float-input">查询车牌号/车架号</label> -->
+            <input [(ngModel)]="inputStr" id="float-input" type="text" size="30" pInputText placeholder="查询车牌号/车架号">
+            <!-- <label for="float-input">查询车牌号/车架号</label> -->
           </div>
         </div>
       </section>
@@ -39,15 +39,15 @@
                 </div>
                 <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
                 <div class="item-label">
-                  <div>工单</div>
+                  <div><span>工单</span></div>
                   <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
-                  <div>服务顾问</div>
+                  <div><span>服务顾问</span></div>
                   <div>{{item.assignedAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
-                  <div>交车时间</div>
+                  <div><span>交车时间</span></div>
                   <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
                 </div>
               </div>
@@ -91,15 +91,15 @@
                 </div>
                 <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
                 <div class="item-label">
-                  <div>工单</div>
+                  <div><span>工单</span></div>
                   <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
-                  <div>服务顾问</div>
+                  <div><span>服务顾问</span></div>
                   <div>{{item.assignedAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
-                  <div>交车时间</div>
+                  <div><span>交车时间</span></div>
                   <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
                 </div>
               </div>
@@ -119,15 +119,15 @@
                 </div>
                 <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
                 <div class="item-label">
-                  <div>工单</div>
+                  <div><span>工单</span></div>
                   <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
-                  <div>服务顾问</div>
-                  <div><span>{{item.assignedAdvisorName || '-'}}</span></div>
+                  <div><span>服务顾问</span></div>
+                  <div>{{item.assignedAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
-                  <div>交车时间</div>
+                  <div><span>交车时间</span></div>
                   <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
                 </div>
               </div>
@@ -149,15 +149,15 @@
             </div>
             <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
             <div class="item-label">
-              <div>工单</div>
+              <div><span>工单</span></div>
               <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
-              <div>服务顾问</div>
+              <div><span>服务顾问</span></div>
               <div>{{item.assignedAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
-              <div>交车时间</div>
+              <div><span>交车时间</span></div>
               <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
             </div>
           </div>
@@ -177,15 +177,15 @@
             </div>
             <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
             <div class="item-label">
-              <div>工单</div>
+              <div><span>工单</span></div>
               <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
-              <div>服务顾问</div>
+              <div><span>服务顾问</span></div>
               <div>{{item.assignedAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
-              <div>交车时间</div>
+              <div><span>交车时间</span></div>
               <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
             </div>
           </div>
@@ -205,15 +205,15 @@
             </div>
             <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
             <div class="item-label">
-              <div>工单</div>
+              <div><span>工单</span></div>
               <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
-              <div>服务顾问</div>
+              <div><span>服务顾问</span></div>
               <div>{{item.assignedAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
-              <div>交车时间</div>
+              <div><span>交车时间</span></div>
               <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
             </div>
           </div>

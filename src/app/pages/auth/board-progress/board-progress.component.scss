@@ -174,8 +174,14 @@
       justify-content: space-between;
       line-height: 18px;
 
-      div {
+      div:first-child span {
         white-space: nowrap;
+      }
+      div:last-child {
+        text-align: right;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
       }
     }
   }
