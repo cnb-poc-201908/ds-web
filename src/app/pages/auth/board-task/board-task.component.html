@@ -5,7 +5,7 @@
         <p-tabMenu [model]="items" class="DS-tabMenu" [activeItem]="items[0]">
           <ng-template pTemplate="item" let-item let-i="index">
             <a tabindex="0" class="ui-menuitem-icon" (click)="change($event, i, item)">
-              {{item.label}}
+              {{item.label}} <span *ngIf="i === 0">({{2}})</span><span *ngIf="i === 1">({{4}})</span><span *ngIf="i === 2">({{4}})</span>
             </a>
           </ng-template>
         </p-tabMenu>
