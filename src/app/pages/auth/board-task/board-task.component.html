@@ -82,15 +82,15 @@
     <div *ngIf="activeIndex == 1">
       <div class="p-grid">
         <div class="p-col-3" *ngFor="let item of dataListObj.INPROGRESS">
-          <p-card (click)="dispatch(item)">
-            <p-header [ngClass]="{'red-brand':item.hot == true}">
+          <p-card>
+            <p-header [ngClass]="{'red-brand':item.activity == true}">
               <i class="pi pi-star hot-job"></i>
               <span class="serial-label">牌照号</span>
               <p></p>
               <div class="clearfix">
-                <div class="serial-value">{{item.vehiclelicensePlate}}</div>
+                <div class="serial-value">{{item.vehicleLicensePlate}}</div>
                 <div class="serial-image">
-                  <i class="pi pi-envelope icon-envelop"></i>&nbsp;
+                  <i class="pi pi-envelope icon-envelop" (click)="showSendMsg($event)"></i>&nbsp;
                   <!-- <i class="pi pi-eye icon-eye"></i> -->
                 </div>
               </div>
@@ -98,16 +98,23 @@
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">客户预约交车时间</div>
               <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
-                {{item.plannedOut | date :'yyyy-MM-dd HH:MM'}}
+                {{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM'}}
               </div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-6">预估交车时间</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">
+                <span [ngClass]="{'alert': (item.dueOutDateTime != '' && item.dueOutDateTime != null)
+                  && (item.planOutDateTime != '' && item.planOutDateTime != null)
+                  && (item.planOutDateTime >= item.planOutDateTime) }">预估交车时间</span>
+              </div>
               <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
-                {{item.dueOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
+                <span [ngClass]="{'alert': (item.dueOutDateTime != '' && item.dueOutDateTime != null)
+                  && (item.planOutDateTime != '' && item.planOutDateTime != null)
+                  && (item.planOutDateTime >= item.planOutDateTime) }">
+                  {{item.planOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
+                </span>
               </div>
             </div>
-
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">车型</div>
               <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.vehicleDescription}}">
@@ -115,7 +122,7 @@
             </div>
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">车架号</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vehicleVin}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vehicleVIN}}</div>
             </div>
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">SA</div>
@@ -123,7 +130,7 @@
             </div>
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">备注</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.notes}}">{{item.notes}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.text}}">{{item.text}}</div>
             </div>
           </p-card>
         </div>
@@ -132,15 +139,15 @@
     <div *ngIf="activeIndex == 2">
       <div class="p-grid">
         <div class="p-col-3" *ngFor="let item of dataListObj.CHECKEDOUT">
-          <p-card (click)="dispatch(item)">
-            <p-header [ngClass]="{'red-brand':item.hot == true}">
+          <p-card>
+            <p-header [ngClass]="{'red-brand':item.activity == true}">
               <i class="pi pi-star hot-job"></i>
               <span class="serial-label">牌照号</span>
               <p></p>
               <div class="clearfix">
-                <div class="serial-value">{{item.vehiclelicensePlate}}</div>
+                <div class="serial-value">{{item.vehicleLicensePlate}}</div>
                 <div class="serial-image">
-                  <i class="pi pi-envelope icon-envelop"></i>&nbsp;
+                  <i class="pi pi-envelope icon-envelop" (click)="showSendMsg($event)"></i>&nbsp;
                   <!-- <i class="pi pi-eye icon-eye"></i> -->
                 </div>
               </div>
@@ -148,13 +155,21 @@
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">客户预约交车时间</div>
               <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
-                {{item.plannedOut | date :'yyyy-MM-dd HH:MM'}}
+                {{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM'}}
               </div>
             </div>
             <div class="ui-g">
-              <div class="ui-g-12 ui-md-6 ui-lg-6">预估交车时间</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6">
+                <span [ngClass]="{'alert': (item.dueOutDateTime != '' && item.dueOutDateTime != null)
+                  && (item.planOutDateTime != '' && item.planOutDateTime != null)
+                  && (item.planOutDateTime >= item.planOutDateTime) }">预估交车时间</span>
+              </div>
               <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">
-                {{item.dueOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
+                <span [ngClass]="{'alert': (item.dueOutDateTime != '' && item.dueOutDateTime != null)
+                  && (item.planOutDateTime != '' && item.planOutDateTime != null)
+                  && (item.planOutDateTime >= item.planOutDateTime) }">
+                  {{item.planOutDateTime | date : 'yyyy-MM-dd HH:MM'}}
+                </span>
               </div>
             </div>
 
@@ -165,7 +180,7 @@
             </div>
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">车架号</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vehicleVin}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right">{{item.vehicleVIN}}</div>
             </div>
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">SA</div>
@@ -173,7 +188,7 @@
             </div>
             <div class="ui-g">
               <div class="ui-g-12 ui-md-6 ui-lg-6">备注</div>
-              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.notes}}">{{item.notes}}</div>
+              <div class="ui-g-12 ui-md-6 ui-lg-6 item-right" title="{{item.text}}">{{item.text}}</div>
             </div>
           </p-card>
         </div>
