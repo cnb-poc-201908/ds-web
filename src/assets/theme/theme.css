@@ -4107,3 +4107,6 @@ body .ui-card:hover {
   box-shadow:2px 2px 10px #909090;
 }
 
+body .ui-dynamicdialog {
+  top:40% !important;
+}
