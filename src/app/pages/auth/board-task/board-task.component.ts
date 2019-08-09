@@ -168,7 +168,7 @@ export class BoardTaskComponent implements OnInit {
     if (data && data.length > 0) {
       data.forEach(item=>{
         let date = new Date();
-        let labor = item.amountLabor.split(".")
+        let labor = item.amountLabor ? item.amountLabor.split(".") : "0";
         let laborHour = 0;
         let laborMins = 0;
         if (labor && labor.length === 1) {
