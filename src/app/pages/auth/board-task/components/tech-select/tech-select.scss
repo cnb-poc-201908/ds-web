@@ -17,6 +17,26 @@
       cursor: pointer;
       &.selected{
         border: 1px solid #82C600;
+        background-color: #82C600;
+        color: #fff;
+        .type,.info-warp,.per-label {
+          color: #fff;
+        }
+        .info-warp{
+          div{
+            border-right:1px solid #fff !important;
+          }
+        }
+        .station {
+          div {
+            span{
+              border: 1px solid #fff;
+            }
+          }
+        }
+      }
+      .info-warp{
+        font-size: 20px;
       }
       .title {
         font-size: 18px;
@@ -43,8 +63,19 @@
           margin-left: 20px;
           text-align: center;
           line-height: 30px;
-          background: url('../../../../../../assets/image/board_monitor/tech_station.svg');
-          background-size: cover;
+          // border-radius: 50%;
+          // border: 1px solid #0062FF;
+          // background: url('../../../../../../assets/image/board_monitor/tech_station.svg');
+          // background-size: cover;
+          span{
+            border: 1px solid #82C600;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
 

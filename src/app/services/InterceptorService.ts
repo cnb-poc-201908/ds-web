@@ -35,7 +35,7 @@ export class InterceptorService implements HttpInterceptor {
           console.log('http success');
           setTimeout(() => {
             this.common.hideSpinner();
-          }, 1000);
+          }, 1500);
         },
         catchError((err: HttpErrorResponse) => this.ErrorHandle(err))
       )
