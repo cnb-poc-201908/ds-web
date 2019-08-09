@@ -112,7 +112,6 @@ export class TechSelect implements OnInit {
           color: {primary: '#e3bc08', secondary: '#FDF1BA'},
           start: this.getTodayTime(item.startTime),
           end : this.getTodayTime(item.endTime),
-          meta: {}
         })
       })
 
@@ -126,7 +125,7 @@ export class TechSelect implements OnInit {
         resizable: {
           beforeStart: true,
           afterEnd: true
-        }
+        },
       });
 
       this.refresh.next();

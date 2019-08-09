@@ -90,7 +90,7 @@ export class ContractCreateComponent implements OnInit {
   ];
   dealerList = [
     { code: '1', text: 'Radio' },
-    { code: '1', text: 'VIN' },
+    { code: '1', text: 'CD changer for 6 CDs' },
     { code: '1', text: 'Locking' }
   ];
   firmList = [
