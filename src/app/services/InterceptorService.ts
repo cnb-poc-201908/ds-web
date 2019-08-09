@@ -18,11 +18,11 @@ export class InterceptorService implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // console.log('http start');
+    console.log('http start');
     this.common.openSpinner();
     const mergedHeaders = new HttpHeaders({
       // 'Authorization': 'Token',
-      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/json'
     });
 
     const req = request.clone({
@@ -32,7 +32,7 @@ export class InterceptorService implements HttpInterceptor {
     return next.handle(req).pipe(
       tap(
         event => {
-          // console.log('http success');
+          console.log('http success');
           setTimeout(() => {
             this.common.hideSpinner();
           }, 1000);

@@ -177,9 +177,22 @@
       }
     }
 
-    ::ng-deep .ui-button.ui-button-text-icon-left .ui-button-text {
-      padding: .6em 2em .6em 2em;
-  }
+    .buttons{
+      display: flex;
+      justify-content: flex-end;
+      justify-items: center;
+      margin-top: 10px;
+      .ui-button{
+        &+.ui-button{
+          margin-left: 10px;
+        }
+      }
+      ::ng-deep .ui-button.ui-button-text-icon-left .ui-button-text {
+        padding: .6em 2em .6em 2em;
+
+      }
+    }
+    
 
 }
 
