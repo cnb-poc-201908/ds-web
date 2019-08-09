@@ -21,7 +21,7 @@
     <div class="maintain-wrap">
       <div class="title-wrap">
         <div class="text">
-          维修区<span>（{{progressAllObj.CREATED.length + progressAllObj.CHECKEDIN.length + progressAllObj.WORKSTARTED.length}}）</span>
+          维修区<span>（{{progressAllObj.CHECKEDIN.length + progressAllObj.WORKSTARTED.length + progressAllObj.INPROGRESS.length}}）</span>
         </div>
         <!-- <div class="icon"></div> -->
       </div>
@@ -33,22 +33,22 @@
           </div>
           <div class="column-content">
             <div class="card-content">
-              <div class="card-wrap" *ngFor="let item of progressAllObj.CREATED;let i = index;">
+              <div class="card-wrap" *ngFor="let item of progressAllObj.CHECKEDIN;let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
-                <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
+                <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
                 <div class="item-label">
                   <div>工单</div>
                   <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
                   <div>服务顾问</div>
-                  <div>{{item.contactAdvisorName || '-'}}</div>
+                  <div>{{item.assignedAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
                   <div>交车时间</div>
-                  <div>{{item.checkOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
+                  <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
                 </div>
               </div>
               <!-- <p-virtualScroller styleClass="board-progress" [value]="waitingMaintainList" scrollHeight="600px"
@@ -85,22 +85,22 @@
           </div>
           <div class="column-content">
             <div class="card-content">
-              <div class="card-wrap" *ngFor="let item of progressAllObj.CHECKEDIN;let i = index;">
+              <div class="card-wrap" *ngFor="let item of progressAllObj.WORKSTARTED;let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
-                <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
+                <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
                 <div class="item-label">
                   <div>工单</div>
                   <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
                   <div>服务顾问</div>
-                  <div>{{item.contactAdvisorName || '-'}}</div>
+                  <div>{{item.assignedAdvisorName || '-'}}</div>
                 </div>
                 <div class="item-label">
                   <div>交车时间</div>
-                  <div>{{item.checkOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
+                  <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
                 </div>
               </div>
             </div>
@@ -113,22 +113,22 @@
           </div>
           <div class="column-content">
             <div class="card-content">
-              <div class="card-wrap" *ngFor="let item of progressAllObj.WORKSTARTED;let i = index;">
+              <div class="card-wrap" *ngFor="let item of progressAllObj.INPROGRESS;let i = index;">
                 <div class="item-label">
                   <div>牌照号</div>
                 </div>
-                <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
+                <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
                 <div class="item-label">
                   <div>工单</div>
                   <div>{{getRepairOrderId(item.repairOrderId)}}</div>
                 </div>
                 <div class="item-label">
                   <div>服务顾问</div>
-                  <div>{{item.contactAdvisorName || '-'}}</div>
+                  <div><span>{{item.assignedAdvisorName || '-'}}</span></div>
                 </div>
                 <div class="item-label">
                   <div>交车时间</div>
-                  <div>{{item.checkOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
+                  <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
                 </div>
               </div>
             </div>
@@ -147,18 +147,18 @@
             <div class="item-label">
               <div>牌照号</div>
             </div>
-            <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
+            <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
             <div class="item-label">
               <div>工单</div>
               <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
               <div>服务顾问</div>
-              <div>{{item.contactAdvisorName || '-'}}</div>
+              <div>{{item.assignedAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
               <div>交车时间</div>
-              <div>{{item.checkOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
+              <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
             </div>
           </div>
         </div>
@@ -175,18 +175,18 @@
             <div class="item-label">
               <div>牌照号</div>
             </div>
-            <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
+            <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
             <div class="item-label">
               <div>工单</div>
               <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
               <div>服务顾问</div>
-              <div>{{item.contactAdvisorName || '-'}}</div>
+              <div>{{item.assignedAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
               <div>交车时间</div>
-              <div>{{item.checkOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
+              <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
             </div>
           </div>
         </div>
@@ -194,27 +194,27 @@
     </div>
     <div class="secondary-wrap">
       <div class="title-wrap red">
-        <div class="text">滞留区<span>（{{progressAllObj.CLOSED.length}}）</span></div>
+        <div class="text">滞留区<span>（{{progressAllObj.PENDING.length}}）</span></div>
         <div class="icon"></div>
       </div>
       <div class="secondary-content">
         <div class="card-content">
-          <div class="card-wrap red" *ngFor="let item of progressAllObj.CLOSED;let i = index;">
+          <div class="card-wrap red" *ngFor="let item of progressAllObj.PENDING;let i = index;">
             <div class="item-label">
               <div>牌照号</div>
             </div>
-            <div class="chassis-number">{{item.vehiclelicensePlate || '-'}}</div>
+            <div class="chassis-number">{{item.vehicleLicensePlate || '-'}}</div>
             <div class="item-label">
               <div>工单</div>
               <div>{{getRepairOrderId(item.repairOrderId)}}</div>
             </div>
             <div class="item-label">
               <div>服务顾问</div>
-              <div>{{item.contactAdvisorName || '-'}}</div>
+              <div>{{item.assignedAdvisorName || '-'}}</div>
             </div>
             <div class="item-label">
               <div>交车时间</div>
-              <div>{{item.checkOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
+              <div>{{item.dueOutDateTime | date :'yyyy-MM-dd HH:MM' || '-'}}</div>
             </div>
           </div>
         </div>
