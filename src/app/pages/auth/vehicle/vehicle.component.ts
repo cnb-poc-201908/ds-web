@@ -34,7 +34,7 @@ export class VehicleComponent implements OnInit {
 
   ngOnInit() {
     this.stockStatus = [
-      { label: '库龄/天', value: 'all' },
+      { label: '全部', value: 'all' },
       { label: '0-30天', value: 'white' },
       { label: '30天-60天', value: 'green' },
       { label: '60天-120天', value: 'yellow' },
