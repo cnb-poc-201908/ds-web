@@ -44,7 +44,7 @@ export class DSLayoutSidebarComponent implements OnInit {
         { label: '调度管理', icon: 'ds icon-booking', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-monitor'] },
         { label: '派工管理', icon: 'ds icon-maintain', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/board-task'] },
       ];
-    } else if (user.uId === 'sa') {
+    } else if (user.uId === '006') {
       this.items = [
         { label: '进度看板', icon: 'ds icon-summary', routerLinkActiveOptions: { activeItem: true }, routerLink: ['/sa/board'] },
       ];
