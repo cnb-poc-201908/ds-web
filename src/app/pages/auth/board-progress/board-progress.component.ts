@@ -10,7 +10,8 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class BoardProgressComponent implements OnInit {
 
-  STATUS_OBJ = ['CREATED', 'CHECKEDIN', 'WORKSTARTED', 'WORKCOMPLETED', 'CHECKEDOUT', 'CLOSED'];
+  // STATUS_OBJ = ['CREATED', 'CHECKEDIN', 'WORKSTARTED', 'WORKCOMPLETED', 'CHECKEDOUT', 'CLOSED'];
+  STATUS_OBJ = ['CHECKEDIN', 'WORKSTARTED', 'INPROGRESS', 'WORKCOMPLETED', 'CHECKEDOUT', 'PENDING'];
 
   waitingMaintainList = [];
   maintenanceList = [];
@@ -26,12 +27,12 @@ export class BoardProgressComponent implements OnInit {
     washAreaList: [],
     deliveryAreaList: [],
     stayAreaList: [],
-    CREATED: [],
     CHECKEDIN: [],
     WORKSTARTED: [],
+    INPROGRESS: [],
     WORKCOMPLETED: [],
     CHECKEDOUT: [],
-    CLOSED: [],
+    PENDING: [],
   };
 
   totalLazyCarsLength: number;
