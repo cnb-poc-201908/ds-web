@@ -18,7 +18,7 @@
             <div class="ui-g-12">
               <div class="car-warp" (click)="jumpPage()" style="cursor: pointer;">
                 <div class="info">
-                  <div class="num">{{progressAllObj.CREATED.length}}</div>
+                  <div class="num">{{progressAllObj['CREATED']?.length}}</div>
                   <div class="label">待派工</div>
                 </div>
                 <div class="image">
@@ -29,7 +29,7 @@
             <div class="ui-g-12">
               <div class="car-warp purple">
                 <div class="info">
-                  <div class="num">{{progressAllObj.WORKSTARTED.length}}</div>
+                  <div class="num">{{progressAllObj['WORKSTARTED']?.length}}</div>
                   <div class="label">维修中</div>
                 </div>
                 <div class="image">
@@ -40,7 +40,7 @@
             <div class="ui-g-12">
               <div class="car-warp red">
                 <div class="info">
-                  <div class="num">{{progressAllObj.INPROGRESS.length}}</div>
+                  <div class="num">{{progressAllObj['INPROGRESS']?.length}}</div>
                   <div class="label">增项</div>
                 </div>
                 <div class="image">
@@ -51,7 +51,7 @@
             <div class="ui-g-12">
               <div class="car-warp blue">
                 <div class="info">
-                  <div class="num">{{progressAllObj.CHECKOUT.length}}</div>
+                  <div class="num">{{progressAllObj['CHECKOUT']?.length}}</div>
                   <div class="label">待交车</div>
                 </div>
                 <div class="image">
