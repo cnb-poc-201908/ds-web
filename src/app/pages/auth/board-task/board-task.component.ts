@@ -180,11 +180,17 @@ export class BoardTaskComponent implements OnInit {
             laborMins = 30;
           }
         }
-        date.setHours(date.getHours() + laborHour);
+        date.setHours(date.getHours() + laborHour - 4);
         date.setMinutes(date.getMinutes() + laborMins);
+        item.dueOutDateTimeFormat = this.getTime(item.dueOutDateTime);
+        item.planOutDateTimeFormat = this.getTime(date);
         item.planOutDateTime = date.toString();
       })
     }
+  }
+
+  getTime(date) {
+    return new Date(date).getTime();
   }
 
 }
