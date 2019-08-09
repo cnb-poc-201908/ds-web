@@ -123,6 +123,10 @@ export class TechSelect implements OnInit {
         end : this.getTodayTime("8:15"),
         meta: {},
         draggable : true,
+        resizable: {
+          beforeStart: true,
+          afterEnd: true
+        }
       });
 
       this.refresh.next();
