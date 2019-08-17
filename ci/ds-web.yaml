@@ -15,6 +15,6 @@ spec:
           image: registry.cn-beijing.aliyuncs.com/bmwpoc/ds-web-dev:{version}
           ports:
             - name: http-port
-              containerPort: 80
+              containerPort: 801
       imagePullSecrets:
         - name: bmwpoc
